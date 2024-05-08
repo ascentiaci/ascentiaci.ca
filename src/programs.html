@@ -2,16 +2,17 @@
 <html lang="en">
   <head>
     <include src="src/parts/headtag.htm" locals='{
-      "title":"Home"
+      "title":"Programs"
     }'>
   </head>
   <body>
     <include src="src/parts/nav.htm"></include>
+    <main>
     <include
       src="src/parts/head.htm"
       locals='{
       "headerimg": "index.png",
-      "name": "Welcome to Ascentia Career Institute"
+      "name": "Programs"
     
     }'
     ></include>
@@ -19,16 +20,23 @@
     <div class="container py-4 px-2 mx-auto">
       <div class="text-center">
       <p>
-       
+       Explore the amazing programs Ascentia Career Institute has to offer:
       </p>
     </div>
-
+    </div>
+    
+    
+  <include src="src/parts/category.htm">{"cat":"Healthcare","slug":"healthcare"}</include>
+  <include src="src/parts/category.htm">{"cat":"Computer Systems and Technology","slug":"computer-systems-and-technology"}</include>
+  <include src="src/parts/category.htm">{"cat":"Education", "slug": "education"}</include>
   
 
-      </div>
+
+
     </div>
     </div>
     </div>
+  </main>
     <include src="src/parts/footer.htm"></include>
   </body>
 </html>

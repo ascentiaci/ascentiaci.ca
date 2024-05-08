@@ -72,3 +72,16 @@ footer > p > a {
 .bg-highlight-secondary {
     background-color: var(--brand-highlight-secondary);
    }
+
+main,nav,.bg-body-secondary {
+    background-color: rgba(255,255,255,1) !important;   
+}
+
+body {
+    background-color: black;
+}
+
+
+.program-card-img {
+    object-fit: cover;
+}
