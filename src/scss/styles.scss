@@ -1,0 +1,74 @@
+// Import all of Bootstrap's CSS
+@import "bootstrap/scss/bootstrap";
+// Import Fonts
+@import url("https://use.typekit.net/uxt6rai.css");
+
+
+
+:root {
+    --bs-secondary-bg-rgb:rgb(255,255,255);
+    --brand-primary: rgb(99,10,22);
+    --brand-tertiary: #8C9DB2;
+    --brand-highlight: #9D3D4A;
+    --brand-highlight-secondary: #B56D77;
+
+    --brand-header-font: droid-serif;
+    --brand-body-font: open-Sans;
+    $font-family-sans-serif: var(--brand-body-font);
+
+}
+* {
+font-family: var(--brand-body-font);
+}
+
+h1,h2,h3,h4,h5 {
+    font-family: var(--brand-header-font);
+}
+
+
+
+
+.has-primary-bg {
+    background-color: var(--brand-primary);
+    color: var(--bs-secondary-bg-rgb);
+}
+
+hr {
+    background-color: var(--brand-primary);
+    border-color: var(--brand-primary);
+    border-style: solid;
+    border-width: 3px;
+    opacity: 1;
+}
+
+h2 > a {
+    text-decoration: none;
+    color: var(--brand-tertiary);
+}
+
+a:hover {
+    color: var(--brand-highlight);
+}
+
+.btn:hover {
+    background-color: var(--brand-highlight);
+    color: var(--bs-secondary-bg-rgb);
+}
+
+footer {
+    background-color: black;
+    color: white;
+    text-decoration: none;
+}
+footer > p > a {
+    color: white;
+    text-decoration: none;
+}
+
+.bg-highlight {
+ background-color: var(--brand-highlight);
+}
+
+.bg-highlight-secondary {
+    background-color: var(--brand-highlight-secondary);
+   }
