@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{ title }} | Ascentia Career Institute</title>
+  
+  <link rel="stylesheet" href="scss/styles.scss" />
+  <script type="module" src="js/main.js"></script>
+</head>
+<body>
+  <include src="src/parts/nav.htm"></include>
+
+  <div class="page-header">
+    <img src="/src/images/{{ headerimg }}?as=webp" alt="" style="max-height: 225px; width: 99vw;">
+    <br>
+    <h2 class="text-center py-2">{{ name }}</h2>
+  </div>
+
+  <block name="header"></block>
+
+  <div class="container py-4 px-2 mx-auto">
+    <div class="text-center">
+      <block name="content">
+        <p>Default content</p>
+      </block>
+    </div>
+  </div>
+
+  <include src="src/parts/footer.htm"></include>
+</body>
+</html>

@@ -12,7 +12,8 @@
     "@popperjs/core": "^2.11.8",
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",
-    "parceljs": "^0.0.1"
+    "parceljs": "^0.0.1",
+    "posthtml-extend": "^0.6.5"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.12.0",

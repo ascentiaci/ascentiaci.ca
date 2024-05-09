@@ -2,6 +2,7 @@
   "plugins": {
     "posthtml-doctype": { "doctype": "HTML 5" },
     "posthtml-include": {},
-    "posthtml-expressions": {}
+    "posthtml-expressions": {},
+    "posthtml-extend": {}
   }
 }
