@@ -1,0 +1,35 @@
+<extends src="parts/base.htm" locals='{
+  "headerimg": "index.png", 
+  "name": "",
+  "title": "Admissions"
+}'>
+
+<block name="pageTitle">
+Admissions
+</block>
+
+  <block name="content">
+    <div class="row row-cols-lg-2 row-cols-1 h-100 justify-content-evenly px-5">
+    <include src="src/parts/programslide.htm" locals='{
+      "name": "Admission Requirements",
+      "intro": "We are excited about your interest in joining our community! On this page you will find a clear outline of the necessary steps and criteria to apply."
+    }'></include>
+    <include src="src/parts/programslide.htm" locals='{
+      "name": "Questions?",
+      "intro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    }'></include>
+    <include src="src/parts/programslide.htm" locals='{
+      "name": "Enrollment calendar",
+      "intro": "Explore our course calendar to find start dates for programs that fit your schedule. Start your learning journey today!"
+    }'></include>
+    <include src="src/parts/programslide.htm" locals='{
+      "name": "Financial Aid",
+      "intro": "Financing their education is a major hurdle for many post-secondary students. At Ascentia Career Institute, we’re committed to assisting you with this challenge. For details on tuition, fees, and the financial aid options available, including bursaries and scholarships, please reach out to one of our advisors."
+    }'></include>
+    <include src="src/parts/programslide.htm" locals='{
+      "name": "Before you Apply",
+      "intro": "We are thrilled that you’re considering Ascentia Career Institute to advance your career! Our goal is to support you every step of the way as you prepare to join one of our programs. To make your application process as smooth as possible, please carefully review the following guidelines:"
+    }'></include>
+  </div>
+  </block>
+</extends>

@@ -1,32 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>{{ title }} | Ascentia Career Institute</title>
-  
-  <link rel="stylesheet" href="scss/styles.scss" />
-  <script type="module" src="js/main.js"></script>
-</head>
-<body>
-  <include src="src/parts/nav.htm"></include>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{ title }} | Ascentia Career Institute</title>
 
-  <div class="page-header">
-    <img src="/src/images/{{ headerimg }}?as=webp" alt="" style="max-height: 225px; width: 99vw;">
-    <br>
-    <h2 class="text-center py-2">{{ name }}</h2>
-  </div>
+    <link rel="stylesheet" href="scss/styles.scss" />
+    <script type="module" src="js/main.js"></script>
+  </head>
+  <body>
+    <div id="top">
+      <nav class="navbar navbar-expand-lg bg-body-secondary">
+        <div class="container-fluid">
+          <a href="/" class="navbar-brand">
+            <img
+              src="/src/images/primary-logo-name-tagline-black-text.png?as=webp&width=250"
+              alt=""
+            />
+          </a>
+          <button class="has-primary-bg btn" id="request-info">
+            Request Info
+          </button>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#mainNavbarContent"
+            aria-controls="mainNavbarContent"
+            aria-expanded="false"
+            aria-label="Toogle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="navbar-collapse collapse" id="mainNavbarContent">
+            <ul class="navbar-nav me-auto-mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="/src/why-ascentia.html"
+                  >Why Ascentia</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/src/programs.html">Programs</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/src/admissions.html">Admissions</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Career Services</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">About Ascentia</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Student Services</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
 
-  <block name="header"></block>
+      <header class="border-0 mb-0">
+        <img
+          src="/src/images/{{ headerimg }}?as=webp"
+          alt=""
+          style="max-height: 225px; width: 99vw"
+        />
+        <br />
 
-  <div class="container py-4 px-2 mx-auto">
-    <div class="text-center">
-      <block name="content">
-        <p>Default content</p>
-      </block>
+        <h2 class="text-center py-2 bg-body-secondary">
+          <block name="pageTitle">Welcome</block>
+        </h2>
+      </header>
+      <main class="mt-0">
+        <div class="container py-4 px-2 mx-auto">
+          <div class="text-center">
+            <block name="content">
+              <p>Default content</p>
+            </block>
+          </div>
+        </div>
+      </main>
     </div>
-  </div>
-
-  <include src="src/parts/footer.htm"></include>
-</body>
+    <footer class="px-5 pt-2">
+      <a href="#">
+        <img
+          src="/src/images/primary-logo-name-no-tagline-white-text.png?as=webp&width=200"
+        />
+        <p class="pl-3">
+          <a
+            href="https://www.google.com/maps/dir/?api=1&destination=1690%20Water%20St,%20Kelowna,%20BC"
+            >Unit 200 - 1690 Water St.,
+            <br />
+            Kelowna, BC V1Y 8T8
+          </a>
+        </p>
+    
+        <p class="pl-3">
+          <a href="tel:12509998733">1-250-999-8733</a>
+        </p>
+      </a>
+    </footer>
+    
+  </body>
 </html>

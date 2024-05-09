@@ -1,24 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <head>
-      <include src="src/parts/headtag.htm" locals='{
-        "title":"Why Ascentia?"
-      }'>
-    </head>
-  </head>
-  <body>
-    <include src="src/parts/nav.htm"></include>
-    <main>
-    <include
-      src="src/parts/head.htm"
-      locals='{
-      "headerimg": "index.png",
-      "name": "Why Ascentia?"
-    
-    }'
-    ></include>
+<extends src="parts/base.htm" locals='{
+  "headerimg": "index.png", 
+  "name": "Welcome to Ascentia Career Institute",
+  "title": "Home"
+}'>
 
+<block name="pageTitle">Welcome to Ascentia Career Institute</block>
+
+  <block name="content">
+     
     <div class="container py-4 px-2 mx-auto">
       <div class="text-center">
       <p>
@@ -26,35 +15,52 @@
       </p>
     </div>
     <div class="container row">
-      <include src="src/parts/whyparts.htm" locals='{
+      <extends src="parts/whyparts.htm" locals='{
         "order":"1",
         "image": "feature2.webp",
         "order2":"2",
         "header":"Convenient Location",
         "image":"feature1.webp",
-        "body": "Ascentia Career Institute is located in a prime location in downtown Kelowna. Our campus is conveniently located near multiple clinical placement partners and is readily accessible via public transport with a charter bus stop just a short walk away."
-      }'></include>
-      <include src="src/parts/whyparts.htm" locals='{
+        "body": ""
+      }'>
+      <block name="whyHeader">Convenient Location</block>
+    <block name="whyContent">
+      Ascentia Career Institute is located in a prime location in downtown Kelowna. Our campus is conveniently located near multiple clinical placement partners and is readily accessible via public transport with a charter bus stop just a short walk away.
+    </block>
+    
+    </extends>
+
+      <extends src="parts/whyparts.htm" locals='{
         "order":"2",
         "image": "feature2.webp",
         "order2":"1",
-        "header":"Latest Curriculum & Exclusive programs",
-        "body": "We prioritize your success by meticulously designing our programs to ensure they have t he most up to date curriculum while being tailed for maximum learning effectiveness. We offer programs and curriculum not offered anywhere else in the Okanagan valley."
-      }'></include>
-      <include src="src/parts/whyparts.htm" locals='{
+        "header":"",
+        "body": ""
+      }'>
+      <block name="whyHeader">Latest Curriculum & Exclusive programs</block>
+      <block name="whyContent">We prioritize your success by meticulously designing our programs to ensure they have t he most up to date curriculum while being tailed for maximum learning effectiveness. We offer programs and curriculum not offered anywhere else in the Okanagan valley.</block>
+    </extends>
+      <extends src="parts/whyparts.htm" locals='{
         "order":"1",
         "image": "feature3.webp",
         "order2":"2",
-        "header":"Flexible Learning",
-        "body": "We understand that every student is unique, and that’s why we offer flexible learning options. Whether you thrive in a traditional classroom setting, prefer the convenience of live streaming classes from home, or benefit from revisiting recorded sessions at your own pace, we’ve got you covered. We want you to have the freedom to choose the method that works best for you, empowering you to succeed on your own terms."
-      }'></include>
-      <include src="src/parts/whyparts.htm" locals='{
+        "header":"",
+        "body": ""
+      }'>
+      <block name="whyHeader">Flexible Learning</block>
+      <block name="whyContent">We understand that every student is unique, and that’s why we offer flexible learning options. Whether you thrive in a traditional classroom setting, prefer the convenience of live streaming classes from home, or benefit from revisiting recorded sessions at your own pace, we’ve got you covered. We want you to have the freedom to choose the method that works best for you, empowering you to succeed on your own terms.</block>
+    </extends>
+      
+      <extends src="parts/whyparts.htm" locals='{
         "order":"2",
         "image": "feature1.webp",
         "order2":"1",
-        "header":"Ethics and Inclusivity",
-        "body": "Above all, we shall always act ethically. We treat all our students and graduates with respect and dignity and ensure that we lead the industry in compliance with government regulations and guidance, including the spirit behind these regulations. Everyone deserves the opportunity to improve their skills – everyone is welcome at Ascentia."
-      }'></include>
+        "header":"",
+        "body": ""
+      }'>
+      <block name="whyHeader">Ethics and Inclusivity</block>
+      <block name="whyContent">Above all, we shall always act <b>ethically</b>. We treat all our students and graduates with <b>respect</b> and <b>dignity</b> and ensure that we lead the industry in compliance with government regulations and guidance, including the <b>spirit</b> behind these regulations. Everyone deserves the opportunity to improve their skills – <strong>everyone</strong> is welcome at Ascentia.</block>
+    </extends>
     </div>
 
   
@@ -63,7 +69,5 @@
     </div>
     </div>
     </div>
-  </main>
-    <include src="src/parts/footer.htm"></include>
-  </body>
-</html>
+</block>
+</extends>

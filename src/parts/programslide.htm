@@ -6,9 +6,12 @@
         <div class="col-md-8 bg-white">
             <div class="card-body">
                 <h5 class="card-title">{{ name }}</h5>
-                <p class="card-text">{{ intro }}</p>
-                <button class="btn has-primary-bg">Learn More</button>
+                <p class="card-text">{{ intro === undefined ? 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.' : intro }}</p>
             </div>
+        </div>
+        <div class="card-footer">
+            <button class="btn has-primary-bg">Learn More</button>
+
         </div>
     </div>
 </div>
