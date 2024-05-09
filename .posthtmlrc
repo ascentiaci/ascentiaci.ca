@@ -3,6 +3,6 @@
     "posthtml-doctype": { "doctype": "HTML 5" },
     "posthtml-include": {},
     "posthtml-expressions": {},
-    "posthtml-extend": {}
+    "posthtml-extend": {"root": "./src", "strict": false}
   }
 }

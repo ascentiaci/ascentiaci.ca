@@ -1,14 +1,296 @@
-<extends src="parts/base.htm" locals='{
-  "headerimg": "index.png", 
-  "name": "",
-  "title": ""
-}'>
-
-<block name="pageTitle">
-
-</block>
-
+<extends src="parts/base.htm" locals='{"headerimg": "index.png", "name": "","title": ""}'>
+  <block name="pageTitle"> Career Services </block>
   <block name="content">
+<script src="/node_modules/cloudflare-turnstile-widget/dist/index.js" type="module"></script>
 
+    <div class="accordion w-100" id="careerServicesAccord">
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button
+            class="accordion-button has-primary-bg w-100"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#career1"
+            aria-expanded="true"
+            aria-controls="career1"
+            style="text-align: left;"
+            name="headingone"
+          >
+          Graduates
+          </button>
+        </h2>
+        <div
+          id="career1"
+          class="accordion-collapse collapsed"
+          aria-labelledby="headingone"
+          data-bs-parent="#careerServicesAccord"
+        >
+          <div class="accordion-body">
+            <div class="text-left">
+              <p>So, you've graduated from your program and now you need a job?</p>
+              <p>Fill this form out to reach out to our Career Services team, who is dedicated to helping our graduates get hired.</p>
+            </div>
+            <div class="gradForm">
+              <form class="rendered-form">
+                <div class="row mb-3">
+                  <div class="col-md-6">
+                    <label for="name" class="form-label">
+                      Name<span class="text-danger">*</span>
+                      <span
+                        class="tooltip-element"
+                        data-bs-toggle="tooltip"
+                        data-bs-placement="top"
+                        title="Enter your Full Name"
+                      >?</span>
+                    </label>
+                    <input
+                      type="text"
+                      placeholder="Enter your name..."
+                      class="form-control"
+                      name="name"
+                      id="name"
+                      required
+                    />
+                  </div>
+                  <div class="col-md-6">
+                    <label for="email" class="form-label">
+                      Email<span class="text-danger">*</span>
+                      <span
+                        class="tooltip-element"
+                        data-bs-toggle="tooltip"
+                        data-bs-placement="top"
+                        title="We need to know how to get in touch"
+                      >?</span>
+                    </label>
+                    <input
+                      type="email"
+                      placeholder="name@example.com"
+                      class="form-control"
+                      name="email"
+                      id="email"
+                      required
+                    />
+                  </div>
+                </div>
+    
+                <div class="row mb-3">
+                  <div class="col-md-6">
+                    <label for="gradDate" class="form-label">
+                      Graduation Date/Year<span class="text-danger">*</span>
+                      <span
+                        class="tooltip-element"
+                        data-bs-toggle="tooltip"
+                        data-bs-placement="top"
+                        title="Select your Graduation Date. Can't remember the exact date? We just need the year."
+                      >?</span>
+                    </label>
+                    <input
+                      type="date"
+                      placeholder="01-01-2025"
+                      class="form-control"
+                      name="gradDate"
+                      id="gradDate"
+                      required
+                    />
+                  </div>
+                  <div class="col-md-6">
+                    <label for="resume" class="form-label">
+                      Current Resume (Optional)
+                      <span
+                        class="tooltip-element"
+                        data-bs-toggle="tooltip"
+                        data-bs-placement="top"
+                        title="If you have updated your resume since graduation, upload it here."
+                      >?</span>
+                    </label>
+                    <input
+                      type="file"
+                      class="form-control"
+                      name="resume"
+                      id="resume"
+                    />
+                  </div>
+                </div>
+    
+                <div class="row mb-3">
+                  <div class="col-md-12">
+                    <label for="program" class="form-label">
+                      Program<span class="text-danger">*</span>
+                      <span
+                        class="tooltip-element"
+                        data-bs-toggle="tooltip"
+                        data-bs-placement="top"
+                        title="What program did you graduate from?"
+                      >?</span>
+                    </label>
+                    <input
+                      type="text"
+                      placeholder="Pharmacy Assistant"
+                      class="form-control"
+                      name="program"
+                      id="program"
+                      required
+                    />
+                  </div>
+                </div>
+    
+                <div class="row">
+                  <div class="col-md-12">
+                    <button
+                      type="submit"
+                      class="btn btn-primary"
+                      name="submitbtn"
+                      id="submitbtn"
+                    >
+                      Submit
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button
+            class="accordion-button has-primary-bg w-100 collapsed "
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#career2"
+            aria-expanded="false"
+            aria-controls="career2"
+            style="text-align: left;"
+            name="headingTwo"
+          >
+            Employers
+          </button>
+        </h2>
+        <div
+          id="career2"
+          class="accordion-collapse collapse collapsed"
+          aria-labelledby="headingTwo"
+          data-bs-parent="#careerServicesAccord"
+        >
+          <div class="accordion-body">
+            <div class="container mt-4">
+              <h2>Submit a Job Listing</h2>
+              <p>Please fill out the form below to submit your job listing to our Career Services team.</p>
+              
+              <form id="jobListingForm" class="needs-validation" novalidate>
+                <div class="row g-3">
+                  <!-- Company Name -->
+                  <div class="col-md-6">
+                    <label for="companyName" class="form-label">Company Name<span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="companyName" placeholder="Enter your company name" required>
+                    <div class="invalid-feedback">
+                      Company name is required.
+                    </div>
+                  </div>
+                  
+                  <!-- Contact Person -->
+                  <div class="col-md-6">
+                    <label for="contactPerson" class="form-label">Contact Person<span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="contactPerson" placeholder="Name of the contact person" required>
+                    <div class="invalid-feedback">
+                      Contact person's name is required.
+                    </div>
+                  </div>
+                  
+                  <!-- Email Address -->
+                  <div class="col-md-6">
+                    <label for="emailAddress" class="form-label">Email Address<span class="text-danger">*</span></label>
+                    <input type="email" class="form-control" id="emailAddress" placeholder="contact@example.com" required>
+                    <div class="invalid-feedback">
+                      A valid email address is required.
+                    </div>
+                  </div>
+                  
+                  <!-- Phone Number -->
+                  <div class="col-md-6">
+                    <label for="phoneNumber" class="form-label">Phone Number</label>
+                    <input type="tel" class="form-control" id="phoneNumber" placeholder="+1 (555) 555-5555">
+                  </div>
+                  
+                  <!-- Job Title -->
+                  <div class="col-12">
+                    <label for="jobTitle" class="form-label">Job Title<span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="jobTitle" placeholder="Enter the job title" required>
+                    <div class="invalid-feedback">
+                      Job title is required.
+                    </div>
+                  </div>
+                  
+                  <!-- Job Location -->
+                  <div class="col-md-6">
+                    <label for="jobLocation" class="form-label">Job Location<span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="jobLocation" placeholder="City, Province/State" required>
+                    <div class="invalid-feedback">
+                      Job location is required.
+                    </div>
+                  </div>
+                  
+                  <!-- Job Type -->
+                  <div class="col-md-6">
+                    <label for="jobType" class="form-label">Job Type<span class="text-danger">*</span></label>
+                    <select class="form-select" id="jobType" required>
+                      <option value="">Choose...</option>
+                      <option>Full-Time</option>
+                      <option>Part-Time</option>
+                      <option>Contract</option>
+                      <option>Temporary</option>
+                      <option>Internship</option>
+                    </select>
+                    <div class="invalid-feedback">
+                      Please select a job type.
+                    </div>
+                  </div>
+                  
+                  <!-- Number of Vacancies -->
+                  <div class="col-md-6">
+                    <label for="numVacancies" class="form-label">Number of Vacancies</label>
+                    <input type="number" class="form-control" id="numVacancies" placeholder="Enter the number of vacancies">
+                  </div>
+                  
+                  <!-- Salary Range -->
+                  <div class="col-md-6">
+                    <label for="salaryRange" class="form-label">Salary Range</label>
+                    <input type="text" class="form-control" id="salaryRange" placeholder="e.g., $50,000 - $70,000">
+                  </div>
+                  
+                  <!-- Job Description -->
+                  <div class="col-12">
+                    <label for="jobDescription" class="form-label">Job Description<span class="text-danger">*</span></label>
+                    <textarea class="form-control" id="jobDescription" placeholder="Describe the role and responsibilities" rows="4" required></textarea>
+                    <div class="invalid-feedback">
+                      Job description is required.
+                    </div>
+                  </div>
+                  
+                  <!-- Additional Information -->
+                  <div class="col-12">
+                    <label for="additionalInfo" class="form-label">Additional Information</label>
+                    <textarea class="form-control" id="additionalInfo" placeholder="Include any additional information about the job listing" rows="3"></textarea>
+                  </div>
+                  
+                  <!-- Submit Button -->
+                  <div class="col-12">
+                    <button class="btn btn-primary" type="submit">Submit Job Listing</button>
+                    <turnstile-widget site-key="0x4AAAAAAAYDjhZNjYSI8Zc8" size="compact" theme="dark"></turnstile-widget>
+                    <script src="js/careerforms.js"></script>
+                  </div>
+                </div>
+                <input type="text" class="hidden" id="cfToken">
+              </form>
+            </div>
+          </div>
+        </div>
+      
+      </div>
+    </div>
+
+    
+    
   </block>
 </extends>

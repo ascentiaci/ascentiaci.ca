@@ -1,7 +1,10 @@
 // Import all of Bootstrap's CSS
+$font-family-sans-serif: var(--brand-body-font);
+$accordion-icon-active-color: white;
+$accordion-icon-color: white;
+@import url("https://use.typekit.net/uxt6rai.css");
 @import "bootstrap/scss/bootstrap";
 // Import Fonts
-@import url("https://use.typekit.net/uxt6rai.css");
 
 :root {
   --bs-secondary-bg-rgb: rgb(255, 255, 255);
@@ -12,10 +15,11 @@
 
   --brand-header-font: droid-serif;
   --brand-body-font: open-Sans;
-  $font-family-sans-serif: var(--brand-body-font);
+  
+  
 }
 * {
-  font-family: var(--brand-body-font);
+    font-family: var(--brand-body-font);
 }
 
 h1,
@@ -26,9 +30,13 @@ h5 {
   font-family: var(--brand-header-font);
 }
 
-.has-primary-bg {
+.has-primary-bg, .btn-primary,.btn-primary:active,.accordion-button:not(.collapsed) {
   background-color: var(--brand-primary);
   color: var(--bs-secondary-bg-rgb);
+}
+
+.accordion-button::after {
+    color: white;
 }
 
 hr {
@@ -48,7 +56,7 @@ a:hover {
   color: var(--brand-highlight);
 }
 
-.btn:hover {
+.btn:hover,.btn-primary:hover {
   background-color: var(--brand-highlight);
   color: var(--bs-secondary-bg-rgb);
 }
@@ -89,4 +97,8 @@ body {
 .card-footer {
     background-color: unset;
     border-top-style: none;
+}
+
+.text-left {
+    text-align: left;
 }
