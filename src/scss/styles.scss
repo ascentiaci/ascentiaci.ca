@@ -5,6 +5,7 @@ $accordion-icon-color: white;
 @import url("https://use.typekit.net/uxt6rai.css");
 @import "bootstrap/scss/bootstrap";
 // Import Fonts
+@import "/node_modules/bootstrap-icons/font/bootstrap-icons.css";
 
 :root {
   --bs-secondary-bg-rgb: rgb(255, 255, 255);
@@ -101,4 +102,13 @@ body {
 
 .text-left {
     text-align: left;
+}
+
+.text-primary {
+  color: var(--brand-primary) !important;
+}
+
+nav {
+  font-size: small;
+  align-items: end;
 }
