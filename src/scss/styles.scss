@@ -1,22 +1,24 @@
-// Import all of Bootstrap's CSS
-$font-family-sans-serif: var(--brand-body-font);
-$accordion-icon-active-color: white;
-$accordion-icon-color: white;
-@import url("https://use.typekit.net/uxt6rai.css");
-@import "bootstrap/scss/bootstrap";
-// Import Fonts
-@import "/node_modules/bootstrap-icons/font/bootstrap-icons.css";
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css');
 
+@import url("https://use.typekit.net/uxt6rai.css");
 :root {
-  --bs-secondary-bg-rgb: rgb(255, 255, 255);
   --brand-primary: rgb(99, 10, 22);
   --brand-tertiary: #8c9db2;
   --brand-highlight: #9d3d4a;
   --brand-highlight-secondary: #b56d77;
-
   --brand-header-font: droid-serif;
   --brand-body-font: open-Sans;
-  
+  --bs-nav-tabs-link-active-bg:black !important;
+}
+$nav-tabs-active-bg: var(--brand-primary);  
+$font-family-sans-serif: var(--brand-body-font);
+$accordion-icon-active-color: white;
+$accordion-icon-color: white;
+@import "bootstrap/scss/bootstrap";
+// Import Fonts
+@import "/node_modules/bootstrap-icons/font/bootstrap-icons.css";
+:root {
+  --bs-secondary-bg-rgb: rgb(255, 255, 255);
   
 }
 * {
@@ -31,13 +33,21 @@ h5 {
   font-family: var(--brand-header-font);
 }
 
-.has-primary-bg, .btn-primary,.btn-primary:active,.accordion-button:not(.collapsed) {
+.btn-primary,.btn-primary:active,.accordion-button:not(.collapsed) {
   background-color: var(--brand-primary);
-  color: var(--bs-secondary-bg-rgb);
+  color: white;
+}
+.has-primary-bg {
+  background-color: var(--brand-primary);
+  color: white;
 }
 
 .accordion-button::after {
     color: white;
+}
+
+.has-primary-bg > * {
+  color: white;
 }
 
 hr {
@@ -111,4 +121,18 @@ body {
 nav {
   font-size: small;
   align-items: end;
+}
+
+.nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
+  color: white !important;
+  background-color: var(--brand-primary) !important;
+  border-color: rgba(white, 0);
+  border:none;
+}
+
+.nav-tabs .nav-link:not(.active), .nav-tabs .nav-item.show .nav-link {
+  color: var(--brand-primary)  !important;
+  background-color: white !important;
+  border:none;
+  // border-color: rgba(white, 0);
 }
