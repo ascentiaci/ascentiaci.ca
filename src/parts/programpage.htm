@@ -29,37 +29,11 @@
           aria-controls="admitReqsEFL-pane"
         >
           <i class="bi bi-person-check"></i> Admissions Requirements
-          <br>
-          <i>English as First Language</i>
-        </button>
-      </li>
-      <li class="nav-item " role="presentation">
-        <button
-          class="nav-link text-white"
-          id="admitReqsESL"
-          data-bs-toggle="tab"
-          data-bs-target="#admitReqsESL-pane"
-          role="tab"
-          aria-controls="admitReqsESL-pane"
-        >
-        <i class="bi bi-globe"></i> Admissions Requirements
-          <br>
-          <i>English as Second Language</i>
-        </button>
-      </li>
-      <li class="nav-item " role="presentation">
-        <button
-          class="nav-link text-white"
-          id="prePractice"
-          data-bs-toggle="tab"
-          data-bs-target="#prePractice-pane"
-          role="tab"
-          aria-controls="prePractice-pane"
-        >
-        <i class="fa-solid fa-staff-snake"></i> Pre-Practice Requirements
           
         </button>
       </li>
+      
+      
       <li class="nav-item " role="presentation">
         <button
           class="nav-link text-white"
@@ -83,10 +57,10 @@
       >
       <!-- Highlights Table -->
         <table class="table table-striped">
-            <tr><td>Duration</td><td><block name="duration"></block></td></tr>
-            <tr><td>Curriculum</td><td><block name="curriculum"></block></td></tr>
-            <tr><td>Certification</td><td><block name="certification"></block></td></tr>
-            <tr><td>Compliance</td><td><block name="compliance"></block></td></tr>
+            <tr><td>Duration</td><td class="text-left"><block name="duration"></block></td></tr>
+            <tr><td>Curriculum</td><td class="text-left"><block name="curriculum"></block></td></tr>
+            <tr><td>Certification</td><td class="text-left"><block name="certification"></block></td></tr>
+            <tr><td>Compliance</td><td class="text-left"><block name="compliance"></block></td></tr>
         </table>
       </div>
       <div
@@ -98,24 +72,8 @@
       >
       <ul style="text-align: left;"><block name="admitReqsEFL"></block></ul>
       </div>
-      <div
-        class="tab-pane fade align-content-start"
-        id="admitReqsESL-pane"
-        role="tabpanel"
-        aria-labelledby="admitReqsESL"
-        tabindex="0"
-      >
-      <ul style="text-align: left;"><block name="admitReqsESL"></block></ul>
-      </div>
-      <div
-        class="tab-pane fade align-content-start"
-        id="prePractice-pane"
-        role="tabpanel"
-        aria-labelledby="prePractice"
-        tabindex="0"
-      >
-      <ul style="text-align: left;"><block name="prePractice"></block></ul>
-      </div>
+      
+      
       <div
         class="tab-pane fade align-content-start"
         id="TuitionFees-pane"

@@ -11,73 +11,7 @@
   <body>
   
     <div id="top">
-      <nav class="navbar navbar-expand-lg bg-body-secondary">
-        <div class="container-fluid">
-          <a href="/" class="navbar-brand">
-            <img
-              src="/src/images/primary-logo-name-tagline-black-text.png?as=webp&width=250"
-              alt=""
-            />
-          </a>
-          <button class="has-primary-bg text-white btn" id="request-info" data-bs-toggle="modal" data-bs-target="#leadForm1">
-            Request Info
-          </button>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#mainNavbarContent"
-            aria-controls="mainNavbarContent"
-            aria-expanded="false"
-            aria-label="Toogle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="navbar-collapse collapse  justify-content-end" id="mainNavbarContent">
-            <ul class="navbar-nav me-auto-mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link btn" href="/src/why-ascentia.html"
-                  >Why Ascentia</a
-                >
-              </li>
-              <li class="nav-item btn-group">
-                <a class="nav-link btn" href="/src/programs.html">Programs</a>
-                <a class="nav-link btn dropdown-toggle dropdown-toggle-split" id="navbarDropdownPrograms" data-bs-toggle="dropdown" aria-expanded="false" ></a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdownPrograms">
-                  <li>
-                    <a class="dropdown-item btn" href="/src/healthcare.html">Healthcare</a>
-                  </li>
-                  <li><a class="dropdown-item btn" href="/src/education.html">Education</a></li>
-                  <li><a class="dropdown-item btn" href="/src/computer-systems-and-technology.html">Computer Systems and Technology</a></li>
-                </ul>
-              </li>
-              <li class="nav-item btn-group">
-                <a type="button" class="btn nav-link" href="/src/admissions.html">Admissions</a>
-                <a type="button" class="btn dropdown-toggle dropdown-toggle-split" id="navbarDropdownAdmissions" data-bs-toggle="dropdown" aria-expanded="false"><span class="visually-hidden">Toggle</span></a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdownAdmissions">
-                  <li><a class="dropdown-item" href="#">Requirements</a></li>
-                  <li><a class="dropdown-item" href="#">Questions?</a></li>
-                  <li><a class="dropdown-item" href="#">Enrollment Calendar</a></li>
-                  <li><a class="dropdown-item" href="#">Financial Aid</a></li>
-                  <li><a class="dropdown-item" href="#">Before you apply</a></li>
-                </ul>
-              </li>
-              
-              
-              <li class="nav-item">
-                <a class="btn nav-link" href="/src/career-services.html">Career Services</a>
-                
-              </li>
-              <li class="nav-item">
-                <a class="nav-link btn" href="/src/about-ascentia.html">About Ascentia</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link btn" href="#">Student Services</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
+      <extends src="parts/nav.htm"></extends>
 
       <header class="border-0 mb-0">
         <img
