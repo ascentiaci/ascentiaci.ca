@@ -82,6 +82,11 @@ footer > p > a {
   text-decoration: none;
 }
 
+a {
+  text-decoration: none;
+  color: unset;
+}
+
 .bg-highlight {
   background-color: var(--brand-highlight);
 }
@@ -135,4 +140,13 @@ nav {
   background-color: white !important;
   border:none;
   // border-color: rgba(white, 0);
+}
+.multiLevelList > li:not(ul > li) {
+  font-weight: bold;
+  color: var(--brand-primary);
+}
+
+.multiLevelList > li > ul > li {
+  font-weight:400;
+  color:black;
 }
