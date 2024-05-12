@@ -10,10 +10,13 @@
   "license": "ISC",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.5.2",
+    "@fullcalendar/daygrid": "^6.1.11",
+    "@fullcalendar/icalendar": "^6.1.11",
     "@popperjs/core": "^2.11.8",
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",
     "cloudflare-turnstile-widget": "^0.3.0",
+    "ical.js": "^1.5.0",
     "parceljs": "^0.0.1",
     "posthtml-extend": "^0.6.5"
   },

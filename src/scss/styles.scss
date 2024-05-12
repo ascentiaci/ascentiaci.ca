@@ -150,3 +150,17 @@ nav {
   font-weight:400;
   color:black;
 }
+
+#requirements > li {
+  list-style-type: none;
+  list-style-position: inside;
+
+}
+
+.age {
+  list-style-image: url('/node_modules/@fortawesome/fontawesome-free/svgs/solid/clock.svg');
+}
+
+.education {
+  list-style-image: url('/node_modules/@fortawesome/fontawesome-free/svgs/solid/graduation-cap.svg');
+}
