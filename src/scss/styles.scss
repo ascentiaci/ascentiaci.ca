@@ -1,6 +1,7 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css');
 
-@import url("https://use.typekit.net/uxt6rai.css");
+// @import url("https://use.typekit.net/uxt6rai.css");
+
 :root {
   --brand-primary: rgb(99, 10, 22);
   --brand-tertiary: #8c9db2;
@@ -9,6 +10,15 @@
   --brand-header-font: droid-serif;
   --brand-body-font: open-Sans;
   --bs-nav-tabs-link-active-bg:black !important;
+}
+
+@font-face {
+  font-family: droid-serif;
+  src: url('/src/fonts/DroidSerif-Regular-webfont.woff');
+}
+@font-face {
+  font-family: open-Sans;
+  src: url('/src/fonts/OpenSans-Regular-webfont.woff');
 }
 $nav-tabs-active-bg: var(--brand-primary);  
 $font-family-sans-serif: var(--brand-body-font);

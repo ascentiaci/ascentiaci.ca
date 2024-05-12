@@ -4,7 +4,8 @@
   "description": "Ascentia Career Institute Main Marketing Site",
   "scripts": {
     "start": "parcel serve src/index.html --public-url / --dist-dir dist",
-    "build": "parcel build src/index.html --public-url / --dist-dir dist"
+    "build": "parcel build src/index.html --public-url / --dist-dir dist",
+    "cachefonts": "afontizer 'use.typekit.net/uxt6rai.css' './src/styles/fonts' './src/styles/_afont.scss'"
   },
   "author": "",
   "license": "ISC",
@@ -22,6 +23,8 @@
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.12.0",
+    "afontizer": "^1.0.4",
+    "axios": "^1.6.8",
     "parcel": "^2.12.0",
     "posthtml-doctype": "^1.1.1",
     "posthtml-expressions": "^1.11.3",
