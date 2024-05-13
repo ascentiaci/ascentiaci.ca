@@ -1,128 +1,138 @@
 <extends
   src="parts/base.htm"
   locals='{
-    "headerimg": "{{ headerimg }}", 
+    "headerImg": "{{ headerImg }}", 
     "title": "{{ title }}"
   }'
 >
   <block name="pageTitle"> {{ title }} </block>
 
-  <block name="content">
-    <h2>Description</h2>
-    <p><block name="description"></block></p>
+  <block name="content"><div class="container">
+                            
+                                <p><block name="description"></block></p>
+                            
+                                <ul class="nav nav-tabs justify-content-evenly d-flex flex-row w-100 align-items-stretch  " id="programInfo" role="tablist">
+                                  <li class="nav-item w-33" role="presentation">
+                                    <button class="nav-link active w-100 h-100 bold" id="progHighlights" data-bs-toggle="tab" data-bs-target="#progHighlights-pane" role="tab" aria-controls="progHighlights-pane" type="button"
+                                    >
+                                      <i class="bi bi-book"></i> Program Highlights
+                                    </button>
+                                  </li>
+                                  <li class="nav-item w-33" role="presentation">
+                                    <button type="button"
+                                      class="nav-link text-white w-100 h-100 bold"
+                                      id="admitRequirementsEFL"
+                                      data-bs-toggle="tab"
+                                      data-bs-target="#admitRequirementsEFL-pane"
+                                      role="tab"
+                                      aria-controls="admitRequirementsEFL-pane"
+                                    >
+                                      <i class="bi bi-person-check"></i> Admissions Requirements
+                                      </button>
+                                  </li>
+                                  
 
-    <ul class="nav nav-tabs" id="programInfo" role="tablist">
-      <li class="nav-item " role="presentation">
-        <button class="nav-link active " id="progHighlights" data-bs-toggle="tab" data-bs-target="#progHighlights-pane" role="tab"
-          aria-controls="progHighlights-pane"
-        >
-          <i class="bi bi-book"></i> Program Highlights
-        </button>
-      </li>
-      <li class="nav-item " role="presentation">
-        <button
-          class="nav-link text-white"
-          id="admitReqsEFL"
-          data-bs-toggle="tab"
-          data-bs-target="#admitReqsEFL-pane"
-          role="tab"
-          aria-controls="admitReqsEFL-pane"
-        >
-          <i class="bi bi-person-check"></i> Admissions Requirements
-          
-        </button>
-      </li>
-      
-      
-      <li class="nav-item " role="presentation">
-        <button
-          class="nav-link text-white"
-          id="TuitionFees"
-          data-bs-toggle="tab"
-          data-bs-target="#TuitionFees-pane"
-          role="tab"
-          aria-controls="TuitionFees-pane"
-        >
-        <i class="bi bi-currency-dollar"></i> Tuition and Fees</i>
-        </button>
-      </li>
-    </ul>
-    <div class="tab-content" id="tabContent">
-      <div
-        class="tab-pane fade show active"
-        id="progHighlights-pane"
-        role="tabpanel"
-        aria-labelledby="progHighlights"
-        tabindex="0"
-      >
-      <!-- Highlights Table -->
-        <table class="table table-striped">
-            <tr><td>Duration</td><td class="text-left"><block name="duration"></block></td></tr>
-            <tr><td>Curriculum</td><td class="text-left"><block name="curriculum"></block></td></tr>
-            <tr><td>Certification</td><td class="text-left"><block name="certification"></block></td></tr>
-            <tr><td>Compliance</td><td class="text-left"><block name="compliance"></block></td></tr>
-        </table>
-      </div>
-      <div
-        class="tab-pane fade align-content-start"
-        id="admitReqsEFL-pane"
-        role="tabpanel"
-        aria-labelledby="admitReqsEFL"
-        tabindex="0"
-      >
-      <ul style="text-align: left;"><block name="admitReqsEFL"></block></ul>
-      </div>
-      
-      
-      <div
-        class="tab-pane fade align-content-start"
-        id="TuitionFees-pane"
-        role="tabpanel"
-        aria-labelledby="TuitionFees"
-        tabindex="0"
-      >
-      
-      <table class="table table-striped">
-        <tr>
-            <td>Tuition</td>
-            <td><block name="tuition"></block></td>
-        </tr>
-        <tr>
-            <td>Administration Fee</td>
-            <td><block name="adminFee"></block></td>
-        </tr>
-        <tr>
-            <td>Archival Fee</td>
-            <td><block name="archivalFee"></block></td>
-        </tr>
-        <tr>
-            <td><block name="fee1Name"></block></td>
-            <td><block name="fee1"></block></td>
-        </tr>
-        <tr>
-            <td><block name="fee2Name"></block></td>
-            <td><block name="fee2"></block></td>
-        </tr>
-        <tr>
-            <td><block name="fee3Name"></block></td>
-            <td><block name="fee3"></block></td>
-        </tr>
-        <tr>
-            <td><block name="fee4Name"></block></td>
-            <td><block name="fee4"></block></td>
-        </tr>
-        <tr>
-            <td>Total Tuition and Fees</td>
-            <td><block name="total"></block></td>
-        </tr>
+                                  <li class="nav-item w-33" role="presentation">
+                                    <button type="button"
+                                      class="nav-link text-white w-100 h-100 bold"
+                                      id="TuitionFees"
+                                      data-bs-toggle="tab"
+                                      data-bs-target="#TuitionFees-pane"
+                                      role="tab"
+                                      aria-controls="TuitionFees-pane"
+                                    >
+                                    <i class="bi bi-currency-dollar"></i> Tuition and Fees</i>
+                                    </button>
+                                  </li>
+                                </ul>
+                                <div class="tab-content pt-4" id="tabContent">
+                                  <div
+                                    class="tab-pane fade show active"
+                                    id="progHighlights-pane"
+                                    role="tabpanel"
+                                    aria-labelledby="progHighlights"
+                                    tabindex="0"
+                                  >
+                                  <!-- Highlights Table -->
+                                    <table class="table table-striped">
+                                        <tr><td class="bold text-left w-25 ">Duration</td><td class="text-left"><block name="duration"></block></td></tr>
+                                        <tr><td class="bold text-left">Curriculum</td><td class="text-left"><block name="curriculum"></block></td></tr>
+                                        <tr><td class="bold text-left">Certification</td><td class="text-left"><block name="certification"></block></td></tr>
+                                        <tr><td class="bold text-left">Compliance</td><td class="text-left"><block name="compliance"></block></td></tr>
+                                        <tr><td class="bold text-left">Average Salary</td><td class="text-left"><block name="salary"></block></td></tr>
+                                        <tr><td class="bold text-left">BC Job Openings, 2023-2033</td><td class="text-left"><block name="outlook"></block></td></tr>
+                                    </table>
+                                  </div>
+                                  <div
+                                    class="tab-pane fade align-content-start"
+                                    id="admitRequirementsEFL-pane"
+                                    role="tabpanel"
+                                    aria-labelledby="admitRequirementsEFL"
+                                    tabindex="0"
+                                  >
+                                  <ul class="text-left"><block name="admitRequirementsEFL">
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                  </block></ul>
+                                  </div>
+                                  <div
+                                    class="tab-pane fade align-content-start"
+                                    id="admitRequirementsESL-pane"
+                                    role="tabpanel"
+                                    aria-labelledby="admitRequirementsESL"
+                                    tabindex="0"
+                                  >
+                                  <ul class="text-left"><block name="admitRequirementsESL"></block></ul>
+                                  </div>
+                                  <!-- <div
+                                    class="tab-pane fade align-content-start"
+                                    id="prePractice-pane"
+                                    role="tabpanel"
+                                    aria-labelledby="prePractice"
+                                    tabindex="0"
+                                  >
+                                  <ul style="text-align: left;"><block name="prePractice"></block></ul>
+                                  </div> -->
+                                  <div
+                                    class="tab-pane fade align-content-start"
+                                    id="TuitionFees-pane"
+                                    role="tabpanel"
+                                    aria-labelledby="TuitionFees"
+                                    tabindex="0"
+                                  >
+                                  
+                                  <table class="table table-striped detailsTable text-left">
+                                    <tr>
+                                        <td class="w-25 bold">Tuition</td>
+                                        <td><block name="tuition"></block></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="bold">Administration Fee</td>
+                                        <td><block name="adminFee"></block></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="bold">Archival Fee</td>
+                                        <td><block name="archivalFee"></block></td>
+                                    </tr>
+                                    <block name="additionalFeesRows">
 
-      </table>
-      
-      </div>
-    </div>
-    <div id="proLeadForm">
-        <block name="ProgramleadForm"></block>
-    </div>
-  </block>
+                                  </block>
+                                    <tr>
+                                        <td class="bold">Total Tuition and Fees</td>
+                                        <td><block name="total"></block></td>
+                                    </tr>
+                            
+                                  </table>
+                                  
+                                  </div>
+                                </div>
+                                <div id="proLeadForm">
+                                    <block name="ProgramleadForm"></block>
+                                </div>
+                              
+                        </div></block>
 
 </extends>

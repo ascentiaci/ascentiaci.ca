@@ -1,4 +1,4 @@
-<extends src="parts/base.htm" locals='{"headerimg": "index.png", "name": "","title": ""}'>
+<extends src="parts/base.htm" locals='{"headerImg": "index.png", "name": "","title": ""}'>
   <block name="pageTitle"> Career Services </block>
   <block name="content">
 <script src="/node_modules/cloudflare-turnstile-widget/dist/index.js" type="module"></script>
@@ -7,14 +7,13 @@
       <div class="accordion-item">
         <h2 class="accordion-header">
           <button
-            class="accordion-button has-primary-bg w-100"
+            class="accordion-button has-primary-bg w-100 text-left"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#career1"
             aria-expanded="true"
             aria-controls="career1"
-            style="text-align: left;"
-            name="headingone"
+            name="headingOne"
           >
           Graduates
           </button>
@@ -22,7 +21,7 @@
         <div
           id="career1"
           class="accordion-collapse collapsed"
-          aria-labelledby="headingone"
+          aria-labelledby="headingOne"
           data-bs-parent="#careerServicesAccord"
         >
           <div class="accordion-body">
@@ -155,13 +154,12 @@
       <div class="accordion-item">
         <h2 class="accordion-header">
           <button
-            class="accordion-button has-primary-bg w-100 collapsed "
+            class="accordion-button has-primary-bg w-100 collapsed text-left"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#career2"
             aria-expanded="false"
             aria-controls="career2"
-            style="text-align: left;"
             name="headingTwo"
           >
             Employers
@@ -281,7 +279,7 @@
                     <script src="js/careerforms.js"></script>
                   </div>
                 </div>
-                <input type="text" class="hidden" id="cfToken">
+                <input type="text" class="hidden" id="cfToken" title="cfToken">
               </form>
             </div>
           </div>

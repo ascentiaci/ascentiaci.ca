@@ -9,7 +9,7 @@ This template is used to display information about the program at our school. Be
   src="parts/programpageHC.htm"
   
   locals='{
-    "headerimg": "index.png", 
+    "headerImg": "index.png", 
     "title": "
   }'
 >
@@ -22,7 +22,7 @@ This template is used to display information about the program at our school. Be
 
 - **src**: The source of the base template that this page extends. It's usually a generic program page layout.
 - **locals**: Local variables passed into the template. Includes:
-  - **headerimg**: The path to the header image for this page.
+  - **headerImg**: The path to the header image for this page.
   - **title**: The title of the program.
 
 ### Blocks
@@ -85,10 +85,10 @@ Blocks are sections within the template where content can be inserted or updated
 - Description: Provides compliance or approval status.
 - To Update: Update the text to show the latest compliance status.
 
-#### `admitReqsEFL`
+#### `admitRequirementsEFL`
 
 ```html
-<block name="admitReqsEFL">
+<block name="admitRequirementsEFL">
   <!-- Admission requirements for English as a First Language students -->
 </block>
 ```
@@ -96,10 +96,10 @@ Blocks are sections within the template where content can be inserted or updated
 - Description: Contains a list of admission requirements for students whose first language is English.
 - To Update: Adjust the list items within the block to modify admission requirements.
 
-#### `admitReqsESL`
+#### `admitRequirementsESL`
 
 ```html
-<block name="admitReqsESL">
+<block name="admitRequirementsESL">
   <!-- Admission requirements for English as a Second Language students -->
 </block>
 ```

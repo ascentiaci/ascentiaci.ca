@@ -1,16 +1,16 @@
 <div class="card program-card mb-3 h-100 my-3 border-0 col-12 col-lg-6" >
     <div class="row g-2">
         <div class="col-md-4">
-            <img src="/src/images/feature1.webp" class="program-card-img img-fluid rounded-start h-100" alt="">
+            <img src="/src/images/feature1.webp" class="program-card-img img-fluid rounded-start" style="height: 300px;" alt="">
         </div>
-        <div class="col-md-8 bg-white">
+        <div class="col-md-8 bg-white overflow-y-hidden text-left" style="height: 300px;">
             <div class="card-body">
-                <h5 class="card-title">{{ name }}</h5>
-                <p class="card-text">{{ intro === undefined ? 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.' : intro }}</p>
+                <h4 class="card-title text-left">{{ name }}</h4>
+                <p class="card-text text-truncate text-wrap overflow-y-hidden " style="height: 185px;">{{ intro === undefined ? 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.' : intro }}</p>
+                <a type="button" class="btn has-primary-bg" href="{{ href }}">Learn More</a>
             </div>
         </div>
         <div class="card-footer">
-            <a type="button" class="btn has-primary-bg" href="{{ href }}">Learn More</a>
 
         </div>
     </div>

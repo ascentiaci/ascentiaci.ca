@@ -1,14 +1,13 @@
-<a href="{{ target }}" style="text-decoration: none;">
-<div class="card border-0">
+<a href="{{ target }}">
+<div class="card border-0 px-2">
   <div class="card-header">
-    <h5 class="card-title">{{ title }}</h5>
+    <h4 class="card-title text-left">{{ title }}</h4>
 </div>
-<p class="card-text"><small>{{ blurb }}</small></p>
-  
-    <button class="btn pb-1 text-left"><small class="text-primary">{{ cta }}</small> <i class="bi bi-arrow-right text-primary align-bottom" ></i></button>
+<p class="card-text pt-3 text-left">{{ blurb }}</p>
+<button class="btn pb-1 text-left px-0 bold" type="button"><small class="text-primary">{{ cta }}</small> <i class="bi bi-arrow-right text-primary align-bottom" ></i></button>
   
 
-  <div class="card-footer">
+  <div class="card-footer text-left px-0">
     <img src="images/{{ image }}" alt="" class="card-img-bottom" />
   </div>
 </div>

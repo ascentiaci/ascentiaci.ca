@@ -1,5 +1,5 @@
 <extends src="parts/base.htm" locals='{
-  "headerimg": "index.png", 
+  "headerImg": "index.png", 
   "name": "Admissions Requirements",
   "title": ""
 }'>
@@ -17,9 +17,9 @@
 
       <h4>Healthcare Programs:</h4>
 
-      <div class="accordian" id="hcReqsAccordian">
+      <div class="accordian" id="hcRequirementsAccordian">
         <extends src="parts/accordianpart.htm" locals='{
-            "parent": "hcReqsAccordian",
+            "parent": "hcRequirementsAccordian",
             "cardId": "hc01"
           }'>
           <block name="accordianTitle">
@@ -93,7 +93,7 @@
         </extends>
 
         <extends src="parts/accordianpart.htm" locals='{
-            "parent" : "hcReqsAccordian",
+            "parent" : "hcRequirementsAccordian",
             "cardId" : "hc02"
           }'>
           <block name="accordianTitle">
@@ -102,16 +102,12 @@
 
           <block name="accordianBody">
             <ul>
-              <li>
-                All Students must be 19 years of age or older at the start of their program.
-              </li>
+              <li>All Students must be 19 years of age or older at the start of their program.</li>
               <li> Grade 12, GED., Mature Student Status</li>
               <li> Satisfactory completion of a Criminal Record Search</li>
               <li> A pre-admission application and interview</li>
-              <li> Completed Grade 10 Math or its equivalent and must pass the Institute's English Language Assessment
-                Test. </li>
-              <li> International students must have an IELTS score of 5.5 bands or higher, or pass the College's English
-                Language Assessment </li>Test.
+              <li> Completed Grade 10 Math or its equivalent and must pass the Institute's English Language Assessment Test. </li>
+              <li> International students must have an IELTS score of 5.5 bands or higher, or pass the College's English Language Assessment Test.</li>
               <li> Be able to type 40 wpm</li>
               <li> Standard First Aid</li>
             </ul>
