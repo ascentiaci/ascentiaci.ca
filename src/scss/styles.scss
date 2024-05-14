@@ -130,7 +130,7 @@ body {
 }
 
 .program-card-img {
-  object-fit: cover;
+  min-height: 100%;
 }
 .card-footer {
     background-color: unset;
@@ -226,4 +226,8 @@ ul > li {
 
 .w-66 {
   width: calc((100%/3)*2);
+}
+
+.red {
+  color: red;
 }

@@ -1,17 +1,20 @@
-<div class="card program-card mb-3 h-100 my-3 border-0 col-12 col-lg-6" >
-    <div class="row g-2">
+<!-- TODO: Fix Padding. Not 100% sure if this page is the cause. But we shall see. -->
+
+<div class="card pt-2 mb-3 border-0 px-2">
+    
+    <div class="row g-0 h-100">
         <div class="col-md-4">
-            <img src="/src/images/feature1.webp" class="program-card-img img-fluid rounded-start" style="height: 300px;" alt="">
+            <img src="images/feature1.webp" class="img-fluid h-100 object-fit-cover" alt="">
         </div>
-        <div class="col-md-8 bg-white overflow-y-hidden text-left" style="height: 300px;">
-            <div class="card-body">
-                <h4 class="card-title text-left">{{ name }}</h4>
-                <p class="card-text text-truncate text-wrap overflow-y-hidden " style="height: 185px;">{{ intro === undefined ? 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.' : intro }}</p>
-                <a type="button" class="btn has-primary-bg" href="{{ href }}">Learn More</a>
+        <div class="col-md-8 h-100">
+            <div class="card-body h-100">
+                <h4 class="card-title text-left">
+                    {{ name }}
+                </h4>
+                <p class="card-text text-left h-100 mb-2 pb-5 text-overflow-ellipsis overflow-y-hidden  ">{{ intro === undefined ? 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.' : intro }}</p>
             </div>
         </div>
-        <div class="card-footer">
-
-        </div>
     </div>
+    <a class="has-primary-bg text-white text-center" href="{{ href }}"><div class="card-footer">Learn More</div></a>
+
 </div>
