@@ -25,6 +25,8 @@ $font-family-sans-serif: var(--brand-body-font);
 $accordion-icon-active-color: white;
 $accordion-icon-color: white;
 @import "bootstrap/scss/bootstrap";
+@import "bootstrap/scss/_mixins";
+
 // Import Fonts
 @import "/node_modules/bootstrap-icons/font/bootstrap-icons.css";
 :root {
@@ -230,4 +232,33 @@ ul > li {
 
 .red {
   color: red;
+}
+
+.w-10 {
+  max-width: 1.5rem;
+}
+
+.pl-n2 {
+  padding-left: 1.5rem;
+}
+
+.navbar-nav .btn-group .btn {
+  vertical-align: middle;
+}
+
+.navbar-nav .btn-group .dropdown-toggle-split {
+  padding-left: 0;
+}
+
+.navbar-nav .btn-group .dropdown-toggle::after {
+  margin-left: 0.25rem;
+}
+
+#request-info {
+  min-width: 100%;
+}
+
+
+.btn-nohighlight:hover {
+  background-color: unset;
 }
