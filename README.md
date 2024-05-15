@@ -1,5 +1,5 @@
 # ascentiaci.ca
-Ascentia Career Institute Main Marketing Site
+Ascentia™️ Career Institute Main Marketing Site
 
 # Tools used
 - parceljs

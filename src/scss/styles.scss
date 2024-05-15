@@ -25,7 +25,7 @@ $font-family-sans-serif: var(--brand-body-font);
 $accordion-icon-active-color: white;
 $accordion-icon-color: white;
 @import "bootstrap/scss/bootstrap";
-@import "bootstrap/scss/_mixins";
+
 
 // Import Fonts
 @import "/node_modules/bootstrap-icons/font/bootstrap-icons.css";
@@ -262,3 +262,16 @@ ul > li {
 .btn-nohighlight:hover {
   background-color: unset;
 }
+
+.cat-header {
+  margin-left: -1em;
+  margin-right: -1em;
+}
+
+
+@include media-breakpoint-up(lg) {
+  .cat-header {
+    margin-left: -2.5em;
+    margin-right: -2.5em;
+    };
+  }
