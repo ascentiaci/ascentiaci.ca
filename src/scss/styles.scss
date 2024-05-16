@@ -10,6 +10,7 @@
   --brand-header-font: droid-serif;
   --brand-body-font: open-Sans;
   --bs-nav-tabs-link-active-bg: black !important;
+  --bs-secondary-bg-rgb: rgb(255, 255, 255);
 }
 
 @font-face {
@@ -28,9 +29,7 @@ $accordion-icon-color: white;
 
 // Import Fonts
 @import "/node_modules/bootstrap-icons/font/bootstrap-icons.css";
-:root {
-  --bs-secondary-bg-rgb: rgb(255, 255, 255);
-}
+
 * {
   font-family: var(--brand-body-font);
 }
