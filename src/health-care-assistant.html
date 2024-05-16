@@ -190,8 +190,8 @@
 
   <!-- Enter Tuition and Fees Here -->
   <!-- Follow formatting to add fees -->
-  {{ tuition=15000 }} {{ adminFee=75 }} {{ archivalFee=10}} {{
-  totalCost=tuition+adminFee+archivalFee }}
+  {{ tuition=15000 }} {{ adminFee=75 }} {{ archivalFee=10}} 
+  {{ totalCost=tuition+adminFee+archivalFee }}
   <!-- Make sure to update the totalCost formula to reflect the new fee variables -->
 
   <block name="tuition">${{ tuition.toLocaleString() }}</block>
