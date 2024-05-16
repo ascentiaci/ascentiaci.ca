@@ -7,7 +7,14 @@
 >
   <block name="pageTitle"> Medical Lab Assistant </block>
   <block name="description">
-    Designed for those eager to enter the medical field swiftly, our fast-track program offers comprehensive training in less than a year. Dive into hands-on learning led by experienced instructors, gaining essential skills vital for success in medical assistance roles. Our industry-relevant curriculum is finely tuned to meet the demands of modern healthcare, ensuring you're equipped with the knowledge needed to excel. With opportunities for practical experience and networking within the field, our program paves the way for a fulfilling career in healthcare.
+    Designed for those eager to enter the medical field swiftly, our fast-track
+    program offers comprehensive training in less than a year. Dive into
+    hands-on learning led by experienced instructors, gaining essential skills
+    vital for success in medical assistance roles. Our industry-relevant
+    curriculum is finely tuned to meet the demands of modern healthcare,
+    ensuring you're equipped with the knowledge needed to excel. With
+    opportunities for practical experience and networking within the field, our
+    program paves the way for a fulfilling career in healthcare.
   </block>
   <block name="duration">6 months </block>
   <block name="curriculum">To be Announced </block>
@@ -21,19 +28,22 @@
       All Students must be 19 years of age or older at the start of their
       program.
     </li>
-    <li>	Grade 12, G.E.D., Mature Student Status</li>
-<li>	Satisfactory completion of a Criminal Record Search</li>
-<li>	A pre-admission application and interview</li>
-<li>	Completed Grade 10 Math or its equivalent and must pass the Institute's English Language Assessment Test. </li>
-<li>	International students must have an IELTS score of 5.5 bands or higher, or pass the College's English Language Assessment Test.</li>
-<li>	Be able to type 40 wpm</li>
-<li>	Standard First Aid</li>
-
+    <li>Grade 12, G.E.D., Mature Student Status</li>
+    <li>Satisfactory completion of a Criminal Record Search</li>
+    <li>A pre-admission application and interview</li>
+    <li>
+      Completed Grade 10 Math or its equivalent and must pass the Institute's
+      English Language Assessment Test.
+    </li>
+    <li>
+      International students must have an IELTS score of 5.5 bands or higher, or
+      pass the College's English Language Assessment Test.
+    </li>
+    <li>Be able to type 40 wpm</li>
+    <li>Standard First Aid</li>
   </block>
 
-  <block name="admitRequirementsESL">
-  
-  </block>
+  <block name="admitRequirementsESL"> </block>
 
   <block name="prePractice">
     <ol>
@@ -58,7 +68,8 @@
             It is strongly recommended that student immunizations remain current
             for&nbsp;<em
               >Hepatitis B., Measles, Mumps, Rubella, Tetanus, Polio and
-              Diphtheria.</em>
+              Diphtheria.</em
+            >
           </li>
 
           <li>
@@ -93,19 +104,17 @@
     </ol>
   </block>
 
-<!-- Enter Tuition and Fees Here -->
-<!-- Follow formatting to add fees -->
-{{ tuition=15000 }}
-{{ adminFee=75 }}
-{{ archivalFee=10}}
-{{ totalCost=tuition+adminFee+archivalFee }}
-<!-- Make sure to update the totalCost formula to reflect the new fee variables -->
+  <!-- Enter Tuition and Fees Here -->
+  <!-- Follow formatting to add fees -->
+  {{ tuition=15000 }} {{ adminFee=75 }} {{ archivalFee=10}} {{
+  totalCost=tuition+adminFee+archivalFee }}
+  <!-- Make sure to update the totalCost formula to reflect the new fee variables -->
 
   <block name="tuition">${{ tuition.toLocaleString() }}</block>
   <block name="adminFee">${{ adminFee.toLocaleString() }}</block>
   <block name="archivalFee">${{ archivalFee.toLocaleString() }}</block>
-      <!-- Add additional fees here -->
-    <!-- format as <tr><td class="bold">Fee Name</td></td>$feeName.toLocaleString()</td></tr> -->
+  <!-- Add additional fees here -->
+  <!-- format as <tr><td class="bold">Fee Name</td></td>$feeName.toLocaleString()</td></tr> -->
   <block name="total">${{ totalCost.toLocaleString() }}</block>
 
   <block name="ProgramleadForm"

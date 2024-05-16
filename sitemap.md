@@ -1,6 +1,5 @@
 # Here is the sitemap
 
-
 ```mermaid
 flowchart TD
 %% Nodes
@@ -28,7 +27,7 @@ flowchart TD
     subgraph I [Admissions]
      J(Questions)
      K(Enrollement Calendar)
-     L(Financial Aid)    
+     L(Financial Aid)
      M(Before you apply)
     end
 

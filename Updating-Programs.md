@@ -1,13 +1,12 @@
-## Documentation for Program Page Template
+# Documentation for Program Page Template
 
 This template is used to display information about the program at our school. Below is a guide to understanding and updating the various parts of this template.
 
-### Template Structure
+## Template Structure
 
 ```html
 <extends
   src="parts/programpageHC.htm"
-  
   locals='{
     "headerImg": "index.png", 
     "title": "
@@ -16,20 +15,21 @@ This template is used to display information about the program at our school. Be
   <!-- Various blocks for content -->
 </extends>
 ```
-* Change the programspageHC.htm to programspage.htm for non-healthcare programs
 
-#### Attributes
+- Change the programspageHC.htm to programspage.htm for non-healthcare programs
 
-- **src**: The source of the base template that this page extends. It's usually a generic program page layout.
-- **locals**: Local variables passed into the template. Includes:
-  - **headerImg**: The path to the header image for this page.
-  - **title**: The title of the program.
+## Attributes
 
-### Blocks
+- `src`: The source of the base template that this page extends. It's usually a generic program page layout.
+- `locals`: Local variables passed into the template. Includes:
+- `headerImg`: The path to the header image for this page.
+- `title`: The title of the program.
+
+## Blocks
 
 Blocks are sections within the template where content can be inserted or updated. Here are the main blocks and how to modify them:
 
-#### `pageTitle`
+### `pageTitle`
 
 ```html
 <block name="pageTitle"> </block>
@@ -132,7 +132,7 @@ Blocks are sections within the template where content can be inserted or updated
 ```
 
 - Description: These blocks specify various fees associated with the program.
-- To Update: Change the amounts to reflect current pricing. Update `fee1Name`, `fee1`, etc., to add additional fees. Leave the contents for the fee name and the fee to leave them empty. *Make Sure the amounts are accurate*
+- To Update: Change the amounts to reflect current pricing. Update `fee1Name`, `fee1`, etc., to add additional fees. Leave the contents for the fee name and the fee to leave them empty. _Make Sure the amounts are accurate_
 
 #### `ProgramleadForm`
 
@@ -144,7 +144,7 @@ Blocks are sections within the template where content can be inserted or updated
 
 - Description: Used to display announcements or lead forms for the program.
 - To Update: Modify the content within the block to change the announcement or form details.
-- Note: will create `<include ` template for lead form at a later date.
+- Note: will create `<include` template for lead form at a later date.
 
 ---
 

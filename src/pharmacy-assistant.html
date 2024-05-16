@@ -7,7 +7,14 @@
 >
   <block name="pageTitle"> Pharmacy Assistant </block>
   <block name="introCopy">
-    In just under 6 months, you'll graduate equipped with comprehensive training in essential pharmacy assistant skills. Our curriculum is meticulously crafted to align with the latest trends in the pharmaceutical field, ensuring you stay ahead of the curve. Led by skilled instructors with firsthand pharmacy experience, you'll receive top-notch guidance every step of the way. Gain practical experience through hands-on opportunities in diverse pharmacy settings and expand your professional network within the pharmaceutical community.
+    In just under 6 months, you'll graduate equipped with comprehensive training
+    in essential pharmacy assistant skills. Our curriculum is meticulously
+    crafted to align with the latest trends in the pharmaceutical field,
+    ensuring you stay ahead of the curve. Led by skilled instructors with
+    firsthand pharmacy experience, you'll receive top-notch guidance every step
+    of the way. Gain practical experience through hands-on opportunities in
+    diverse pharmacy settings and expand your professional network within the
+    pharmaceutical community.
   </block>
   <block name="duration">550 hours, 28 weeks. </block>
   <block name="curriculum">To be Announced </block>
@@ -20,7 +27,10 @@
     <table class="table table-striped">
       <tr>
         <th scope="row">Age</th>
-        <td>All Students must be 19 years of age or older at the start of their program.</td>
+        <td>
+          All Students must be 19 years of age or older at the start of their
+          program.
+        </td>
       </tr>
       <tr>
         <th scope="row">Education</th>
@@ -36,11 +46,17 @@
       </tr>
       <tr>
         <th scope="row">Minimum Math Requirement</th>
-        <td>Completed Grade 10 Math or its equivalent and must pass the College's English Language Assessment Test. </td>
+        <td>
+          Completed Grade 10 Math or its equivalent and must pass the College's
+          English Language Assessment Test.
+        </td>
       </tr>
       <tr>
         <th scope="row">Language</th>
-        <td>International students must have an IELTS score of 5.5 bands or higher, or pass the College's English Language Assessment Test.</td>
+        <td>
+          International students must have an IELTS score of 5.5 bands or
+          higher, or pass the College's English Language Assessment Test.
+        </td>
       </tr>
       <tr>
         <th scope="row">Typing Skills</th>
@@ -51,12 +67,9 @@
         <td>Standard First Aid</td>
       </tr>
     </table>
-
   </block>
 
-  <block name="admitRequirementsESL">
-  
-  </block>
+  <block name="admitRequirementsESL"> </block>
 
   <block name="prePractice">
     <ol>
@@ -116,18 +129,13 @@
       </li>
     </ol>
   </block>
-<!-- Enter Tuition and Fees Here -->
-<!-- Follow formatting to add fees -->
-{{ tuition=7205 }}
-{{ appFee=250 }}
-{{ AssessmentFee=100 }}
-{{ adminFee=75 }}
-{{ archivalFee=4 }}
-{{ books=385 }}
-{{ materials=0}}
-{{ uniform=140 }}
-{{ totalCost=tuition+appFee+AssessmentFee+adminFee+archivalFee+books+materials+uniform }}
-<!-- Make sure to update the totalCost formula to reflect the new fee variables -->
+  <!-- Enter Tuition and Fees Here -->
+  <!-- Follow formatting to add fees -->
+  {{ tuition=7205 }} {{ appFee=250 }} {{ AssessmentFee=100 }} {{ adminFee=75 }}
+  {{ archivalFee=4 }} {{ books=385 }} {{ materials=0}} {{ uniform=140 }} {{
+  totalCost=tuition+appFee+AssessmentFee+adminFee+archivalFee+books+materials+uniform
+  }}
+  <!-- Make sure to update the totalCost formula to reflect the new fee variables -->
 
   <block name="tuition">${{ tuition.toLocaleString() }}</block>
   <block name="adminFee">${{ adminFee.toLocaleString() }}</block>
@@ -154,10 +162,9 @@
       <td>${{ uniform.toLocaleString() }}</td>
     </tr>
   </block>
-      <!-- Add additional fees here -->
-    <!-- format as <tr><th scope="row" class="bold">Fee Name</th></td>$feeName.toLocaleString()</td></tr> -->
+  <!-- Add additional fees here -->
+  <!-- format as <tr><th scope="row" class="bold">Fee Name</th></td>$feeName.toLocaleString()</td></tr> -->
   <block name="total">${{ totalCost.toLocaleString() }}</block>
-
 
   <block name="ProgramleadForm"
     ><div class="has-primary-bg text-white">Coming Soon: 2024</div></block

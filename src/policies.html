@@ -1,16 +1,14 @@
-<extends src="parts/base.htm" locals='{
+<extends
+  src="parts/base.htm"
+  locals='{
   "headerImg": "index.png", 
   "name": "Policies",
   "title": "Policies"
-}'>
+}'
+>
+  <block name="pageTitle">Policies</block>
 
-<block name="pageTitle">
-  Policies
-</include>
-</block>
-
-<block name="content">
-    <extends src="parts/policiesembed.htm" locals='{}'>
-
-  </block>
+  <block name="content">
+    <extends src="parts/policiesembed.htm" locals="{}"></extends
+  ></block>
 </extends>

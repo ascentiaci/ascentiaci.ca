@@ -50,7 +50,9 @@
         </td>
       </tr>
       <tr>
-        <th scope="row"><strong>Canadian Adult Achievement Test (CAAT):</strong></th>
+        <th scope="row">
+          <strong>Canadian Adult Achievement Test (CAAT):</strong>
+        </th>
         <td>Reading Comprehension 35/50, Spelling 23/32</td>
       </tr>
       <tr>
@@ -186,21 +188,18 @@
     </ol>
   </block>
 
-<!-- Enter Tuition and Fees Here -->
-<!-- Follow formatting to add fees -->
-{{ tuition=15000 }}
-{{ adminFee=75 }}
-{{ archivalFee=10}}
-{{ totalCost=tuition+adminFee+archivalFee }}
-<!-- Make sure to update the totalCost formula to reflect the new fee variables -->
+  <!-- Enter Tuition and Fees Here -->
+  <!-- Follow formatting to add fees -->
+  {{ tuition=15000 }} {{ adminFee=75 }} {{ archivalFee=10}} {{
+  totalCost=tuition+adminFee+archivalFee }}
+  <!-- Make sure to update the totalCost formula to reflect the new fee variables -->
 
   <block name="tuition">${{ tuition.toLocaleString() }}</block>
   <block name="adminFee">${{ adminFee.toLocaleString() }}</block>
   <block name="archivalFee">${{ archivalFee.toLocaleString() }}</block>
-      <!-- Add additional fees here -->
-    <!-- format as <tr><td class="bold">Fee Name</td></td>$feeName.toLocaleString()</td></tr> -->
+  <!-- Add additional fees here -->
+  <!-- format as <tr><td class="bold">Fee Name</td></td>$feeName.toLocaleString()</td></tr> -->
   <block name="total">${{ totalCost.toLocaleString() }}</block>
-
 
   <block name="ProgramleadForm"
     ><div class="has-primary-bg text-white text-center">

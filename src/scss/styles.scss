@@ -1,4 +1,4 @@
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css');
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css");
 
 // @import url("https://use.typekit.net/uxt6rai.css");
 
@@ -9,32 +9,30 @@
   --brand-highlight-secondary: #b56d77;
   --brand-header-font: droid-serif;
   --brand-body-font: open-Sans;
-  --bs-nav-tabs-link-active-bg:black !important;
+  --bs-nav-tabs-link-active-bg: black !important;
 }
 
 @font-face {
   font-family: droid-serif;
-  src: url('/src/fonts/DroidSerif-Regular-webfont.woff');
+  src: url("/src/fonts/DroidSerif-Regular-webfont.woff");
 }
 @font-face {
   font-family: open-Sans;
-  src: url('/src/fonts/OpenSans-Regular-webfont.woff');
+  src: url("/src/fonts/OpenSans-Regular-webfont.woff");
 }
-$nav-tabs-active-bg: var(--brand-primary);  
+$nav-tabs-active-bg: var(--brand-primary);
 $font-family-sans-serif: var(--brand-body-font);
 $accordion-icon-active-color: white;
 $accordion-icon-color: white;
 @import "bootstrap/scss/bootstrap";
 
-
 // Import Fonts
 @import "/node_modules/bootstrap-icons/font/bootstrap-icons.css";
 :root {
   --bs-secondary-bg-rgb: rgb(255, 255, 255);
-  
 }
 * {
-    font-family: var(--brand-body-font);
+  font-family: var(--brand-body-font);
 }
 
 h1,
@@ -45,19 +43,18 @@ h5 {
   font-family: var(--brand-header-font);
   font-weight: bold;
 }
-h1>a,
-h2>a,
-h3>a,
-h4>a,
-h5>a {
+h1 > a,
+h2 > a,
+h3 > a,
+h4 > a,
+h5 > a {
   font-family: var(--brand-header-font);
   font-weight: bold;
 }
 
-
-
-
-.btn-primary,.btn-primary:active,.accordion-button:not(.collapsed) {
+.btn-primary,
+.btn-primary:active,
+.accordion-button:not(.collapsed) {
   background-color: var(--brand-primary);
   color: white;
 }
@@ -67,7 +64,7 @@ h5>a {
 }
 
 .accordion-button::after {
-    color: white;
+  color: white;
 }
 
 .has-primary-bg > * {
@@ -91,7 +88,8 @@ a:hover {
   color: var(--brand-highlight);
 }
 
-.btn:hover,.btn-primary:hover {
+.btn:hover,
+.btn-primary:hover {
   background-color: var(--brand-highlight);
   color: var(--bs-secondary-bg-rgb);
 }
@@ -121,7 +119,7 @@ a {
 
 main,
 nav,
-.bg-body-secondary, 
+.bg-body-secondary,
 header,
 #top {
   background-color: rgba(255, 255, 255, 1) !important;
@@ -135,15 +133,19 @@ body {
   min-height: 100%;
 }
 .card-footer {
-    background-color: unset;
-    border-top-style: none;
+  background-color: unset;
+  border-top-style: none;
 }
 
-.text-left, .text-left > *, .text-left > * > * {
-    text-align: left !important;
+.text-left,
+.text-left > *,
+.text-left > * > * {
+  text-align: left !important;
 }
-.text-right, .text-right > *, .text-right > * > * {
-    text-align: right !important;
+.text-right,
+.text-right > *,
+.text-right > * > * {
+  text-align: right !important;
 }
 
 .text-primary {
@@ -155,17 +157,19 @@ nav {
   align-items: end;
 }
 
-.nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
+.nav-tabs .nav-link.active,
+.nav-tabs .nav-item.show .nav-link {
   color: white !important;
   background-color: var(--brand-primary) !important;
   border-color: rgba(white, 0);
-  border:none;
+  border: none;
 }
 
-.nav-tabs .nav-link:not(.active), .nav-tabs .nav-item.show .nav-link {
-  color: var(--brand-primary)  !important;
+.nav-tabs .nav-link:not(.active),
+.nav-tabs .nav-item.show .nav-link {
+  color: var(--brand-primary) !important;
   background-color: white !important;
-  border:none;
+  border: none;
   // border-color: rgba(white, 0);
 }
 .multiLevelList > li:not(ul > li) {
@@ -174,34 +178,33 @@ nav {
 }
 
 .multiLevelList > li > ul > li {
-  font-weight:400;
-  color:black;
+  font-weight: 400;
+  color: black;
 }
 
 #requirements > li {
   list-style-type: none;
   list-style-position: inside;
-
 }
 
 .age {
-  list-style-image: url('/node_modules/@fortawesome/fontawesome-free/svgs/solid/clock.svg');
+  list-style-image: url("/node_modules/@fortawesome/fontawesome-free/svgs/solid/clock.svg");
 }
 
 .education {
-  list-style-image: url('/node_modules/@fortawesome/fontawesome-free/svgs/solid/graduation-cap.svg');
+  list-style-image: url("/node_modules/@fortawesome/fontawesome-free/svgs/solid/graduation-cap.svg");
 }
 
 .list-upper-alpha {
-  list-style-type:upper-alpha
+  list-style-type: upper-alpha;
 }
 
 .list-lower-roman {
-  list-style-type:lower-roman
+  list-style-type: lower-roman;
 }
 
 .headerImg {
-  max-height: 225px; 
+  max-height: 225px;
   width: 99vw;
   object-fit: cover;
 }
@@ -223,11 +226,11 @@ ul > li {
 }
 
 .w-33 {
-  width: calc(100%/3);
+  width: calc(100% / 3);
 }
 
 .w-66 {
-  width: calc((100%/3)*2);
+  width: calc((100% / 3) * 2);
 }
 
 .red {
@@ -258,7 +261,6 @@ ul > li {
   min-width: 100%;
 }
 
-
 .btn-nohighlight:hover {
   background-color: unset;
 }
@@ -268,10 +270,9 @@ ul > li {
   margin-right: -1em;
 }
 
-
 @include media-breakpoint-up(lg) {
   .cat-header {
     margin-left: -2.5em;
     margin-right: -2.5em;
-    };
   }
+}
