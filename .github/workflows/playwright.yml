@@ -1,0 +1,54 @@
+name: Playwright Tests
+
+on:
+  pull_request:
+    branches:
+      - "*"
+  push:
+    branches:
+      - "*"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '16'
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Run Playwright tests
+      run: npm run test
+
+    - name: Upload Playwright results
+      uses: actions/upload-artifact@v2
+      with:
+        name: playwright-results
+        path: test-results
+
+    - name: Generate and post Playwright report summary
+      uses: daun/playwright-report-summary@v3
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        test-artifacts-folder: test-results
+        test-summary-json-path: playwright-report/summary.json
+        test-run-url: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+
+    - name: Comment on pull request
+      if: github.event_name == 'pull_request'
+      run: |
+        PR_NUMBER=$(jq --raw-output .pull_request.number "$GITHUB_EVENT_PATH")
+        curl -s -H "Authorization: token $GITHUB_TOKEN" \
+          -X POST \
+          -d "{\"body\": \"Playwright test results: $TEST_RESULTS_SUMMARY\"}" \
+          "https://api.github.com/repos/$GITHUB_REPOSITORY/issues/$PR_NUMBER/comments"
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        TEST_RESULTS_SUMMARY: $(cat test-results/summary.json)

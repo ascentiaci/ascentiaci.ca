@@ -2,3 +2,8 @@ node_modules
 package-lock.json
 .parcel-cache/*
 dist
+/test-results/
+/playwright-report
+/coverage/
+/blob-report/
+/playwright/.cache/

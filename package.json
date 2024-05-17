@@ -5,7 +5,8 @@
   "scripts": {
     "start": "parcel serve src/index.html --public-url / --dist-dir dist",
     "build": "parcel build src/index.html --public-url / --dist-dir dist",
-    "cachefonts": "afontizer 'use.typekit.net/uxt6rai.css' './src/styles/fonts' './src/styles/_afont.scss'"
+    "test": "playwright test",
+    "crawl": "node ./scripts/generate-sitemap.mjs"
   },
   "author": "",
   "license": "ISC",
@@ -17,16 +18,22 @@
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",
     "cloudflare-turnstile-widget": "^0.3.0",
+    "concurrently": "^8.2.2",
     "ical.js": "^1.5.0",
     "parceljs": "^0.0.1",
-    "posthtml-extend": "^0.6.5"
+    "posthtml-extend": "^0.6.5",
+    "sitemap-generator": "^8.5.1",
+    "sp-wt": "^1.0.9"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.12.0",
+    "@playwright/test": "^1.44.0",
     "@trunkio/launcher": "^1.3.1",
+    "@types/node": "^20.12.12",
     "afontizer": "^1.0.4",
     "axios": "^1.6.8",
     "parcel": "^2.12.0",
+    "playwright": "^1.44.0",
     "posthtml-doctype": "^1.1.1",
     "posthtml-expressions": "^1.11.3",
     "posthtml-include": "^2.0.1",
