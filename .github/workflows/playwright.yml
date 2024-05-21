@@ -24,11 +24,11 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Install Playwright
-        run: npm install playwright --with-deps
-
       - name: Build project
         run: npm run build
+
+      - name: Install Playwright
+        run: npx install playwright --with-deps
 
       - name: Run Playwright tests
         run: npm run test
