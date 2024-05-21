@@ -40,9 +40,13 @@ jobs:
       uses: daun/playwright-report-summary@v3
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
-        test-artifacts-folder: test-results
-        test-summary-json-path: playwright-report/summary.json
-        test-run-url: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        report-file: playwright-report/report.html
+        
+    - name: Upload Playwright report
+      uses: actions/upload-artifact@v2
+      with:
+        name: playwright-report
+        path: playwright-report
 
     - name: Comment on pull request
       if: github.event_name == 'pull_request'
