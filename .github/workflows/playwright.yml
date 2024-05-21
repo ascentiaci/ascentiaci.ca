@@ -46,7 +46,7 @@ jobs:
         uses: daun/playwright-report-summary@v3
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          report-file: playwright-report
+          report-file: results.json
 
       - name: Upload Playwright report
         uses: actions/upload-artifact@v2
