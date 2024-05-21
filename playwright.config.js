@@ -3,7 +3,7 @@ const { devices } = require("@playwright/test");
 
 module.exports = {
   reporter: [
-    ["json", { outputFile: "playwright-report/report.json" }],
+    ["json", { outputFile: "results.json" }],
     ["list"],
     ["html", { outputFolder: "playwright-report", open: "never" }],
   ],
