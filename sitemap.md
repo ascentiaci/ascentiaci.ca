@@ -6,7 +6,7 @@ flowchart TD
     A(Home Page/index.html);
     A-->ide1
     B(How to Apply/how-to-apply.html)
-    C(Why Ascentia)
+    C(Why elevare)
     D(Post Graduate Support)
     E(Explore our Programs)
     F(Healthcare)

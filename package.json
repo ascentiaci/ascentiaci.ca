@@ -1,7 +1,7 @@
 {
-  "name": "ascentiaci.ca",
+  "name": "elevareci.ca",
   "version": "1.0.0",
-  "description": "Ascentia Career Institute Main Marketing Site",
+  "description": "Elevare Career Institute Main Marketing Site",
   "scripts": {
     "start": "parcel serve src/index.html --public-url / --dist-dir dist",
     "build": "parcel build src/index.html --public-url / --dist-dir dist",

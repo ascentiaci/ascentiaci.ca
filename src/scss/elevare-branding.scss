@@ -1,0 +1,19 @@
+:root {
+    --brand-primary: #0026C0;
+    --brand-tertiary: #FFF;
+    --brand-highlight: #DB6265;
+    --brand-highlight-secondary: #F1B11A;
+    --brand-header-font: norwester;
+    --brand-body-font: montserrat;
+    --bs-nav-tabs-link-active-bg: black !important;
+    --bs-secondary-bg-rgb: rgb(255, 255, 255);
+  }
+  
+  @font-face {
+    font-family: norwester;
+    src: url("/src/fonts/norwester.otf");
+  }
+  @font-face {
+    font-family: montserrat;
+    src: url("/src/fonts/Montserrat-Regular.ttf");
+  }

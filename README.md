@@ -1,6 +1,6 @@
-# ascentiaci.ca
+# elevareci.ca
 
-`Ascentia™️ Career Institute Main Marketing Site`
+`Elevare™️ Career Institute Main Marketing Site`
 
 ## Tools used
 
