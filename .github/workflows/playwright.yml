@@ -41,10 +41,18 @@ jobs:
         run: ls test-results/
 
       - name: Upload Playwright results
-        uses: actions/upload-artifact@v4
-        with:
-          name: playwright-results
-          path: test-results/
+        id: azcopy
+        shell: bash
+        run: |
+          REPORT_DIR='run-${{ github.run_id }}-${{ github.run_attempt }}'
+          azcopy cp --recursive "./playwright-report/*" "https://summitcareerinstitute.blob.core.windows.net/\$web/$REPORT_DIR"
+          echo "::notice title=HTML report url::https://summitcareerinstitute.z9.web.core.windows.net/$REPORT_DIR/index.html"
+          echo "REPORT_DIR=$REPORT_DIR" >> "$GITHUB_OUTPUT"
+        env:
+          AZCOPY_AUTO_LOGIN_TYPE: SPN
+          AZCOPY_SPA_APPLICATION_ID: "${{ secrets.AZCOPY_SPA_APPLICATION_ID }}"
+          AZCOPY_SPA_CLIENT_SECRET: "${{ secrets.AZCOPY_SPA_CLIENT_SECRET }}"
+          AZCOPY_TENANT_ID: "${{ secrets.AZCOPY_TENANT_ID }}"
 
       - name: Generate and post Playwright report summary
         uses: daun/playwright-report-summary@v3
@@ -59,11 +67,12 @@ jobs:
           path: playwright-report
 
       - name: Comment on pull request
-
         uses: thollander/actions-comment-pull-request@v2
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          message: "Playwright Test Results: ${{ env.TEST_RESULTS_SUMMARY }}"
+          message: |
+            "Playwright Test Results: ${{ env.TEST_RESULTS_SUMMARY }}"
+            "https://summitcareerinstitute.z9.web.core.windows.net/${{ steps.azcopy.outputs.REPORT_DIR }}/index.html"
           comment_tag: execution
 
         env:
