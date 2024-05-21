@@ -46,7 +46,7 @@ jobs:
         run: |
           REPORT_DIR='run-${{ github.run_id }}-${{ github.run_attempt }}'
           azcopy cp --recursive "./playwright-report/*" "https://summitcareerinstitute.blob.core.windows.net/\$web/$REPORT_DIR"
-          azcopy cp --recursive "./test-results/*" "https://summitcareerinstitute.blob.core.windows.net/\$web/$REPORT_DIR"
+          azcopy cp --recursive "./test-results/*" "https://summitcareerinstitute.blob.core.windows.net/\$web/$REPORT_DIR/snapshots"
           echo "::notice title=HTML report url::https://summitcareerinstitute.z9.web.core.windows.net/$REPORT_DIR/index.html"
           echo "REPORT_DIR=$REPORT_DIR" >> "$GITHUB_OUTPUT"
         env:
