@@ -55,13 +55,11 @@ jobs:
           path: playwright-report
 
       - name: Comment on pull request
-        if: github.event_name == 'pull_request'
-        run: |
-          PR_NUMBER=$(jq --raw-output .pull_request.number "$GITHUB_EVENT_PATH")
-          curl -s -H "Authorization: token $GITHUB_TOKEN" \
-            -X POST \
-            -d "{\"body\": \"Playwright test results: $TEST_RESULTS_SUMMARY\"}" \
-            "https://api.github.com/repos/$GITHUB_REPOSITORY/issues/$PR_NUMBER/comments"
+        uses: thollander/actions-comment-pull-request@v2
+        with:
+          message: "Playwright Test Results: ${{ env.TEST_RESULTS_SUMMARY }}"
+          comment_tag: execution
+          
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           TEST_RESULTS_SUMMARY: $(cat summary.json)
