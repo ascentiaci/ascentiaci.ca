@@ -1,44 +1,44 @@
 // @ts-check
-const { devices } = require('@playwright/test');
+const { devices } = require("@playwright/test");
 
 module.exports = {
   webServer: {
-    command: 'npm run start',
+    command: "npm run start",
     port: 1234,
     timeout: 120 * 1000,
     reuseExistingServer: !process.env.CI,
   },
   use: {
-    baseURL: 'http://localhost:1234',
-    trace: 'on-first-retry',
+    baseURL: "http://localhost:1234",
+    trace: "on-first-retry",
   },
   projects: [
     {
-      name: 'Chromium',
+      name: "Chromium",
       use: {
-        browserName: 'chromium',
+        browserName: "chromium",
         headless: true,
       },
     },
     {
-      name: 'Firefox',
+      name: "Firefox",
       use: {
-        browserName: 'firefox',
+        browserName: "firefox",
         headless: true,
       },
     },
     {
-      name: 'WebKit',
+      name: "WebKit",
       use: {
-        browserName: 'webkit',
+        browserName: "webkit",
         headless: true,
       },
     },
     {
-      name: 'Mobile Safari',
+      name: "Mobile Safari",
       use: {
-        browserName: 'webkit',
-        ...devices['iPhone 13'],
+        browserName: "webkit",
+        ...devices["iPhone 13"],
         headless: true,
       },
     },
