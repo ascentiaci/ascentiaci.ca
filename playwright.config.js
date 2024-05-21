@@ -2,6 +2,11 @@
 const { devices } = require("@playwright/test");
 
 module.exports = {
+  reporter: [
+    ["json", { outputFile: "playwright-report/report.json" }],
+    ["list"],
+    ["html", { outputFolder: "playwright-report", open: "never" }],
+  ],
   webServer: {
     command: "npm run start",
     port: 1234,

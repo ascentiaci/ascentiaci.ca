@@ -34,13 +34,13 @@ jobs:
         run: npm run test
 
       - name: List CWD
-        run: ls
+        run: ls test-results/
 
       - name: Upload Playwright results
         uses: actions/upload-artifact@v2
         with:
           name: playwright-results
-          path: test-results
+          path: test-results/
 
       - name: Generate and post Playwright report summary
         uses: daun/playwright-report-summary@v3
