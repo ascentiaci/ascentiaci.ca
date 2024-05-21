@@ -28,7 +28,7 @@ jobs:
         run: npm run build
 
       - name: Install Playwright
-        run: npm install playwright --with-deps
+        run: npx playwright install --with-deps
 
       - name: Run Playwright tests
         run: npm run test
