@@ -5,14 +5,17 @@ on:
     branches:
       - "**"
   # push:
-    # branches:
-      # - "**"
+  # branches:
+  # - "**"
 
 jobs:
   test:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Install Playwright
+        run: npx playwright install --with-deps
+
       - name: Checkout code
         uses: actions/checkout@v2
 
@@ -20,15 +23,12 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: "16"
-      
+
       - name: Install dependencies
         run: npm ci
 
       - name: Build project
         run: npm run build
-
-      - name: Install Playwright
-        run: npx playwright install --with-deps
 
       - name: Run Playwright tests
         run: npm run test
@@ -59,7 +59,7 @@ jobs:
         with:
           message: "Playwright Test Results: ${{ env.TEST_RESULTS_SUMMARY }}"
           comment_tag: execution
-          
+
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           TEST_RESULTS_SUMMARY: $(cat summary.json)
