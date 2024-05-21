@@ -1,36 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <head>
-      <include src="src/parts/headtag.htm" locals='{
-        "title":"Home"
-      }'>
-    </head>
-  </head>
-  <body>
-    <include src="src/parts/nav.htm"></include>
-    <include
-      src="src/parts/head.htm"
-      locals='{
-      "headerimg": "index.png",
-      "name": "Welcome to Ascentia Career Institute"
-    
-    }'
-    ></include>
+<extends
+  src="parts/base.htm"
+  locals='{
+  "headerImg": "index.png", 
+  "name": "",
+  "title": ""
+}'
+>
+  <block name="pageTitle"> </block>
 
-    <div class="container py-4 px-2 mx-auto">
-      <div class="text-center">
-      <p>
-       
-      </p>
-    </div>
-
-  
-
-      </div>
-    </div>
-    </div>
-    </div>
-    <include src="src/parts/footer.htm"></include>
-  </body>
-</html>
+  <block name="content"> </block>
+</extends>

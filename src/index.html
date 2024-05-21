@@ -1,93 +1,83 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <include src="src/parts/headtag.htm" locals='{
-      "title":"Home"
-    }'>
-  </head>
-  <body>
-    <include src="src/parts/nav.htm"></include>
-    <main>
-    <include
-      src="src/parts/head.htm"
-      locals='{
-      "headerimg": "index.png",
-      "name": "Welcome to Ascentia Career Institute"
-    
-    }'
-    ></include>
+<extends
+  src="parts/base.htm"
+  locals='{
+  "headerImg": "index.png", 
+  "name": "Welcome to Ascentia™️ Career Institute",
+  "title": "Home"
+}'
+>
+  <block name="pageTitle">Welcome to Ascentia&nbsp;Career&nbsp;Institute</block>
+  <block name="introCopy">
+    <p>
+      Welcome to Ascentia™️ Career Institute, where “learning today, leading
+      tomorrow” is not just a motto but a promise. With a focus on flexible,
+      adaptable learning and innovation, we empower students to shape their
+      educational journey according to their needs and preferences.
+    </p>
 
+    <p>
+      Embrace the opportunity to embark on a journey of self-discovery and
+      growth, surrounded by a community of like-minded individuals dedicated to
+      excellence. Your journey starts here, at Ascentia™️ Career Institute,
+      where learning knows no bounds and tomorrow's leaders are born today.
+    </p>
+  </block>
+  <block name="content">
     <div class="container py-4 px-2 mx-auto">
-      <div class="text-center">
-      <p>
-        Welcome to Ascentia Career Institute, where “learning today, leading
-        tomorrow” is not just a motto but a promise. With a focus on flexible,
-        adaptable learning and innovation, we empower students to shape their
-        educational journey according to their needs and preferences.
-      </p>
-
-      <p>
-        Embrace the opportunity to embark on a journey of self-discovery and
-        growth, surrounded by a community of like-minded individuals dedicated
-        to excellence. Your journey starts here, at Ascentia Career Institute,
-        where learning knows no bounds and tomorrow's leaders are born today.
-      </p>
-    </div>
-
-    <div class="feature-blocks container py-4" id="feature-blocks">
-      <div class="card-group h-25 row-cols-1 row-cols-lg-3">
-        <include src="src/parts/featureblocks.htm">
-          {
-            "title": "How to Apply",
-            "blurb": "View enrollment calendar, FAQs and details on financial assistance.",
-            "target": "#",
-            "cta": "See Admissions Details",
-            "image": "feature1.webp"
-          }
-        </include>
-        <include src="src/parts/featureblocks.htm">
-          {
-            "title": "Why Ascentia?",
-            "blurb": "Transformative courses with unmatched, flexible learning options.",
-            "target": "#",
-            "cta": "See What Makes Us Different",
-            "image": "feature2.webp"
-          }
-        </include>
-        <include src="src/parts/featureblocks.htm">
-          {
-            "title": "Post Graduate Support",
-            "blurb": "From enrollment to employment, we are with you at every step.",
-            "target": "#",
-            "cta": "Learn how we support graduates",
-            "image": "feature3.webp"
-          }
-        </include>
-       
-        
-        
+      <hr />
+      <div class="feature-blocks container py-4" id="feature-blocks">
+        <div class="card-group h-25 row-cols-1 row-cols-lg-3">
+          <include src="src/parts/featureblocks.htm">
+            { "title": "How to Apply", "blurb": "View enrollment calendar, FAQs
+            and details on financial assistance.", "target": "admissions.html",
+            "cta": "See Admissions Details", "image": "feature1.webp" }
+          </include>
+          <include src="src/parts/featureblocks.htm">
+            { "title": "Why Ascentia™️?", "blurb": "Transformative courses with
+            unmatched, flexible learning options.", "target":
+            "why-ascentia.html", "cta": "See What Makes Us Different", "image":
+            "feature2.webp" }
+          </include>
+          <include src="src/parts/featureblocks.htm">
+            { "title": "Post Graduate Support", "blurb": "From enrollment to
+            employment, we are with you at every step.", "target":
+            "post-graduate-support.html", "cta": "Learn how we support
+            graduates", "image": "feature3.webp" }
+          </include>
+        </div>
+      </div>
+      <hr />
+      <div class="container my-4" id="programs">
+        <div class="row p-3">
+          <div class="card border-0 col-12 col-lg-6 pb-4">
+            <h3>Explore our programs</h3>
+            <p>
+              At Ascentia, our exclusive programs are tailored to help you
+              secure high-demand jobs, giving you the skills needed for a
+              successful career. Explore our unique offerings designed to launch
+              your career into thriving industries.
+            </p>
+            <br />
+            <button class="btn has-primary-bg">Explore our Programs</button>
+          </div>
+          <hr class="d-block d-lg-none" />
+          <div class="col-12 col-lg-6 text-left">
+            <h2 class="text-black">
+              <a class="text-black" href="healthcare.html">Healthcare</a>
+            </h2>
+            <hr />
+            <h2 class="text-black">
+              <a class="text-black" href="education.html">Education</a>
+            </h2>
+            <hr />
+            <h2 class="text-black">
+              <a class="text-black" href="computer-systems-and-technology.html"
+                >Computer Systems and Technology</a
+              >
+            </h2>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="container bg-body-tertiary" id="programs">
-      <div class="row ">
-      <div class="card border-0 col-12 col-lg-6">
-        <h3>Explore our programs</h3>
-        <p>At Ascentia, our exclusive programs are tailored to help you secure high-demand jobs, giving you the skills needed for a successful career. Explore our unique offerings designed to launch your career into thriving industries.</p>
-        <br>
-        <button class="btn has-primary-bg">Explore our Programs</button>
-      </div>
-      <div class="col-12 col-lg-6">
-        <h2><a href="#">Healthcare</a></h2>
-        <hr>
-        <h2><a href="#">Education</a></h2>
-        <hr>
-        <h2><a href="#">Computer Systems and Technology</a></h2>
-
-      </div>
-    </div>
-    </div>
-    </div>
-  </main>
-    <include src="src/parts/footer.htm"></include>
-  </body>
-</html>
+  </block>
+</extends>

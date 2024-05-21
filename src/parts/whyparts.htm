@@ -1,7 +1,7 @@
-<div class="row row-cols-2 px-1 justify-content-evenly {{ order === '1' ? 'bg-body-tertiary ' : 'bg-body-secondary'  }}">
-    <div class="col col-3 order-{{ order }} p-2"><img src="images/{{ image }}?width=250" alt=""></div>
-    <div class="col col-8 order-{{ order2 }} p-1">
-      <h3>{{ header }}</h3>
-        <p>{{ body }}</p>
+<div class="row row-cols-1 row-cols-lg-2 px-1 justify-content-evenly {{ order === '1' ? 'bg-body-tertiary ' : 'bg-body-secondary'  }}">
+    <div class="col col-lg-3 col-12 order-{{ order }} p-2"><img src="images/{{ image }}?width=250" alt=""></div>
+    <div class="col col-lg-8 col-12 order-{{ order2 }} p-1">
+      <h3 class="{{ order === '1' ? 'text-left' : 'text-right' }} py-2"><block name="whyHeader" >Stuff</block></h3>
+        <p class="{{ order === '1' ? 'text-left' : 'text-right' }}"><block name="whyContent">Just Because</block></p>
     </div>
   </div>

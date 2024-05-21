@@ -1,14 +1,21 @@
-<div class="card program-card mb-3 h-100 my-3 border-0 col-12 col-lg-6" >
-    <div class="row g-2">
+<!-- TODO Fix height -->
+
+<div class="card pt-2 my-3 border-0 g-2">
+    
+    <div class="row g-0 h-100">
         <div class="col-md-4">
-            <img src="/src/images/feature1.webp" class="program-card-img img-fluid rounded-start h-100" alt="">
+            <!-- img should be no more than 25% of the viewport -->
+            <img src="images/{{ image }}?as=webp" class="img-fluid h-100 object-fit-cover slide-image" alt="">
         </div>
-        <div class="col-md-8 bg-white">
-            <div class="card-body">
-                <h5 class="card-title">{{ name }}</h5>
-                <p class="card-text">{{ intro }}</p>
-                <button class="btn has-primary-bg">Learn More</button>
+        <div class="col-md-8 h-100">
+            <div class="card-body h-100">
+                <h4 class="card-title text-left">
+                    {{ name }}
+                </h4>
+                <p class="card-text text-left h-100 mb-2 pb-5 text-overflow-ellipsis overflow-y-hidden  ">{{ intro === undefined ? 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.' : intro }}</p>
             </div>
         </div>
     </div>
+    <a class="has-primary-bg text-white text-center" href="{{ href }}"><div class="card-footer">Learn More</div></a>
+
 </div>

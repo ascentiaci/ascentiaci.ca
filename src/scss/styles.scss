@@ -1,87 +1,282 @@
-// Import all of Bootstrap's CSS
-@import "bootstrap/scss/bootstrap";
-// Import Fonts
-@import url("https://use.typekit.net/uxt6rai.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css");
 
-
+// @import url("https://use.typekit.net/uxt6rai.css");
 
 :root {
-    --bs-secondary-bg-rgb:rgb(255,255,255);
-    --brand-primary: rgb(99,10,22);
-    --brand-tertiary: #8C9DB2;
-    --brand-highlight: #9D3D4A;
-    --brand-highlight-secondary: #B56D77;
-
-    --brand-header-font: droid-serif;
-    --brand-body-font: open-Sans;
-    $font-family-sans-serif: var(--brand-body-font);
-
+  --brand-primary: rgb(99, 10, 22);
+  --brand-tertiary: #8c9db2;
+  --brand-highlight: #9d3d4a;
+  --brand-highlight-secondary: #b56d77;
+  --brand-header-font: droid-serif;
+  --brand-body-font: open-Sans;
+  --bs-nav-tabs-link-active-bg: black !important;
+  --bs-secondary-bg-rgb: rgb(255, 255, 255);
 }
+
+@font-face {
+  font-family: droid-serif;
+  src: url("/src/fonts/DroidSerif-Regular-webfont.woff");
+}
+@font-face {
+  font-family: open-Sans;
+  src: url("/src/fonts/OpenSans-Regular-webfont.woff");
+}
+$nav-tabs-active-bg: var(--brand-primary);
+$font-family-sans-serif: var(--brand-body-font);
+$accordion-icon-active-color: white;
+$accordion-icon-color: white;
+@import "bootstrap/scss/bootstrap";
+
+// Import Fonts
+@import "/node_modules/bootstrap-icons/font/bootstrap-icons.css";
+
 * {
-font-family: var(--brand-body-font);
+  font-family: var(--brand-body-font);
 }
 
-h1,h2,h3,h4,h5 {
-    font-family: var(--brand-header-font);
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: var(--brand-header-font);
+  font-weight: bold;
+}
+h1 > a,
+h2 > a,
+h3 > a,
+h4 > a,
+h5 > a {
+  font-family: var(--brand-header-font);
+  font-weight: bold;
 }
 
-
-
-
+.btn-primary,
+.btn-primary:active,
+.accordion-button:not(.collapsed) {
+  background-color: var(--brand-primary);
+  color: white;
+}
 .has-primary-bg {
-    background-color: var(--brand-primary);
-    color: var(--bs-secondary-bg-rgb);
+  background-color: var(--brand-primary);
+  color: white;
+}
+
+.accordion-button::after {
+  color: white;
+}
+
+.has-primary-bg > * {
+  color: white;
 }
 
 hr {
-    background-color: var(--brand-primary);
-    border-color: var(--brand-primary);
-    border-style: solid;
-    border-width: 3px;
-    opacity: 1;
+  background-color: var(--brand-primary);
+  border-color: var(--brand-primary);
+  border-style: solid;
+  border-width: 1.5px;
+  opacity: 1;
 }
 
 h2 > a {
-    text-decoration: none;
-    color: var(--brand-tertiary);
+  text-decoration: none;
+  color: var(--brand-tertiary);
 }
 
 a:hover {
-    color: var(--brand-highlight);
+  color: var(--brand-highlight);
 }
 
-.btn:hover {
-    background-color: var(--brand-highlight);
-    color: var(--bs-secondary-bg-rgb);
+.btn:hover,
+.btn-primary:hover {
+  background-color: var(--brand-highlight);
+  color: var(--bs-secondary-bg-rgb);
 }
 
 footer {
-    background-color: black;
-    color: white;
-    text-decoration: none;
+  background-color: black;
+  color: white;
+  text-decoration: none;
 }
 footer > p > a {
-    color: white;
-    text-decoration: none;
+  color: white;
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+  color: unset;
 }
 
 .bg-highlight {
- background-color: var(--brand-highlight);
+  background-color: var(--brand-highlight);
 }
 
 .bg-highlight-secondary {
-    background-color: var(--brand-highlight-secondary);
-   }
+  background-color: var(--brand-highlight-secondary);
+}
 
-main,nav,.bg-body-secondary {
-    background-color: rgba(255,255,255,1) !important;   
+main,
+nav,
+.bg-body-secondary,
+header,
+#top {
+  background-color: rgba(255, 255, 255, 1) !important;
 }
 
 body {
-    background-color: black;
+  background-color: black;
 }
 
-
 .program-card-img {
-    object-fit: cover;
+  min-height: 100%;
+}
+.card-footer {
+  background-color: unset;
+  border-top-style: none;
+}
+
+.text-left,
+.text-left > *,
+.text-left > * > * {
+  text-align: left !important;
+}
+.text-right,
+.text-right > *,
+.text-right > * > * {
+  text-align: right !important;
+}
+
+.text-primary {
+  color: var(--brand-primary) !important;
+}
+
+nav {
+  font-size: small;
+  align-items: end;
+}
+
+.nav-tabs .nav-link.active,
+.nav-tabs .nav-item.show .nav-link {
+  color: white !important;
+  background-color: var(--brand-primary) !important;
+  border-color: rgba(white, 0);
+  border: none;
+}
+
+.nav-tabs .nav-link:not(.active),
+.nav-tabs .nav-item.show .nav-link {
+  color: var(--brand-primary) !important;
+  background-color: white !important;
+  border: none;
+  // border-color: rgba(white, 0);
+}
+.multiLevelList > li:not(ul > li) {
+  font-weight: bold;
+  color: var(--brand-primary);
+}
+
+.multiLevelList > li > ul > li {
+  font-weight: 400;
+  color: black;
+}
+
+#requirements > li {
+  list-style-type: none;
+  list-style-position: inside;
+}
+
+.age {
+  list-style-image: url("/node_modules/@fortawesome/fontawesome-free/svgs/solid/clock.svg");
+}
+
+.education {
+  list-style-image: url("/node_modules/@fortawesome/fontawesome-free/svgs/solid/graduation-cap.svg");
+}
+
+.list-upper-alpha {
+  list-style-type: upper-alpha;
+}
+
+.list-lower-roman {
+  list-style-type: lower-roman;
+}
+
+.headerImg {
+  max-height: 225px;
+  width: 99vw;
+  object-fit: cover;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+main > div {
+  min-width: 100%;
+}
+
+ul > li {
+  line-height: 2em;
+}
+
+.detailsTable > tbody > tr > td {
+  max-width: 25%;
+}
+
+.w-33 {
+  width: calc(100% / 3);
+}
+
+.w-66 {
+  width: calc((100% / 3) * 2);
+}
+
+.red {
+  color: red;
+}
+
+.w-10 {
+  max-width: 1.5rem;
+}
+
+.pl-n2 {
+  padding-left: 1.5rem;
+}
+
+.navbar-nav .btn-group .btn {
+  vertical-align: middle;
+}
+
+.navbar-nav .btn-group .dropdown-toggle-split {
+  padding-left: 0;
+}
+
+.navbar-nav .btn-group .dropdown-toggle::after {
+  margin-left: 0.25rem;
+}
+
+#request-info {
+  min-width: 100%;
+}
+
+.btn-nohighlight:hover {
+  background-color: unset;
+}
+
+.cat-header {
+  margin-left: -1em;
+  margin-right: -1em;
+}
+
+@include media-breakpoint-up(lg) {
+  .cat-header {
+    margin-left: -2.5em;
+    margin-right: -2.5em;
+  }
+}
+
+.slide-image {
+  //max height: 25vh;
+  max-height: 25dvh;
 }
