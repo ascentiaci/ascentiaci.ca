@@ -33,6 +33,9 @@ jobs:
       - name: Run Playwright tests
         run: npm run test
 
+      - name: List CWD
+        run: ls
+
       - name: Upload Playwright results
         uses: actions/upload-artifact@v2
         with:
