@@ -6,7 +6,6 @@
     "start": "parcel serve src/index.html --public-url / --dist-dir dist",
     "build": "parcel build src/index.html --public-url / --dist-dir dist",
     "test": "playwright test",
-    "pretest": "playwright install",
     "crawl": "node ./scripts/generate-sitemap.mjs",
     "check": "npx trunk check"
   },
