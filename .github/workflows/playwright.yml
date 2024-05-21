@@ -12,7 +12,8 @@ permissions: {}
 jobs:
   test:
     runs-on: ubuntu-latest
-
+    permissions:
+      pull-requests: write
     steps:
       - name: Install Playwright
         run: npx playwright install --with-deps
@@ -58,6 +59,7 @@ jobs:
           path: playwright-report
 
       - name: Comment on pull request
+
         uses: thollander/actions-comment-pull-request@v2
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
