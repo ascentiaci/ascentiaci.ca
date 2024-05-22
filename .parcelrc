@@ -1,7 +1,7 @@
 {
   "extends": "@parcel/config-default",
   "transformers": {
-    "*.html": [
+    "*.htm*": [
       "@plasmohq/parcel-transformer-inject-env",
       "..."
     ]
