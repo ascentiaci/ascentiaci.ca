@@ -1,16 +1,16 @@
 <extends
   src="parts/base.htm"
   locals='{
-  "headerImg": "index.png", 
-  "name": "Welcome to $BRAND_SC™️ Career Institute",
-  "title": "Home"
-}'
+    "headerImg": "{{ `$BRAND` === `ascentia` ? `index.png` : `elevare_index.png` }}", 
+    "name": "Welcome to $BRAND_SC™️ Career Institute",
+    "title": "Home"
+  }'
 >
   <block name="pageTitle">Welcome to $BRAND_SC Career&nbsp;Institute</block>
   <block name="introCopy">
-    <if condition="'$BRAND' === '$BRAND_SC'">
+    <if condition="'$BRAND' === 'ascentia'">
       <p>
-        Welcome to $BRAND_SC™️ Career Institute, where “learning today, leading
+        Welcome to Ascentia™️ Career Institute, where “learning today, leading
         tomorrow” is not just a motto but a promise. With a focus on flexible,
         adaptable learning and innovation, we empower students to shape their
         educational journey according to their needs and preferences.
@@ -19,17 +19,24 @@
       <p>
         Embrace the opportunity to embark on a journey of self-discovery and
         growth, surrounded by a community of like-minded individuals dedicated
-        to excellence. Your journey starts here, at $BRAND_SC™️ Career
-        Institute, where learning knows no bounds and tomorrow's leaders are
-        born today.
+        to excellence. Your journey starts here, at Ascentia™️ Career Institute,
+        where learning knows no bounds and tomorrow's leaders are born today.
       </p>
     </if>
-    <if condition="'$BRAND' !== '$BRAND_SC'">
+    <if condition="'$BRAND' !== 'ascentia'">
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt
-        ratione inventore ipsa deleniti temporibus blanditiis quam facilis vel
-        architecto animi sequi soluta, officia adipisci dicta cumque eaque enim
-        eveniet perferendis.
+        Welcome to Elevare Career Institute, where "your potential reaches new
+        heights" is not just a tagline but a commitment. With a focus on
+        flexible, adaptable learning and innovation, we empower students to
+        shape their educational journey according to their needs and
+        preferences.
+      </p>
+
+      <p>
+        Embrace the opportunity to embark on a journey of self-discovery and
+        growth, surrounded by a community of like-minded individuals dedicated
+        to excellence. Your journey starts here, at Elevare Career Institute,
+        where learning knows no bounds and tomorrow's leaders are born today.
       </p>
     </if>
   </block>

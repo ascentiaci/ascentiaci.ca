@@ -30,6 +30,7 @@ $elevare-brand-body-font: "Montserrat";
     --brand-header-font: #{$ascentia-brand-header-font};
     --brand-body-font: #{$ascentia-brand-body-font};
     --nav-logo-path: url("/src/images/aci-logo-black-text.png");
+    --footer-logo-path: url("/src/images/aci-logo-white-text.png");
   } @else if $brand == "elevare" {
     --brand-primary: #{$elevare-brand-primary};
     --brand-tertiary: #{$elevare-brand-tertiary};
@@ -38,6 +39,7 @@ $elevare-brand-body-font: "Montserrat";
     --brand-header-font: #{$elevare-brand-header-font};
     --brand-body-font: #{$elevare-brand-body-font};
     --nav-logo-path: url("/src/images/eci-logo-dark-text.png");
+    --footer-logo-path: url("/src/images/eci-logo-white-text.png");
   }
 }
 
@@ -80,6 +82,9 @@ $accordion-icon-color: white;
 
 .nav-logo {
   content: var(--nav-logo-path);
+}
+.footer-logo {
+  content: var(--footer-logo-path);
 }
 
 h1,

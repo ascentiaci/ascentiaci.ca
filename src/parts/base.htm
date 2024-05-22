@@ -3,7 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{{ title }} | $BRAND_SC™️ Career Institute</title>
+    <if condition="'$BRAND' === 'ascentia'"><title>{{ title }} | Ascentia™️ Career Institute</title></if>
+    <if condition="'$BRAND' !== 'ascentia'"><title>{{ title }} | Elevare™️ Career Institute</title></if>
 
     <link rel="stylesheet" href="scss/_generated.scss" />
     <script type="module" src="js/main.js"></script>
