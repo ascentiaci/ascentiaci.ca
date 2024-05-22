@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg bg-body-secondary">
   <div class="container-fluid">
     <a href="/" class="navbar-brand">
-      <img src="/src/images/primary-logo-name-tagline-black-text.png" class="p-1" style="max-width: 300px;" alt="" />
+      <img src="/src/images/primary-logo-name-tagline-black-text.png" class="nav-logo p-1" style="max-width: 300px;" alt="" />
     </a>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbarContent"
@@ -15,7 +15,9 @@
             data-bs-toggle="modal" data-bs-target="#leadForm1">Request Info</button>
         </li>
         <li class="nav-item">
-          <a class="nav-link btn" href="/src/why-ascentia.html">Why Ascentia</a>
+          <if condition="'$BRAND' === 'ascentia'"><a class="nav-link btn" href="/src/why-ascentia.html">Why $BRAND_SC</a></if>
+          <if condition="'$BRAND' !== 'ascentia'"><a class="nav-link btn" href="/src/why-elevare.html">Why $BRAND_SC</a></if>
+          
         </li>
         <li class="nav-item btn-group">
           <a class="nav-link btn text-center" href="/src/programs.html">Programs</a>
@@ -44,7 +46,8 @@
           <a class="nav-link btn" href="/src/career-services.html">Career Services</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link btn" href="/src/about-ascentia.html">About Ascentia</a>
+          <if condition="'$BRAND' === 'ascentia'"><a class="nav-link btn" href="/src/about-ascentia.html">About $BRAND_SC</a></if>
+          <if condition="'$BRAND' !== 'ascentia'"><a class="nav-link btn" href="/src/about-elevare.html">About $BRAND_SC</a></if>
         </li>
         <li class="nav-item">
           <a class="nav-link btn" href="#">Student Services</a>
