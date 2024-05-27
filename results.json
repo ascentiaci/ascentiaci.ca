@@ -1,7 +1,7 @@
 {
   "config": {
-    "configFile": "c:\\Users\\miken\\source\\repos\\ascentiaci.ca\\playwright.config.js",
-    "rootDir": "c:/Users/miken/source/repos/ascentiaci.ca",
+    "configFile": "C:\\Users\\miken\\source\\repos\\ascentiaci.ca\\playwright.config.js",
+    "rootDir": "C:/Users/miken/source/repos/ascentiaci.ca",
     "forbidOnly": false,
     "fullyParallel": false,
     "globalSetup": null,
@@ -10,9 +10,7 @@
     "grep": {},
     "grepInvert": null,
     "maxFailures": 0,
-    "metadata": {
-      "actualWorkers": 1
-    },
+    "metadata": {},
     "preserveOutput": "always",
     "reporter": [
       [
@@ -40,13 +38,13 @@
     "quiet": false,
     "projects": [
       {
-        "outputDir": "c:/Users/miken/source/repos/ascentiaci.ca/test-results",
+        "outputDir": "C:/Users/miken/source/repos/ascentiaci.ca/test-results",
         "repeatEach": 1,
         "retries": 0,
         "metadata": {},
-        "id": "Chromium",
-        "name": "Chromium",
-        "testDir": "c:/Users/miken/source/repos/ascentiaci.ca",
+        "id": "Chromium - Ascentia",
+        "name": "Chromium - Ascentia",
+        "testDir": "C:/Users/miken/source/repos/ascentiaci.ca",
         "testIgnore": [],
         "testMatch": [
           "**/*.@(spec|test).?(c|m)[jt]s?(x)"
@@ -54,13 +52,13 @@
         "timeout": 30000
       },
       {
-        "outputDir": "c:/Users/miken/source/repos/ascentiaci.ca/test-results",
+        "outputDir": "C:/Users/miken/source/repos/ascentiaci.ca/test-results",
         "repeatEach": 1,
         "retries": 0,
         "metadata": {},
-        "id": "Firefox",
-        "name": "Firefox",
-        "testDir": "c:/Users/miken/source/repos/ascentiaci.ca",
+        "id": "Chromium - Elevare",
+        "name": "Chromium - Elevare",
+        "testDir": "C:/Users/miken/source/repos/ascentiaci.ca",
         "testIgnore": [],
         "testMatch": [
           "**/*.@(spec|test).?(c|m)[jt]s?(x)"
@@ -68,27 +66,13 @@
         "timeout": 30000
       },
       {
-        "outputDir": "c:/Users/miken/source/repos/ascentiaci.ca/test-results",
-        "repeatEach": 1,
-        "retries": 0,
-        "metadata": {},
-        "id": "WebKit",
-        "name": "WebKit",
-        "testDir": "c:/Users/miken/source/repos/ascentiaci.ca",
-        "testIgnore": [],
-        "testMatch": [
-          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
-        ],
-        "timeout": 30000
-      },
-      {
-        "outputDir": "c:/Users/miken/source/repos/ascentiaci.ca/test-results",
+        "outputDir": "C:/Users/miken/source/repos/ascentiaci.ca/test-results",
         "repeatEach": 1,
         "retries": 0,
         "metadata": {},
         "id": "Mobile Safari",
         "name": "Mobile Safari",
-        "testDir": "c:/Users/miken/source/repos/ascentiaci.ca",
+        "testDir": "C:/Users/miken/source/repos/ascentiaci.ca",
         "testIgnore": [],
         "testMatch": [
           "**/*.@(spec|test).?(c|m)[jt]s?(x)"
@@ -99,70 +83,24 @@
     "shard": null,
     "updateSnapshots": "missing",
     "version": "1.44.0",
-    "workers": 1,
+    "workers": 2,
     "webServer": {
-      "command": "npm run start",
       "port": 1234,
       "timeout": 120000,
-      "reuseExistingServer": true
+      "reuseExistingServer": false
     }
   },
-  "suites": [
+  "suites": [],
+  "errors": [
     {
-      "title": "tests\\visual.spec.js",
-      "file": "tests/visual.spec.js",
-      "column": 0,
-      "line": 0,
-      "specs": [],
-      "suites": [
-        {
-          "title": "Visual Comparison for about-ascentia.html",
-          "file": "tests/visual.spec.js",
-          "line": 10,
-          "column": 8,
-          "specs": [
-            {
-              "title": "takes screenshot for about-ascentia.html",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "Chromium",
-                  "projectName": "Chromium",
-                  "results": [
-                    {
-                      "workerIndex": 2,
-                      "status": "passed",
-                      "duration": 3103,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2024-05-27T01:40:49.440Z",
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "d452fb9f87967a36b2a6-6ec16482517ab1d21473",
-              "file": "tests/visual.spec.js",
-              "line": 11,
-              "column": 5
-            }
-          ]
-        }
-      ]
+      "message": "TypeError: The \"file\" argument must be of type string. Received undefined",
+      "stack": "TypeError: The \"file\" argument must be of type string. Received undefined"
     }
   ],
-  "errors": [],
   "stats": {
-    "startTime": "2024-05-27T01:40:44.802Z",
-    "duration": 9605.763000000268,
-    "expected": 1,
+    "startTime": "2024-05-27T19:09:00.556Z",
+    "duration": 55.02599999999984,
+    "expected": 0,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0

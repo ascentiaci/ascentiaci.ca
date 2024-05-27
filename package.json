@@ -10,8 +10,10 @@
     "check": "npx trunk check",
     "injectBrand": "node scripts/injectBrand.js",
     "prestart": "npm run injectBrand",
+    "prelazystart": "npm run injectBrand",
     "prebuild": "npm run injectBrand",
-    "preinjectBrand": "node ./scripts/clearCacheforBuild.js"
+    "preinjectBrand": "node ./scripts/clearCacheforBuild.js",
+    "lazystart": "parcel serve src/index.html --public-url / --dist-dir dist --lazy"
   },
   "author": "",
   "license": "ISC",
