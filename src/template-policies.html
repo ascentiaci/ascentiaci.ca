@@ -1,9 +1,17 @@
+<script locals>
+module.exports = {
+bRaNd: locals.bRaNd || 'BRAND',
+bRaNdSC: locals.bRaNdSC || 'BRAND_SC'
+}
+</script>
 <extends
   src="parts/policypages.htm"
   locals='{
   "headerImg": "index.png", 
   "name": "Policy",
-  "title": "Policy"
+  "title": "Policy",
+  "bRaNd": "BRAND",
+  "bRaNdSC": "BRAND_SC"
 }'
 >
   <block name="pageTitle"> Policy </block>

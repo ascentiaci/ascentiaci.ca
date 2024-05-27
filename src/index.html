@@ -1,14 +1,24 @@
+<script locals>
+  module.exports = {
+    bRaNd: locals.bRaNd || '$BRAND',
+    bRaNdSC: locals.bRaNdSC || '$BRAND_SC'
+  }
+</script>
+
 <extends
   src="parts/base.htm"
   locals='{
     "headerImg": "{{ `$BRAND` === `ascentia` ? `index.png` : `elevare_index.png` }}", 
     "name": "Welcome to $BRAND_SC™️ Career Institute",
-    "title": "Home"
+    "title": "Home",
+    "bRaNd": "BRAND",
+    "bRaNdSC": "BRAND_SC"
+
   }'
 >
   <block name="pageTitle">Welcome to $BRAND_SC Career&nbsp;Institute</block>
   <block name="introCopy">
-    <if condition="'$BRAND' === 'ascentia'">
+    <if condition="bRaNd === 'ascentia'">
       <p>
         Welcome to Ascentia™️ Career Institute, where “learning today, leading
         tomorrow” is not just a motto but a promise. With a focus on flexible,
@@ -23,13 +33,14 @@
         where learning knows no bounds and tomorrow's leaders are born today.
       </p>
     </if>
-    <if condition="'$BRAND' !== 'ascentia'">
+    <if condition="bRaNd !== 'ascentia'">
       <p>
         Welcome to Elevare Career Institute, where "your potential reaches new
         heights" is not just a tagline but a commitment. With a focus on
         flexible, adaptable learning and innovation, we empower students to
         shape their educational journey according to their needs and
         preferences.
+        
       </p>
 
       <p>
@@ -46,21 +57,12 @@
       <div class="feature-blocks container py-4" id="feature-blocks">
         <div class="card-group h-25 row-cols-1 row-cols-lg-3">
           <include src="src/parts/featureblocks.htm">
-            { "title": "How to Apply", "blurb": "View enrollment calendar, FAQs
-            and details on financial assistance.", "target": "admissions.html",
-            "cta": "See Admissions Details", "image": "feature1.webp" }
+            { "title": "How to Apply", "blurb": "View enrollment calendar, FAQs and details on financial assistance.", "target": "admissions.html", "cta": "See Admissions Details", "image": "feature1.webp" } </include>
+          <include src="src/parts/featureblocks.htm">
+            { "title": "Why $BRAND_SC", "blurb": "Transformative courses with unmatched, flexible learning options.", "target": "why-$BRAND.html", "cta": "See What Makes Us Different", "image": "feature2.webp" }
           </include>
           <include src="src/parts/featureblocks.htm">
-            { "title": "Why $BRAND_SC", "blurb": "Transformative courses with
-            unmatched, flexible learning options.", "target": "why-$BRAND.html",
-            "cta": "See What Makes Us Different", "image": "feature2.webp" }
-          </include>
-          <include src="src/parts/featureblocks.htm">
-            { "title": "Post Graduate Support", "blurb": "From enrollment to
-            employment, we are with you at every step.", "target":
-            "post-graduate-support.html", "cta": "Learn how we support
-            graduates", "image": "feature3.webp" }
-          </include>
+            { "title": "Post Graduate Support", "blurb": "From enrollment to employment, we are with you at every step.", "target": "post-graduate-support.html", "cta": "Learn how we support graduates", "image": "feature3.webp" } </include>
         </div>
       </div>
       <hr />

@@ -1,0 +1,131 @@
+{
+  "config": {
+    "configFile": "c:\\Users\\miken\\source\\repos\\ascentiaci.ca\\playwright.config.js",
+    "rootDir": "c:/Users/miken/source/repos/ascentiaci.ca",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 0
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "json",
+        {
+          "outputFile": "results.json"
+        }
+      ],
+      [
+        "list",
+        null
+      ],
+      [
+        "html",
+        {
+          "outputFolder": "playwright-report",
+          "open": "never"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 15000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "c:/Users/miken/source/repos/ascentiaci.ca/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {},
+        "id": "Chromium",
+        "name": "Chromium",
+        "testDir": "c:/Users/miken/source/repos/ascentiaci.ca",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "c:/Users/miken/source/repos/ascentiaci.ca/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {},
+        "id": "Firefox",
+        "name": "Firefox",
+        "testDir": "c:/Users/miken/source/repos/ascentiaci.ca",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "c:/Users/miken/source/repos/ascentiaci.ca/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {},
+        "id": "WebKit",
+        "name": "WebKit",
+        "testDir": "c:/Users/miken/source/repos/ascentiaci.ca",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "c:/Users/miken/source/repos/ascentiaci.ca/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {},
+        "id": "Mobile Safari",
+        "name": "Mobile Safari",
+        "testDir": "c:/Users/miken/source/repos/ascentiaci.ca",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "version": "1.44.0",
+    "workers": 1,
+    "webServer": {
+      "command": "npm run start",
+      "port": 1234,
+      "timeout": 120000,
+      "reuseExistingServer": true
+    }
+  },
+  "suites": [],
+  "errors": [
+    {
+      "message": "Error: ENOENT: no such file or directory, scandir 'c:\\Users\\miken\\source\\repos\\ascentiaci.ca\\dist'",
+      "stack": "Error: ENOENT: no such file or directory, scandir 'c:\\Users\\miken\\source\\repos\\ascentiaci.ca\\dist'\n    at Object.<anonymous> (c:\\Users\\miken\\source\\repos\\ascentiaci.ca\\tests\\visual.spec.js:7:17)",
+      "location": {
+        "file": "c:\\Users\\miken\\source\\repos\\ascentiaci.ca\\tests\\visual.spec.js",
+        "column": 17,
+        "line": 7
+      },
+      "snippet": "\u001b[90m   at \u001b[39mtests\\visual.spec.js:7\n\n\u001b[0m \u001b[90m  5 |\u001b[39m\n \u001b[90m  6 |\u001b[39m \u001b[90m// Read ../dist folder and list all the .html files into the urls array\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  7 |\u001b[39m \u001b[36mconst\u001b[39m urls \u001b[33m=\u001b[39m fs\u001b[33m.\u001b[39mreaddirSync(\u001b[32m\"dist\"\u001b[39m)\u001b[33m.\u001b[39mfilter((file) \u001b[33m=>\u001b[39m file\u001b[33m.\u001b[39mendsWith(\u001b[32m\".html\"\u001b[39m))\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                 \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m  8 |\u001b[39m\n \u001b[90m  9 |\u001b[39m urls\u001b[33m.\u001b[39mforEach((url\u001b[33m,\u001b[39m index) \u001b[33m=>\u001b[39m {\n \u001b[90m 10 |\u001b[39m   test\u001b[33m.\u001b[39mdescribe(\u001b[32m`Visual Comparison for ${url}`\u001b[39m\u001b[33m,\u001b[39m () \u001b[33m=>\u001b[39m {\u001b[0m"
+    }
+  ],
+  "stats": {
+    "startTime": "2024-05-27T00:37:18.469Z",
+    "duration": 3338.7579999999725,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

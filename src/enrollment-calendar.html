@@ -1,9 +1,17 @@
+<script locals>
+module.exports = {
+bRaNd: locals.bRaNd || 'BRAND',
+bRaNdSC: locals.bRaNdSC || 'BRAND_SC'
+}
+</script>
 <extends
   src="parts/base.htm"
   locals='{
   "headerImg": "calendar.jpg", 
   "name": "Enrollment Calendar",
-  "title": "Enrollment Calendar"
+  "title": "Enrollment Calendar",
+  "bRaNd": "BRAND",
+  "bRaNdSC": "BRAND_SC"
 }'
 >
   <!-- https://outlook.office365.com/owa/calendar/dca8a4e453dd4143b8d7eba66392f109@888ltd.ca/6c1c3d5661144e0e8e0606523fc6059b12109602354518733794/calendar.ics -->

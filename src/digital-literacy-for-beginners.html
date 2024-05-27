@@ -1,8 +1,16 @@
+<script locals>
+module.exports = {
+bRaNd: locals.bRaNd || 'BRAND',
+bRaNdSC: locals.bRaNdSC || 'BRAND_SC'
+}
+</script>
 <extends
   src="parts/programpage.htm"
   locals='{
     "headerImg": "index.png", 
-    "title": "Digital Literacy for Beginners"
+    "title": "Digital Literacy for Beginners",
+    "bRaNd": "BRAND",
+    "bRaNdSC": "BRAND_SC"
   }'
 >
   <block name="pageTitle"> Digital Literacy for Beginners </block>
