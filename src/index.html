@@ -1,8 +1,8 @@
 <script locals>
   module.exports = {
-    bRaNd: locals.bRaNd || '$BRAND',
-    bRaNdSC: locals.bRaNdSC || '$BRAND_SC'
-  }
+    bRaNd: locals.bRaNd || "$BRAND",
+    bRaNdSC: locals.bRaNdSC || "$BRAND_SC",
+  };
 </script>
 
 <extends
@@ -16,7 +16,7 @@
 
   }'
 >
-  <block name="pageTitle">Welcome to <span id="CampusName">$BRAND_SC</span> Career&nbsp;Institute</block>
+  <block name="pageTitle">Welcome to $BRAND_SC Career&nbsp;Institute</block>
   <block name="introCopy">
     <if condition="bRaNd === 'ascentia'">
       <p>
@@ -40,7 +40,6 @@
         flexible, adaptable learning and innovation, we empower students to
         shape their educational journey according to their needs and
         preferences.
-        
       </p>
 
       <p>
@@ -57,12 +56,21 @@
       <div class="feature-blocks container py-4" id="feature-blocks">
         <div class="card-group h-25 row-cols-1 row-cols-lg-3">
           <include src="src/parts/featureblocks.htm">
-            { "title": "How to Apply", "blurb": "View enrollment calendar, FAQs and details on financial assistance.", "target": "admissions.html", "cta": "See Admissions Details", "image": "feature1.webp" } </include>
-          <include src="src/parts/featureblocks.htm">
-            { "title": "Why $BRAND_SC", "blurb": "Transformative courses with unmatched, flexible learning options.", "target": "why-$BRAND.html", "cta": "See What Makes Us Different", "image": "feature2.webp" }
+            { "title": "How to Apply", "blurb": "View enrollment calendar, FAQs
+            and details on financial assistance.", "target": "admissions.html",
+            "cta": "See Admissions Details", "image": "feature1.webp" }
           </include>
           <include src="src/parts/featureblocks.htm">
-            { "title": "Post Graduate Support", "blurb": "From enrollment to employment, we are with you at every step.", "target": "post-graduate-support.html", "cta": "Learn how we support graduates", "image": "feature3.webp" } </include>
+            { "title": "Why $BRAND_SC", "blurb": "Transformative courses with
+            unmatched, flexible learning options.", "target": "why-$BRAND.html",
+            "cta": "See What Makes Us Different", "image": "feature2.webp" }
+          </include>
+          <include src="src/parts/featureblocks.htm">
+            { "title": "Post Graduate Support", "blurb": "From enrollment to
+            employment, we are with you at every step.", "target":
+            "post-graduate-support.html", "cta": "Learn how we support
+            graduates", "image": "feature3.webp" }
+          </include>
         </div>
       </div>
       <hr />
