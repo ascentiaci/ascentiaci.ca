@@ -5,15 +5,13 @@
   "scripts": {
     "start": "parcel serve src/index.html --public-url / --dist-dir dist",
     "build": "parcel build src/index.html --public-url / --dist-dir dist",
-    "test": "playwright test",
     "crawl": "node ./scripts/generate-sitemap.mjs",
     "check": "npx trunk check",
     "injectBrand": "node scripts/injectBrand.js",
     "prestart": "npm run injectBrand",
     "prelazystart": "npm run injectBrand",
     "prebuild": "npm run injectBrand",
-    "preinjectBrand": "node ./scripts/clearCacheforBuild.js",
-    "lazystart": "parcel serve src/index.html --public-url / --dist-dir dist --lazy"
+    "preinjectBrand": "node ./scripts/clearCacheforBuild.js"
   },
   "author": "",
   "license": "ISC",
@@ -30,7 +28,6 @@
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",
     "cloudflare-turnstile-widget": "^0.3.0",
-    "concurrently": "^8.2.2",
     "dotenv": "^16.4.5",
     "ical.js": "^1.5.0",
     "parcel": "^2.12.0",
@@ -41,12 +38,10 @@
     "sp-wt": "^1.0.9"
   },
   "devDependencies": {
-    "@playwright/test": "^1.44.0",
     "@trunkio/launcher": "^1.3.1",
     "@types/node": "^20.12.12",
     "afontizer": "^1.0.4",
     "axios": "^1.6.8",
-    "playwright": "^1.44.0",
     "sharp": "^0.31.3",
     "trunk": "^1.1.0"
   }

@@ -17,8 +17,9 @@ fs.writeFileSync(
   scssContent,
 );
 
-
-const baseContent = fs.readFileSync(path.join(__dirname, "../src/parts/baseSrc.htm" ))
+const baseContent = fs.readFileSync(
+  path.join(__dirname, "../src/parts/baseSrc.htm"),
+);
 
 const brandLocals = `
 <script locals>
@@ -27,12 +28,9 @@ const brandLocals = `
     bRaNdSC: '${brandSC}'
   }
 </script>
-`
-const newBaseContent = brandLocals + baseContent
+`;
+const newBaseContent = brandLocals + baseContent;
 
-fs.writeFileSync(
-  path.join(__dirname, "../src/parts/base.htm"),
-  newBaseContent,
-)
-
-console.log("Brand injected successfully");
+fs.writeFileSync(path.join(__dirname, "../src/parts/base.htm"), newBaseContent);
+const logText = `${brand} Brand injected successfully`;
+console.log(logText);
