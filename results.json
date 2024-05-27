@@ -11,7 +11,7 @@
     "grepInvert": null,
     "maxFailures": 0,
     "metadata": {
-      "actualWorkers": 0
+      "actualWorkers": 1
     },
     "preserveOutput": "always",
     "reporter": [
@@ -107,23 +107,62 @@
       "reuseExistingServer": true
     }
   },
-  "suites": [],
-  "errors": [
+  "suites": [
     {
-      "message": "Error: ENOENT: no such file or directory, scandir 'c:\\Users\\miken\\source\\repos\\ascentiaci.ca\\dist'",
-      "stack": "Error: ENOENT: no such file or directory, scandir 'c:\\Users\\miken\\source\\repos\\ascentiaci.ca\\dist'\n    at Object.<anonymous> (c:\\Users\\miken\\source\\repos\\ascentiaci.ca\\tests\\visual.spec.js:7:17)",
-      "location": {
-        "file": "c:\\Users\\miken\\source\\repos\\ascentiaci.ca\\tests\\visual.spec.js",
-        "column": 17,
-        "line": 7
-      },
-      "snippet": "\u001b[90m   at \u001b[39mtests\\visual.spec.js:7\n\n\u001b[0m \u001b[90m  5 |\u001b[39m\n \u001b[90m  6 |\u001b[39m \u001b[90m// Read ../dist folder and list all the .html files into the urls array\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  7 |\u001b[39m \u001b[36mconst\u001b[39m urls \u001b[33m=\u001b[39m fs\u001b[33m.\u001b[39mreaddirSync(\u001b[32m\"dist\"\u001b[39m)\u001b[33m.\u001b[39mfilter((file) \u001b[33m=>\u001b[39m file\u001b[33m.\u001b[39mendsWith(\u001b[32m\".html\"\u001b[39m))\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                 \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m  8 |\u001b[39m\n \u001b[90m  9 |\u001b[39m urls\u001b[33m.\u001b[39mforEach((url\u001b[33m,\u001b[39m index) \u001b[33m=>\u001b[39m {\n \u001b[90m 10 |\u001b[39m   test\u001b[33m.\u001b[39mdescribe(\u001b[32m`Visual Comparison for ${url}`\u001b[39m\u001b[33m,\u001b[39m () \u001b[33m=>\u001b[39m {\u001b[0m"
+      "title": "tests\\visual.spec.js",
+      "file": "tests/visual.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Visual Comparison for about-ascentia.html",
+          "file": "tests/visual.spec.js",
+          "line": 10,
+          "column": 8,
+          "specs": [
+            {
+              "title": "takes screenshot for about-ascentia.html",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Chromium",
+                  "projectName": "Chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "status": "passed",
+                      "duration": 3103,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2024-05-27T01:40:49.440Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d452fb9f87967a36b2a6-6ec16482517ab1d21473",
+              "file": "tests/visual.spec.js",
+              "line": 11,
+              "column": 5
+            }
+          ]
+        }
+      ]
     }
   ],
+  "errors": [],
   "stats": {
-    "startTime": "2024-05-27T00:37:18.469Z",
-    "duration": 3338.7579999999725,
-    "expected": 0,
+    "startTime": "2024-05-27T01:40:44.802Z",
+    "duration": 9605.763000000268,
+    "expected": 1,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0

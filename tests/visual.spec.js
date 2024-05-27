@@ -4,7 +4,7 @@ const fs = require("fs");
 const path = require("path");
 
 // Read ../dist folder and list all the .html files into the urls array
-const urls = fs.readdirSync("dist").filter((file) => file.endsWith(".html"));
+const urls = fs.readdirSync("./dist").filter((file) => file.endsWith(".html"));
 
 urls.forEach((url, index) => {
   test.describe(`Visual Comparison for ${url}`, () => {
