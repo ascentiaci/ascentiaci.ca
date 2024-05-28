@@ -5,7 +5,13 @@
     <div class="row g-0 h-100">
         <div class="col-md-4">
             <!-- img should be no more than 25% of the viewport -->
-            <img src="images/{{ image }}?as=webp" class="img-fluid h-100 object-fit-cover slide-image" alt="">
+            <picture class="img-fluid h-100 object-fit-cover slide-image">
+                <source srcset="images/{{ image }}?as=webp&quality=80&width=600" media="(max-width: 600px)">
+                <source srcset="images/{{ image }}?as=webp&quality=80&width=900" media="(max-width: 900px)">
+                <source srcset="images/{{ image }}?as=webp&quality=80&width=1200" media="(max-width: 1200px)">
+                <img src="images/{{ image }}?as=webp&quality=80" alt="">
+              </picture>
+              
         </div>
         <div class="col-md-8 h-100">
             <div class="card-body h-100">

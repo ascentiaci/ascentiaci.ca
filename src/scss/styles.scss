@@ -85,6 +85,7 @@ $accordion-icon-color: white;
 }
 .footer-logo {
   content: var(--footer-logo-path);
+  max-width: 200px;
 }
 
 h1,
@@ -332,4 +333,15 @@ ul > li {
 .slide-image {
   //max height: 25vh;
   max-height: 25dvh;
+}
+
+.header-image {
+  max-height: 225px;
+  width: 99dvw;
+}
+
+.booking-page {
+  border: 0;
+  width: 100%;
+  height: 100%;
 }

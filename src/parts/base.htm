@@ -58,6 +58,9 @@
                   <span class="visually-hidden">Toggle</span>
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownAdmissions">
+                  <if condition="bRaNd === 'ascentia'"><a class="nav-link btn" href="/src/book-ascentia.html">Book Appointment</a></if>
+                  <if condition="bRaNd !== 'ascentia'"><a class="nav-link btn" href="/src/book-elevareci.html">Book Appointment</a></if>
+                  
                   <li><a class="dropdown-item" href="/src/questions.html">Questions?</a></li>
                   <li><a class="dropdown-item" href="/src/enrollment-calendar.html">Enrollment Calendar</a></li>
                   <li><a class="dropdown-item" href="/src/financial-aid.html">Financial Aid</a></li>
