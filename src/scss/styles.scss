@@ -2,13 +2,51 @@
 
 // @import url("https://use.typekit.net/uxt6rai.css");
 
+// src/styles/main.scss
+
+// Your existing SCSS content
+// Define brand-specific variables
+$ascentia-brand-primary: rgb(99, 10, 22);
+$ascentia-brand-tertiary: #8c9db2;
+$ascentia-brand-highlight: #9d3d4a;
+$ascentia-brand-highlight-secondary: #b56d77;
+$ascentia-brand-header-font: "Droid Serif";
+$ascentia-brand-body-font: "Open Sans";
+
+$elevare-brand-primary: #0026c0;
+$elevare-brand-tertiary: #fff;
+$elevare-brand-highlight: #db6265;
+$elevare-brand-highlight-secondary: #f1b11a;
+$elevare-brand-header-font: "Norwester";
+$elevare-brand-body-font: "Montserrat";
+
+// Define a mixin to set brand variables based on the selected brand
+@mixin set-brand($brand) {
+  @if $brand == "ascentia" {
+    --brand-primary: #{$ascentia-brand-primary};
+    --brand-tertiary: #{$ascentia-brand-tertiary};
+    --brand-highlight: #{$ascentia-brand-highlight};
+    --brand-highlight-secondary: #{$ascentia-brand-highlight-secondary};
+    --brand-header-font: #{$ascentia-brand-header-font};
+    --brand-body-font: #{$ascentia-brand-body-font};
+    --nav-logo-path: url("/src/images/aci-logo-black-text.png");
+    --footer-logo-path: url("/src/images/aci-logo-white-text.png");
+  } @else if $brand == "elevare" {
+    --brand-primary: #{$elevare-brand-primary};
+    --brand-tertiary: #{$elevare-brand-tertiary};
+    --brand-highlight: #{$elevare-brand-highlight};
+    --brand-highlight-secondary: #{$elevare-brand-highlight-secondary};
+    --brand-header-font: #{$elevare-brand-header-font};
+    --brand-body-font: #{$elevare-brand-body-font};
+    --nav-logo-path: url("/src/images/eci-logo-dark-text.png");
+    --footer-logo-path: url("/src/images/eci-logo-white-text.png");
+  }
+}
+
+// Apply the brand-specific variables to CSS variables
 :root {
-  --brand-primary: rgb(99, 10, 22);
-  --brand-tertiary: #8c9db2;
-  --brand-highlight: #9d3d4a;
-  --brand-highlight-secondary: #b56d77;
-  --brand-header-font: droid-serif;
-  --brand-body-font: open-Sans;
+  @include set-brand($brand);
+
   --bs-nav-tabs-link-active-bg: black !important;
   --bs-secondary-bg-rgb: rgb(255, 255, 255);
 }
@@ -21,6 +59,14 @@
   font-family: open-Sans;
   src: url("/src/fonts/OpenSans-Regular-webfont.woff");
 }
+@font-face {
+  font-family: "Montserrat";
+  src: url("/src/fonts/Montserrat-Regular.ttf");
+}
+@font-face {
+  font-family: "Norwester";
+  src: url("/src/fonts/norwester.otf");
+}
 $nav-tabs-active-bg: var(--brand-primary);
 $font-family-sans-serif: var(--brand-body-font);
 $accordion-icon-active-color: white;
@@ -32,6 +78,14 @@ $accordion-icon-color: white;
 
 * {
   font-family: var(--brand-body-font);
+}
+
+.nav-logo {
+  content: var(--nav-logo-path);
+}
+.footer-logo {
+  content: var(--footer-logo-path);
+  max-width: 200px;
 }
 
 h1,
@@ -279,4 +333,15 @@ ul > li {
 .slide-image {
   //max height: 25vh;
   max-height: 25dvh;
+}
+
+.header-image {
+  max-height: 225px;
+  width: 99dvw;
+}
+
+.booking-page {
+  border: 0;
+  width: 100%;
+  height: 100%;
 }

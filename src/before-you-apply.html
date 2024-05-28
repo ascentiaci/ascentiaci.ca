@@ -1,9 +1,17 @@
+<script locals>
+  module.exports = {
+    bRaNd: locals.bRaNd || "BRAND",
+    bRaNdSC: locals.bRaNdSC || "BRAND_SC",
+  };
+</script>
 <extends
   src="parts/base.htm"
   locals='{
   "headerImg": "todolist.jpg", 
   "name": "Before you apply",
-  "title": "Before you apply"
+  "title": "Before you apply",
+  "bRaNd": "BRAND",
+  "bRaNdSC": "BRAND_SC"
 }'
 >
   <block name="pageTitle"> Before you apply </block>

@@ -1,26 +1,54 @@
+<script locals>
+  module.exports = {
+    bRaNd: locals.bRaNd || "$BRAND",
+    bRaNdSC: locals.bRaNdSC || "$BRAND_SC",
+  };
+</script>
+
 <extends
   src="parts/base.htm"
   locals='{
-  "headerImg": "index.png", 
-  "name": "Welcome to Ascentia™️ Career Institute",
-  "title": "Home"
-}'
->
-  <block name="pageTitle">Welcome to Ascentia&nbsp;Career&nbsp;Institute</block>
-  <block name="introCopy">
-    <p>
-      Welcome to Ascentia™️ Career Institute, where “learning today, leading
-      tomorrow” is not just a motto but a promise. With a focus on flexible,
-      adaptable learning and innovation, we empower students to shape their
-      educational journey according to their needs and preferences.
-    </p>
+    "headerImg": "{{ `$BRAND` === `ascentia` ? `index.png` : `elevare_index.png` }}", 
+    "name": "Welcome to $BRAND_SC™️ Career Institute",
+    "title": "Home",
+    "bRaNd": "BRAND",
+    "bRaNdSC": "BRAND_SC"
 
-    <p>
-      Embrace the opportunity to embark on a journey of self-discovery and
-      growth, surrounded by a community of like-minded individuals dedicated to
-      excellence. Your journey starts here, at Ascentia™️ Career Institute,
-      where learning knows no bounds and tomorrow's leaders are born today.
-    </p>
+  }'
+>
+  <block name="pageTitle">Welcome to $BRAND_SC Career&nbsp;Institute</block>
+  <block name="introCopy">
+    <if condition="bRaNd === 'ascentia'">
+      <p>
+        Welcome to Ascentia™️ Career Institute, where “learning today, leading
+        tomorrow” is not just a motto but a promise. With a focus on flexible,
+        adaptable learning and innovation, we empower students to shape their
+        educational journey according to their needs and preferences.
+      </p>
+
+      <p>
+        Embrace the opportunity to embark on a journey of self-discovery and
+        growth, surrounded by a community of like-minded individuals dedicated
+        to excellence. Your journey starts here, at Ascentia™️ Career Institute,
+        where learning knows no bounds and tomorrow's leaders are born today.
+      </p>
+    </if>
+    <if condition="bRaNd !== 'ascentia'">
+      <p>
+        Welcome to Elevare Career Institute, where "your potential reaches new
+        heights" is not just a tagline but a commitment. With a focus on
+        flexible, adaptable learning and innovation, we empower students to
+        shape their educational journey according to their needs and
+        preferences.
+      </p>
+
+      <p>
+        Embrace the opportunity to embark on a journey of self-discovery and
+        growth, surrounded by a community of like-minded individuals dedicated
+        to excellence. Your journey starts here, at Elevare Career Institute,
+        where learning knows no bounds and tomorrow's leaders are born today.
+      </p>
+    </if>
   </block>
   <block name="content">
     <div class="container py-4 px-2 mx-auto">
@@ -33,10 +61,9 @@
             "cta": "See Admissions Details", "image": "feature1.webp" }
           </include>
           <include src="src/parts/featureblocks.htm">
-            { "title": "Why Ascentia™️?", "blurb": "Transformative courses with
-            unmatched, flexible learning options.", "target":
-            "why-ascentia.html", "cta": "See What Makes Us Different", "image":
-            "feature2.webp" }
+            { "title": "Why $BRAND_SC", "blurb": "Transformative courses with
+            unmatched, flexible learning options.", "target": "why-$BRAND.html",
+            "cta": "See What Makes Us Different", "image": "feature2.webp" }
           </include>
           <include src="src/parts/featureblocks.htm">
             { "title": "Post Graduate Support", "blurb": "From enrollment to
@@ -52,7 +79,7 @@
           <div class="card border-0 col-12 col-lg-6 pb-4">
             <h3>Explore our programs</h3>
             <p>
-              At Ascentia, our exclusive programs are tailored to help you
+              At $BRAND_SC, our exclusive programs are tailored to help you
               secure high-demand jobs, giving you the skills needed for a
               successful career. Explore our unique offerings designed to launch
               your career into thriving industries.

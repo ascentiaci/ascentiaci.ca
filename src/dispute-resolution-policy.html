@@ -1,16 +1,24 @@
+<script locals>
+  module.exports = {
+    bRaNd: locals.bRaNd || "BRAND",
+    bRaNdSC: locals.bRaNdSC || "BRAND_SC",
+  };
+</script>
 <extends
   src="parts/policypages.htm"
   locals='{
   "headerImg": "index.png", 
   "name": "Dispute Resolution Policy",
-  "title": "Dispute Resolution Policy"
+  "title": "Dispute Resolution Policy",
+  "bRaNd": "BRAND",
+  "bRaNdSC": "BRAND_SC"
 }'
 >
   <block name="pageTitle"> Dispute Resolution Policy </block>
 
   <block name="introCopy"> </block>
 
-  <block name="instituteName">Ascentia™️ Career Institute</block>
+  <block name="instituteName">$BRAND_SC™️ Career Institute</block>
   <block name="instituteNumber">03500</block>
   <block name="effectiveDate">May 1, 2024</block>
   <block name="revisionDate">May 1, 2024</block>
@@ -24,8 +32,8 @@
         <div class="card-body">
           <ol class="list-upper-alpha">
             <li>
-              This policy governs complaints from students respecting Ascentia™️
-              Career Institute and any aspect of its operations.
+              This policy governs complaints from students respecting
+              $BRAND_SC™️ Career Institute and any aspect of its operations.
             </li>
             <li>
               A student who makes or is otherwise involved in a complaint will
@@ -40,7 +48,7 @@
                 <li>
                   Upon submission of the complaint to the Executive Director,
                   Alda Messiah, who can be reached at
-                  <a href="mailto:alda@ascentiaci.ca">alda@ascentiaci.ca</a>
+                  <a href="mailto:alda@$BRAND_SCci.ca">alda@$BRAND_SCci.ca</a>
                 </li>
                 <li>
                   The Executive Director will then reach out to the affected

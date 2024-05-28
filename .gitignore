@@ -2,8 +2,10 @@ node_modules
 # package-lock.json
 .parcel-cache/*
 dist
+elevare-dist
 /test-results/
 /playwright-report
 /coverage/
 /blob-report/
 /playwright/.cache/
+src/scss/_generated.scss

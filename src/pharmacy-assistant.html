@@ -1,8 +1,16 @@
+<script locals>
+  module.exports = {
+    bRaNd: locals.bRaNd || "BRAND",
+    bRaNdSC: locals.bRaNdSC || "BRAND_SC",
+  };
+</script>
 <extends
   src="parts/programpage.htm"
   locals='{
     "headerImg": "index.png", 
-    "title": "Pharmacy Assistant"
+    "title": "Pharmacy Assistant",
+    "bRaNd": "BRAND",
+    "bRaNdSC": "BRAND_SC"
   }'
 >
   <block name="pageTitle"> Pharmacy Assistant </block>

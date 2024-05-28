@@ -1,17 +1,25 @@
+<script locals>
+  module.exports = {
+    bRaNd: locals.bRaNd || "$BRAND",
+    bRaNdSC: locals.bRaNdSC || "$BRAND_SC",
+  };
+</script>
 <extends
   src="parts/base.htm"
   locals='{
   "headerImg": "index.png", 
-  "name": "Welcome to Ascentia™️ Career Institute",
-  "title": "Home"
+  "name": "Welcome to $BRAND_SC™️ Career Institute",
+  "title": "Home",
+  "bRaNd": "$BRAND",
+  "bRaNdSC": "$BRAND_SC"
 }'
 >
-  <block name="pageTitle">Welcome to Ascentia™️ Career Institute</block>
+  <block name="pageTitle">Welcome to $BRAND_SC™️ Career Institute</block>
   <block name="introCopy">
     <p>
-      Why should you choose Ascentia™️ Career Institute above other colleges in
+      Why should you choose $BRAND_SC™️ Career Institute above other colleges in
       British Columbia? Selecting a college to initiate or enhance your career
-      is crucial. Let's discuss the unique advantages Ascentia™️has to offer.
+      is crucial. Let's discuss the unique advantages $BRAND_SC™️has to offer.
     </p>
   </block>
   <block name="content">
@@ -30,7 +38,7 @@
         >
           <block name="whyHeader">Convenient Location</block>
           <block name="whyContent">
-            Ascentia™️ Career Institute is located in a prime location in
+            $BRAND_SC™️ Career Institute is located in a prime location in
             downtown Kelowna. Our campus is conveniently located near multiple
             clinical placement partners and is readily accessible via public
             transport with a charter bus stop just a short walk away.
@@ -94,7 +102,7 @@
             ensure that we lead the industry in compliance with government
             regulations and guidance, including the <b>spirit</b> behind these
             regulations. Everyone deserves the opportunity to improve their
-            skills - <strong>everyone</strong> is welcome at Ascentia.</block
+            skills - <strong>everyone</strong> is welcome at $BRAND_SC.</block
           >
         </extends>
       </div>
