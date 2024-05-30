@@ -22,8 +22,8 @@
 		"body": [
 			"<script locals>",
 			"module.exports = {",
-			"bRaNd: locals.bRaNd || '$BRAND',",
-			 "bRaNdSC: locals.bRaNdSC || '$BRAND_SC'",
+			"BUILD_BRAND: locals.BUILD_BRAND || '$BUILD_BRAND',",
+			 "BUILD_BRAND_SC: locals.BUILD_BRAND_SC || '$BUILD_BRAND_SC'",
 			"}",
 		  "</script>",
 		  ""
@@ -34,8 +34,8 @@
 		"prefix": "bl2",
 		"body": [
 			",",
-			"\"bRaNd\": \"$BRAND\",",
-			"\"bRaNdSC\": \"$BRAND_SC\""
+			"\"BUILD_BRAND\": \"$BUILD_BRAND\",",
+			"\"BUILD_BRAND_SC\": \"$BUILD_BRAND_SC\""
 		]
 	},
 	"AECI Page Template": {
@@ -43,8 +43,8 @@
 		"body": [
 		  "<script locals>",
 		  "module.exports = {",
-		  "bRaNd: locals.bRaNd || 'BRAND',",
-		  "bRaNdSC: locals.bRaNdSC || 'BRAND_SC'",
+		  "BUILD_BRAND: locals.BUILD_BRAND || 'BRAND',",
+		  "BUILD_BRAND_SC: locals.BUILD_BRAND_SC || 'BRAND_SC'",
 		  "}",
 		  "</script>",
 		  "<extends",
@@ -53,8 +53,8 @@
 		  "  \"headerImg\": \"${1:index}.png\", ",
 		  "  \"name\": \"${2:name}\",",
 		  "  \"title\": \"${2:name}\",",
-		  "  \"bRaNd\": \"BRAND\",",
-		  "  \"bRaNdSC\": \"BRAND_SC\"",
+		  "  \"BUILD_BRAND\": \"BRAND\",",
+		  "  \"BUILD_BRAND_SC\": \"BRAND_SC\"",
 		  "}'",
 		  ">",
 		  "  <block name=\"pageTitle\">${3:titleBlock}</block>",

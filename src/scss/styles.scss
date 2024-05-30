@@ -330,7 +330,9 @@ ul > li {
   }
 }
 
-.slide-image {
+.slide-image,
+.slide-image > source,
+.slide-image > img {
   //max height: 25vh;
   max-height: 25dvh;
 }

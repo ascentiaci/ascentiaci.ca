@@ -1,17 +1,26 @@
+<!-- START LOCALS -->
 <script locals>
   module.exports = {
-    bRaNd: locals.bRaNd || "BRAND",
-    bRaNdSC: locals.bRaNdSC || "BRAND_SC",
+    BUILD_BRAND: "ascentia",
+    BUILD_BRAND_SC: "Ascentia",
+    BUILD_CST: "true",
+    BUILD_CST_PROGRAMS_LIST: "DLB,M365",
+    BUILD_EDUCATION: "true",
+    BUILD_EDUCATION_PROGRAMS_LIST: "ECEA",
+    BUILD_HEALTHCARE: "true",
+    BUILD_HEALTHCARE_PROGRAMS_LIST: "RMT,CDA,DOC,PA,HCA,MLA",
+    BUILD_PROGRAMS: "RMT,CDA,DOC,PA,HCA,MLA,ECEA,DLB,M365,COA",
   };
 </script>
+<!-- END LOCALS -->
 <extends
   src="parts/base.htm"
   locals='{
   "headerImg": "index.png", 
   "name": "",
   "title": "Programs",
-  "bRaNd": "BRAND",
-  "bRaNdSC": "BRAND_SC"
+  "BUILD_BRAND": "BRAND",
+  "BUILD_BRAND_SC": "BRAND_SC"
 }'
 >
   <block name="pageTitle"> Programs </block>
@@ -24,17 +33,23 @@
     </p>
   </block>
   <block name="content">
-    <include
-      src="./src/parts/category.htm"
-      locals='{"cat":"Healthcare","slug":"healthcare"}'
-    ></include>
-    <include
-      src="src/parts/category.htm"
-      locals='{"cat":"Computer Systems and Technology","slug":"computer-systems-and-technology"}'
-    ></include>
-    <include
-      src="src/parts/category.htm"
-      locals='{"cat":"Education", "slug": "education"}'
-    ></include>
+    <if condition="BUILD_HEALTHCARE === 'true'"
+      ><include
+        src="./src/parts/category.htm"
+        locals='{"cat":"Healthcare","slug":"healthcare"}'
+      ></include
+    ></if>
+    <if condition="BUILD_CST === 'true'">
+      <include
+        src="src/parts/category.htm"
+        locals='{"cat":"Computer Systems and Technology","slug":"computer-systems-and-technology"}'
+      ></include
+    ></if>
+    <if condition="BUILD_EDUCATION === 'true'"
+      ><include
+        src="src/parts/category.htm"
+        locals='{"cat":"Education", "slug": "education"}'
+      ></include
+    ></if>
   </block>
 </extends>
