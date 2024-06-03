@@ -17,7 +17,7 @@
   src="parts/base.htm"
   locals='{
     "headerImg": "{{ `$BUILD_BRAND` === `ascentia` ? `index.png` : `elevare_index.png` }}", 
-    "name": "Welcome to $BUILD_BRAND_SC™️ Career Institute",
+    "name": "Welcome to $BUILD_BRAND_SC️ Career Institute",
     "title": "Home",
     "BUILD_BRAND": "BRAND",
     "BUILD_BRAND_SC": "BRAND_SC"
@@ -30,7 +30,7 @@
   <block name="introCopy">
     <if condition="BUILD_BRAND === 'ascentia'">
       <p>
-        Welcome to Ascentia™️ Career Institute, where “learning today, leading
+        Welcome to Ascentia️ Career Institute, where “learning today, leading
         tomorrow” is not just a motto but a promise. With a focus on flexible,
         adaptable learning and innovation, we empower students to shape their
         educational journey according to their needs and preferences.
@@ -39,7 +39,7 @@
       <p>
         Embrace the opportunity to embark on a journey of self-discovery and
         growth, surrounded by a community of like-minded individuals dedicated
-        to excellence. Your journey starts here, at Ascentia™️ Career Institute,
+        to excellence. Your journey starts here, at Ascentia️ Career Institute,
         where learning knows no bounds and tomorrow's leaders are born today.
       </p>
     </if>
@@ -64,31 +64,49 @@
     <div class="container py-4 px-2 mx-auto">
       <hr />
       <div class="feature-blocks container py-4" id="feature-blocks">
-        <div class="card-group h-25 row-cols-1 row-cols-lg-3">
-          <include
-            src="src/parts/featureblocks.htm"
-            locals='
-          { "title": "How to Apply", "blurb": "View enrollment calendar, FAQs and details on financial assistance.", "target": "admissions.html", "cta": "See Admissions Details", "image": "feature1.webp" }
-          '
+        <div class="card-group row row-cols-1 row-cols-lg-3 gx-4">
+          <extends
+            src="parts/featureblocks.htm"
+            locals='{
+            "target": "admissions.html",
+            "cta": "See Admissions Details",
+            "image": "feature1.webp"
+          }'
           >
-          </include>
-          <include
-            src="src/parts/featureblocks.htm"
-            locals='
-          { "title": "Why $BUILD_BRAND_SC", "blurb": "Transformative courses with unmatched, flexible learning options.", "target": "why-$BUILD_BRAND.html", "cta": "See What Makes Us Different", "image": "feature2.webp" }
-          '
+            <block name="title"> How to Apply </block>
+            <block name="blurb"
+              >Enrollment calendar, FAQs and financial assistance</block
+            >
+          </extends>
+          <extends
+            src="parts/featureblocks.htm"
+            locals='{
+            "target": "why-$BUILD_BRAND.html",
+            "cta": "See What Makes Us Different",
+            "image": "feature2.webp"
+          }'
           >
-          </include>
-          <include
-            src="src/parts/featureblocks.htm"
-            locals='
-          { "title": "Post Graduate Support", "blurb": "From enrollment to employment, we are with you at every step.", "target": "post-graduate-support.html", "cta": "Learn how we support graduates", "image": "feature3.webp" }
-          
-          '
+            <block name="title"> Why $BUILD_BRAND_SC </block>
+            <block name="blurb"
+              >Transformative courses with unmatched, flexible learning</block
+            >
+          </extends>
+          <extends
+            src="parts/featureblocks.htm"
+            locals='{
+            "target": "post-graduate-support.html",
+            "cta": "Discover Graduate Support",
+            "image": "feature3.webp"
+          }'
           >
-          </include>
+            <block name="title"> Graduate Support </block>
+            <block name="blurb"
+              >Supporting you from enrollment to employment</block
+            >
+          </extends>
         </div>
       </div>
+
       <hr />
       <div class="container my-4" id="programs">
         <div class="row p-3">
@@ -108,25 +126,25 @@
           <hr class="d-block d-lg-none" />
           <div class="col-12 col-lg-6 text-left">
             <if condition="BUILD_HEALTHCARE === 'true'"
-              ><h2 class="text-black">
+              ><h3 class="text-black">
                 <a class="text-black" href="healthcare.html">Healthcare</a>
-              </h2>
+              </h3>
               <hr
             /></if>
             <if condition="BUILD_EDUCATION === 'true'"
-              ><h2 class="text-black">
+              ><h3 class="text-black">
                 <a class="text-black" href="education.html">Education</a>
-              </h2>
+              </h3>
               <hr
             /></if>
             <if condition="BUILD_CST === 'true'"
-              ><h2 class="text-black">
+              ><h3 class="text-black">
                 <a
                   class="text-black"
                   href="computer-systems-and-technology.html"
                   >Computer Systems and Technology</a
                 >
-              </h2></if
+              </h3></if
             >
           </div>
         </div>

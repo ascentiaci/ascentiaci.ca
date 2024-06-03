@@ -66,15 +66,19 @@ function replaceOrPrependLocals(filePath, newLocals) {
 }
 
 // Call the function to replace or prepend the locals block in the specified file
-replaceOrPrependLocals("../src/parts/base.htm", brandLocals);
-replaceOrPrependLocals("../src/parts/healthcare.htm", brandLocals);
-replaceOrPrependLocals("../src/parts/education.htm", brandLocals);
-replaceOrPrependLocals(
+const pagesToUpdate = [
+  "../src/parts/base.htm",
+  "../src/parts/healthcare.htm",
+  "../src/parts/education.htm",
+  "../src/parts/footer.htm",
   "../src/parts/computer-systems-and-technology.htm",
-  brandLocals,
-);
-replaceOrPrependLocals("../src/programs.html", brandLocals);
-replaceOrPrependLocals("../src/index.html", brandLocals);
+  "../src/programs.html",
+  "../src/index.html",
+];
+
+for (const filePath of pagesToUpdate) {
+  replaceOrPrependLocals(filePath, brandLocals);
+}
 
 const scssContent =
   `$brand: '${brand}';\n` +
