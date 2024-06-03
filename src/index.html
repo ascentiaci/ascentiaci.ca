@@ -2,7 +2,7 @@
 <script locals>
   module.exports = {
     BUILD_BRAND: "ascentia",
-    BUILD_BRAND_SC: "Ascentia",
+    BUILD_BRAND_SC: "Ascentia™",
     BUILD_CST: "true",
     BUILD_CST_PROGRAMS_LIST: "DLB,M365",
     BUILD_EDUCATION: "true",
@@ -65,22 +65,27 @@
       <hr />
       <div class="feature-blocks container py-4" id="feature-blocks">
         <div class="card-group h-25 row-cols-1 row-cols-lg-3">
-          <include src="src/parts/featureblocks.htm">
-            { "title": "How to Apply", "blurb": "View enrollment calendar, FAQs
-            and details on financial assistance.", "target": "admissions.html",
-            "cta": "See Admissions Details", "image": "feature1.webp" }
+          <include
+            src="src/parts/featureblocks.htm"
+            locals='
+          { "title": "How to Apply", "blurb": "View enrollment calendar, FAQs and details on financial assistance.", "target": "admissions.html", "cta": "See Admissions Details", "image": "feature1.webp" }
+          '
+          >
           </include>
-          <include src="src/parts/featureblocks.htm">
-            { "title": "Why $BUILD_BRAND_SC", "blurb": "Transformative courses
-            with unmatched, flexible learning options.", "target":
-            "why-$BUILD_BRAND.html", "cta": "See What Makes Us Different",
-            "image": "feature2.webp" }
+          <include
+            src="src/parts/featureblocks.htm"
+            locals='
+          { "title": "Why $BUILD_BRAND_SC", "blurb": "Transformative courses with unmatched, flexible learning options.", "target": "why-$BUILD_BRAND.html", "cta": "See What Makes Us Different", "image": "feature2.webp" }
+          '
+          >
           </include>
-          <include src="src/parts/featureblocks.htm">
-            { "title": "Post Graduate Support", "blurb": "From enrollment to
-            employment, we are with you at every step.", "target":
-            "post-graduate-support.html", "cta": "Learn how we support
-            graduates", "image": "feature3.webp" }
+          <include
+            src="src/parts/featureblocks.htm"
+            locals='
+          { "title": "Post Graduate Support", "blurb": "From enrollment to employment, we are with you at every step.", "target": "post-graduate-support.html", "cta": "Learn how we support graduates", "image": "feature3.webp" }
+          
+          '
+          >
           </include>
         </div>
       </div>
@@ -96,7 +101,9 @@
               your career into thriving industries.
             </p>
             <br />
-            <button class="btn has-primary-bg">Explore our Programs</button>
+            <a class="btn has-primary-bg" href="programs.html"
+              >Explore our Programs</a
+            >
           </div>
           <hr class="d-block d-lg-none" />
           <div class="col-12 col-lg-6 text-left">

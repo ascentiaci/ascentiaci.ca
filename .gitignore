@@ -9,3 +9,7 @@ elevare-dist
 /blob-report/
 /playwright/.cache/
 src/scss/_generated.scss
+/.history/
+/.history/*
+/.parcel-cache
+/.history/todo*

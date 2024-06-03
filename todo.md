@@ -7,7 +7,7 @@
 [ ] Home Page headers _All the same as 'Explore our programs'_, including features and categories.
 [ ] Nav font bigger.
 [ ] Features/CTAs need to be aligned across. Images should be the same size
-[ ] Explore our Programs button - fix link
+[x] Explore our Programs button - fix link
 
 ## Admissions Page
 
