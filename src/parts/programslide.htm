@@ -1,20 +1,17 @@
-<div class="card pt-2 my-3 border-0 g-2">
-    <div class="row g-0 h-100">
-        <div class="col-md-4">
-            <!-- img should be no more than 25% of the viewport -->
-            <picture class="img-fluid h-100 object-fit-cover slide-image">
+<div class="card pt-2 pl-3 my-3 border-0 w-50">
+    <div class="row h-100 no-gutters">
+        <div class="col-md-4" style="width: 25%;">
+            <picture>
                 <source srcset="images/{{ image }}?as=webp&quality=80&width=600" media="(max-width: 600px)">
                 <source srcset="images/{{ image }}?as=webp&quality=80&width=900" media="(max-width: 900px)">
                 <source srcset="images/{{ image }}?as=webp&quality=80&width=1200" media="(max-width: 1200px)">
-                <img src="images/{{ image }}?as=webp&quality=80" alt="{{ name }}'s image" class="img-fluid h-100 object-fit-cover">
+                <img src="images/{{ image }}?as=webp&quality=80" alt="{{ name }}'s image" class="object-fit-cover h-100 w-100">
             </picture>
         </div>
-        <div class="col-md-8 h-100">
-            <div class="card-body h-100 d-flex flex-column">
-                <h4 class="card-title text-left">
-                    {{ name }}
-                </h4>
-                <p class="card-text text-left flex-grow-1 mb-2 text-overflow-ellipsis overflow-hidden">{{ intro === undefined ? 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.' : intro }}</p>
+        <div class="col-md-8 h-100" style="background-color:white; padding-right: 0;">
+            <div class="card-body h-100" style="padding-right: 1rem;">
+                <h4 class="card-title text-left">{{ name }}</h4>
+                <p class="card-text text-left flex-grow-1 mb-2 text-overflow-ellipsis overflow-hidden" style="display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis;">{{ intro === undefined ? 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.' : intro }}</p>
                 <div class="mt-auto pt-2">
                     <a class="btn btn-primary w-100" href="{{ href }}">Learn More</a>
                 </div>

@@ -1,16 +1,32 @@
+<!-- START LOCALS -->
+<script locals>
+module.exports = {
+  BUILD_BRAND: 'ascentia',
+  BUILD_BRAND_SC: 'Ascentia™',
+  BUILD_CST: 'true',
+  BUILD_CST_PROGRAMS_LIST: 'DLB,M365',
+  BUILD_EDUCATION: 'true',
+  BUILD_EDUCATION_PROGRAMS_LIST: 'ECEA',
+  BUILD_HEALTHCARE: 'true',
+  BUILD_HEALTHCARE_PROGRAMS_LIST: 'RMT,CDA,DOC,PA,HCA,MLA',
+  BUILD_PROGRAMS: 'RMT,CDA,DOC,PA,HCA,MLA,ECEA,DLB,M365,COA',
+}
+</script>
+<!-- END LOCALS -->
 <footer class="px-5 pt-2 mt-3">
   <div class="row">
     <div class="col-12 col-lg-4">
       <a href="/src/index.html" title="goHome">
-        <img src="/src/images/primary-logo-name-no-tagline-white-text.png" class="img-fluid footer-logo" style="max-width: 200px;" alt="logo" />
-        <p class="pl-3" id="CampusAddress">
+        <img src="/src/images/primary-logo-name-no-tagline-white-text.png" class="img-fluid footer-logo" alt="logo" />
+        <address>
+          <p class="pl-3" id="CampusAddress">
           
           
           <if condition="BUILD_BRAND === 'ascentia'"><a href="https://www.google.com/maps/dir/?api=1&destination=1680%20Water%20St,%20Kelowna,%20BC" >Unit 301 - 1680 Water St., <br /> Kelowna, BC V1Y 8T8 </a></if>
           <if condition="BUILD_BRAND !== 'ascentia'"><a href="https://www.google.com/maps/dir/?api=1&destination=1690%20Water%20St,%20Kelowna,%20BC" >Unit 200 - 1690 Water St., <br /> Kelowna, BC V1Y 8T8 </a></if>
 
 
-        </p>
+        </p></address>
     
         <p class="pl-3">
           <if condition="BUILD_BRAND === 'ascentia'"><a href="tel:12509998733">250-999-8733</a></if>
@@ -30,7 +46,7 @@
     </div>
   </div>
   <center class="pb-3">
-    <if condition="BUILD_BRAND === 'ascentia'">&copy; {{ new Date().getFullYear(); }} Ascentia™️ Career Institute</if>
-    <if condition="BUILD_BRAND !== 'ascentia'">&copy; {{ new Date().getFullYear(); }} Elevare™️ Career Institute</if>
+    &copy; {{ new Date().getFullYear(); }} {{ BUILD_BRAND_SC }} Career Institute
+    
   </center>
 </footer>

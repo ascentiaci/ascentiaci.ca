@@ -2,7 +2,7 @@
 <script locals>
 module.exports = {
   BUILD_BRAND: 'ascentia',
-  BUILD_BRAND_SC: 'Ascentia',
+  BUILD_BRAND_SC: 'Ascentia™',
   BUILD_CST: 'true',
   BUILD_CST_PROGRAMS_LIST: 'DLB,M365',
   BUILD_EDUCATION: 'true',
@@ -19,8 +19,8 @@ module.exports = {
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{{ title }} | {{ BUILD_BRAND_SC }}™️ Career Institute</title>
-    <!-- <if condition="BUILD_BRAND !== 'ascentia'"><title>{{ title }} | Elevare™️ Career Institute</title></if> -->
+    <title>{{ title }} | {{ BUILD_BRAND_SC }} Career Institute</title>
+    <!-- <if condition="BUILD_BRAND !== 'ascentia'"><title>{{ title }} | Elevare️ Career Institute</title></if> -->
 
     <link rel="stylesheet" href="scss/_generated.scss" />
     <script type="module" src="js/main.js"></script>
@@ -31,7 +31,7 @@ module.exports = {
       <nav class="navbar navbar-expand-lg bg-body-secondary">
         <div class="container-fluid">
           <a href="/" class="navbar-brand">
-            <img src="/src/images/primary-logo-name-tagline-black-text.png" class="nav-logo p-1" style="max-width: 300px;" alt="$BUILD_BRAND_SC Career Institute" />
+            <img src="/src/images/primary-logo-name-tagline-black-text.png" class="nav-logo p-1" alt="$BUILD_BRAND_SC Career Institute" />
           </a>
       
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbarContent"
@@ -66,7 +66,7 @@ module.exports = {
                   <span class="visually-hidden">Toggle</span>
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownAdmissions">
-                  <if condition="BUILD_BRAND === 'ascentia'"><a class="nav-link btn" href="/src/book-ascentia.html">Book Appointment</a></if>
+                  <if condition="BUILD_BRAND === 'ascentia'"><a rel="noopener" class="nav-link btn" target="_blank" href="https://outlook.office365.com/owa/calendar/AscentiaCareerInstitute@ascentiaci.ca/bookings/">Book Appointment</a></if>
                   <if condition="BUILD_BRAND !== 'ascentia'"><a class="nav-link btn" href="/src/book-elevareci.html">Book Appointment</a></if>
                   
                   <li><a class="dropdown-item" href="/src/questions.html">Questions?</a></li>
