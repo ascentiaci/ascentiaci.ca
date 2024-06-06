@@ -3,6 +3,7 @@
   module.exports = {
     BUILD_BRAND: "ascentia",
     BUILD_BRAND_SC: "Ascentia™",
+    BUILD_CATSCount: "1",
     BUILD_CST: "false",
     BUILD_CST_PROGRAMS_LIST: "DLB,M365",
     BUILD_EDUCATION: "false",
@@ -24,18 +25,14 @@
 
   }'
 >
-  <div class="d-none">
-    {{ CATS = [BUILD_HEALTHCARE, BUILD_EDUCATION, BUILD_CST]; }} {{ CATSCount =
-    CATS.filter((item) => item === "true").length; }}
-  </div>
   <block name="pageTitle"
     >Welcome to $BUILD_BRAND_SC Career&nbsp;Institute</block
   >
   <block name="introCopy">
     <if condition="BUILD_BRAND === 'ascentia'">
       <p>
-        Welcome to Ascentia️ Career Institute, where “learning today, leading
-        tomorrow” is not just a motto but a promise. With a focus on flexible,
+        Welcome to Ascentia Career Institute, where "learning today, leading
+        tomorrow" is not just a motto but a promise. With a focus on flexible,
         adaptable learning and innovation, we empower students to shape their
         educational journey according to their needs and preferences.
       </p>
@@ -43,7 +40,7 @@
       <p>
         Embrace the opportunity to embark on a journey of self-discovery and
         growth, surrounded by a community of like-minded individuals dedicated
-        to excellence. Your journey starts here, at Ascentia️ Career Institute,
+        to excellence. Your journey starts here, at Ascentia Career Institute,
         where learning knows no bounds and tomorrow's leaders are born today.
       </p>
     </if>
@@ -121,9 +118,19 @@
         thriving industries.
       </p>
       <div class="program-blocks container py-4" id="program-blocks">
+        <style>
+          .card-group-1 {
+            grid-template-columns: repeat(1, 1fr);
+          }
+          .card-group-2 {
+            grid-template-columns: repeat(2, 1fr);
+          }
+          .card-group-3 {
+            grid-template-columns: repeat(3, 1fr);
+          }
+        </style>
         <div
-          class="card-group row row-cols-1 row-cols-lg-{{ CATSCount }} justify-content-center gx-4"
-          style="grid-template-columns: repeat({{ CATSCount }}, 1fr);"
+          class="card-group row row-cols-1 row-cols-lg-{{ BUILD_CATSCount }} card-group-{{ BUILD_CATSCount }} justify-content-center gx-4"
         >
           <if condition="BUILD_HEALTHCARE === 'true'">
             <extends
