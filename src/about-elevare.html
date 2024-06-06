@@ -1,0 +1,52 @@
+<script locals>
+  module.exports = {
+    BUILD_BRAND: locals.BUILD_BRAND || "BRAND",
+    BUILD_BRAND_SC: locals.BUILD_BRAND_SC || "BRAND_SC",
+  };
+</script>
+<extends
+  src="parts/base.htm"
+  locals='{
+  "headerImg": "index.png", 
+  "name": "",
+  "title": "About $BUILD_BRAND_SC",
+  "BUILD_BRAND": "BRAND",
+  "BUILD_BRAND_SC": "BRAND_SC"
+}'
+>
+  <block name="pageTitle"> About $BUILD_BRAND_SC️ </block>
+  <block name="introCopy"> </block>
+  <block name="content">
+    <div class="text-left container">
+      <p>
+        <strong>$BUILD_BRAND_SC (ə-‘sen-ti-ə / a-SEN-tee-ah)</strong>, derived
+        from the Latin word ‘ascend’, embodies the essence of our mission at
+        $BUILD_BRAND_SC️ Career Institute. Just as climbing to new heights
+        represents progress and achievement, so too does our commitment to
+        guiding students towards greater personal and professional growth. At
+        $BUILD_BRAND_SC️, we believe in empowering individuals to ascend beyond
+        their current circumstances, elevating their lives and skills to new
+        levels of success.
+      </p>
+      <h5 class="text-left">Our Mission:</h5>
+
+      <p>
+        Our mission is to provide our students with the skills, knowledge, and
+        practical experience necessary to thrive in their desired careers. By
+        offering flexible learning options, personalized support, and
+        industry-leading programs, we aim to be British Columbia’s premier
+        career institute, fostering a culture of integrity, inclusivity, and
+        lifelong learning within our community.
+      </p>
+
+      <h5 class="text-left">Our Vision:</h5>
+
+      <p>
+        To create an environment where individuals are empowered to embark on
+        fulfilling career paths by providing accessible, comprehensive, and
+        innovative educational opportunities tailored to their unique needs and
+        aspirations.
+      </p>
+    </div>
+  </block>
+</extends>

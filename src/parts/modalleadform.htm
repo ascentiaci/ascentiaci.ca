@@ -1,0 +1,187 @@
+<!-- START LOCALS -->
+<script locals>
+module.exports = {
+  BUILD_BRAND: 'ascentia',
+  BUILD_BRAND_SC: 'Ascentia™',
+  BUILD_CATSCount: '1',
+  BUILD_CST: 'false',
+  BUILD_CST_PROGRAMS_LIST: 'DLB,M365',
+  BUILD_EDUCATION: 'false',
+  BUILD_EDUCATION_PROGRAMS_LIST: 'ECEA',
+  BUILD_HEALTHCARE: 'true',
+  BUILD_HEALTHCARE_PROGRAMS_LIST: 'RMT,CDA,DOC,PA,HCA,MLA',
+  BUILD_PROGRAMS: 'PA,HCA,MLA,COA',
+}
+</script>
+<!-- END LOCALS -->
+<div class="modal fade" tabindex="-1" id="leadForm1" aria-labelledby="leadForm1Label" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="leadForm1Label">Request Info</h5>
+                <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- Lead Form for [sc name="sn"][/sc] -->
+                <form id="leadForm" action="https://marketing-n8n.hqt7vl.easypanel.host/webhook-test/6c342149-4461-44c7-a1c8-d0201db5799a" method="POST" onsubmit="return validateForm();">
+                    <h2>Request Information</h2>
+
+                    <label for="firstName">First Name: </label>
+                    <input type="text" id="firstName" name="firstName" placeholder="Your first name" required>
+
+                    <label for="lastName">Last Name:</label>
+                    <input type="text" id="lastName" name="lastName" placeholder="Your last name" required>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Your email address" required>
+
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Your phone number" required>
+
+                    <label for="programInterest">Program of Interest:</label>
+                    <select id="programInterest" name="programInterest" required>
+                        <option value="">Select a Program</option>
+                        <option value="" disabled>-- Healthcare --</option>
+                        <option value="chairside-dental-assistant-diploma">Chairside Dental Assistant Diploma</option>
+                        <option value="dental-office-assistant-diploma">Dental Office Assistant Diploma</option>
+                        <option value="health-care-aid-diploma">Health Care Aid Diploma</option>
+                        <option value="pharmacy-assistant-diploma">Pharmacy Assistant Diploma</option>
+                        <option value="medical-lab-assistant-diploma">Medical Lab Assistant Diploma</option>
+                        <option value="" disabled>-- Education --</option>
+                        <option value="early-childhood-assistant-diploma">Early Childhood Assistant Diploma</option>
+                        
+                        <option value="" disabled>-- Computer Systems and  Technology--</option>
+                        <option value="microsoft-365-courses">Microsoft 365 Courses</option>
+                        <option value="digital-literacy-for-beginners-course">Digital Literacy for Beginners Course</option>
+                        
+                    </select>
+
+                    <label for="comments">Additional Comments:</label>
+                    <textarea id="comments" name="comments" placeholder="Any additional information or questions"></textarea>
+
+                    <label for="consent">
+                        <input type="checkbox" id="consent" name="consent">
+                        (optional) I agree that {{ BUILD_BRAND_SC }} Career Institute may send me messages via SMS.
+                    </label>
+
+                    <!-- Cloudflare Turnstile Widget Placeholder -->
+                    <div id="turnstileContainer" class="d-none"></div>
+                    
+                    <input type="submit" value="Submit">
+
+                    <div id="feedbackMessage" class="red d-none">Please complete the CAPTCHA verification.</div>
+                </form>
+
+                <script>
+                    // Function to load the Turnstile script
+                    function loadTurnstile() {
+                        var script = document.createElement('script');
+                        script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js';
+                        script.async = true;
+                        script.onload = function() {
+                            // Initialize Turnstile widget
+                            var turnstileContainer = document.getElementById('turnstileContainer');
+                            turnstileContainer.classList.remove('d-none');
+                            turnstileContainer.classList.add('cf-turnstile');
+                            turnstileContainer.setAttribute('data-sitekey', '0x4AAAAAAAYDjhZNjYSI8Zc8');
+                            window.cfTurnstile.render(turnstileContainer);
+                        };
+                        document.head.appendChild(script);
+                    }
+
+                    // Load Turnstile widget when modal is shown
+                    var leadFormModal = document.getElementById('leadForm1');
+                    leadFormModal.addEventListener('shown.bs.modal', function () {
+                        if (!document.querySelector('.cf-turnstile')) {
+                            loadTurnstile();
+                        }
+                    });
+
+                    document.getElementById('leadForm').addEventListener('submit', function(event) {
+                        var responseField = document.getElementById('cf-turnstile-response');
+                        if (responseField) {
+                            responseField.value = ''; // Clear previous response value
+                            // Validate Turnstile response
+                            window.cfTurnstile.onSubmit(event, function(token) {
+                                if (token) {
+                                    responseField.value = token; // Set the token in the hidden field
+                                    document.getElementById('leadForm').submit(); // Submit the form
+                                } else {
+                                    // Provide feedback to the user
+                                    document.getElementById('feedbackMessage').style.display = 'block';
+                                    event.preventDefault(); // Prevent form submission
+                                }
+                            });
+                        } else {
+                            event.preventDefault(); // Prevent form submission if Turnstile script is not loaded
+                            document.getElementById('feedbackMessage').style.display = 'block';
+                        }
+                    });
+
+                    function validateForm() {
+                        var tokenValue = document.getElementById('cf-turnstile-response') ? document.getElementById('cf-turnstile-response').value : '';
+                        // var consentChecked = document.getElementById('consent').checked;
+
+                        if (!tokenValue) {
+                            document.getElementById('feedbackMessage').style.display = 'block';
+                            return false; // Prevent form submission if the token is empty
+                        }
+
+                        if (!consentChecked) {
+                            alert('You must agree to the terms and conditions before submitting the form.');
+                            return false; // Prevent form submission if the consent is not checked
+                        }
+
+                        return true;
+                    }
+                </script>
+
+                <style>
+                    #leadForm {
+                        max-width: 500px;
+                        margin: 0 auto;
+                        padding: 20px;
+                        border: 1px solid #ccc;
+                        border-radius: 10px;
+                        background: #f9f9f9;
+                    }
+                    #leadForm h2 {
+                        text-align: center;
+                        color: #333;
+                    }
+                    #leadForm label {
+                        margin-top: 10px;
+                        display: block;
+                        color: #666;
+                    }
+                    #leadForm input[type="text"],
+                    #leadForm input[type="email"],
+                    #leadForm input[type="tel"],
+                    #leadForm select,
+                    #leadForm textarea {
+                        width: 100%;
+                        padding: 8px;
+                        margin-top: 5px;
+                        margin-bottom: 15px;
+                        border: 1px solid #ddd;
+                        border-radius: 4px;
+                        box-sizing: border-box;
+                    }
+                    #leadForm input[type="submit"] {
+                        width: 100%;
+                        background-color: #0056b3;
+                        color: white;
+                        padding: 10px;
+                        border: none;
+                        border-radius: 5px;
+                        cursor: pointer;
+                        font-size: 1em;
+                    }
+                    #leadForm input[type="submit"]:hover {
+                        background-color: #004494;
+                    }
+                </style>
+            </div>
+        </div>
+    </div>
+</div>
