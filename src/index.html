@@ -81,10 +81,10 @@
           <extends
             src="parts/featureblocks.htm"
             locals='{
-            "target": "why-$BUILD_BRAND.html",
-            "cta": "See What Makes Us Different",
-            "image": "feature2.webp"
-          }'
+              "target": "why-$BUILD_BRAND.html",
+              "cta": "See What Makes Us Different",
+              "image": "feature2.webp"
+            }'
           >
             <block name="title"> Why $BUILD_BRAND_SC </block>
             <block name="blurb"
@@ -108,45 +108,64 @@
       </div>
 
       <hr />
-      <div class="container my-4" id="programs">
-        <div class="row p-3">
-          <div class="card border-0 col-12 col-lg-6 pb-4">
-            <h3>Explore our programs</h3>
-            <p>
-              At $BUILD_BRAND_SC, our exclusive programs are tailored to help
-              you secure high-demand jobs, giving you the skills needed for a
-              successful career. Explore our unique offerings designed to launch
-              your career into thriving industries.
-            </p>
-            <br />
-            <a class="btn has-primary-bg" href="programs.html"
-              >Explore our Programs</a
+
+      <h1>Explore our Programs</h1>
+      <p>
+        At $BUILD_BRAND_SC, our exclusive programs are tailored to help you
+        secure high-demand jobs, giving you the skills needed for a successful
+        career. Explore our unique offerings designed to launch your career into
+        thriving industries.
+      </p>
+      <div class="program-blocks container py-4" id="program-blocks">
+        <div class="card-group row row-cols-1 row-cols-lg-3 gx-4">
+          <if condition="BUILD_HEALTHCARE === 'true'">
+            <extends
+              src="parts/featureblocks.htm"
+              locals='{
+            "target": "healthcare.html",
+            "cta": "Explore",
+            "image": "health-care-aide.jpg"
+          }'
             >
-          </div>
-          <hr class="d-block d-lg-none" />
-          <div class="col-12 col-lg-6 text-left">
-            <if condition="BUILD_HEALTHCARE === 'true'"
-              ><h3 class="text-black">
-                <a class="text-black" href="healthcare.html">Healthcare</a>
-              </h3>
-              <hr
-            /></if>
-            <if condition="BUILD_EDUCATION === 'true'"
-              ><h3 class="text-black">
-                <a class="text-black" href="education.html">Education</a>
-              </h3>
-              <hr
-            /></if>
-            <if condition="BUILD_CST === 'true'"
-              ><h3 class="text-black">
-                <a
-                  class="text-black"
-                  href="computer-systems-and-technology.html"
-                  >Computer Systems and Technology</a
-                >
-              </h3></if
+              <block name="title"> Healthcare<br /> </block>
+              <block name="blurb">
+                Discover your future in healthcare with our diploma programs!
+              </block>
+            </extends>
+          </if>
+          <if condition="BUILD_EDUCATION === 'true'">
+            <extends
+              src="parts/featureblocks.htm"
+              locals='{
+          "target": "education.html",
+          "cta": "Explore",
+          "image": "education-assistant.jpg"
+        }'
             >
-          </div>
+              <block name="title">
+                Education
+                <br />
+              </block>
+              <block name="blurb">
+                Shape the minds of tomorrow with our education diplomas!
+              </block>
+            </extends></if
+          >
+          <if condition="BUILD_CST === 'true'">
+            <extends
+              src="parts/featureblocks.htm"
+              locals='{
+          "target": "computer-systems-and-technology.html",
+          "cta": "Explore",
+          "image": "m365.jpg"
+        }'
+            >
+              <block name="title"> Computer Systems and Technology </block>
+              <block name="blurb">
+                Master tech skills with our Computer Systems programs!
+              </block>
+            </extends></if
+          >
         </div>
       </div>
     </div>

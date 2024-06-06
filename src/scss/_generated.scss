@@ -2,19 +2,22 @@ $brand: 'ascentia';
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css");
 
 // @import url("https://use.typekit.net/uxt6rai.css");
+@import url("https://use.typekit.net/uxt6rai.css");
 
 // src/styles/main.scss
 
 // Your existing SCSS content
 // Define brand-specific variables
 $ascentia-brand-primary: rgb(99, 10, 22);
+$ascentia-brand-secondary: #778596;
 $ascentia-brand-tertiary: #8c9db2;
 $ascentia-brand-highlight: #9d3d4a;
 $ascentia-brand-highlight-secondary: #b56d77;
 $ascentia-brand-header-font: "Droid Serif";
-$ascentia-brand-body-font: "Open Sans";
+$ascentia-brand-body-font: "urbane-rounded", sans-serif;
 
 $elevare-brand-primary: #0026c0;
+$elevare-brand-secondary: #0026c0;
 $elevare-brand-tertiary: #fff;
 $elevare-brand-highlight: #db6265;
 $elevare-brand-highlight-secondary: #f1b11a;
@@ -25,6 +28,7 @@ $elevare-brand-body-font: "Montserrat";
 @mixin set-brand($brand) {
   @if $brand == "ascentia" {
     --brand-primary: #{$ascentia-brand-primary};
+    --brand-secondary: #{$ascentia-brand-secondary};
     --brand-tertiary: #{$ascentia-brand-tertiary};
     --brand-highlight: #{$ascentia-brand-highlight};
     --brand-highlight-secondary: #{$ascentia-brand-highlight-secondary};
@@ -34,6 +38,7 @@ $elevare-brand-body-font: "Montserrat";
     --footer-logo-path: url("/src/images/aci-logo-white-text.png");
   } @else if $brand == "elevare" {
     --brand-primary: #{$elevare-brand-primary};
+    --brand-secondary: #{$elevare-brand-secondary};
     --brand-tertiary: #{$elevare-brand-tertiary};
     --brand-highlight: #{$elevare-brand-highlight};
     --brand-highlight-secondary: #{$elevare-brand-highlight-secondary};
@@ -51,6 +56,7 @@ $elevare-brand-body-font: "Montserrat";
   --bs-nav-tabs-link-active-bg: black !important;
   --bs-secondary-bg-rgb: rgb(255, 255, 255);
 }
+
 
 @font-face {
   font-family: droid-serif;
@@ -79,6 +85,8 @@ $accordion-icon-color: white;
 
 * {
   font-family: var(--brand-body-font);
+  font-weight: 500;
+  font-style: normal;
 }
 
 .nav-logo {
@@ -106,10 +114,19 @@ h5 > a {
   font-weight: bold;
 }
 
+
+h1 {
+  color: var(--brand-primary)
+}
+
+h3, h4 {
+  color: var(--brand-secondary)
+}
+
 .btn-primary,
 .btn-primary:active,
 .accordion-button:not(.collapsed) {
-  background-color: var(--brand-primary);
+  background-color: var(--brand-tertiary);
   color: white;
 }
 .has-primary-bg {
@@ -144,7 +161,7 @@ a:hover {
 
 .btn:hover,
 .btn-primary:hover {
-  background-color: var(--brand-highlight);
+  background-color: var(--brand-tertiary);
   color: var(--bs-secondary-bg-rgb);
 }
 
@@ -397,4 +414,37 @@ ul > li {
     flex-direction: column;
     justify-content: space-between;
   }
+}
+
+
+.pill-button {
+  border-radius: 50px;
+  background-color: var(--brand-secondary);
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.pill-button:hover {
+  background-color: var(--brand-highlight-secondary);
+}
+
+.card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-title {
+  margin-bottom: 1rem;
+}
+
+.object-fit-cover {
+  object-fit: cover;
 }
