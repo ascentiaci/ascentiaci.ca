@@ -3,13 +3,13 @@
 module.exports = {
   BUILD_BRAND: 'ascentia',
   BUILD_BRAND_SC: 'Ascentia™',
-  BUILD_CST: 'true',
+  BUILD_CST: 'false',
   BUILD_CST_PROGRAMS_LIST: 'DLB,M365',
-  BUILD_EDUCATION: 'true',
+  BUILD_EDUCATION: 'false',
   BUILD_EDUCATION_PROGRAMS_LIST: 'ECEA',
   BUILD_HEALTHCARE: 'true',
   BUILD_HEALTHCARE_PROGRAMS_LIST: 'RMT,CDA,DOC,PA,HCA,MLA',
-  BUILD_PROGRAMS: 'RMT,CDA,DOC,PA,HCA,MLA,ECEA,DLB,M365,COA',
+  BUILD_PROGRAMS: 'PA,HCA,MLA,COA',
 }
 </script>
 <!-- END LOCALS -->
@@ -82,9 +82,9 @@ module.exports = {
                 <if condition="BUILD_BRAND === 'ascentia'"><a class="nav-link btn" href="/src/about-ascentia.html">About Ascentia</a></if>
                 <if condition="BUILD_BRAND !== 'ascentia'"><a class="nav-link btn" href="/src/about-elevare.html">About Elevare</a></if>
               </li>
-              <li class="nav-item">
+              <!-- <li class="nav-item">
                 <a class="nav-link btn" href="#">Student Services</a>
-              </li>
+              </li> -->
             </ul>
           </div>
         </div>

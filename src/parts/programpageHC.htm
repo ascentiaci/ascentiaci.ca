@@ -5,6 +5,13 @@
 <block name="pageTitle"> {{ title }} </block>
 
 <block name="content">
+
+
+<style>
+    th {
+      font-weight: bold;
+    }
+    </style>
   <div class="container text-left">
 
     <p>
@@ -56,48 +63,46 @@
         </span>
         <!-- Highlights Table -->
         <table class="table table-striped">
-          <tr>
-            <td class="bold text-left w-25"><i class="fa fa-clock-four d-inline d-lg-none"
-                aria-hidden="false"></i><span class="d-none d-lg-inline">Duration</span></td>
-            <td class="text-left">
-              <block name="duration"></block>
-            </td>
-          </tr>
-          <tr>
-            <td class="bold text-left"><i class="fa fa-book d-inline d-lg-none" aria-hidden="false"></i><span
-                class="d-none d-lg-inline">Curriculum</span></td>
-            <td class="text-left">
-              <block name="curriculum"></block>
-            </td>
-          </tr>
-          <tr>
-            <td class="bold text-left"><i class="fa fa-graduation-cap d-inline d-lg-none"
-                aria-hidden="false"></i><span class="d-none d-lg-inline">Certification</span></td>
-            <td class="text-left">
-              <block name="certification"></block>
-            </td>
-          </tr>
-          <tr>
-            <td class="bold text-left"><i class="fa fa-gavel d-inline d-lg-none" aria-hidden="false"></i><span
-                class="d-none d-lg-inline">Compliance</span></td>
-            <td class="text-left">
-              <block name="compliance"></block>
-            </td>
-          </tr>
-          <tr>
-            <td class="bold text-left"><i class="fa fa-money-bill-trend-up d-inline d-lg-none"
-                aria-hidden="false"></i><span class="d-none d-lg-inline">Average Salary</span></td>
-            <td class="text-left">
-              <block name="salary"></block>
-            </td>
-          </tr>
-          <tr>
-            <td class="bold text-left"><i class="fa fa-arrow-trend-up d-inline d-lg-none"
-                aria-hidden="false"></i><span class="d-none d-lg-inline">BC Job Openings, 2023-2033</span></td>
-            <td class="text-left">
-              <block name="outlook"></block>
-            </td>
-          </tr>
+          <thead>
+            <tr>
+              <th scope="col" class="bold text-left w-25">Duration</th>
+              <td class="text-left">
+                <block name="duration"></block>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="bold text-left" data-label="Curriculum">Curriculum</td>
+              <td class="text-left">
+                <block name="curriculum"></block>
+              </td>
+            </tr>
+            <tr>
+              <td class="bold text-left" data-label="Certification">Certification</td>
+              <td class="text-left">
+                <block name="certification"></block>
+              </td>
+            </tr>
+            <tr>
+              <td class="bold text-left" data-label="Compliance">Compliance</td>
+              <td class="text-left">
+                <block name="compliance"></block>
+              </td>
+            </tr>
+            <tr>
+              <td class="bold text-left" data-label="Average Salary">Average Salary</td>
+              <td class="text-left">
+                <block name="salary"></block>
+              </td>
+            </tr>
+            <tr>
+              <td class="bold text-left" data-label="BC Job Openings, 2023-2033">BC Job Openings, 2023-2033</td>
+              <td class="text-left">
+                <block name="outlook"></block>
+              </td>
+            </tr>
+          </tbody>
         </table>
       </div>
       <div class="tab-pane fade align-content-start" id="admitRequirementsEFL-pane" role="tabpanel"

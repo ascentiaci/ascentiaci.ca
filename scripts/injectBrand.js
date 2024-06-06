@@ -76,6 +76,10 @@ const pagesToUpdate = [
   "../src/parts/computer-systems-and-technology.htm",
   "../src/programs.html",
   "../src/index.html",
+  "../src/questions.html",
+  "../src/parts/contactus.htm",
+  "../src/career-services.html",
+  "../src/parts/modalleadform.htm",
 ];
 
 for (const filePath of pagesToUpdate) {

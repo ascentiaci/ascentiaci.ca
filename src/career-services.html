@@ -1,16 +1,38 @@
+<!-- START LOCALS -->
 <script locals>
   module.exports = {
-    BUILD_BRAND: locals.BUILD_BRAND || "BRAND",
-    BUILD_BRAND_SC: locals.BUILD_BRAND_SC || "BRAND_SC",
+    BUILD_BRAND: "ascentia",
+    BUILD_BRAND_SC: "Ascentia™",
+    BUILD_CST: "false",
+    BUILD_CST_PROGRAMS_LIST: "DLB,M365",
+    BUILD_EDUCATION: "false",
+    BUILD_EDUCATION_PROGRAMS_LIST: "ECEA",
+    BUILD_HEALTHCARE: "true",
+    BUILD_HEALTHCARE_PROGRAMS_LIST: "RMT,CDA,DOC,PA,HCA,MLA",
+    BUILD_PROGRAMS: "PA,HCA,MLA,COA",
   };
 </script>
+<!-- END LOCALS -->
 <extends
   src="parts/base.htm"
-  locals='{"headerImg": "index.png", "name": "","title": "",
-  "BUILD_BRAND": "BRAND",
-  "BUILD_BRAND_SC": "BRAND_SC"}'
+  locals='{"headerImg": "index.png", "name": "", "title": "Career Services",
+  "BUILD_BRAND": "$BUILD_BRAND",
+  "BUILD_BRAND_SC": "$BUILD_BRAND_SC"}'
 >
   <block name="pageTitle">Career Services</block>
+  <block name="introCopy">
+    <p>
+      At {{ BUILD_BRAND_SC }} Career Institute, we are dedicated to supporting
+      our students and graduates in their career journeys. Whether you're a
+      recent graduate seeking your first job or an employer looking to hire
+      talented professionals, our Career Services team is here to help.
+    </p>
+    <p>
+      Our goal is to provide the resources, guidance, and connections you need
+      to achieve your career aspirations. Explore the sections below to find out
+      more about how we can assist you.
+    </p>
+  </block>
   <block name="content">
     <script
       src="/node_modules/cloudflare-turnstile-widget/dist/index.js"
@@ -20,7 +42,7 @@
     <div class="accordion w-100" id="careerServicesAccord">
       <!-- Graduates Section -->
       <div class="accordion-item">
-        <h2 class="accordion-header">
+        <h2 class="accordion-header" id="headingOne">
           <button
             class="accordion-button has-primary-bg w-100 text-left"
             type="button"
@@ -28,14 +50,13 @@
             data-bs-target="#career1"
             aria-expanded="true"
             aria-controls="career1"
-            name="headingOne"
           >
             Graduates
           </button>
         </h2>
         <div
           id="career1"
-          class="accordion-collapse collapse"
+          class="accordion-collapse collapse show"
           aria-labelledby="headingOne"
           data-bs-parent="#careerServicesAccord"
         >
@@ -53,9 +74,9 @@
               <form class="rendered-form" id="gradForm" novalidate>
                 <div class="row mb-3">
                   <div class="col-md-6">
-                    <label for="name" class="form-label"
-                      >Name<span class="text-danger">*</span></label
-                    >
+                    <label for="name" class="form-label">
+                      Name<span class="text-danger">*</span>
+                    </label>
                     <input
                       type="text"
                       class="form-control"
@@ -65,9 +86,9 @@
                     />
                   </div>
                   <div class="col-md-6">
-                    <label for="email" class="form-label"
-                      >Email<span class="text-danger">*</span></label
-                    >
+                    <label for="email" class="form-label">
+                      Email<span class="text-danger">*</span>
+                    </label>
                     <input
                       type="email"
                       class="form-control"
@@ -79,11 +100,9 @@
                 </div>
                 <div class="row mb-3">
                   <div class="col-md-6">
-                    <label for="gradDate" class="form-label"
-                      >Graduation Date/Year<span class="text-danger"
-                        >*</span
-                      ></label
-                    >
+                    <label for="gradDate" class="form-label">
+                      Graduation Date/Year<span class="text-danger">*</span>
+                    </label>
                     <input
                       type="date"
                       class="form-control"
@@ -93,17 +112,17 @@
                     />
                   </div>
                   <div class="col-md-6">
-                    <label for="resume" class="form-label"
-                      >Current Resume (Optional)</label
-                    >
+                    <label for="resume" class="form-label">
+                      Current Resume (Optional)
+                    </label>
                     <input type="file" class="form-control" id="resume" />
                   </div>
                 </div>
                 <div class="row mb-3">
                   <div class="col-md-12">
-                    <label for="program" class="form-label"
-                      >Program<span class="text-danger">*</span></label
-                    >
+                    <label for="program" class="form-label">
+                      Program<span class="text-danger">*</span>
+                    </label>
                     <input
                       type="text"
                       class="form-control"
@@ -127,7 +146,6 @@
                     <button
                       type="submit"
                       class="btn btn-primary"
-                      name="submitbtn"
                       id="submitbtn"
                     >
                       Submit
@@ -141,7 +159,7 @@
       </div>
       <!-- Employers Section -->
       <div class="accordion-item">
-        <h2 class="accordion-header">
+        <h2 class="accordion-header" id="headingTwo">
           <button
             class="accordion-button has-primary-bg w-100 collapsed text-left"
             type="button"
@@ -149,7 +167,6 @@
             data-bs-target="#career2"
             aria-expanded="false"
             aria-controls="career2"
-            name="headingTwo"
           >
             Employers
           </button>
@@ -170,9 +187,9 @@
               <form id="jobListingForm" class="needs-validation" novalidate>
                 <div class="row g-3">
                   <div class="col-md-6">
-                    <label for="companyName" class="form-label"
-                      >Company Name<span class="text-danger">*</span></label
-                    >
+                    <label for="companyName" class="form-label">
+                      Company Name<span class="text-danger">*</span>
+                    </label>
                     <input
                       type="text"
                       class="form-control"
@@ -185,9 +202,9 @@
                     </div>
                   </div>
                   <div class="col-md-6">
-                    <label for="contactPerson" class="form-label"
-                      >Contact Person<span class="text-danger">*</span></label
-                    >
+                    <label for="contactPerson" class="form-label">
+                      Contact Person<span class="text-danger">*</span>
+                    </label>
                     <input
                       type="text"
                       class="form-control"
@@ -200,9 +217,9 @@
                     </div>
                   </div>
                   <div class="col-md-6">
-                    <label for="emailAddress" class="form-label"
-                      >Email Address<span class="text-danger">*</span></label
-                    >
+                    <label for="emailAddress" class="form-label">
+                      Email Address<span class="text-danger">*</span>
+                    </label>
                     <input
                       type="email"
                       class="form-control"
@@ -215,9 +232,9 @@
                     </div>
                   </div>
                   <div class="col-md-6">
-                    <label for="phoneNumber" class="form-label"
-                      >Phone Number</label
-                    >
+                    <label for="phoneNumber" class="form-label">
+                      Phone Number
+                    </label>
                     <input
                       type="tel"
                       class="form-control"
@@ -226,9 +243,9 @@
                     />
                   </div>
                   <div class="col-12">
-                    <label for="jobTitle" class="form-label"
-                      >Job Title<span class="text-danger">*</span></label
-                    >
+                    <label for="jobTitle" class="form-label">
+                      Job Title<span class="text-danger">*</span>
+                    </label>
                     <input
                       type="text"
                       class="form-control"
@@ -239,9 +256,9 @@
                     <div class="invalid-feedback">Job title is required.</div>
                   </div>
                   <div class="col-md-6">
-                    <label for="jobLocation" class="form-label"
-                      >Job Location<span class="text-danger">*</span></label
-                    >
+                    <label for="jobLocation" class="form-label">
+                      Job Location<span class="text-danger">*</span>
+                    </label>
                     <input
                       type="text"
                       class="form-control"
@@ -254,9 +271,9 @@
                     </div>
                   </div>
                   <div class="col-md-6">
-                    <label for="jobType" class="form-label"
-                      >Job Type<span class="text-danger">*</span></label
-                    >
+                    <label for="jobType" class="form-label">
+                      Job Type<span class="text-danger">*</span>
+                    </label>
                     <select class="form-select" id="jobType" required>
                       <option value="">Choose...</option>
                       <option>Full-Time</option>
@@ -270,9 +287,9 @@
                     </div>
                   </div>
                   <div class="col-md-6">
-                    <label for="numVacancies" class="form-label"
-                      >Number of Vacancies</label
-                    >
+                    <label for="numVacancies" class="form-label">
+                      Number of Vacancies
+                    </label>
                     <input
                       type="number"
                       class="form-control"
@@ -281,9 +298,9 @@
                     />
                   </div>
                   <div class="col-md-6">
-                    <label for="salaryRange" class="form-label"
-                      >Salary Range</label
-                    >
+                    <label for="salaryRange" class="form-label">
+                      Salary Range
+                    </label>
                     <input
                       type="text"
                       class="form-control"
@@ -292,9 +309,9 @@
                     />
                   </div>
                   <div class="col-12">
-                    <label for="jobDescription" class="form-label"
-                      >Job Description<span class="text-danger">*</span></label
-                    >
+                    <label for="jobDescription" class="form-label">
+                      Job Description<span class="text-danger">*</span>
+                    </label>
                     <textarea
                       class="form-control"
                       id="jobDescription"
@@ -307,9 +324,9 @@
                     </div>
                   </div>
                   <div class="col-12">
-                    <label for="additionalInfo" class="form-label"
-                      >Additional Information</label
-                    >
+                    <label for="additionalInfo" class="form-label">
+                      Additional Information
+                    </label>
                     <textarea
                       class="form-control"
                       id="additionalInfo"

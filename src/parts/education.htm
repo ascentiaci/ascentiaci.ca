@@ -3,13 +3,13 @@
 module.exports = {
   BUILD_BRAND: 'ascentia',
   BUILD_BRAND_SC: 'Ascentia™',
-  BUILD_CST: 'true',
+  BUILD_CST: 'false',
   BUILD_CST_PROGRAMS_LIST: 'DLB,M365',
-  BUILD_EDUCATION: 'true',
+  BUILD_EDUCATION: 'false',
   BUILD_EDUCATION_PROGRAMS_LIST: 'ECEA',
   BUILD_HEALTHCARE: 'true',
   BUILD_HEALTHCARE_PROGRAMS_LIST: 'RMT,CDA,DOC,PA,HCA,MLA',
-  BUILD_PROGRAMS: 'RMT,CDA,DOC,PA,HCA,MLA,ECEA,DLB,M365,COA',
+  BUILD_PROGRAMS: 'PA,HCA,MLA,COA',
 }
 </script>
 <!-- END LOCALS -->
@@ -17,7 +17,7 @@ module.exports = {
     <if condition='BUILD_PROGRAMS.includes("ECEA")'><include src="src/parts/programslide.htm" locals='{
       "name": "Early Childhood Education Assistant",
       "intro": "Learn how to care for our youngest and most vulnrable.",
-      "href": "#",
+      "href": "education-assistant.html",
       "image": "education-assistant.jpg"
     }'></include></if>
 </div>

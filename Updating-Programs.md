@@ -79,7 +79,10 @@ Blocks are sections within the template where content can be inserted or updated
 #### `compliance`
 
 ```html
-<block name="compliance">PTIB - Approval Pending</block>
+<block name="compliance"
+  >PTIB (Private Training Institutions Branch, Ministry of Advanced Education
+  and Future Skills) - Approval Pending</block
+>
 ```
 
 - Description: Provides compliance or approval status.

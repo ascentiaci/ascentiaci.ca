@@ -3,13 +3,13 @@
   module.exports = {
     BUILD_BRAND: "ascentia",
     BUILD_BRAND_SC: "Ascentia™",
-    BUILD_CST: "true",
+    BUILD_CST: "false",
     BUILD_CST_PROGRAMS_LIST: "DLB,M365",
-    BUILD_EDUCATION: "true",
+    BUILD_EDUCATION: "false",
     BUILD_EDUCATION_PROGRAMS_LIST: "ECEA",
     BUILD_HEALTHCARE: "true",
     BUILD_HEALTHCARE_PROGRAMS_LIST: "RMT,CDA,DOC,PA,HCA,MLA",
-    BUILD_PROGRAMS: "RMT,CDA,DOC,PA,HCA,MLA,ECEA,DLB,M365,COA",
+    BUILD_PROGRAMS: "PA,HCA,MLA,COA",
   };
 </script>
 <!-- END LOCALS -->
@@ -24,6 +24,18 @@
 
   }'
 >
+  <script>
+    {
+      {
+        CATS = [BUILD_HEALTHCARE, BUILD_EDUCATION, BUILD_CST];
+      }
+    }
+    {
+      {
+        CATSCount = CATS.filter((item) => item === "true").length;
+      }
+    }
+  </script>
   <block name="pageTitle"
     >Welcome to $BUILD_BRAND_SC Career&nbsp;Institute</block
   >
@@ -117,7 +129,10 @@
         thriving industries.
       </p>
       <div class="program-blocks container py-4" id="program-blocks">
-        <div class="card-group row row-cols-1 row-cols-lg-3 gx-4">
+        <div
+          class="card-group row row-cols-1 row-cols-lg-{{ CATSCount }} justify-content-center gx-4"
+          style="grid-template-columns: repeat({{ CATSCount }}, 1fr);"
+        >
           <if condition="BUILD_HEALTHCARE === 'true'">
             <extends
               src="parts/featureblocks.htm"

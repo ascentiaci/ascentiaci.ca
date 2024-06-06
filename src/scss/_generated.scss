@@ -57,7 +57,6 @@ $elevare-brand-body-font: "Montserrat";
   --bs-secondary-bg-rgb: rgb(255, 255, 255);
 }
 
-
 @font-face {
   font-family: droid-serif;
   src: url("/src/fonts/DroidSerif-Regular-webfont.woff");
@@ -114,13 +113,13 @@ h5 > a {
   font-weight: bold;
 }
 
-
 h1 {
-  color: var(--brand-primary)
+  color: var(--brand-primary);
 }
 
-h3, h4 {
-  color: var(--brand-secondary)
+h3,
+h4 {
+  color: var(--brand-secondary);
 }
 
 .btn-primary,
@@ -415,7 +414,6 @@ ul > li {
     justify-content: space-between;
   }
 }
-
 
 .pill-button {
   border-radius: 50px;

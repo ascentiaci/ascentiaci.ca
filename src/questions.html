@@ -1,20 +1,203 @@
+<!-- START LOCALS -->
 <script locals>
   module.exports = {
-    BUILD_BRAND: locals.BUILD_BRAND || "BRAND",
-    BUILD_BRAND_SC: locals.BUILD_BRAND_SC || "BRAND_SC",
+    BUILD_BRAND: "ascentia",
+    BUILD_BRAND_SC: "Ascentia™",
+    BUILD_CST: "false",
+    BUILD_CST_PROGRAMS_LIST: "DLB,M365",
+    BUILD_EDUCATION: "false",
+    BUILD_EDUCATION_PROGRAMS_LIST: "ECEA",
+    BUILD_HEALTHCARE: "true",
+    BUILD_HEALTHCARE_PROGRAMS_LIST: "RMT,CDA,DOC,PA,HCA,MLA",
+    BUILD_PROGRAMS: "PA,HCA,MLA,COA",
   };
 </script>
+<!-- END LOCALS -->
 <extends
   src="parts/base.htm"
   locals='{
   "headerImg": "questions.jpg", 
   "name": "Questions?",
   "title": "Questions?",
-  "BUILD_BRAND": "BRAND",
-  "BUILD_BRAND_SC": "BRAND_SC"
+  "BUILD_BRAND": "BUILD_BRAND",
+  "BUILD_BRAND_SC": "BUILD_BRAND_SC"
 }'
 >
   <block name="pageTitle"> Questions? </block>
+  <block name="introCopy">
+    We understand that choosing the right educational path is a significant
+    decision, and you might have many questions along the way. At {{
+    BUILD_BRAND_SC }} Career Institute, we're here to provide you with the
+    information and support you need to make the best choice for your future.
+  </block>
+  <block name="content">
+    <div class="container my-5 text-left">
+      <div class="row">
+        <div class="col">
+          <h3>Frequently Asked Questions</h3>
+          <div class="accordion" id="faqAccordion">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+                <button
+                  class="accordion-button"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseOne"
+                  aria-expanded="true"
+                  aria-controls="collapseOne"
+                >
+                  What programs do you offer?
+                </button>
+              </h2>
+              <div
+                id="collapseOne"
+                class="accordion-collapse collapse show"
+                aria-labelledby="headingOne"
+                data-bs-parent="#faqAccordion"
+              >
+                <div class="accordion-body">
+                  We offer a wide range of programs designed to meet diverse
+                  career goals and interests. Explore our
+                  <a href="programs.html">Programs page</a> to find the one
+                  that's right for you.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingTwo">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseTwo"
+                  aria-expanded="false"
+                  aria-controls="collapseTwo"
+                >
+                  How do I apply?
+                </button>
+              </h2>
+              <div
+                id="collapseTwo"
+                class="accordion-collapse collapse"
+                aria-labelledby="headingTwo"
+                data-bs-parent="#faqAccordion"
+              >
+                <div class="accordion-body">
+                  Our application process is straightforward and user-friendly.
+                  Visit our
+                  <a href="before-you-apply.html">Before You Apply</a> page for
+                  detailed instructions on how to submit your application and
+                  what documents you'll need.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingThree">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseThree"
+                  aria-expanded="false"
+                  aria-controls="collapseThree"
+                >
+                  What are the tuition fees?
+                </button>
+              </h2>
+              <div
+                id="collapseThree"
+                class="accordion-collapse collapse"
+                aria-labelledby="headingThree"
+                data-bs-parent="#faqAccordion"
+              >
+                <div class="accordion-body">
+                  Tuition fees vary by program. For a detailed breakdown of
+                  costs and available financial aid options, please visit our
+                  <a href="financial-aid.html">Financial Aid</a> page.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingFour">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseFour"
+                  aria-expanded="false"
+                  aria-controls="collapseFour"
+                >
+                  When do classes start?
+                </button>
+              </h2>
+              <div
+                id="collapseFour"
+                class="accordion-collapse collapse"
+                aria-labelledby="headingFour"
+                data-bs-parent="#faqAccordion"
+              >
+                <div class="accordion-body">
+                  Our classes start on different dates throughout the year.
+                  Check our
+                  <a href="enrollment-calendar.html">Enrollment Calendar</a> for
+                  upcoming start dates and deadlines.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingFive">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseFive"
+                  aria-expanded="false"
+                  aria-controls="collapseFive"
+                >
+                  Can I visit the campus?
+                </button>
+              </h2>
+              <div
+                id="collapseFive"
+                class="accordion-collapse collapse"
+                aria-labelledby="headingFive"
+                data-bs-parent="#faqAccordion"
+              >
+                <div class="accordion-body">
+                  We're thrilled to welcome you to our campus. Right now, we are
+                  preparing our state-of-the-art facilities for our wonderful
+                  students. Please reach out to us using the contact information
+                  below for more details.
+                  <!-- Absolutely! We encourage prospective students to visit our campus and experience {{ BUILD_BRAND_SC }}  firsthand. Schedule a tour through our <a rel="noopener" href="https://outlook.office365.com/owa/calendar/AscentiaCareerInstitute@ascentiaci.ca/bookings/" target="_blank">Booking</a> page. -->
+                </div>
+              </div>
+            </div>
+          </div>
 
-  <block name="content"> </block>
+          <h3 class="mt-4">Contact Us</h3>
+          <p>
+            Still have questions? Our admissions team is here to help. You can
+            reach us at
+            <if condition="BUILD_BRAND === 'ascentia'"
+              ><a href="tel:12509998733">250-999-8733</a></if
+            >
+            <if condition="BUILD_BRAND !== 'ascentia'"
+              ><a href="tel:12509998736">250-999-8736</a></if
+            >
+            or
+            <if condition="BUILD_BRAND === 'ascentia'"
+              ><a href="mailto:info@ascentiaci.ca">info@ascentiaci.ca</a></if
+            >
+            <if condition="BUILD_BRAND !== 'ascentia'"
+              ><a href="mailto:info@elevareci.ca">info@elevareci.ca</a></if
+            >
+            <!-- or visit our campus at <if condition="BUILD_BRAND === 'ascentia'"><a href="https://www.google.com/maps/dir/?api=1&destination=1680%20Water%20St,%20Kelowna,%20BC" >Unit 301 - 1680 Water St., Kelowna, BC V1Y 8T8 </a></if>
+            <if condition="BUILD_BRAND !== 'ascentia'"><a href="https://www.google.com/maps/dir/?api=1&destination=1690%20Water%20St,%20Kelowna,%20BC" >Unit 200 - 1690 Water St., Kelowna, BC V1Y 8T8 </a></if> -->
+            . We're here to ensure you have all the information you need to make
+            a confident decision about your education.
+          </p>
+        </div>
+      </div>
+    </div>
+  </block>
 </extends>

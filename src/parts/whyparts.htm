@@ -1,9 +1,10 @@
 <div class="row row-cols-1 row-cols-lg-2 px-1 py-3 justify-content-around {{ order === '1' ? 'bg-body-tertiary ' : 'bg-body-secondary' }}">
-  <div class="col col-lg-7 col-12 order-{{ order }} p-2" style="width: 50%;">
-      <img src="images/{{ image }}" alt="" class="object-fit-cover h-100 w-100 brand-secondary">
+  <div class="col col-lg-4 col-12 order-{{ order }} d-none d-lg-inline">
+      <img src="images/{{ image }}" alt="" class="object-fit-cover h-100 brand-secondary">
   </div>
-  <div class="col col-lg-3 col-12 order-{{ order2 }} p-1 ms-lg-3">
-      <h3 class="{{ order === '1' ? 'text-left' : 'text-right' }} py-2"><block name="whyHeader">Stuff</block></h3>
-      <p class="{{ order === '1' ? 'text-left' : 'text-right' }}"><block name="whyContent">Just Because</block></p>
+  <div class="col col-lg-8 col-12 order-{{ order2 }} d-flex flex-column {{ order === '1' ? 'text-left' : 'text-right'}}">
+      <h3 class="py-2 text-center"><block name="whyHeader">Diploma in Business Co-op</block></h3>
+      <p class="text-center"><block name="whyContent">This Diploma's qualifications provide practical skills and theoretical business knowledge employers need. They allow advanced entry to universities nationally and internationally.</block></p>
+      
   </div>
 </div>
