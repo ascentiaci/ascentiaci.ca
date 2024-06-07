@@ -13,3 +13,7 @@ src/scss/_generated.scss
 /.history/*
 /.parcel-cache
 /.history/todo*
+.env*
+.flaskenv*
+!.env.project
+!.env.vault
