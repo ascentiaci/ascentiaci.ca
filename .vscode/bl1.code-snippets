@@ -65,5 +65,31 @@
 		  ""
 		],
 		"description": "AECI Page Template"
+	  },
+	  "Program ENV Setup": {
+		"prefix": "BUILD_PROGRAM",
+		"body": [
+		  "# ${1:PA} Values",
+		  "BUILD_${1:PA}_TUITION=${2:15000}",
+		  "",
+		  "# PA Fees",
+		  "BUILD_${1:PA}_FEE1_LABEL=Application Fee",
+		  "BUILD_${1:PA}_FEE1_PRICE=250",
+		  "BUILD_${1:PA}_FEE2_LABEL=Aministrative Fee - File Archiving",
+		  "BUILD_${1:PA}_FEE2_PRICE=5",
+		  "BUILD_${1:PA}_FEE3_LABEL=${3:Textbooks}",
+		  "BUILD_${1:PA}_FEE3_PRICE=385",
+		  "BUILD_${1:PA}_FEE4_LABEL=Testing/Assessment Fee - Entrance Exam",
+		  "BUILD_${1:PA}_FEE4_PRICE=100",
+		  "BUILD_${1:PA}_FEE5_LABEL=Other - Uniform Fee (2 Sets)",
+		  "BUILD_${1:PA}_FEE5_PRICE=140",
+		  "",
+		  "# ${1:PA} Schedule",
+		  "",
+		  "BUILD_${1:PA}_SCHEDULE=Full Time",
+		  "BUILD_${1:PA}_HOURS=550",
+		  "BUILD_${1:PA}_WEEKS=28"
+		],
+		"description": "Program ENV Setup"
 	  }
 }
