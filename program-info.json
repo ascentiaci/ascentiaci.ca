@@ -1,0 +1,209 @@
+{
+    "PA": {
+      "Values": {
+        "Tuition": 7730,
+        "Name": "Pharmacy Assistant",
+        "Filename": "pharmacy-assistant.html"
+      },
+      "Fees": [
+        {
+          "Label": "Application Fee",
+          "Price": 250
+        },
+        {
+          "Label": "Administrative Fee - File Archiving",
+          "Price": 5
+        },
+        {
+          "Label": "Textbooks",
+          "Price": 385
+        },
+        {
+          "Label": "Testing/Assessment Fee - Entrance Exam",
+          "Price": 100
+        },
+        {
+          "Label": "Other - Uniform Fee (2 Sets)",
+          "Price": 140
+        }
+      ],
+      "Schedule": {
+        "Type": "Full Time",
+        "Hours": 550,
+        "Weeks": 28
+      }
+    },
+    "MLA": {
+      "Values": {
+        "Tuition": 14610
+      },
+      "Fees": [
+        {
+          "Label": "Application Fee",
+          "Price": 250
+        },
+        {
+          "Label": "Administrative Fee - File Archiving",
+          "Price": 5
+        },
+        {
+          "Label": "Textbooks",
+          "Price": 695
+        },
+        {
+          "Label": "Testing/Assessment Fee - Entrance Exam",
+          "Price": 100
+        },
+        {
+          "Label": "Other - Uniform Fee (2 Sets)",
+          "Price": 140
+        },
+        {
+          "Label": "Materials",
+          "Price": 500
+        }
+      ],
+      "Schedule": {
+        "Type": "Full Time",
+        "Hours": 832,
+        "Weeks": 44
+      }
+    },
+    "RMT": {
+      "Values": {
+        "Tuition": 12000,
+        "Name": "Registered Massage Therapist",
+        "Filename": "registered-massage-therapist.html"
+      },
+      "Fees": [
+        {
+          "Label": "Application Fee",
+          "Price": 250
+        },
+        {
+          "Label": "Administrative Fee - File Archiving",
+          "Price": 5
+        },
+        {
+          "Label": "Textbooks",
+          "Price": 600
+        },
+        {
+          "Label": "Testing/Assessment Fee - Entrance Exam",
+          "Price": 100
+        },
+        {
+          "Label": "Other - Uniform Fee (2 Sets)",
+          "Price": 140
+        }
+      ],
+      "Schedule": {
+        "Type": "Full Time",
+        "Hours": 1100,
+        "Weeks": 52
+      }
+    },
+    "CDA": {
+      "Values": {
+        "Tuition": 8000,
+        "Name": "Chairside Dental Assistant",
+        "Filename": "chairside-dental-assistant.html"
+      },
+      "Fees": [
+        {
+          "Label": "Application Fee",
+          "Price": 250
+        },
+        {
+          "Label": "Administrative Fee - File Archiving",
+          "Price": 5
+        },
+        {
+          "Label": "Textbooks",
+          "Price": 400
+        },
+        {
+          "Label": "Testing/Assessment Fee - Entrance Exam",
+          "Price": 100
+        },
+        {
+          "Label": "Other - Uniform Fee (2 Sets)",
+          "Price": 140
+        }
+      ],
+      "Schedule": {
+        "Type": "Full Time",
+        "Hours": 600,
+        "Weeks": 30
+      }
+    },
+    "DOC": {
+      "Values": {
+        "Tuition": 7000,
+        "Name": "Dental Office Assistant",
+        "Filename": "dental-office-assistant.html"
+      },
+      "Fees": [
+        {
+          "Label": "Application Fee",
+          "Price": 250
+        },
+        {
+          "Label": "Administrative Fee - File Archiving",
+          "Price": 5
+        },
+        {
+          "Label": "Textbooks",
+          "Price": 350
+        },
+        {
+          "Label": "Testing/Assessment Fee - Entrance Exam",
+          "Price": 100
+        },
+        {
+          "Label": "Other - Uniform Fee (2 Sets)",
+          "Price": 140
+        }
+      ],
+      "Schedule": {
+        "Type": "Full Time",
+        "Hours": 500,
+        "Weeks": 25
+      }
+    },
+    "HCA": {
+      "Values": {
+        "Tuition": 6500,
+        "Name": "Health Care Assistant",
+        "Filename": "health-care-assistant.html"
+      },
+      "Fees": [
+        {
+          "Label": "Application Fee",
+          "Price": 250
+        },
+        {
+          "Label": "Administrative Fee - File Archiving",
+          "Price": 5
+        },
+        {
+          "Label": "Textbooks",
+          "Price": 300
+        },
+        {
+          "Label": "Testing/Assessment Fee - Entrance Exam",
+          "Price": 100
+        },
+        {
+          "Label": "Other - Uniform Fee (2 Sets)",
+          "Price": 140
+        }
+      ],
+      "Schedule": {
+        "Type": "Full Time",
+        "Hours": 450,
+        "Weeks": 22
+      }
+    }
+  }
+  
