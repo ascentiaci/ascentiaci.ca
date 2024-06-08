@@ -1,17 +1,17 @@
 <!-- START LOCALS -->
 <script locals>
-  module.exports = {
-    BUILD_BRAND: "ascentia",
-    BUILD_BRAND_SC: "Ascentia™",
-    BUILD_CATSCount: "1",
-    BUILD_CST: "false",
-    BUILD_CST_PROGRAMS_LIST: "DLB,M365",
-    BUILD_EDUCATION: "false",
-    BUILD_EDUCATION_PROGRAMS_LIST: "ECEA",
-    BUILD_HEALTHCARE: "true",
-    BUILD_HEALTHCARE_PROGRAMS_LIST: "RMT,CDA,DOC,PA,HCA,MLA",
-    BUILD_PROGRAMS: "PA,HCA,MLA,COA",
-  };
+module.exports = {
+  BUILD_BRAND: 'ascentia',
+  BUILD_BRAND_SC: 'Ascentia™',
+  BUILD_CATSCount: '1',
+  BUILD_CST: 'false',
+  BUILD_CST_PROGRAMS_LIST: 'DLB,M365',
+  BUILD_EDUCATION: 'false',
+  BUILD_EDUCATION_PROGRAMS_LIST: 'ECEA',
+  BUILD_HEALTHCARE: 'true',
+  BUILD_HEALTHCARE_PROGRAMS_LIST: 'RMT,CDA,DOC,PA,HCA,MLA',
+  BUILD_PROGRAMS: 'PA,HCA,MLA,COA',
+}
 </script>
 <!-- END LOCALS -->
 <extends
@@ -119,19 +119,33 @@
       </p>
       <div class="program-blocks container py-4" id="program-blocks">
         <style>
-          .card-group-1 {
-            grid-template-columns: repeat(1, 1fr);
-          }
-          .card-group-2 {
-            grid-template-columns: repeat(2, 1fr);
-          }
-          .card-group-3 {
-            grid-template-columns: repeat(3, 1fr);
-          }
+            .program-blocks {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .card-group {
+                display: grid;
+                gap: 1rem;
+            }
+            .card-group-1 {
+                grid-template-columns: 1fr;
+                max-width: 50%;
+            }
+            .card-group-2 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .card-group-3 {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .card-group img {
+                width: 100%;
+                height: auto;
+                object-fit: cover;
+            }
         </style>
-        <div
-          class="card-group row row-cols-1 row-cols-lg-{{ BUILD_CATSCount }} card-group-{{ BUILD_CATSCount }} justify-content-center gx-4"
-        >
+        <div class="card-group row row-cols-1 row-cols-lg-{{ BUILD_CATSCount }} card-group-{{ BUILD_CATSCount }} gx-4">
+    
           <if condition="BUILD_HEALTHCARE === 'true'">
             <extends
               src="parts/featureblocks.htm"
