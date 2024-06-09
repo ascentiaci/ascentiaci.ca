@@ -1,0 +1,25 @@
+<script locals>
+  module.exports = {
+    BUILD_BRAND: locals.BUILD_BRAND || "BRAND",
+    BUILD_BRAND_SC: locals.BUILD_BRAND_SC || "BRAND_SC",
+  };
+</script>
+<extends
+  src="parts/base.htm"
+  locals='{
+        "headerImg": "index.png", 
+        "name": "name",
+        "title": "name",
+        "BUILD_BRAND": "BRAND",
+        "BUILD_BRAND_SC": "BRAND_SC"
+    }'
+>
+  <block name="pageTitle">titleBlock</block>
+  <block name="introCopy">IntroCopy</block>
+
+  <!-- https://outlook.office365.com/owa/calendar/AscentiaCareerInstitute@ascentiaci.ca/bookings/ -->
+
+  <block name="content">
+    <!-- <iframe src="https://appointment-easyappointments.hqt7vl.easypanel.host/index.php/appointments" frameborder="0"></iframe> -->
+  </block>
+</extends>

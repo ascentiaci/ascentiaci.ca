@@ -1,0 +1,182 @@
+<script locals>
+  module.exports = {
+    BUILD_BRAND: locals.BUILD_BRAND || "",
+    BUILD_BRAND_SC: locals.BUILD_BRAND_SC || "BRAND_SC",
+  };
+</script>
+<extends
+  src="parts/base.htm"
+  locals='{
+  "headerImg": "fabian-blank-pElSkGRA2NU-unsplash.jpg", 
+  "name": "",
+  "title": "Financial Aid",
+  "BUILD_BRAND": "BRAND",
+  "BUILD_BRAND_SC": "BRAND_SC"
+}'
+>
+  <block name="pageTitle"> Financial Aid </block>
+
+  <block name="introCopy"
+    >At {{ BUILD_BRAND_SC }}, we understand that financing your education is a
+    significant consideration. We are committed to helping you navigate the
+    financial aspects of your studies and providing you with the resources you
+    need to achieve your academic goals. Our admissions advisors are here to
+    assist you in exploring various funding options, including grants, loans,
+    and payment plans.</block
+  >
+  <block name="content">
+    <div class="container my-5 text-left">
+      <div class="row">
+        <div class="col">
+          <h3>Types of Financial Aid</h3>
+          <div class="accordion" id="financialAidAccordion">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingGrants">
+                <button
+                  class="accordion-button"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseGrants"
+                  aria-expanded="true"
+                  aria-controls="collapseGrants"
+                >
+                  Grants
+                </button>
+              </h2>
+              <div
+                id="collapseGrants"
+                class="accordion-collapse collapse show"
+                aria-labelledby="headingGrants"
+                data-bs-parent="#financialAidAccordion"
+              >
+                <div class="accordion-body">
+                  Grants are typically need-based and may be available through
+                  government programs. These do not require repayment. Please
+                  check the eligibility criteria and application process for any
+                  grants you may be eligible for.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingLoans">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseLoans"
+                  aria-expanded="false"
+                  aria-controls="collapseLoans"
+                >
+                  Student Loans
+                </button>
+              </h2>
+              <div
+                id="collapseLoans"
+                class="accordion-collapse collapse"
+                aria-labelledby="headingLoans"
+                data-bs-parent="#financialAidAccordion"
+              >
+                <div class="accordion-body">
+                  Student loans are a common way to finance your education. Our
+                  admissions advisors can guide you through the process of
+                  applying for federal and provincial student loans, as well as
+                  private loan options. Understand the terms and conditions, and
+                  find the best loan options to suit your needs.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingPaymentPlans">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapsePaymentPlans"
+                  aria-expanded="false"
+                  aria-controls="collapsePaymentPlans"
+                >
+                  Payment Plans
+                </button>
+              </h2>
+              <div
+                id="collapsePaymentPlans"
+                class="accordion-collapse collapse"
+                aria-labelledby="headingPaymentPlans"
+                data-bs-parent="#financialAidAccordion"
+              >
+                <div class="accordion-body">
+                  We offer flexible payment plans to help you manage the cost of
+                  your education. These plans allow you to spread out your
+                  tuition payments over the course of your program. Contact our
+                  admissions advisors to discuss payment plan options.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <h3>Additional Financial Resources</h3>
+          <ul>
+            <li>
+              <a rel="noopener" href="https://www.workbc.ca/" target="_blank"
+                >WorkBC</a
+              >: Depending on your qualifications, you may be eligible for
+              financial assistance through WorkBC. They offer various programs
+              and services to support your educational and career goals.
+            </li>
+            <li>
+              Employer Training Incentives: Some employers offer training
+              incentives to support their employees' professional development.
+              Check with your employer to see if they provide any financial
+              assistance for further education.
+            </li>
+          </ul>
+
+          <h3>How to Apply for Financial Aid</h3>
+          <ol>
+            <li>
+              <strong>Research Your Options:</strong> Start by exploring the
+              different types of financial aid available. Visit our sections on
+              grants, loans, and payment plans for detailed information.
+            </li>
+            <li>
+              <strong>Complete Your Application:</strong> Gather the necessary
+              documents and complete the financial aid application forms. Make
+              sure to meet all deadlines to ensure timely processing.
+            </li>
+            <li>
+              <strong>Submit Your Application:</strong> Submit your completed
+              application along with any required documents to our admissions
+              office. Our team will review your application and notify you of
+              your eligibility and award amounts.
+            </li>
+            <li>
+              <strong>Receive Your Aid:</strong> Once your application is
+              approved, you will receive your financial aid award letter
+              detailing the types and amounts of aid you will receive.
+            </li>
+          </ol>
+
+          <h3>Financial Aid Resources</h3>
+          <ul>
+            <li>
+              <strong>Admissions Advisors:</strong> Our dedicated admissions
+              advisors are here to help you every step of the way. Contact us
+              for personalized assistance.
+            </li>
+            <li>
+              <a
+                rel="noopener"
+                href="https://www2.gov.bc.ca/gov/content/education-training/post-secondary-education/pay-for-school"
+                target="_blank"
+                >BC Government Financial Aid Resources</a
+              >: Access the comprehensive financial aid resources provided by
+              the BC government.
+            </li>
+          </ul>
+
+          <include src="./src/parts/contactus.htm"> </include>
+        </div>
+      </div>
+    </div>
+  </block>
+</extends>

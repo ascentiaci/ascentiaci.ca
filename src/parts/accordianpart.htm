@@ -1,0 +1,17 @@
+<div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#{{ cardId }}" aria-expanded="false" aria-controls="{{ cardId }}">
+          <block name="accordionTitle">
+            
+          </block>
+        </button>
+      </h2>
+      <div id="{{ cardId }}" class="accordion-collapse collapsed collapse" data-bs-parent="#{{ parent }}">
+        <div class="accordion-body">
+          <block name="accordionBody">
+            
+          </block>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -2,6 +2,11 @@
   "plugins": {
     "posthtml-doctype": { "doctype": "HTML 5" },
     "posthtml-include": {},
-    "posthtml-expressions": {}
+    "posthtml-expressions": {
+      "locals": { 
+        "BRAND": "ascentia"
+      } 
+    },
+    "posthtml-extend": {"root": "./src", "strict": false}
   }
 }

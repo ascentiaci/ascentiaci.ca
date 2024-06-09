@@ -1,0 +1,48 @@
+<script locals>
+  module.exports = {
+    BUILD_BRAND: locals.BUILD_BRAND || "BRAND",
+    BUILD_BRAND_SC: locals.BUILD_BRAND_SC || "BRAND_SC",
+  };
+</script>
+<extends
+  src="parts/base.htm"
+  locals='{
+  "headerImg": "calendar.jpg", 
+  "name": "Enrollment Calendar",
+  "title": "Enrollment Calendar",
+  "BUILD_BRAND": "BRAND",
+  "BUILD_BRAND_SC": "BRAND_SC"
+}'
+>
+  <!-- https://outlook.office365.com/owa/calendar/dca8a4e453dd4143b8d7eba66392f109@888ltd.ca/6c1c3d5661144e0e8e0606523fc6059b12109602354518733794/calendar.ics -->
+  <block name="pageTitle"> Enrollment Calendar </block>
+  <block name="introCopy">
+    Explore our course calendar to find start dates for programs that fit your
+    schedule. Start your learning journey today!
+  </block>
+  <block name="content">
+    <!-- <script src='https://cdn.jsdelivr.net/npm/@fullcalendar/icalendar@6.1.11/index.global.min.js'></script> -->
+    <!-- <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js'></script> -->
+
+    <script src="/node_modules/ical.js/build/ical.min.js"></script>
+    <script src="/node_modules/@fullcalendar/core/index.global.min.js"></script>
+    <script src="/node_modules/@fullcalendar/daygrid/index.global.min.js"></script>
+    <script src="/node_modules/@fullcalendar/icalendar/index.global.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var calendarEl = document.getElementById("calendar");
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+          initialView: "dayGridMonth",
+          events: {
+            url: "https://production.corsproxy.aolccbc.workers.dev/?https://outlook.office365.com/owa/calendar/dca8a4e453dd4143b8d7eba66392f109@888ltd.ca/6c1c3d5661144e0e8e0606523fc6059b12109602354518733794/calendar.ics",
+            fethMode: "no-cors",
+            format: "ics",
+          },
+        });
+        calendar.render();
+      });
+    </script>
+
+    <div id="calendar"></div>
+  </block>
+</extends>
