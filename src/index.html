@@ -1,201 +1,53 @@
-<!-- START LOCALS -->
-<script locals>
-module.exports = {
-  BUILD_BRAND: 'ascentia',
-  BUILD_BRAND_SC: 'Ascentia™',
-  BUILD_CATSCount: '1',
-  BUILD_CST: 'false',
-  BUILD_CST_PROGRAMS_LIST: 'DLB,M365',
-  BUILD_EDUCATION: 'false',
-  BUILD_EDUCATION_PROGRAMS_LIST: 'ECEA',
-  BUILD_HEALTHCARE: 'true',
-  BUILD_HEALTHCARE_PROGRAMS_LIST: 'RMT,CDA,DOC,PA,HCA,MLA',
-  BUILD_PROGRAMS: 'PA,HCA,MLA,COA',
-}
-</script>
-<!-- END LOCALS -->
-<extends
-  src="parts/base.htm"
-  locals='{
-    "headerImg": "{{ `$BUILD_BRAND` === `ascentia` ? `index.png` : `elevare_index.png` }}", 
-    "name": "Welcome to $BUILD_BRAND_SC Career Institute",
-    "title": "Home",
-    "BUILD_BRAND": "BRAND",
-    "BUILD_BRAND_SC": "BRAND_SC"
-
-  }'
->
-  <block name="pageTitle"
-    >Welcome to $BUILD_BRAND_SC Career&nbsp;Institute</block
-  >
-  <block name="introCopy">
-    <if condition="BUILD_BRAND === 'ascentia'">
-      <p>
-        Welcome to Ascentia Career Institute, where "learning today, leading
-        tomorrow" is not just a motto but a promise. With a focus on flexible,
-        adaptable learning and innovation, we empower students to shape their
-        educational journey according to their needs and preferences.
-      </p>
-
-      <p>
-        Embrace the opportunity to embark on a journey of self-discovery and
-        growth, surrounded by a community of like-minded individuals dedicated
-        to excellence. Your journey starts here, at Ascentia Career Institute,
-        where learning knows no bounds and tomorrow's leaders are born today.
-      </p>
-    </if>
-    <if condition="BUILD_BRAND !== 'ascentia'">
-      <p>
-        Welcome to Elevare Career Institute, where "your potential reaches new
-        heights" is not just a tagline but a commitment. With a focus on
-        flexible, adaptable learning and innovation, we empower students to
-        shape their educational journey according to their needs and
-        preferences.
-      </p>
-
-      <p>
-        Embrace the opportunity to embark on a journey of self-discovery and
-        growth, surrounded by a community of like-minded individuals dedicated
-        to excellence. Your journey starts here, at Elevare Career Institute,
-        where learning knows no bounds and tomorrow's leaders are born today.
-      </p>
-    </if>
-  </block>
-  <block name="content">
-    <div class="container py-4 px-2 mx-auto">
-      <hr />
-      <div class="feature-blocks container py-4" id="feature-blocks">
-        <div class="card-group row row-cols-1 row-cols-lg-3 gx-4">
-          <extends
-            src="parts/featureblocks.htm"
-            locals='{
-            "target": "admissions.html",
-            "cta": "See Admissions Details",
-            "image": "feature1.webp"
-          }'
-          >
-            <block name="title"> How to Apply </block>
-            <block name="blurb"
-              >Enrollment calendar, FAQs and financial assistance</block
-            >
-          </extends>
-          <extends
-            src="parts/featureblocks.htm"
-            locals='{
-              "target": "why-$BUILD_BRAND.html",
-              "cta": "See What Makes Us Different",
-              "image": "feature2.webp"
-            }'
-          >
-            <block name="title"> Why $BUILD_BRAND_SC </block>
-            <block name="blurb"
-              >Transformative courses with unmatched, flexible learning</block
-            >
-          </extends>
-          <extends
-            src="parts/featureblocks.htm"
-            locals='{
-            "target": "post-graduate-support.html",
-            "cta": "Discover Graduate Support",
-            "image": "feature3.webp"
-          }'
-          >
-            <block name="title"> Graduate Support </block>
-            <block name="blurb"
-              >Supporting you from enrollment to employment</block
-            >
-          </extends>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Under Construction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            text-align: center;
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 0.5em;
+        }
+        p {
+            font-size: 1.2em;
+            color: #333;
+        }
+        .logo {
+            margin-bottom: 20px;
+        }
+        .logo img {
+            width: 150px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="images/primary-logo-name-tagline-black-text.png?" alt="Website Logo">
         </div>
-      </div>
-
-      <hr />
-
-      <h1>Explore our Programs</h1>
-      <p>
-        At $BUILD_BRAND_SC, our exclusive programs are tailored to help you
-        secure high-demand jobs, giving you the skills needed for a successful
-        career. Explore our unique offerings designed to launch your career into
-        thriving industries.
-      </p>
-      <div class="program-blocks container py-4" id="program-blocks">
-        <style>
-            .program-blocks {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
-            .card-group {
-                display: grid;
-                gap: 1rem;
-            }
-            .card-group-1 {
-                grid-template-columns: 1fr;
-                max-width: 50%;
-            }
-            .card-group-2 {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .card-group-3 {
-                grid-template-columns: repeat(3, 1fr);
-            }
-            .card-group img {
-                width: 100%;
-                height: auto;
-                object-fit: cover;
-            }
-        </style>
-        <div class="card-group row row-cols-1 row-cols-lg-{{ BUILD_CATSCount }} card-group-{{ BUILD_CATSCount }} gx-4">
-    
-          <if condition="BUILD_HEALTHCARE === 'true'">
-            <extends
-              src="parts/featureblocks.htm"
-              locals='{
-            "target": "healthcare.html",
-            "cta": "Explore",
-            "image": "health-care-aide.jpg"
-          }'
-            >
-              <block name="title"> Healthcare<br /> </block>
-              <block name="blurb">
-                Discover your future in healthcare with our diploma programs!
-              </block>
-            </extends>
-          </if>
-          <if condition="BUILD_EDUCATION === 'true'">
-            <extends
-              src="parts/featureblocks.htm"
-              locals='{
-          "target": "education.html",
-          "cta": "Explore",
-          "image": "education-assistant.jpg"
-        }'
-            >
-              <block name="title">
-                Education
-                <br />
-              </block>
-              <block name="blurb">
-                Shape the minds of tomorrow with our education diplomas!
-              </block>
-            </extends></if
-          >
-          <if condition="BUILD_CST === 'true'">
-            <extends
-              src="parts/featureblocks.htm"
-              locals='{
-          "target": "computer-systems-and-technology.html",
-          "cta": "Explore",
-          "image": "m365.jpg"
-        }'
-            >
-              <block name="title"> Computer Systems and Technology </block>
-              <block name="blurb">
-                Master tech skills with our Computer Systems programs!
-              </block>
-            </extends></if
-          >
-        </div>
-      </div>
+        <h1>We're Building Something Great!</h1>
+        <p>Our website is currently under construction. We'll be here soon with our new awesome site.</p>
+        
     </div>
-  </block>
-</extends>
+</body>
+</html>
