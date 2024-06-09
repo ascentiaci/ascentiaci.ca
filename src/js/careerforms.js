@@ -37,7 +37,7 @@ document
 
     // Example n8n Webhook URL
     var webhookUrl =
-      "https://marketing-n8n.hqt7vl.easypanel.host/webhook-test/1d8e41e9-0fbe-4a4a-9fc3-f6e5825bd352";
+      "https://n8n.888ltd.ca/webhook-test/1d8e41e9-0fbe-4a4a-9fc3-f6e5825bd352";
 
     fetch(webhookUrl, {
       method: "POST",
