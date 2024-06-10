@@ -70,7 +70,7 @@ Blocks are sections within the template where content can be inserted or updated
 #### `certification`
 
 ```html
-<block name="certification">BC Registry #, Certificate </block>
+<block name="certification">BC Registry #, Diploma </block>
 ```
 
 - Description: Lists the certifications or registration numbers associated with the program.

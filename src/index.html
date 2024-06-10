@@ -1,17 +1,17 @@
 <!-- START LOCALS -->
 <script locals>
-module.exports = {
-  BUILD_BRAND: 'ascentia',
-  BUILD_BRAND_SC: 'Ascentia™',
-  BUILD_CATSCount: '1',
-  BUILD_CST: 'false',
-  BUILD_CST_PROGRAMS_LIST: 'DLB,M365',
-  BUILD_EDUCATION: 'false',
-  BUILD_EDUCATION_PROGRAMS_LIST: 'ECEA',
-  BUILD_HEALTHCARE: 'true',
-  BUILD_HEALTHCARE_PROGRAMS_LIST: 'RMT,CDA,DOC,PA,HCA,MLA',
-  BUILD_PROGRAMS: 'PA,HCA,MLA,COA',
-}
+  module.exports = {
+    BUILD_BRAND: "elevare",
+    BUILD_BRAND_SC: "Elevare™",
+    BUILD_CATSCount: "1",
+    BUILD_CST: "false",
+    BUILD_CST_PROGRAMS_LIST: "DLB,M365",
+    BUILD_EDUCATION: "true",
+    BUILD_EDUCATION_PROGRAMS_LIST: "ECEA",
+    BUILD_HEALTHCARE: "true",
+    BUILD_HEALTHCARE_PROGRAMS_LIST: "RMT,CDA,DOC,PA,HCA,MLA",
+    BUILD_PROGRAMS: "PA,HCA,MLA,ECEA,DOC",
+  };
 </script>
 <!-- END LOCALS -->
 <extends
@@ -38,15 +38,15 @@ module.exports = {
       </p>
 
       <p>
-        Embrace the opportunity to embark on a journey of self-discovery and
-        growth, surrounded by a community of like-minded individuals dedicated
-        to excellence. Your journey starts here, at Ascentia Career Institute,
-        where learning knows no bounds and tomorrow's leaders are born today.
+        Join a community dedicated to excellence and embark on a transformative
+        journey of self-discovery and professional growth. Begin your journey
+        with Ascentia™ Career Institute, where limitless learning fosters the
+        leaders of tomorrow
       </p>
     </if>
     <if condition="BUILD_BRAND !== 'ascentia'">
       <p>
-        Welcome to Elevare Career Institute, where "your potential reaches new
+        Welcome to Elevare™ Career Institute, where "your potential reaches new
         heights" is not just a tagline but a commitment. With a focus on
         flexible, adaptable learning and innovation, we empower students to
         shape their educational journey according to their needs and
@@ -54,10 +54,10 @@ module.exports = {
       </p>
 
       <p>
-        Embrace the opportunity to embark on a journey of self-discovery and
-        growth, surrounded by a community of like-minded individuals dedicated
-        to excellence. Your journey starts here, at Elevare Career Institute,
-        where learning knows no bounds and tomorrow's leaders are born today.
+        Join a community dedicated to excellence and embark on a transformative
+        journey of self-discovery and professional growth. Begin your journey
+        with Elevare™ Career Institute, where limitless learning fosters the
+        leaders of tomorrow
       </p>
     </if>
   </block>
@@ -76,7 +76,8 @@ module.exports = {
           >
             <block name="title"> How to Apply </block>
             <block name="blurb"
-              >Enrollment calendar, FAQs and financial assistance</block
+              >Learn how to apply, view the enrollment calendar, FAQs, and
+              financial aid options. Discover Admissions Details</block
             >
           </extends>
           <extends
@@ -112,40 +113,41 @@ module.exports = {
 
       <h1>Explore our Programs</h1>
       <p>
-        At $BUILD_BRAND_SC, our exclusive programs are tailored to help you
+        At $BUILD_BRAND_SC, our expert-led programs are tailored to help you
         secure high-demand jobs, giving you the skills needed for a successful
-        career. Explore our unique offerings designed to launch your career into
-        thriving industries.
+        career. Discover our specialized programs crafted to propel your career
+        in high-demand industries.
       </p>
       <div class="program-blocks container py-4" id="program-blocks">
         <style>
-            .program-blocks {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
-            .card-group {
-                display: grid;
-                gap: 1rem;
-            }
-            .card-group-1 {
-                grid-template-columns: 1fr;
-                max-width: 50%;
-            }
-            .card-group-2 {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .card-group-3 {
-                grid-template-columns: repeat(3, 1fr);
-            }
-            .card-group img {
-                width: 100%;
-                height: auto;
-                object-fit: cover;
-            }
+          .program-blocks {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+          .card-group {
+            display: grid;
+            gap: 1rem;
+          }
+          .card-group-1 {
+            grid-template-columns: 1fr;
+            max-width: 50%;
+          }
+          .card-group-2 {
+            grid-template-columns: repeat(2, 1fr);
+          }
+          .card-group-3 {
+            grid-template-columns: repeat(3, 1fr);
+          }
+          .card-group img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+          }
         </style>
-        <div class="card-group row row-cols-1 row-cols-lg-{{ BUILD_CATSCount }} card-group-{{ BUILD_CATSCount }} gx-4">
-    
+        <div
+          class="card-group row row-cols-1 row-cols-lg-{{ BUILD_CATSCount }} card-group-{{ BUILD_CATSCount }} gx-4"
+        >
           <if condition="BUILD_HEALTHCARE === 'true'">
             <extends
               src="parts/featureblocks.htm"
@@ -167,7 +169,7 @@ module.exports = {
               locals='{
           "target": "education.html",
           "cta": "Explore",
-          "image": "education-assistant.jpg"
+          "image": "early-childhood-education.jpg"
         }'
             >
               <block name="title">

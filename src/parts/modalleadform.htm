@@ -1,16 +1,16 @@
 <!-- START LOCALS -->
 <script locals>
 module.exports = {
-  BUILD_BRAND: 'ascentia',
-  BUILD_BRAND_SC: 'Ascentia™',
+  BUILD_BRAND: 'elevare',
+  BUILD_BRAND_SC: 'Elevare™',
   BUILD_CATSCount: '1',
   BUILD_CST: 'false',
   BUILD_CST_PROGRAMS_LIST: 'DLB,M365',
-  BUILD_EDUCATION: 'false',
+  BUILD_EDUCATION: 'true',
   BUILD_EDUCATION_PROGRAMS_LIST: 'ECEA',
   BUILD_HEALTHCARE: 'true',
   BUILD_HEALTHCARE_PROGRAMS_LIST: 'RMT,CDA,DOC,PA,HCA,MLA',
-  BUILD_PROGRAMS: 'PA,HCA,MLA,COA',
+  BUILD_PROGRAMS: 'PA,HCA,MLA,ECEA,DOC',
 }
 </script>
 <!-- END LOCALS -->
@@ -61,7 +61,7 @@ module.exports = {
 
                     <label for="consent">
                         <input type="checkbox" id="consent" name="consent">
-                        (optional) I agree that {{ BUILD_BRAND_SC }} Career Institute may send me messages via SMS.
+                        (optional) I consent to receive SMS communications from {{ BUILD_BRAND_SC }} Career Institute.
                     </label>
 
                     <!-- Cloudflare Turnstile Widget Placeholder -->

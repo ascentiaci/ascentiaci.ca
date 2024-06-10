@@ -5,7 +5,7 @@
   };
 </script>
 <extends
-  src="parts/programpageHC.htm"
+  src="parts/programpage.htm"
   locals='{
     "headerImg": "chair-side-dental.jpg", 
     "title": "Dental Office Assistant Assistant",
@@ -28,7 +28,7 @@
   </block>
   <block name="duration">6 months </block>
   <block name="curriculum">To be Announced </block>
-  <block name="certification">Certificate </block>
+  <block name="certification">Diploma </block>
   <block name="compliance"
     >PTIB (Private Training Institutions Branch, Ministry of Advanced Education
     and Future Skills) - Approval Pending</block
@@ -122,16 +122,23 @@
   <!-- Enter Tuition and Fees Here -->
   <!-- Follow formatting to add fees -->
   <!-- prettier-ignore -->
-  {{ tuition=10000 }} {{ adminFee=75 }} {{ archivalFee=10}} {{ totalCost=tuition+adminFee+archivalFee }}
+  {{ tuition=10000 }} {{ adminFee=250 }} {{ archivalFee=10}} {{ totalCost=tuition+adminFee+archivalFee }}
   <!-- Make sure to update the totalCost formula to reflect the new fee variables -->
 
-  <block name="tuition">${{ tuition.toLocaleString() }}</block>
+  <!-- <block name="tuition">${{ tuition.toLocaleString() }}</block>
+  <block name="adminFee">${{ adminFee.toLocaleString() }}</block>
+  <block name="archivalFee">${{ archivalFee.toLocaleString() }}</block>
+  Add additional fees here -->
+  <!-- format as <tr><td class="bold">Fee Name</td></td>$feeName.toLocaleString()</td></tr> -->
+  <!-- <block name="total">${{ totalCost.toLocaleString() }}</block> -->
+  <!-- DELETE ONCE ABOVE IS UPDATED -->
+  <block name="tuition">To be Announced</block>
   <block name="adminFee">${{ adminFee.toLocaleString() }}</block>
   <block name="archivalFee">${{ archivalFee.toLocaleString() }}</block>
   <!-- Add additional fees here -->
   <!-- format as <tr><td class="bold">Fee Name</td></td>$feeName.toLocaleString()</td></tr> -->
-  <block name="total">${{ totalCost.toLocaleString() }}</block>
-
+  <block name="total">To be Announced</block>
+  <!-- END DELETE -->
   <block name="ProgramleadForm"
     ><div class="has-primary-bg text-white">Coming Soon: 2024</div></block
   >

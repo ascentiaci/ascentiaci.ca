@@ -1,16 +1,16 @@
 <!-- START LOCALS -->
 <script locals>
 module.exports = {
-  BUILD_BRAND: 'ascentia',
-  BUILD_BRAND_SC: 'Ascentia™',
+  BUILD_BRAND: 'elevare',
+  BUILD_BRAND_SC: 'Elevare™',
   BUILD_CATSCount: '1',
   BUILD_CST: 'false',
   BUILD_CST_PROGRAMS_LIST: 'DLB,M365',
-  BUILD_EDUCATION: 'false',
+  BUILD_EDUCATION: 'true',
   BUILD_EDUCATION_PROGRAMS_LIST: 'ECEA',
   BUILD_HEALTHCARE: 'true',
   BUILD_HEALTHCARE_PROGRAMS_LIST: 'RMT,CDA,DOC,PA,HCA,MLA',
-  BUILD_PROGRAMS: 'PA,HCA,MLA,COA',
+  BUILD_PROGRAMS: 'PA,HCA,MLA,ECEA,DOC',
 }
 </script>
 <!-- END LOCALS -->
@@ -72,7 +72,7 @@ module.exports = {
   <if condition='BUILD_PROGRAMS.includes("DOC") '>
     <include src="src/parts/programslide.htm" locals='{
       "name": "Dental Office Assistant",
-      "intro": "Click to learn more",
+      "intro": "Discover the path to a rewarding career with our Dental Office Assistant Diploma program! Our comprehensive training equips you with the essential skills to excel in dental office administration. Learn everything from dental terminology and office procedures to patient management and dental software applications. Gain hands-on experience with practical labs and internships, ensuring you’re job-ready from day one. Whether scheduling appointments, handling billing, or managing patient records, our program prepares you for the dynamic and fulfilling role of a dental office assistant. Start your journey towards a professional dental career with us today!",
       "href": "dental-office-assistant.html",
       "image": "coa.jpg"
     }'></include>
