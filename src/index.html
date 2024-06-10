@@ -43,11 +43,21 @@
 <body>
     <div class="container">
         <div class="logo">
-            <img src="images/primary-logo-name-tagline-black-text.png?" alt="Website Logo">
+            <img src="images/primary-logo-name-tagline-black-text.png?" alt="Website Logo" id="ascentiaLogo">
+            <img src="images/elevare.png" class="d-none" ald="Website Logo" id="elevareLogo" title="Elevare Logo">
         </div>
         <h1>We're Building Something Great!</h1>
         <p>Our website is currently under construction. We'll be here soon with our new awesome site.</p>
         
     </div>
+    <script>
+        // on dom load, check the hostname and if it's not ascentiaci.ca, then set id ascentiaLogo to have class d-hidden and id elevareLogo remove d-none class and vice versa
+        window.onload = function() {
+            if (window.location.hostname !== 'ascentiaci.ca') {
+                document.getElementById('ascentiaLogo').classList.add('d-none');
+                document.getElementById('elevareLogo').classList.remove('d-none');
+            }
+        }
+    </script>
 </body>
 </html>
