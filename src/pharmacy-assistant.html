@@ -1,8 +1,16 @@
 <script locals>
-  module.exports = {
-    BUILD_BRAND: locals.BUILD_BRAND || "BRAND",
-    BUILD_BRAND_SC: locals.BUILD_BRAND_SC || "BRAND_SC",
-  };
+ module.exports = {
+  tuition: {
+    tuition: 7205,
+    appFee: 250,
+    adminFee: 5,
+    otherFees: [
+      { feeLabel: 'Uniform', feeCost: 150 },
+      { feeLabel: 'Books', feeCost: 300 },
+    ]
+  },
+  total: 777
+};
 </script>
 <extends
   src="parts/programpage.htm"
@@ -142,39 +150,26 @@
   </block>
   <!-- Enter Tuition and Fees Here -->
   <!-- Follow formatting to add fees -->
-  {{ tuition=7205 }} {{ appFee=250 }} {{ AssessmentFee=100 }} {{ adminFee=75 }}
+  
+  {{ appFee=250 }} {{ AssessmentFee=100 }} {{ adminFee=75 }}
   <!-- prettier-ignore -->
-  {{ archivalFee=4 }} {{ books=385 }} {{ materials=0}} {{ uniform=140 }} {{ totalCost=tuition+appFee+AssessmentFee+adminFee+archivalFee+books+materials+uniform }}
+  {{ archivalFee=4 }} {{ books=385 }} {{ materials=0}} {{ uniform=140 }} {{ totalCost=appFee+AssessmentFee+adminFee+archivalFee+books+materials+uniform }}
   <!-- Make sure to update the totalCost formula to reflect the new fee variables -->
 
-  <block name="tuition">${{ tuition.toLocaleString() }}</block>
-  <block name="adminFee">${{ adminFee.toLocaleString() }}</block>
+  <block name="tuition">${{ tuition['tuition'].toLocaleString() }}</block>
+  <block name="adminFee">${{ tuition['adminFee'].toLocaleString() }}</block>
   <block name="archivalFee">${{ archivalFee.toLocaleString() }}</block>
   <block name="additionalFeesRows">
-    <tr>
-      <th scope="row" class="bold">Application Fee</th>
-      <td>${{ appFee.toLocaleString() }}</td>
-    </tr>
-    <tr>
-      <th scope="row" class="bold">Assessment Fee</th>
-      <td>${{ AssessmentFee.toLocaleString() }}</td>
-    </tr>
-    <tr>
-      <th scope="row" class="bold">Books</th>
-      <td>${{ books.toLocaleString() }}</td>
-    </tr>
-    <tr>
-      <th scope="row" class="bold">Materials</th>
-      <td>${{ materials.toLocaleString() }}</td>
-    </tr>
-    <tr>
-      <th scope="row" class="bold">Uniform</th>
-      <td>${{ uniform.toLocaleString() }}</td>
-    </tr>
+    <each loop="fee in tuition['otherFees']">
+      <tr>
+          <th scope="row" class="bold">{{ fee.feeLabel }}</th>
+          <td>${{ fee.feeCost.toLocaleString() }}</td>
+      </tr>
+  </each>
   </block>
   <!-- Add additional fees here -->
   <!-- format as <tr><th scope="row" class="bold">Fee Name</th></td>$feeName.toLocaleString()</td></tr> -->
-  <block name="total">${{ totalCost.toLocaleString() }}</block>
+  <block name="total">${{ total.toLocaleString() }}</block>
 
   <block name="ProgramleadForm"
     ><div class="has-primary-bg text-white">Coming Soon: 2024</div></block

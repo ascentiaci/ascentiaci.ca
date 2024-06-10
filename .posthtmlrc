@@ -1,12 +1,51 @@
 {
   "plugins": {
-    "posthtml-doctype": { "doctype": "HTML 5" },
-    "posthtml-include": {},
-    "posthtml-expressions": {
-      "locals": { 
-        "BRAND": "ascentia"
-      } 
+    "posthtml-doctype": {
+      "doctype": "HTML 5"
     },
-    "posthtml-extend": {"root": "./src", "strict": false}
+    "posthtml-include": {
+      "locals": {
+        "BUILD_PROGRAMS": "PA",
+        "BUILD_HEALTHCARE": "true"
+      }
+    },
+    "posthtml-expressions": {
+      "locals": {
+        "BUILD_BRAND": "ascentia",
+        "BUILD_BRAND_SC": "Ascentia™",
+        "BUILD_CATSCount": "1",
+        "BUILD_CST": "false",
+        "BUILD_CST_PROGRAMS_LIST": "DLB,M365",
+        "BUILD_EDUCATION": "false",
+        "BUILD_EDUCATION_PROGRAMS_LIST": "ECEA",
+        "BUILD_HEALTHCARE": "true",
+        "BUILD_HEALTHCARE_PROGRAMS_LIST": "RMT,CDA,DOC,PA,HCA,MLA",
+        "BUILD_PROGRAMS": "PA"
+      }
+    },
+    "posthtml-extend": {
+      "root": "./src",
+      "strict": false,
+      "locals": {
+        "BUILD_PROGRAMS": "PA",
+        "BUILD_HEALTHCARE": "true",
+        "tuition": {
+          "tuition": 7205,
+          "appFee": 250,
+          "adminFee": 5,
+          "otherFees": [
+            {
+              "feeLabel": "Uniform",
+              "feeCost": 150
+            },
+            {
+              "feeLabel": "Books",
+              "feeCost": 300
+            }
+          ]
+        },
+        "total": 777
+      }
+    }
   }
 }

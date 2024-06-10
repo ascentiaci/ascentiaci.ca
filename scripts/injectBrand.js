@@ -5,86 +5,50 @@ dotenv.config();
 
 const brand = process.env.BUILD_BRAND;
 
-// Function to create a locals block from environment variables starting with "BUILD_"
-function createLocalsBlock() {
+// Function to create a locals object from environment variables starting with "BUILD_"
+function createLocalsObject() {
   const envVariables = process.env;
-  let localsContent = "module.exports = {\n";
+  const locals = {};
 
-  // Iterate over environment variables and filter those that start with "BUILD_"
   for (const [key, value] of Object.entries(envVariables)) {
     if (key.startsWith("BUILD_")) {
-      localsContent += `  ${key}: '${value}',\n`;
+      locals[key] = value;
     }
   }
-  localsContent += "}";
 
-  // Create the full locals block with start and end markers
-  return `
-<!-- START LOCALS -->
-<script locals>
-${localsContent}
-</script>
-<!-- END LOCALS -->`.trim();
+  return locals;
 }
 
-// Generate the locals block
-const brandLocals = createLocalsBlock();
+// Generate the locals object
+const locals = createLocalsObject();
 
-// Function to replace or prepend the locals block in the specified file
-function replaceOrPrependLocals(filePath, newLocals) {
+// Function to update the .posthtmlrc file with new locals
+function updatePosthtmlrc(filePath, newLocals) {
   const fileLocation = path.join(__dirname, filePath);
 
   try {
-    // Read the content of the file
-    let fileContent = fs.readFileSync(fileLocation, "utf8");
+    // Read the content of the .posthtmlrc file
+    const fileContent = fs.readFileSync(fileLocation, "utf8");
+    const config = JSON.parse(fileContent);
 
-    // Define the start and end markers for the locals block
-    const startLocals = "<!-- START LOCALS -->";
-    const endLocals = "<!-- END LOCALS -->";
-
-    // Find the start and end indexes of the existing locals block
-    const startIndex = fileContent.indexOf(startLocals);
-    const endIndex = fileContent.indexOf(endLocals) + endLocals.length;
-
-    if (startIndex === -1 || endIndex === -1) {
-      // If the locals block is not found, prepend the new locals block to the file content
-      fileContent = newLocals + "\n" + fileContent;
+    // Update the locals in the posthtml-expressions plugin
+    if (config.plugins["posthtml-expressions"]) {
+      config.plugins["posthtml-expressions"].locals = newLocals;
     } else {
-      // If the locals block is found, replace the existing locals block with the new one
-      fileContent =
-        fileContent.slice(0, startIndex) +
-        newLocals +
-        fileContent.slice(endIndex);
+      // If posthtml-expressions is not found, add it to the plugins
+      config.plugins["posthtml-expressions"] = { locals: newLocals };
     }
 
-    // Write the modified content back to the file
-    fs.writeFileSync(fileLocation, fileContent, "utf8");
-    console.log(
-      `✅ ${filePath} updated successfully with new Locals. ${brand} injected\n`,
-    );
+    // Write the modified content back to the .posthtmlrc file
+    // fs.writeFileSync(fileLocation, JSON.stringify(config, null, 2), "utf8");
+    console.log(`✅ ${filePath} updated successfully with new locals.\n`);
   } catch (error) {
     console.error(`❌ Error updating ${filePath}:`, error);
   }
 }
 
-// Call the function to replace or prepend the locals block in the specified file
-const pagesToUpdate = [
-  "../src/parts/base.htm",
-  "../src/parts/healthcare.htm",
-  "../src/parts/education.htm",
-  "../src/parts/footer.htm",
-  "../src/parts/computer-systems-and-technology.htm",
-  "../src/programs.html",
-  "../src/index.html",
-  "../src/questions.html",
-  "../src/parts/contactus.htm",
-  "../src/career-services.html",
-  "../src/parts/modalleadform.htm",
-];
-
-for (const filePath of pagesToUpdate) {
-  replaceOrPrependLocals(filePath, brandLocals);
-}
+// Call the function to update the .posthtmlrc file with the generated locals
+updatePosthtmlrc("../.posthtmlrc", locals);
 
 try {
   const scssContent =
