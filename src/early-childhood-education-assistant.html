@@ -27,7 +27,7 @@
   </block>
   <block name="duration">6 months </block>
   <block name="curriculum">To be Announced </block>
-  <block name="certification">Certificate </block>
+  <block name="certification">Diploma </block>
   <block name="compliance"
     >PTIB (Private Training Institutions Branch, Ministry of Advanced Education
     and Future Skills) - Approval Pending</block
@@ -112,15 +112,17 @@
   <!-- Enter Tuition and Fees Here -->
   <!-- Follow formatting to add fees -->
   <!-- prettier-ignore -->
-  {{ tuition=9000 }} {{ adminFee=75 }} {{ archivalFee=10}} {{ totalCost=tuition+adminFee+archivalFee }}
+  {{ tuition=9000 }} {{ adminFee=250 }} {{ archivalFee=5}} {{ totalCost=tuition+adminFee+archivalFee }}
   <!-- Make sure to update the totalCost formula to reflect the new fee variables -->
 
-  <block name="tuition">${{ tuition.toLocaleString() }}</block>
+  <!-- <block name="tuition">${{ tuition.toLocaleString() }}</block> -->
+  <block name="tuition">To be Annoucned</block>
   <block name="adminFee">${{ adminFee.toLocaleString() }}</block>
   <block name="archivalFee">${{ archivalFee.toLocaleString() }}</block>
   <!-- Add additional fees here -->
   <!-- format as <tr><td class="bold">Fee Name</td></td>$feeName.toLocaleString()</td></tr> -->
-  <block name="total">${{ totalCost.toLocaleString() }}</block>
+  <block name="total">To be Announced</block>
+  <!-- <block name="total">${{ totalCost.toLocaleString() }}</block> -->
 
   <block name="ProgramleadForm"
     ><div class="has-primary-bg text-white">Coming Soon: 2024</div></block
