@@ -29,3 +29,5 @@ jobs:
         uses: foo-software/lighthouse-check-action@master
         with:
           urls: ${{ steps.cfDeploy.outputs.url }}
+          gitHubAccessToken: ${{ github.token }}
+          prCommentEnabled: true
