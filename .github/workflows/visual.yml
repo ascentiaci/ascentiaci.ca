@@ -1,6 +1,10 @@
 name: Visual Review Deployment
 
-on: pull_request
+on:
+  push:
+    branches:
+      - "**"
+      - "!main"
 
 permissions:
   contents: read
