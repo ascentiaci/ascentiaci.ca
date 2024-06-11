@@ -15,19 +15,7 @@ jobs:
   wait_for_deployement:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: prompt/actions-commit-hash@v3
-        id: push-changes
-      - name: install dependencies
-        uses: actions/setup-node@v2
-        env:
-          PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: "true"
-      - name: install puppeteer-headful
-        uses: mujo-code/puppeteer-headful@18.9.0
-        with:
-          args: install
-        env:
-          CI: "true"
+      #   - uses: actions/checkout@v4
       - name: Await CF Pages
         id: cfDeploy
         uses: WalshyDev/cf-pages-await@v1.3.1
@@ -36,16 +24,11 @@ jobs:
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           accountEmail: ${{ secrets.CLOUDFLARE_ACCOUNT_EMAIL }}
           project: "ascentiaci-ca"
-          commitHash: ${{ steps.push-changes.outputs.hash }}
-      - name: Take Screenshots
+          commitHash: ${{ github.sha }}
+      - name: Comment Screenshots
         id: screenshots
-        uses: xxidbr9/screenshots-action@v1.1.18
+        uses: saadmk11/comment-webpage-screenshot@main
         with:
-          url: ${{ steps.cfDeploy.outputs.url }}
-      - name: Upload Screenshots
-        uses: actions/upload-artifact@v4
-        with:
-          path: screenshots
-          name: Download-screenshots
-      - name: Comment on pull request
-        uses: live-codes/pr-comment-from-artifact@v1.0.1
+          capture_changed_html_files: yes
+          capture_html_file_paths: ${{ steps.cfDeploy.outputs.url }}
+          capture_urls: ${{ steps.cfDeploy.outputs.url }}
