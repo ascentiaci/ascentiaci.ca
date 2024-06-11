@@ -9,20 +9,39 @@ on:
 permissions:
   contents: read
   pull-requests: write
+  deployments: write
 
 jobs:
-  get_cloudflare_preview_url:
+  wait_for_deployement:
     runs-on: ubuntu-latest
     steps:
-      - name: cloudflare_preview_url_a
-        uses: zentered/cloudflare-preview-url@v1.4.1
-        id: cloudflare_preview_url_a
-        env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          CLOUDFLARE_ACCOUNT_EMAIL: ${{ secrets.CLOUDFLARE_ACCOUNT_EMAIL }}
-          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      - uses: actions/checkout@v4
+      - uses: prompt/actions-commit-hash@v3
+        id: push-changes
+      - name: install puppeteer-headful
+        uses: mujo-code/puppeteer-headful@master
         with:
-          cloudflare_project_id: "ascentiaci/ascentiaci.ca"
-          wait_until_ready: true
-      - name: Get URL A
-        run: echo "https://${{ steps.cloudflare_preview_url_a.outputs.preview_url }}"
+          args: install
+        env:
+          CI: "true"
+      - name: Await CF Pages
+        id: cfDeploy
+        uses: WalshyDev/cf-pages-await@v1.3.1
+        with:
+          apiKey: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          accountEmail: ${{ secrets.CLOUDFLARE_ACCOUNT_EMAIL }}
+          project: "ascentiaci-ca"
+          commitHash: ${{ steps.push-changes.outputs.hash }}
+      - name: Take Screenshots
+        id: screenshots
+        uses: xxidbr9/screenshots-action@v1.1.18
+        with:
+          url: ${{ steps.cfDeploy.outputs.url }}
+      - name: Upload Screenshots
+        uses: actions/upload-artifact@v4
+        with:
+          path: screenshots
+          name: Download-screenshots
+      - name: Comment on pull request
+        uses: live-codes/pr-comment-from-artifact@v1.0.1
