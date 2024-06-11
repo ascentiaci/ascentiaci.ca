@@ -25,10 +25,7 @@ jobs:
           accountEmail: ${{ secrets.CLOUDFLARE_ACCOUNT_EMAIL }}
           project: "ascentiaci-ca"
           commitHash: ${{ github.sha }}
-      - name: Comment Screenshots
-        id: screenshots
-        uses: saadmk11/comment-webpage-screenshot@main
+      - name: Lighthouse
+        uses: foo-software/lighthouse-check-action@master
         with:
-          capture_changed_html_files: yes
-          capture_html_file_paths: ${{ steps.cfDeploy.outputs.url }}
-          capture_urls: ${{ steps.cfDeploy.outputs.url }}
+          urls: ${{ steps.cfDeploy.outputs.url }}
