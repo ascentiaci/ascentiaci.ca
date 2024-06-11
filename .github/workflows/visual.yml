@@ -23,7 +23,7 @@ jobs:
         env:
           PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: "true"
       - name: install puppeteer-headful
-        uses: mujo-code/puppeteer-headful@master
+        uses: mujo-code/puppeteer-headful@18.9.0
         with:
           args: install
         env:
