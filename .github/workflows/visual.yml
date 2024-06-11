@@ -1,0 +1,24 @@
+name: Visual Review Deployment
+
+on: pull_request
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  get_cloudflare_preview_url:
+    runs-on: ubuntu-latest
+    steps:
+      - name: cloudflare_preview_url_a
+        uses: zentered/cloudflare-preview-url@v1
+        id: cloudflare_preview_url_a
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_EMAIL: ${{ secrets.CLOUDFLARE_ACCOUNT_EMAIL }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        with:
+          cloudflare_project_id: "ascentiaci-ca"
+          wait_until_ready: true
+      - name: Get URL A
+        run: echo "https://${{ steps.cloudflare_preview_url_a.outputs.preview_url }}"
