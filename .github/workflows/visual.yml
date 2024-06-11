@@ -22,7 +22,7 @@ jobs:
           CLOUDFLARE_ACCOUNT_EMAIL: ${{ secrets.CLOUDFLARE_ACCOUNT_EMAIL }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
         with:
-          cloudflare_project_id: "ascentiaci-ca"
+          cloudflare_project_id: "ascentiaci/ascentiaci.ca"
           wait_until_ready: true
       - name: Get URL A
         run: echo "https://${{ steps.cloudflare_preview_url_a.outputs.preview_url }}"
