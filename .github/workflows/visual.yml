@@ -1,0 +1,33 @@
+name: Visual Review Deployment
+
+on:
+  push:
+    branches:
+      - "**"
+      - "!main"
+
+permissions:
+  contents: read
+  pull-requests: write
+  deployments: write
+
+jobs:
+  wait_for_deployement:
+    runs-on: ubuntu-latest
+    steps:
+      #   - uses: actions/checkout@v4
+      - name: Await CF Pages
+        id: cfDeploy
+        uses: WalshyDev/cf-pages-await@v1.3.1
+        with:
+          apiKey: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          accountEmail: ${{ secrets.CLOUDFLARE_ACCOUNT_EMAIL }}
+          project: "ascentiaci-ca"
+          commitHash: ${{ github.sha }}
+      - name: Lighthouse
+        uses: foo-software/lighthouse-check-action@master
+        with:
+          urls: ${{ steps.cfDeploy.outputs.url }}
+          gitHubAccessToken: ${{ github.token }}
+          prCommentEnabled: true
