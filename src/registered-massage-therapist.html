@@ -1,0 +1,81 @@
+<script locals>
+    module.exports = {
+      BUILD_BRAND: locals.BUILD_BRAND || "BRAND",
+      BUILD_BRAND_SC: locals.BUILD_BRAND_SC || "BRAND_SC",
+    };
+  </script>
+  <extends
+    src="parts/programpage.htm"
+    locals='{
+      "headerImg": "index.png", 
+      "title": "Registered Massage Therapist",
+      "BUILD_BRAND": "BRAND",
+      "BUILD_BRAND_SC": "BRAND_SC"
+    }'
+  >
+    <block name="pageTitle"> Registered Massage Therapist </block>
+    <block name="introCopy">
+      <p>Designed for those eager to enter the healthcare field with a focus on holistic wellness, our comprehensive program offers in-depth training in less than two years.</p>
+      <p>Engage in hands-on learning led by experienced instructors, acquiring essential skills and knowledge vital for success as a Registered Massage Therapist (RMT).</p>
+      <p>Our industry-relevant curriculum adheres to the standards set by the College of Massage Therapists of British Columbia (CMTBC), ensuring you are well-prepared for certification and practice.</p>
+      <p>With ample opportunities for practical experience and professional networking, our program paves the way for a rewarding career in massage therapy.</p>
+    </block>
+    <block name="duration">20 months </block>
+    <!-- <block name="curriculum">To be Announced </block> -->
+    <block name="certification">Diploma </block>
+    <!-- <block name="compliance">PTIB (Private Training Institutions Branch, Ministry of Advanced Education and Future Skills) - Approval Pending</block> -->
+    <block name="salary">$60,000 - $80,000</block>
+    <block name="outlook">Growing demand with excellent job prospects</block>
+  
+    <block name="admitRequirementsEFL">
+      <ul>
+        <li>All students must be 19 years of age or older at the start of their program.</li>
+        <li>Grade 12, G.E.D., or Mature Student Status</li>
+        <li>Satisfactory completion of a Criminal Record Check</li>
+        <li>A pre-admission application and interview</li>
+        <li>Completed Grade 12 Biology or equivalent</li>
+        <li>International students must have an IELTS score of 6.5 bands or higher, or pass the Institute's English Language Assessment Test.</li>
+      </ul>
+    </block>
+  
+    <block name="admitRequirementsESL"> </block>
+  
+    <block name="prePractice">
+      <ol>
+        <li>A clear criminal record check</li>
+        <li>Immunizations as per Practice Education Guidelines
+          <ul>
+            <li>Provide proof of a negative reaction to a TB skin test or a chest x-ray with a note from a physician stating that you are not contagious.</li>
+            <li>A formal declaration of health from a physician affirming your capacity, both mentally and physically, to carry out tasks typically expected in your selected profession.</li>
+            <li>It is strongly recommended that student immunizations remain current for Hepatitis B, Measles, Mumps, Rubella, Tetanus, Polio, and Diphtheria.</li>
+            <li>Minimum two doses of the Covid-19 Vaccine</li>
+          </ul>
+        </li>
+        <li>Completion of Student Practice Education Core Orientation modules</li>
+        <li>Completion of First Aid and CPR ‘C’ Certification</li>
+        <li>Completion of WHMIS Certification</li>
+        <li>Completion of Workplace Violence Prevention Modules</li>
+        <li>Successful completion of all theoretical courses with a minimum 70% grade in each course</li>
+        <li>Successful demonstration of skills testing in preparation for practice experiences</li>
+      </ol>
+    </block>
+  
+    <!-- Enter Tuition and Fees Here -->
+    <!-- Follow formatting to add fees -->
+    <!-- prettier-ignore -->
+    {{ tuition=20000 }} {{ adminFee=250 }} {{ archivalFee=10}} {{ totalCost=tuition+adminFee+archivalFee }}
+    <!-- Make sure to update the totalCost formula to reflect the new fee variables -->
+  
+    <!-- <block name="tuition">${{ tuition.toLocaleString() }}</block> -->
+    
+    <!-- <block name="adminFee">${{ adminFee.toLocaleString() }}</block> -->
+    <!-- <block name="archivalFee">${{ archivalFee.toLocaleString() }}</block> -->
+    <!-- Add additional fees here -->
+    <!-- format as <tr><td class="bold">Fee Name</td></td>$feeName.toLocaleString()</td></tr> -->
+    <!-- <block name="total">${{ totalCost.toLocaleString() }}</block> -->
+  
+    <block name="ProgramleadForm">
+      <div class="has-primary-bg text-white">Coming Soon: 2024</div>
+    </block>
+  </extends>
+  

@@ -1,18 +1,18 @@
 <script locals>
   module.exports = {
-    BUILD_BRAND: locals.BUILD_BRAND || "BRAND",
-    BUILD_BRAND_SC: locals.BUILD_BRAND_SC || "BRAND_SC",
+    BUILD_BRAND: locals.BUILD_BRAND || "$BUILD_BRAND",
+    BUILD_BRAND_SC: locals.BUILD_BRAND_SC || "$BUILD_BRAND_SC",
   };
 </script>
 <extends
   src="parts/base.htm"
   locals='{
-  "headerImg": "index.png", 
-  "name": "Welcome to $BUILD_BRAND_SC️ Career Institute",
-  "title": "Home",
-  "BUILD_BRAND": "BRAND",
-  "BUILD_BRAND_SC": "BRAND_SC"
-}'
+    "headerImg": "index.png", 
+    "name": "Welcome to $BUILD_BRAND_SC️ Career Institute",
+    "title": "Why $BUILD_BRAND_SC",
+    "BUILD_BRAND": "$BUILD_BRAND",
+    "BUILD_BRAND_SC": "$BUILD_BRAND_SC"
+  }'
 >
   <block name="pageTitle">Welcome to $BUILD_BRAND_SC️ Career Institute</block>
   <block name="introCopy">
@@ -20,7 +20,7 @@
       Why should you choose $BUILD_BRAND_SC️ Career Institute above other
       colleges in British Columbia? Selecting a college to initiate or enhance
       your career is crucial. Let's discuss the unique advantages
-      $BUILD_BRAND_SC️has to offer.
+      $BUILD_BRAND_SC️ has to offer.
     </p>
   </block>
   <block name="content">
@@ -29,13 +29,13 @@
         <extends
           src="parts/whyparts.htm"
           locals='{
-        "order":"1",
-        "image": "feature2.webp",
-        "order2":"2",
-        "header":"Convenient Location",
-        "image":"feature1.webp",
-        "body": ""
-      }'
+          "order":"1",
+          "image": "feature2.webp",
+          "order2":"2",
+          "header":"Convenient Location",
+          "image":"kolby-milton-irWzMGoLNWQ-unsplash.jpg",
+          "body": ""
+        }'
         >
           <block name="whyHeader">Convenient Location</block>
           <block name="whyContent">
@@ -49,12 +49,12 @@
         <extends
           src="parts/whyparts.htm"
           locals='{
-        "order":"2",
-        "image": "feature2.webp",
-        "order2":"1",
-        "header":"",
-        "body": ""
-      }'
+          "order":"2",
+          "image": "eben-kassaye-Z7TAIOQgjWA-unsplash.jpg",
+          "order2":"1",
+          "header":"",
+          "body": ""
+        }'
         >
           <block name="whyHeader"
             >Latest Curriculum & Expert-Led programs</block
@@ -70,12 +70,12 @@
         <extends
           src="parts/whyparts.htm"
           locals='{
-        "order":"1",
-        "image": "feature3.webp",
-        "order2":"2",
-        "header":"",
-        "body": ""
-      }'
+          "order":"1",
+          "image": "mimi-thian-slWBjTGhREQ-unsplash.jpg",
+          "order2":"2",
+          "header":"",
+          "body": ""
+        }'
         >
           <block name="whyHeader">Flexible Learning</block>
           <block name="whyContent"
@@ -92,12 +92,12 @@
         <extends
           src="parts/whyparts.htm"
           locals='{
-        "order":"2",
-        "image": "feature1.webp",
-        "order2":"1",
-        "header":"",
-        "body": ""
-      }'
+          "order":"2",
+          "image": "pexels-olly-3869386.jpg",
+          "order2":"1",
+          "header":"",
+          "body": ""
+        }'
         >
           <block name="whyHeader">Ethics and Inclusivity</block>
           <block name="whyContent"
