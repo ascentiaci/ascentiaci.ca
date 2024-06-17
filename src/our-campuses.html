@@ -1,0 +1,40 @@
+<script locals>
+  module.exports = {
+    BUILD_BRAND: locals.BUILD_BRAND || "BRAND",
+    BUILD_BRAND_SC: locals.BUILD_BRAND_SC || "BRAND_SC",
+  };
+</script>
+<extends
+  src="parts/base.htm"
+  locals='{
+  "headerImg": "index.png", 
+  "name": "",
+  "title": "Healthcare",
+  "BUILD_BRAND": "BRAND",
+  "BUILD_BRAND_SC": "BRAND_SC"
+}'
+>
+      <block name="pageTitle"> Our Campuses </block>
+      <block name="introCopy">
+        At Ascentia Career Institute, we are dedicated to providing exceptional education and training to help you achieve your career goals.
+      </block>
+    
+      <block name="content">
+        <div class="location-container">
+          <div class="location">
+              <h2>Main Campus</h2>
+              <p><strong>Address:</strong> 301-1680 Water St, Kelowna, BC</p>
+              <p><strong>Phone:</strong> 250-999-8736</p>
+              <p><strong>Email:</strong> info@ascentiaci.ca</p>
+          </div>
+          <div class="location">
+              <h2>Temporary Office</h2>
+              <p><strong>Address:</strong> 201-20621 Logan Ave, Langley, BC</p>
+              <p><strong>Phone:</strong> 250-999-8736</p>
+              <p><strong>Email:</strong> info@ascentiaci.ca</p>
+          </div>
+      </div>
+      </block>
+    </extends>
+    
+

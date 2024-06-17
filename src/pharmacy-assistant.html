@@ -21,8 +21,30 @@
     <p>Gain practical experience through hands-on opportunities in diverse pharmacy settings and expand your professional network within the pharmaceutical community.</p>
     
   </block>
-  <block name="duration">550 hours, 28 weeks. </block>
-  <block name="curriculum">To be Announced </block>
+  <block name="duration">550 hours, 25 weeks. </block>
+  <block name="curriculum">
+    <ul>
+      <li>Typing Skill Building Level 1 (10 WPM)</li>
+      <li>Typing Skill Building Level 2 (25 WPM)</li>
+      <li>Financial Awareness and Success</li>
+      <li>Digital Literacy for Beginners</li>
+      <li>Microsoft 365 Introduction</li>
+      <li>Microsoft Word 365 Essentials</li>
+      <li>Microsoft Outlook 365 Essentials</li>
+      <li>Job Search and Resume Writing</li>
+      <li>Medical Terminology</li>
+      <li>Retail Tech Support Training</li>
+      <li>Professional Communications</li>
+      <li>Pharmacy Software Fundamentals</li>
+      <li>Pharmacology</li>
+      <li>Pharmacology Calculations</li>
+      <li>Practicum for Pharmacy Assistant</li>
+      <li>Standard First Aid with CPR Level C Training</li>
+  </ul>
+  
+
+
+  </block>
   <block name="certification">Diploma </block>
   <block name="compliance"
     >PTIB (Private Training Institutions Branch, Ministry of Advanced Education
@@ -132,19 +154,17 @@
   </block>
   <!-- Enter Tuition and Fees Here -->
   <!-- Follow formatting to add fees -->
-  {{ tuition=7205 }} {{ appFee=250 }} {{ AssessmentFee=100 }} {{ adminFee=250 }}
+  {{ tuition=7205 }} {{ appFee=250 }} {{ AssessmentFee=100 }} 
   <!-- prettier-ignore -->
-  {{ archivalFee=4 }} {{ books=385 }} {{ materials=0}} {{ uniform=140 }} {{ totalCost=tuition+appFee+AssessmentFee+adminFee+archivalFee+books+materials+uniform }}
+  {{ archivalFee=5 }} {{ books=385 }} {{ materials=0}} {{ uniform=140 }} 
+  {{ totalCost=tuition+appFee+AssessmentFee+archivalFee+books+uniform }}
   <!-- Make sure to update the totalCost formula to reflect the new fee variables -->
 
   <block name="tuition">${{ tuition.toLocaleString() }}</block>
-  <block name="adminFee">${{ adminFee.toLocaleString() }}</block>
+  
   <block name="archivalFee">${{ archivalFee.toLocaleString() }}</block>
   <block name="additionalFeesRows">
-    <tr>
-      <th scope="row" class="bold">Application Fee</th>
-      <td>${{ appFee.toLocaleString() }}</td>
-    </tr>
+    
     <tr>
       <th scope="row" class="bold">Assessment Fee</th>
       <td>${{ AssessmentFee.toLocaleString() }}</td>
@@ -153,10 +173,7 @@
       <th scope="row" class="bold">Books</th>
       <td>${{ books.toLocaleString() }}</td>
     </tr>
-    <tr>
-      <th scope="row" class="bold">Materials</th>
-      <td>${{ materials.toLocaleString() }}</td>
-    </tr>
+ 
     <tr>
       <th scope="row" class="bold">Uniform</th>
       <td>${{ uniform.toLocaleString() }}</td>
@@ -166,7 +183,5 @@
   <!-- format as <tr><th scope="row" class="bold">Fee Name</th></td>$feeName.toLocaleString()</td></tr> -->
   <block name="total">${{ totalCost.toLocaleString() }}</block>
 
-  <block name="ProgramleadForm"
-    ><div class="has-primary-bg text-white">Coming Soon: 2024</div></block
-  >
+  <!-- <block name="ProgramleadForm"><div class="has-primary-bg text-white">Coming Soon: 2024</div></block> -->
 </extends>

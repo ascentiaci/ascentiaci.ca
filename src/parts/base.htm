@@ -10,7 +10,7 @@ module.exports = {
   BUILD_EDUCATION_PROGRAMS_LIST: 'ECEA',
   BUILD_HEALTHCARE: 'true',
   BUILD_HEALTHCARE_PROGRAMS_LIST: 'RMT,CDA,DOC,PA,HCA,MLA',
-  BUILD_PROGRAMS: 'PA,HCA,MLA,ECEA,DOC,CDA',
+  BUILD_PROGRAMS: 'PA,HCA,MLA,ECEA,DR,CDA,RMT',
 }
 </script>
 <!-- END LOCALS -->
@@ -45,6 +45,7 @@ module.exports = {
                 <button class="btn nav-link p-2 btn-lg has-primary-bg text-white " id="request-info"
                   data-bs-toggle="modal" data-bs-target="#leadForm1">Request Info</button>
               </li>
+              <li class="nav-item"><a class="nav-link btn" href="/src/our-campuses.html">Our Campuses</a></li>
               <li class="nav-item">
                 <if condition="BUILD_BRAND === 'ascentia'"><a class="nav-link btn" href="/src/why-ascentia.html">Why Ascentia</a></if>
                 <if condition="BUILD_BRAND !== 'ascentia'"><a class="nav-link btn" href="/src/why-elevare.html">Why Elevare</a></if>
