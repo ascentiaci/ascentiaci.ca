@@ -410,7 +410,7 @@ ul > li {
 .pill-button {
   border-radius: 50px;
   background-color: var(--brand-secondary);
-  color: white;
+  color: white !important;
   padding: 10px 20px;
   text-align: center;
   text-decoration: none;
