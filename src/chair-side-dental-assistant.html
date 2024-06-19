@@ -35,8 +35,15 @@
   </block>
   {{ hours=530 }}
   <block name="duration">
-    {{ hours }} hours, {{ weeks=Math.ceil(hours/28) }} weeks, {{
-    months=Math.ceil(weeks/4) }} months
+    <!-- prettier-ignore -->
+    {{ hours }}
+    hours,
+    <!-- prettier-ignore -->
+    {{ weeks=Math.ceil(hours/28) }} 
+        weeks,
+    <!-- prettier-ignore -->
+    {{ months=Math.ceil(weeks/4) }} 
+    months
   </block>
   <block name="curriculum">
     <ul>
