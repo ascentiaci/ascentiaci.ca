@@ -1,9 +1,8 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css");
-
-// @import url("https://use.typekit.net/uxt6rai.css");
 @import url("https://use.typekit.net/uxt6rai.css");
-
-// src/styles/main.scss
+@import "bootstrap/scss/bootstrap";
+// Import Fonts
+@import "/node_modules/bootstrap-icons/font/bootstrap-icons.css";
 
 // Your existing SCSS content
 // Define brand-specific variables
@@ -76,10 +75,6 @@ $nav-tabs-active-bg: var(--brand-primary);
 $font-family-sans-serif: var(--brand-body-font);
 $accordion-icon-active-color: white;
 $accordion-icon-color: white;
-@import "bootstrap/scss/bootstrap";
-
-// Import Fonts
-@import "/node_modules/bootstrap-icons/font/bootstrap-icons.css";
 
 * {
   font-family: var(--brand-body-font);
@@ -89,7 +84,9 @@ $accordion-icon-color: white;
 
 .nav-logo {
   content: var(--nav-logo-path);
+  max-width: 300px;
 }
+
 .footer-logo {
   content: var(--footer-logo-path);
   max-width: 200px;
@@ -124,9 +121,11 @@ h4 {
 .btn-primary,
 .btn-primary:active,
 .accordion-button:not(.collapsed) {
-  background-color: var(--brand-tertiary);
-  color: white;
+  background-color: var(--brand-primary);
+  color: var(--brand-tertiary) !important;
+  // border-bottom: 2px solid var(--brand-secondary);
 }
+
 .has-primary-bg {
   background-color: var(--brand-primary);
   color: white;
@@ -230,16 +229,10 @@ nav {
   align-items: end;
 }
 
-.nav-logo {
-  max-width: 300px;
-}
-
 .nav-tabs .nav-link.active,
 .nav-tabs .nav-item.show .nav-link {
   color: white !important;
   background-color: var(--brand-primary) !important;
-  border-color: rgba(white, 0);
-  border: none;
 }
 
 .nav-tabs .nav-link:not(.active),
@@ -376,14 +369,11 @@ ul > li {
   height: 100%;
 }
 
-.footer-logo {
-  max-width: 200px;
-}
-
 /* Added CSS for responsive cards */
 .card {
   display: flex;
   flex-direction: column;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .card-header,
@@ -427,10 +417,6 @@ ul > li {
 
 .pill-button:hover {
   background-color: var(--brand-highlight-secondary);
-}
-
-.card {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .card-body {
@@ -483,14 +469,6 @@ ul > li {
 .accordion-header.active {
   background-color: var(--brand-secondary);
   color: var(--brand-tertiary);
-}
-
-.btn-primary,
-.btn-primary:active,
-.accordion-button:not(.collapsed) {
-  background-color: var(--brand-primary);
-  color: var(--brand-tertiary) !important;
-  // border-bottom: 2px solid var(--brand-secondary);
 }
 
 #map {
