@@ -11,7 +11,8 @@
     "prestart": "npm run injectBrand",
     "prelazystart": "npm run injectBrand",
     "prebuild": "npm run injectBrand",
-    "preinjectBrand": "node ./scripts/clearCacheforBuild.js"
+    "preinjectBrand": "node ./scripts/clearCacheforBuild.js",
+    "postbuild": "node ./scripts/generateFavicons.js"
   },
   "author": "",
   "license": "ISC",
@@ -29,9 +30,11 @@
     "@popperjs/core": "^2.11.8",
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",
+    "cli-real-favicon": "^0.0.9",
     "cloudflare-turnstile-widget": "^0.3.0",
     "datatables.net-bs5": "^2.0.8",
     "dotenv": "^16.4.5",
+    "favicons": "^7.2.0",
     "fullcalendar": "^6.1.14",
     "ical.js": "^1.5.0",
     "jquery": "^3.7.1",
