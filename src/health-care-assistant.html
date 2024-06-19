@@ -48,8 +48,7 @@
 
   {{ hours=990 }}
   <block name="duration">
-    {{ hours }} hours, {{ weeks=Math.ceil(hours/28) }} weeks, {{
-    months=Math.ceil(weeks/4) }} months
+    {{ hours }} hours, {{ weeks=Math.ceil(hours/28) }} weeks, {{ months=Math.ceil(weeks/4) }} months
   </block>
 
   <block name="curriculum">
@@ -300,8 +299,7 @@ Education & Future Skills
           </li>
 
           <li>
-            {{ Math.ceil(months * 4) }} weekly payments of ${{
-            Math.ceil(totalCost / Math.ceil(months * 4)).toLocaleString() }}
+            {{ Math.ceil(months * 4) }} weekly payments of ${{         Math.ceil(totalCost / Math.ceil(months * 4)).toLocaleString() }}
             each
           </li>
         </ul>
