@@ -1,9 +1,12 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css");
+
+// @import url("https://use.typekit.net/uxt6rai.css");
 @import url("https://use.typekit.net/uxt6rai.css");
 
 // src/styles/main.scss
 
-// Brand-specific variables
+// Your existing SCSS content
+// Define brand-specific variables
 $ascentia-brand-primary: rgb(99, 10, 22);
 $ascentia-brand-secondary: #778596;
 $ascentia-brand-tertiary: #8c9db2;
@@ -20,7 +23,7 @@ $elevare-brand-highlight-secondary: #f1b11a;
 $elevare-brand-header-font: "Norwester";
 $elevare-brand-body-font: "Montserrat";
 
-// Mixin to set brand variables
+// Define a mixin to set brand variables based on the selected brand
 @mixin set-brand($brand) {
   @if $brand == "ascentia" {
     --brand-primary: #{$ascentia-brand-primary};
@@ -45,14 +48,14 @@ $elevare-brand-body-font: "Montserrat";
   }
 }
 
-// Apply brand variables to CSS variables
+// Apply the brand-specific variables to CSS variables
 :root {
   @include set-brand($brand);
+
   --bs-nav-tabs-link-active-bg: black !important;
   --bs-secondary-bg-rgb: rgb(255, 255, 255);
 }
 
-// Font faces
 @font-face {
   font-family: droid-serif;
   src: url("/src/fonts/DroidSerif-Regular-webfont.woff");
@@ -69,24 +72,21 @@ $elevare-brand-body-font: "Montserrat";
   font-family: "Norwester";
   src: url("/src/fonts/norwester.otf");
 }
-
-// Variables for Bootstrap and other components
 $nav-tabs-active-bg: var(--brand-primary);
 $font-family-sans-serif: var(--brand-body-font);
 $accordion-icon-active-color: white;
 $accordion-icon-color: white;
-
 @import "bootstrap/scss/bootstrap";
+
+// Import Fonts
 @import "/node_modules/bootstrap-icons/font/bootstrap-icons.css";
 
-// Global styles
 * {
   font-family: var(--brand-body-font);
   font-weight: 500;
   font-style: normal;
 }
 
-// Logo styles
 .nav-logo {
   content: var(--nav-logo-path);
 }
@@ -95,12 +95,19 @@ $accordion-icon-color: white;
   max-width: 200px;
 }
 
-// Header styles
 h1,
 h2,
 h3,
 h4,
 h5 {
+  font-family: var(--brand-header-font);
+  font-weight: bold;
+}
+h1 > a,
+h2 > a,
+h3 > a,
+h4 > a,
+h5 > a {
   font-family: var(--brand-header-font);
   font-weight: bold;
 }
@@ -114,20 +121,38 @@ h4 {
   color: var(--brand-secondary);
 }
 
-// Button and background styles
 .btn-primary,
 .btn-primary:active,
 .accordion-button:not(.collapsed) {
   background-color: var(--brand-tertiary);
   color: white;
 }
-
 .has-primary-bg {
   background-color: var(--brand-primary);
   color: white;
 }
 
-// Link and hover styles
+.accordion-button::after {
+  color: white;
+}
+
+.has-primary-bg > * {
+  color: white;
+}
+
+hr {
+  background-color: var(--brand-primary);
+  border-color: var(--brand-primary);
+  border-style: solid;
+  border-width: 1.5px;
+  opacity: 1;
+}
+
+h2 > a {
+  text-decoration: none;
+  color: var(--brand-tertiary);
+}
+
 a:hover {
   color: var(--brand-highlight);
 }
@@ -138,19 +163,53 @@ a:hover {
   color: var(--bs-secondary-bg-rgb);
 }
 
-// Footer styles
 footer {
   background-color: black;
   color: white;
   text-decoration: none;
 }
-
 footer > p > a {
   color: white;
   text-decoration: none;
 }
 
-// Text styles
+a {
+  text-decoration: none;
+  color: unset;
+}
+
+.bg-highlight {
+  background-color: var(--brand-highlight);
+}
+
+.bg-highlight-secondary {
+  background-color: var(--brand-highlight-secondary);
+}
+
+main,
+nav,
+.bg-body-secondary,
+header,
+#top {
+  background-color: rgba(255, 255, 255, 1) !important;
+}
+
+main {
+  font-size: large;
+}
+
+body {
+  background-color: black;
+}
+
+.program-card-img {
+  min-height: 100%;
+}
+.card-footer {
+  background-color: unset;
+  border-top-style: none;
+}
+
 .text-left,
 .text-left > *,
 .text-left > * > * {
@@ -166,7 +225,6 @@ footer > p > a {
   color: var(--brand-primary) !important;
 }
 
-// Navigation styles
 nav {
   font-size: medium;
   align-items: end;
@@ -189,9 +247,8 @@ nav {
   color: var(--brand-primary) !important;
   background-color: white !important;
   border: none;
+  // border-color: rgba(white, 0);
 }
-
-// List styles
 .multiLevelList > li:not(ul > li) {
   font-weight: bold;
   color: var(--brand-primary);
@@ -202,7 +259,6 @@ nav {
   color: black;
 }
 
-// Requirements styles
 #requirements > li {
   list-style-type: none;
   list-style-position: inside;
@@ -224,39 +280,28 @@ nav {
   list-style-type: lower-roman;
 }
 
-// Header image styles
 .headerImg {
   max-height: 225px;
   width: 99vw;
   object-fit: cover;
 }
 
-// Font weight styles
 .bold {
   font-weight: bold;
 }
 
-// Main styles
-main {
-  font-size: large;
+main > div {
+  min-width: 100%;
 }
 
-body {
-  background-color: black;
+ul > li {
+  line-height: 2em;
 }
 
-// Program card styles
-.program-card-img {
-  min-height: 100%;
+.detailsTable > tbody > tr > td {
+  max-width: 25%;
 }
 
-// Card footer styles
-.card-footer {
-  background-color: unset;
-  border-top-style: none;
-}
-
-// Width styles
 .w-33 {
   width: calc(100% / 3);
 }
@@ -269,7 +314,6 @@ body {
   width: 80%;
 }
 
-// Color styles
 .red {
   color: red;
 }
@@ -278,12 +322,10 @@ body {
   max-width: 1.5rem;
 }
 
-// Padding styles
 .pl-n2 {
   padding-left: 1.5rem;
 }
 
-// Navbar styles
 .navbar-nav .btn-group .btn {
   vertical-align: middle;
 }
@@ -296,17 +338,14 @@ body {
   margin-left: 0.25rem;
 }
 
-// Request info styles
 #request-info {
   min-width: 100%;
 }
 
-// Button no highlight styles
 .btn-nohighlight:hover {
   background-color: unset;
 }
 
-// Category header styles
 .cat-header {
   margin-left: -1em;
   margin-right: -1em;
@@ -319,32 +358,29 @@ body {
   }
 }
 
-// Slide image styles
 .slide-image,
 .slide-image > source,
 .slide-image > img {
+  //max height: 25vh;
   max-height: 25dvh;
 }
 
-// Header image styles
 .header-image {
   max-height: 225px;
   width: 99dvw;
 }
 
-// Booking page styles
 .booking-page {
   border: 0;
   width: 100%;
   height: 100%;
 }
 
-// Footer logo styles
 .footer-logo {
   max-width: 200px;
 }
 
-// Card styles for responsive cards
+/* Added CSS for responsive cards */
 .card {
   display: flex;
   flex-direction: column;
@@ -378,7 +414,6 @@ body {
   }
 }
 
-// Pill button styles
 .pill-button {
   border-radius: 50px;
   background-color: var(--brand-secondary);
@@ -394,7 +429,6 @@ body {
   background-color: var(--brand-highlight-secondary);
 }
 
-// Card shadow styles
 .card {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -408,17 +442,27 @@ body {
   margin-bottom: 1rem;
 }
 
-// Object fit cover styles
 .object-fit-cover {
   object-fit: cover;
 }
-
-// Accordion header styles
 .accordion-header {
   background-color: var(--brand-primary);
   color: var(--brand-tertiary);
+  //border: 2px solid var(--brand-highlight);
   padding: 10px;
   cursor: pointer;
+  -webkit-transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+  -moz-transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+  -ms-transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+  -o-transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
   transition:
     background-color 0.3s ease,
     color 0.3s ease;
@@ -441,13 +485,19 @@ body {
   color: var(--brand-tertiary);
 }
 
-// Map styles
+.btn-primary,
+.btn-primary:active,
+.accordion-button:not(.collapsed) {
+  background-color: var(--brand-primary);
+  color: var(--brand-tertiary) !important;
+  // border-bottom: 2px solid var(--brand-secondary);
+}
+
 #map {
   width: 100%;
   height: 300px;
 }
 
-// Centered text styles
 .text-center.px-3.py-2.mt-3.bg-body-secondary {
   color: var(--brand-primary);
 }
