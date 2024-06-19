@@ -7,7 +7,7 @@
 <extends
   src="parts/programpage.htm"
   locals='{
-    "headerImg": "index.png", 
+    "headerImg": "medical-lab.jpg", 
     "title": "Medical Laboratory Assistant",
     "BUILD_BRAND": "BRAND",
     "BUILD_BRAND_SC": "BRAND_SC"
@@ -15,12 +15,32 @@
 >
   <block name="pageTitle"> Medical Laboratory Assistant </block>
   <block name="introCopy">
-    <p>Designed for those eager to enter the medical field swiftly, our fast-track Medical Laboratory Assistant program offers comprehensive training in less than a year.</p>
-    <p>Dive into hands-on learning led by experienced instructors, gaining essential skills vital for success in medical laboratory roles.</p>
-    <p>Our industry-relevant curriculum is finely tuned to meet the demands of modern healthcare, ensuring you're equipped with the knowledge needed to excel in laboratory settings.</p>
-    <p>With opportunities for practical experience and networking within the field, our program paves the way for a fulfilling career as a Medical Laboratory Assistant.</p>
+    <p>
+      Designed for those eager to enter the medical field swiftly, our
+      fast-track Medical Laboratory Assistant program offers comprehensive
+      training in less than a year.
+    </p>
+    <p>
+      Dive into hands-on learning led by experienced instructors, gaining
+      essential skills vital for success in medical laboratory roles.
+    </p>
+    <p>
+      Our industry-relevant curriculum is finely tuned to meet the demands of
+      modern healthcare, ensuring you're equipped with the knowledge needed to
+      excel in laboratory settings.
+    </p>
+    <p>
+      With opportunities for practical experience and networking within the
+      field, our program paves the way for a fulfilling career as a Medical
+      Laboratory Assistant.
+    </p>
   </block>
-  <block name="duration">6 months</block>
+  {{ hours=840 }}
+  <block name="duration">
+    {{ hours }} hours, {{ weeks=Math.ceil(hours/28) }} weeks, {{
+    months=Math.ceil(weeks/4) }} months
+  </block>
+
   <block name="curriculum">
     <ul>
       <li>Typing Skill Building Level 1 (10 WPM)</li>
@@ -42,35 +62,56 @@
       <li>Cardiology</li>
       <li>Practicum for Medical Lab Assistant</li>
       <li>Standard First Aid with CPR Level C Training</li>
-  </ul>
-  
     </ul>
   </block>
   <block name="certification">Diploma</block>
   <block name="compliance">
-    PTIB (Private Training Institutions Branch, Ministry of Advanced Education and Future Skills) - Approval Pending
+    PTIB (Private Training Institutions Branch, Ministry of Advanced Education
+    and Future Skills) - Approval Pending
   </block>
   <block name="salary">$53,204</block>
   <block name="outlook">1,620</block>
   <block name="admitRequirementsEFL">
     <ul>
-      <li>All Students must be 19 years of age or older at the start of their program.</li>
+      <li>
+        All Students must be 19 years of age or older at the start of their
+        program.
+      </li>
       <li>Grade 12, G.E.D., Mature Student Status</li>
       <li>Satisfactory completion of a Criminal Record Search</li>
       <li>A pre-admission application and interview</li>
-      <li>Completed Grade 10 Math or its equivalent and must pass the Institute's English Language Assessment Test.</li>
-      <li>International students must have an IELTS score of 5.5 bands or higher, or pass the College's English Language Assessment Test.</li>
+      <li>
+        Completed Grade 10 Math or its equivalent and must pass the Institute's
+        English Language Assessment Test.
+      </li>
+      <li>
+        International students must have an IELTS score of 5.5 bands or higher,
+        or pass the College's English Language Assessment Test.
+      </li>
     </ul>
   </block>
   <block name="admitRequirementsESL"> </block>
   <block name="prePractice">
     <ol>
       <li>A clear criminal record check</li>
-      <li>Immunizations as per Practice Education Guidelines
+      <li>
+        Immunizations as per Practice Education Guidelines
         <ul>
-          <li>Provide proof of a negative reaction to a TB skin test or a chest x-ray with a note from a physician stating that you are not contagious.</li>
-          <li>A formal declaration of health from a Physician affirming your capacity, both mentally and physically, to carry out tasks typically expected in your selected profession.</li>
-          <li>It is strongly recommended that student immunizations remain current for Hepatitis B, Measles, Mumps, Rubella, Tetanus, Polio, and Diphtheria.</li>
+          <li>
+            Provide proof of a negative reaction to a TB skin test or a chest
+            x-ray with a note from a physician stating that you are not
+            contagious.
+          </li>
+          <li>
+            A formal declaration of health from a Physician affirming your
+            capacity, both mentally and physically, to carry out tasks typically
+            expected in your selected profession.
+          </li>
+          <li>
+            It is strongly recommended that student immunizations remain current
+            for Hepatitis B, Measles, Mumps, Rubella, Tetanus, Polio, and
+            Diphtheria.
+          </li>
           <li>Minimum two doses of the Covid-19 Vaccine</li>
         </ul>
       </li>
@@ -78,9 +119,18 @@
       <li>Completion of First Aid and CPR ‘C’ Certification</li>
       <li>Completion of WHIMIS and Food Safe</li>
       <li>Completion of Workplace Violence Prevention Modules</li>
-      <li>Completion of Student Practice Education Core Orientation Modules (SPECO)</li>
-      <li>Successful completion of all theoretical courses with a minimum 70% grade in each course</li>
-      <li>Successful demonstration of skills testing in preparation for practice experiences</li>
+      <li>
+        Completion of Student Practice Education Core Orientation Modules
+        (SPECO)
+      </li>
+      <li>
+        Successful completion of all theoretical courses with a minimum 70%
+        grade in each course
+      </li>
+      <li>
+        Successful demonstration of skills testing in preparation for practice
+        experiences
+      </li>
     </ol>
   </block>
 
@@ -101,21 +151,49 @@
 
   <!--  -->
   <block name="additionalFeesRows">
-    <tr><td class="bold">Textbooks</td></td><td>${{ textbooksFee.toLocaleString() }}</td></tr>  
-    <tr><td class="bold">Materials</td></td><td>${{ materialsFee.toLocaleString() }}</td></tr>  
-    <tr><td class="bold">Testing</td></td><td>${{ testingFee.toLocaleString() }}</td></tr>  
-    <tr><td class="bold">Other</td></td><td>${{ otherFee.toLocaleString() }}</td></tr>  
-  
+    <tr>
+      <td class="bold">Textbooks</td>
+      <td>${{ textbooksFee.toLocaleString() }}</td>
+    </tr>
+    <tr>
+      <td class="bold">Materials</td>
+      <td>${{ materialsFee.toLocaleString() }}</td>
+    </tr>
+    <tr>
+      <td class="bold">Testing</td>
+      <td>${{ testingFee.toLocaleString() }}</td>
+    </tr>
+    <tr>
+      <td class="bold">Other</td>
+      <td>${{ otherFee.toLocaleString() }}</td>
+    </tr>
   </block>
-
 
   <block name="textbooksFee">${{ textbooksFee.toLocaleString() }}</block>
   <block name="materialsFee">${{ materialsFee.toLocaleString() }}</block>
   <block name="testingFee">${{ testingFee.toLocaleString() }}</block>
-  <!-- format as <tr><td class="bold">Fee Name</td></td><td>$ feeName.toLocaleString() </td></tr> -->
+  <!-- format as <tr><td class="bold">Fee Name</td><td>$ feeName.toLocaleString() </td></tr> -->
   <block name="total">${{ totalCost.toLocaleString() }}</block>
+  <block name="paymentPlan">
+    <tr>
+      <th scope="row" class="bold">Payment Plan Options:</th>
+      <td>
+        <ul>
+          <li>
+            {{ months }} monthly payments of ${{ Math.ceil(totalCost /
+            months).toLocaleString() }} each
+          </li>
 
-  <block name="ProgramleadForm">
-    <!-- <div class="has-primary-bg text-white">Coming Soon: 2024</div> -->
+          <li>
+            {{ Math.ceil(months * 4) }} weekly payments of ${{
+            Math.ceil(totalCost / Math.ceil(months * 4)).toLocaleString() }}
+            each
+          </li>
+        </ul>
+      </td>
+    </tr>
   </block>
+  <!-- <block name="ProgramleadForm">
+    <div class="has-primary-bg text-white">Coming Soon: 2024</div>
+  </block> -->
 </extends>

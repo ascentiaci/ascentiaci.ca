@@ -1,16 +1,16 @@
 <!-- START LOCALS -->
 <script locals>
 module.exports = {
-  BUILD_BRAND: 'elevare',
-  BUILD_BRAND_SC: 'Elevare™',
-  BUILD_CATSCount: '1',
+  BUILD_BRAND: 'ascentia',
+  BUILD_BRAND_SC: 'Ascentia™',
+  BUILD_CATSCount: '2',
   BUILD_CST: 'false',
   BUILD_CST_PROGRAMS_LIST: 'DLB,M365',
   BUILD_EDUCATION: 'true',
   BUILD_EDUCATION_PROGRAMS_LIST: 'ECEA',
   BUILD_HEALTHCARE: 'true',
   BUILD_HEALTHCARE_PROGRAMS_LIST: 'RMT,CDA,DOC,PA,HCA,MLA',
-  BUILD_PROGRAMS: 'PA,HCA,MLA,ECEA,DR,CDA,RMT',
+  BUILD_PROGRAMS: 'PA,HCA,MLA,ECEA,DR,CDA',
 }
 </script>
 <!-- END LOCALS -->
@@ -45,7 +45,7 @@ module.exports = {
                 <button class="btn nav-link p-2 btn-lg has-primary-bg text-white " id="request-info"
                   data-bs-toggle="modal" data-bs-target="#leadForm1">Request Info</button>
               </li>
-              <li class="nav-item"><a class="nav-link btn" href="/src/our-campuses.html">Our Campuses</a></li>
+              <li class="nav-item"><a class="nav-link btn" href="/src/our-campus.html">Our Campus</a></li>
               <li class="nav-item">
                 <if condition="BUILD_BRAND === 'ascentia'"><a class="nav-link btn" href="/src/why-ascentia.html">Why Ascentia</a></if>
                 <if condition="BUILD_BRAND !== 'ascentia'"><a class="nav-link btn" href="/src/why-elevare.html">Why Elevare</a></if>
@@ -100,7 +100,7 @@ module.exports = {
         />
         <br />
         
-        <h2 class="text-center px-3 py-2 mt-3 bg-body-secondary " style="color:var(--brand-primary)">
+        <h2 class="text-center px-3 py-2 mt-3 bg-body-secondary">
           <block name="pageTitle">Welcome</block>
         </h2>
       </header>

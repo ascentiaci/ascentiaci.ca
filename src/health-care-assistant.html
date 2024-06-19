@@ -17,17 +17,40 @@
   <block name="pageTitle">Health Care Assistant</block>
 
   <block name="introCopy">
-    <p>Begin your journey in the healthcare field with our Health Care Assistant program!</p>
-    <p>This comprehensive training program equips you with the essential skills to provide compassionate care and support to individuals in various healthcare settings.</p>
-    <p>From understanding health and healing concepts to engaging in practical care experiences, you'll be well-prepared to make a positive impact in the lives of those you assist.</p>
-    <p>Our curriculum covers important areas such as interpersonal communications, caring for individuals with common and cognitive health challenges, and personal care and assistance. With hands-on labs and practicums, you'll gain valuable real-world experience, ensuring you're job-ready upon graduation.</p>
-    <p>Start your journey toward a rewarding career as a Health Care Assistant with us today!</p>
-    
+    <p>
+      Begin your journey in the healthcare field with our Health Care Assistant
+      program!
+    </p>
+    <p>
+      This comprehensive training program equips you with the essential skills
+      to provide compassionate care and support to individuals in various
+      healthcare settings.
+    </p>
+    <p>
+      From understanding health and healing concepts to engaging in practical
+      care experiences, you'll be well-prepared to make a positive impact in the
+      lives of those you assist.
+    </p>
+    <p>
+      Our curriculum covers important areas such as interpersonal
+      communications, caring for individuals with common and cognitive health
+      challenges, and personal care and assistance. With hands-on labs and
+      practicums, you'll gain valuable real-world experience, ensuring you're
+      job-ready upon graduation.
+    </p>
+    <p>
+      Start your journey toward a rewarding career as a Health Care Assistant
+      with us today!
+    </p>
   </block>
 
   <block name="description"></block>
 
-  <block name="duration">7 months</block>
+  {{ hours=990 }}
+  <block name="duration">
+    {{ hours }} hours, {{ weeks=Math.ceil(hours/28) }} weeks, {{
+    months=Math.ceil(weeks/4) }} months
+  </block>
 
   <block name="curriculum">
     <ul>
@@ -44,17 +67,20 @@
       <li>Health 1: Interpersonal Communications</li>
       <li>Health 2: Lifestyle and Choices</li>
       <li>Health Care Assistant: Introduction to Practice</li>
-      <li>Healing 1: Caring for Individuals Experiencing Common Health Challenges</li>
-      <li>Healing 2: Caring for Individuals Experiencing Cognitive or Mental Challenges</li>
+      <li>
+        Healing 1: Caring for Individuals Experiencing Common Health Challenges
+      </li>
+      <li>
+        Healing 2: Caring for Individuals Experiencing Cognitive or Mental
+        Challenges
+      </li>
       <li>Healing 3: Personal Care and Assistance</li>
       <li>Practicum: Multi-level/Complex Care with Dementia Care</li>
       <li>Practicum: Home Support/Assisted Living/Group Home</li>
       <li>Standard First Aid with CPR Level C Training</li>
       <li>Food Safe Training</li>
       <li>WHMIS Training</li>
-  </ul>
-  
-
+    </ul>
   </block>
 
   <block name="certification">BC Registry #, Diploma</block>
@@ -232,17 +258,56 @@ Education & Future Skills
   {{ textbooksFee=175 }} 
   {{ uniform=140 }} 
   {{ materials=25 }} 
-  {{ totalCost=tuition+adminFee+archivalFee+textbooksFee+uniform+materials }}
+  {{ testing=100 }} 
+  {{ totalCost=tuition+adminFee+archivalFee+textbooksFee+uniform+materials+testing }}
   <!-- Make sure to update the totalCost formula to reflect the new fee variables -->
 
-  <!-- <block name="tuition">${{ tuition.toLocaleString() }}</block> -->
-  <block name="tuition">To be Announced</block>
+  <block name="tuition">${{ tuition.toLocaleString() }}</block>
+
   <block name="adminFee">${{ adminFee.toLocaleString() }}</block>
   <block name="archivalFee">${{ archivalFee.toLocaleString() }}</block>
+
+  <block name="additionalFeesRows">
+    <tr>
+      <td class="bold">Textbooks</td>
+      <td>${{ textbooksFee.toLocaleString() }}</td>
+    </tr>
+    <tr>
+      <td class="bold">Materials</td>
+      <td>${{ materials.toLocaleString() }}</td>
+    </tr>
+    <tr>
+      <td class="bold">Testing</td>
+      <td>${{ testing.toLocaleString() }}</td>
+    </tr>
+    <tr>
+      <td class="bold">Uniform</td>
+      <td>${{ uniform.toLocaleString() }}</td>
+    </tr>
+  </block>
   <!-- Add additional fees here -->
-  <!-- format as <tr><td class="bold">Fee Name</td></td>$feeName.toLocaleString()</td></tr> -->
-  <!-- <block name="total">${{ totalCost.toLocaleString() }}</block> -->
-  <block name="total">To be Announced</block>
+  <!-- format as <tr><td class="bold">Fee Name</td>$feeName.toLocaleString()</td></tr> -->
+  <block name="total">${{ totalCost.toLocaleString() }}</block>
+
+  <block name="paymentPlan">
+    <tr>
+      <th scope="row" class="bold">Payment Plan Options:</th>
+      <td>
+        <ul>
+          <li>
+            {{ months }} monthly payments of ${{ Math.ceil(totalCost /
+            months).toLocaleString() }} each
+          </li>
+
+          <li>
+            {{ Math.ceil(months * 4) }} weekly payments of ${{
+            Math.ceil(totalCost / Math.ceil(months * 4)).toLocaleString() }}
+            each
+          </li>
+        </ul>
+      </td>
+    </tr>
+  </block>
 
   <block name="ProgramleadForm">
     <div class="has-primary-bg text-white text-center">Coming Soon: 2024</div>

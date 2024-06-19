@@ -18,6 +18,7 @@ function createLocalsBlock() {
   }
   localsContent += "}";
 
+  fs.writeFileSync(path.join(__dirname, "../src/js/vars.js"), localsContent);
   // Create the full locals block with start and end markers
   return `
 <!-- START LOCALS -->
@@ -26,6 +27,8 @@ ${localsContent}
 </script>
 <!-- END LOCALS -->`.trim();
 }
+
+// send locals to their own JS file
 
 // Generate the locals block
 const brandLocals = createLocalsBlock();
@@ -85,6 +88,8 @@ const pagesToUpdate = [
 for (const filePath of pagesToUpdate) {
   replaceOrPrependLocals(filePath, brandLocals);
 }
+
+// add brand vars to js file too
 
 try {
   const scssContent =

@@ -17,6 +17,7 @@
   "license": "ISC",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.5.2",
+    "@fullcalendar/core": "^6.1.14",
     "@fullcalendar/daygrid": "^6.1.11",
     "@fullcalendar/icalendar": "^6.1.11",
     "@iframe-resizer/parent": "^5.0.1",
@@ -34,6 +35,7 @@
     "ical.js": "^1.5.0",
     "jquery": "^3.7.1",
     "jsdom": "^24.1.0",
+    "ol": "^9.2.4",
     "parcel": "^2.12.0",
     "posthtml-doctype": "^1.1.1",
     "posthtml-expressions": "^1.11.3",
@@ -48,8 +50,15 @@
     "@types/node": "^20.12.12",
     "afontizer": "^1.0.4",
     "axios": "^1.6.8",
+    "crypto-browserify": "^3.12.0",
+    "events": "^3.3.0",
+    "os-browserify": "^0.3.0",
+    "path-browserify": "^1.0.1",
+    "process": "^0.11.10",
     "sharp": "^0.31.3",
     "sppull": "^3.0.1",
-    "trunk": "^1.1.0"
+    "stream-browserify": "^3.0.0",
+    "trunk": "^1.1.0",
+    "vm-browserify": "^1.1.2"
   }
 }

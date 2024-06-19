@@ -1,23 +1,23 @@
 <!-- START LOCALS -->
 <script locals>
-module.exports = {
-  BUILD_BRAND: 'elevare',
-  BUILD_BRAND_SC: 'Elevare™',
-  BUILD_CATSCount: '1',
-  BUILD_CST: 'false',
-  BUILD_CST_PROGRAMS_LIST: 'DLB,M365',
-  BUILD_EDUCATION: 'true',
-  BUILD_EDUCATION_PROGRAMS_LIST: 'ECEA',
-  BUILD_HEALTHCARE: 'true',
-  BUILD_HEALTHCARE_PROGRAMS_LIST: 'RMT,CDA,DOC,PA,HCA,MLA',
-  BUILD_PROGRAMS: 'PA,HCA,MLA,ECEA,DR,CDA,RMT',
-}
+  module.exports = {
+    BUILD_BRAND: "ascentia",
+    BUILD_BRAND_SC: "Ascentia™",
+    BUILD_CATSCount: "2",
+    BUILD_CST: "false",
+    BUILD_CST_PROGRAMS_LIST: "DLB,M365",
+    BUILD_EDUCATION: "true",
+    BUILD_EDUCATION_PROGRAMS_LIST: "ECEA",
+    BUILD_HEALTHCARE: "true",
+    BUILD_HEALTHCARE_PROGRAMS_LIST: "RMT,CDA,DOC,PA,HCA,MLA",
+    BUILD_PROGRAMS: "PA,HCA,MLA,ECEA,DR,CDA",
+  };
 </script>
 <!-- END LOCALS -->
 <extends
   src="parts/base.htm"
   locals='{
-    "headerImg": "{{ `$BUILD_BRAND` === `ascentia` ? `index.png` : `elevare_index.png` }}", 
+    "headerImg": "{{ `$BUILD_BRAND` === `ascentia` ? `index.png` : `lake-6819747_1920.jpg` }}", 
     "name": "Welcome to $BUILD_BRAND_SC Career Institute",
     "title": "Home",
     "BUILD_BRAND": "BRAND",
@@ -76,8 +76,8 @@ module.exports = {
           >
             <block name="title"> How to Apply </block>
             <block name="blurb"
-              >Learn how to apply, view the enrollment calendar, FAQs, and
-              financial aid options. Discover Admissions Details</block
+              >How to apply, enrollment calendar and financial aid
+              options.</block
             >
           </extends>
           <extends

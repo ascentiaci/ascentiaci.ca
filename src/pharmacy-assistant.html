@@ -7,7 +7,7 @@
 <extends
   src="parts/programpage.htm"
   locals='{
-    "headerImg": "index.png", 
+    "headerImg": "pharmacy.jpg", 
     "title": "Pharmacy Assistant",
     "BUILD_BRAND": "BRAND",
     "BUILD_BRAND_SC": "BRAND_SC"
@@ -15,13 +15,29 @@
 >
   <block name="pageTitle"> Pharmacy Assistant </block>
   <block name="introCopy">
-    <p>In just under 6 months, you'll graduate equipped with comprehensive training in essential pharmacy assistant skills.</p>
-    <p>Our curriculum is meticulously crafted to align with the latest trends in the pharmaceutical field, ensuring you stay ahead of the curve.</p>
-    <p>Led by skilled instructors with firsthand pharmacy experience, you'll receive top-notch guidance every step of the way.</p>
-    <p>Gain practical experience through hands-on opportunities in diverse pharmacy settings and expand your professional network within the pharmaceutical community.</p>
-    
+    <p>
+      In just under 6 months, you'll graduate equipped with comprehensive
+      training in essential pharmacy assistant skills.
+    </p>
+    <p>
+      Our curriculum is meticulously crafted to align with the latest trends in
+      the pharmaceutical field, ensuring you stay ahead of the curve.
+    </p>
+    <p>
+      Led by skilled instructors with firsthand pharmacy experience, you'll
+      receive top-notch guidance every step of the way.
+    </p>
+    <p>
+      Gain practical experience through hands-on opportunities in diverse
+      pharmacy settings and expand your professional network within the
+      pharmaceutical community.
+    </p>
   </block>
-  <block name="duration">550 hours, 25 weeks. </block>
+  {{ hours=550 }}
+  <block name="duration">
+    {{ hours }} hours, {{ weeks=Math.ceil(hours/28) }} weeks, {{
+    months=Math.ceil(weeks/4) }} months
+  </block>
   <block name="curriculum">
     <ul>
       <li>Typing Skill Building Level 1 (10 WPM)</li>
@@ -40,10 +56,7 @@
       <li>Pharmacology Calculations</li>
       <li>Practicum for Pharmacy Assistant</li>
       <li>Standard First Aid with CPR Level C Training</li>
-  </ul>
-  
-
-
+    </ul>
   </block>
   <block name="certification">Diploma </block>
   <block name="compliance"
@@ -88,7 +101,6 @@
           higher, or pass the College's English Language Assessment Test.
         </td>
       </tr>
-      
     </table>
   </block>
 
@@ -154,17 +166,16 @@
   </block>
   <!-- Enter Tuition and Fees Here -->
   <!-- Follow formatting to add fees -->
-  {{ tuition=7205 }} {{ appFee=250 }} {{ AssessmentFee=100 }} 
+  {{ tuition=7205 }} {{ appFee=250 }} {{ AssessmentFee=100 }}
   <!-- prettier-ignore -->
-  {{ archivalFee=5 }} {{ books=385 }} {{ materials=0}} {{ uniform=140 }} 
-  {{ totalCost=tuition+appFee+AssessmentFee+archivalFee+books+uniform }}
+  {{ archivalFee=5 }} {{ books=385 }} {{ materials=0}} {{ uniform=140 }} {{ testingFee=100 }}
+  {{ totalCost=tuition+appFee+AssessmentFee+archivalFee+books+uniform+testingFee }}
   <!-- Make sure to update the totalCost formula to reflect the new fee variables -->
 
   <block name="tuition">${{ tuition.toLocaleString() }}</block>
-  
+
   <block name="archivalFee">${{ archivalFee.toLocaleString() }}</block>
   <block name="additionalFeesRows">
-    
     <tr>
       <th scope="row" class="bold">Assessment Fee</th>
       <td>${{ AssessmentFee.toLocaleString() }}</td>
@@ -173,15 +184,39 @@
       <th scope="row" class="bold">Books</th>
       <td>${{ books.toLocaleString() }}</td>
     </tr>
- 
+
     <tr>
       <th scope="row" class="bold">Uniform</th>
       <td>${{ uniform.toLocaleString() }}</td>
+    </tr>
+    <tr>
+      <th scope="row" class="bold">Testing</th>
+      <td>${{ testingFee.toLocaleString() }}</td>
     </tr>
   </block>
   <!-- Add additional fees here -->
   <!-- format as <tr><th scope="row" class="bold">Fee Name</th></td>$feeName.toLocaleString()</td></tr> -->
   <block name="total">${{ totalCost.toLocaleString() }}</block>
+
+  <block name="paymentPlan">
+    <tr>
+      <th scope="row" class="bold">Payment Plan Options:</th>
+      <td>
+        <ul>
+          <li>
+            {{ months }} monthly payments of ${{ Math.ceil(totalCost /
+            months).toLocaleString() }} each
+          </li>
+
+          <li>
+            {{ Math.ceil(months * 4) }} weekly payments of ${{
+            Math.ceil(totalCost / Math.ceil(months * 4)).toLocaleString() }}
+            each
+          </li>
+        </ul>
+      </td>
+    </tr>
+  </block>
 
   <!-- <block name="ProgramleadForm"><div class="has-primary-bg text-white">Coming Soon: 2024</div></block> -->
 </extends>

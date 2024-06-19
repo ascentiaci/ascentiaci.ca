@@ -7,7 +7,7 @@
 <extends
   src="parts/programpage.htm"
   locals='{
-    "headerImg": "chair-side-dental.jpg", 
+    "headerImg": "coa.jpg", 
     "title": "Dental Receptionist",
     "BUILD_BRAND": "BRAND",
     "BUILD_BRAND_SC": "BRAND_SC"
@@ -16,14 +16,34 @@
   <block name="pageTitle"> Dental Receptionist </block>
   <block name="introCopy">
     <p>Kickstart your career with our Dental Receptionist program!</p>
-    <p>This comprehensive training program equips you with the essential skills needed to efficiently manage a dental office and support patient care.</p>
-    <p>From mastering typing skills and Microsoft Office applications to understanding dental reception basics and managing dental records, you'll be well-prepared to excel in a dental setting.</p>
-    <p>Our curriculum covers crucial areas such as dental emergency procedures, dental insurance, and dental software management, ensuring you have the practical knowledge required for the role.</p>
-    <p>With hands-on labs and a practicum, you'll gain real-world experience, making you job-ready upon graduation.</p>
-    <p>Start your journey towards a rewarding career as a Dental Receptionist with us today!</p>
-    
+    <p>
+      This comprehensive training program equips you with the essential skills
+      needed to efficiently manage a dental office and support patient care.
+    </p>
+    <p>
+      From mastering typing skills and Microsoft Office applications to
+      understanding dental reception basics and managing dental records, you'll
+      be well-prepared to excel in a dental setting.
+    </p>
+    <p>
+      Our curriculum covers crucial areas such as dental emergency procedures,
+      dental insurance, and dental software management, ensuring you have the
+      practical knowledge required for the role.
+    </p>
+    <p>
+      With hands-on labs and a practicum, you'll gain real-world experience,
+      making you job-ready upon graduation.
+    </p>
+    <p>
+      Start your journey towards a rewarding career as a Dental Receptionist
+      with us today!
+    </p>
   </block>
-  <block name="duration">6 months </block>
+  {{ hours=580 }}
+  <block name="duration">
+    {{ hours }} hours, {{ weeks=Math.ceil(hours/28) }} weeks, {{
+    months=Math.ceil(weeks/4) }} months
+  </block>
   <block name="curriculum">
     <ul>
       <li>Typing Skill Building (Levels 1, 2, and 3: 10, 25, 40 WPM)</li>
@@ -43,9 +63,7 @@
       <li>Dental Insurance</li>
       <li>Dental Software Management</li>
       <li>Practicum for Dental Receptionist</li>
-  </ul>
-  
-  
+    </ul>
   </block>
   <block name="certification">Diploma </block>
   <!-- <block name="compliance"
@@ -72,7 +90,6 @@
         International students must have an IELTS score of 5.5 bands or higher,
         or pass the College's English Language Assessment Test.
       </li>
-
     </ul>
   </block>
 
@@ -153,15 +170,41 @@
 
   <!--  -->
   <block name="additionalFeesRows">
-    <tr><td class="bold">Textbooks</td></td><td>${{ textbooksFee.toLocaleString() }}</td></tr>  
-    
-    <tr><td class="bold">Testing</td></td><td>${{ testingFee.toLocaleString() }}</td></tr>  
-    <tr><td class="bold">Uniform</td></td><td>${{ otherFee.toLocaleString() }}</td></tr>  
-  
+    <tr>
+      <td class="bold">Textbooks</td>
+      <td>${{ textbooksFee.toLocaleString() }}</td>
+    </tr>
+
+    <tr>
+      <td class="bold">Testing</td>
+      <td>${{ testingFee.toLocaleString() }}</td>
+    </tr>
+    <tr>
+      <td class="bold">Uniform</td>
+      <td>${{ otherFee.toLocaleString() }}</td>
+    </tr>
   </block>
 
   <block name="total">${{ totalCost.toLocaleString() }}</block>
-  
+  <block name="paymentPlan">
+    <tr>
+      <th scope="row" class="bold">Payment Plan Options:</th>
+      <td>
+        <ul>
+          <li>
+            {{ months }} monthly payments of ${{ Math.ceil(totalCost /
+            months).toLocaleString() }} each
+          </li>
+
+          <li>
+            {{ Math.ceil(months * 4) }} weekly payments of ${{
+            Math.ceil(totalCost / Math.ceil(months * 4)).toLocaleString() }}
+            each
+          </li>
+        </ul>
+      </td>
+    </tr>
+  </block>
   <!-- END DELETE -->
   <!-- <block name="ProgramleadForm" ><div class="has-primary-bg text-white">Coming Soon: 2024</div></block > -->
 </extends>

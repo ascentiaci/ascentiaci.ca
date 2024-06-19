@@ -7,7 +7,7 @@
 <extends
   src="parts/programpage.htm"
   locals='{
-    "headerImg": "index.png", 
+    "headerImg": "chair-side-dental.jpg", 
     "title": "Chairside Dental Assistant",
     "BUILD_BRAND": "BRAND",
     "BUILD_BRAND_SC": "BRAND_SC"
@@ -15,14 +15,50 @@
 >
   <block name="pageTitle"> Chairside Dental Assistant </block>
   <block name="introCopy">
-    <p>Designed for those eager to enter the medical field swiftly, our fast-track program offers comprehensive training in less than a year.</p>
-<p>Dive into hands-on learning led by experienced instructors, gaining essential skills vital for success in medical assistance roles.</p>
-<p>Our industry-relevant curriculum is finely tuned to meet the demands of modern healthcare, ensuring you're equipped with the knowledge needed to excel.</p>
-<p>With opportunities for practical experience and networking within the field, our program paves the way for a fulfilling career in healthcare.</p>
-
+    <p>
+      Designed for those eager to enter the medical field swiftly, our
+      fast-track program offers comprehensive training in less than a year.
+    </p>
+    <p>
+      Dive into hands-on learning led by experienced instructors, gaining
+      essential skills vital for success in medical assistance roles.
+    </p>
+    <p>
+      Our industry-relevant curriculum is finely tuned to meet the demands of
+      modern healthcare, ensuring you're equipped with the knowledge needed to
+      excel.
+    </p>
+    <p>
+      With opportunities for practical experience and networking within the
+      field, our program paves the way for a fulfilling career in healthcare.
+    </p>
   </block>
-  <block name="duration">6 months </block>
-  <!-- <block name="curriculum">To be Announced </block> -->
+  {{ hours=530 }}
+  <block name="duration">
+    {{ hours }} hours, {{ weeks=Math.ceil(hours/28) }} weeks, {{
+    months=Math.ceil(weeks/4) }} months
+  </block>
+  <block name="curriculum">
+    <ul>
+      <li>Typing Skill Building (Levels 1, 2, and 3: 10, 25, 40 WPM)</li>
+      <li>Financial Awareness and Success</li>
+      <li>Diversity & Inclusion in Professional Practice</li>
+      <li>Digital Literacy for Beginners</li>
+      <li>Microsoft 365 Introduction</li>
+      <li>Microsoft Word 365 (Essentials and Intermediate)</li>
+      <li>Microsoft Excel 365 Essentials</li>
+      <li>Microsoft Outlook 365 Essentials</li>
+      <li>PowerPoint 365 Essentials</li>
+      <li>Job Search and Resume Writing</li>
+      <li>Dental Reception Basics</li>
+      <li>Standard First Aid with CPR Level C Training</li>
+      <li>Dental Emergency Procedures</li>
+      <li>Dental Records Management</li>
+      <li>Dental Insurance</li>
+      <li>Dental Software Management</li>
+      <li>Practicum for Dental Receptionist</li>
+    </ul>
+  </block>
   <block name="certification">Diploma </block>
   <!-- <block name="compliance">PTIB (Private Training Institutions Branch, Ministry of Advanced Education
     and Future Skills) - Approval Pending</block> -->
@@ -46,7 +82,6 @@
         International students must have an IELTS score of 5.5 bands or higher,
         or pass the College's English Language Assessment Test.
       </li>
-
     </ul>
   </block>
 
@@ -124,21 +159,46 @@
   <!-- Make sure to update the totalCost formula to reflect the new fee variables -->
 
   <block name="tuition">${{ tuition.toLocaleString() }}</block>
-  
+
   <!-- <block name="adminFee">${{ adminFee.toLocaleString() }}</block> -->
   <!-- <block name="archivalFee">${{ archivalFee.toLocaleString() }}</block> -->
 
   <block name="additionalFeesRows">
-    <tr><td class="bold">Textbooks</td><td>${{ textbooksFee.toLocaleString() }}</td></tr>  
-    <tr><td class="bold">Testing</td><td>${{ testingFee.toLocaleString() }}</td></tr>  
-    <tr><td class="bold">Other</td><td>${{ uniformFee.toLocaleString() }}</td></tr>  
-  
+    <tr>
+      <td class="bold">Textbooks</td>
+      <td>${{ textbooksFee.toLocaleString() }}</td>
+    </tr>
+    <tr>
+      <td class="bold">Testing</td>
+      <td>${{ testingFee.toLocaleString() }}</td>
+    </tr>
+    <tr>
+      <td class="bold">Other</td>
+      <td>${{ uniformFee.toLocaleString() }}</td>
+    </tr>
   </block>
-    
-  </block>
-  <!-- Add additional fees here -->
-  <!-- format as <tr><td class="bold">Fee Name</td></td>$feeName.toLocaleString()</td></tr> -->
-  <block name="total">${{ totalCost.toLocaleString() }}</block>
 
+  <!-- Add additional fees here -->
+  <!-- format as <tr><td class="bold">Fee Name</td>$feeName.toLocaleString()</td></tr> -->
+  <block name="total">${{ totalCost.toLocaleString() }}</block>
+  <block name="paymentPlan">
+    <tr>
+      <th scope="row" class="bold">Payment Plan Options:</th>
+      <td>
+        <ul>
+          <li>
+            {{ months }} monthly payments of ${{ Math.ceil(totalCost /
+            months).toLocaleString() }} each
+          </li>
+
+          <li>
+            {{ Math.ceil(months * 4) }} weekly payments of ${{
+            Math.ceil(totalCost / Math.ceil(months * 4)).toLocaleString() }}
+            each
+          </li>
+        </ul>
+      </td>
+    </tr>
+  </block>
   <!-- <block name="ProgramleadForm"><div class="has-primary-bg text-white">Coming Soon: 2024</div></block> -->
 </extends>

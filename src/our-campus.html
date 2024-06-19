@@ -1,0 +1,87 @@
+<script locals>
+  module.exports = {
+    BUILD_BRAND: locals.BUILD_BRAND || "BRAND",
+    BUILD_BRAND_SC: locals.BUILD_BRAND_SC || "BRAND_SC",
+  };
+</script>
+<extends
+  src="parts/base.htm"
+  locals='{
+  "headerImg": "index.png", 
+  "name": "",
+  "title": "Our Campus",
+  "BUILD_BRAND": "BRAND",
+  "BUILD_BRAND_SC": "BRAND_SC"
+}'
+>
+  <block name="pageTitle"> Our Campus </block>
+  <block name="introCopy">
+    At $BUILD_BRAND_SC Career Institute, we are dedicated to providing
+    exceptional education and training to help you achieve your career goals.
+  </block>
+
+  <block name="content">
+    <div class="location-container">
+      <div class="location">
+        <h2>Location (Coming Soon)</h2>
+        <p>
+          <strong>Address:</strong>
+          <if condition="BUILD_BRAND === 'ascentia'"
+            ><a
+              href="https://www.google.com/maps/dir/?api=1&destination=1680%20Water%20St,%20Kelowna,%20BC"
+              >Unit 301 - 1680 Water St., <br />
+              Kelowna, BC V1Y 8T8
+            </a></if
+          >
+          <if condition="BUILD_BRAND !== 'ascentia'"
+            ><a
+              href="https://www.google.com/maps/dir/?api=1&destination=1690%20Water%20St,%20Kelowna,%20BC"
+              >Unit 200 - 1690 Water St., <br />
+              Kelowna, BC V1Y 8T8
+            </a></if
+          >
+        </p>
+        <p>
+          <strong>Phone:</strong>
+          <if condition="BUILD_BRAND === 'ascentia'"
+            ><a href="tel:12509998733">250-999-8733</a></if
+          >
+          <if condition="BUILD_BRAND !== 'ascentia'"
+            ><a href="tel:12509998736">250-999-8736</a></if
+          >
+        </p>
+        <p><strong>Email:</strong> info@ascentiaci.ca</p>
+
+        <div id="map">
+          <script type="module">
+            const buildBrand = "$BUILD_BRAND";
+          </script>
+          <script type="module" src="./js/maps.js"></script>
+        </div>
+      </div>
+      <div class="location">
+        <br />
+        <h2>Temporary Office</h2>
+        <p><strong>Address:</strong> tba, Kelowna, BC</p>
+        <p>
+          <strong>Phone:</strong>
+          <if condition="BUILD_BRAND === 'ascentia'"
+            ><a href="tel:12509998733">250-999-8733</a></if
+          >
+          <if condition="BUILD_BRAND !== 'ascentia'"
+            ><a href="tel:12509998736">250-999-8736</a></if
+          >
+        </p>
+        <p>
+          <strong>Email:</strong>
+          <if condition="BUILD_BRAND === 'ascentia'"
+            ><a href="mailto:info@ascentiaci.ca">info@ascentiaci.ca</a></if
+          >
+          <if condition="BUILD_BRAND !== 'ascentia'"
+            ><a href="mailto:info@elevareci.ca">info@elevareci.ca</a></if
+          >
+        </p>
+      </div>
+    </div>
+  </block>
+</extends>

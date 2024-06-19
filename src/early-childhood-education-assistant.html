@@ -15,15 +15,34 @@
 >
   <block name="pageTitle"> Early Childhood Education Assistant </block>
   <block name="introCopy">
-    <p>Embark on a fulfilling career with our Early Childhood Education Assistant program!</p>
-    <p>This comprehensive training program equips you with the necessary skills to support the development and learning of young children.</p>
-    <p>From understanding child development and creating inclusive learning environments to engaging in practical experiences, you'll be well-prepared to make a positive impact in early childhood settings.</p>
-    <p>Our curriculum includes essential training in child development, health and safety, first aid, food safety, and more, ensuring you're job-ready upon graduation.</p>
-    <p>Start your journey toward a rewarding career in early childhood education with us today!</p>
-    
-    
+    <p>
+      Embark on a fulfilling career with our Early Childhood Education Assistant
+      program!
+    </p>
+    <p>
+      This comprehensive training program equips you with the necessary skills
+      to support the development and learning of young children.
+    </p>
+    <p>
+      From understanding child development and creating inclusive learning
+      environments to engaging in practical experiences, you'll be well-prepared
+      to make a positive impact in early childhood settings.
+    </p>
+    <p>
+      Our curriculum includes essential training in child development, health
+      and safety, first aid, food safety, and more, ensuring you're job-ready
+      upon graduation.
+    </p>
+    <p>
+      Start your journey toward a rewarding career in early childhood education
+      with us today!
+    </p>
   </block>
-  <block name="duration">6 months </block>
+  {{ hours=416 }}
+  <block name="duration">
+    {{ hours }} hours, {{ weeks=Math.ceil(hours/28) }} weeks, {{
+    months=Math.ceil(weeks/4) }} months
+  </block>
   <block name="curriculum">
     <ul>
       <li>Financial Awareness and Success</li>
@@ -36,7 +55,7 @@
       <li>Food Safe Training</li>
       <li>WHMIS Training</li>
       <li>Practicum for Early Childhood Education Assistant</li>
-  </ul>  
+    </ul>
   </block>
   <block name="certification">Diploma </block>
   <block name="compliance"
@@ -63,7 +82,6 @@
         International students must have an IELTS score of 5.5 bands or higher,
         or pass the College's English Language Assessment Test.
       </li>
-
     </ul>
   </block>
 
@@ -128,22 +146,49 @@
   {{ testingFee=100 }}
   {{ textbooksFee=320}}
   {{ materials=450 }}
-  {{ totalCost=tuition+adminFee+archivalFee+textbooksFee+materials }}
+  {{ totalCost=tuition+adminFee+archivalFee+textbooksFee+materials+testingFee }}
   <!-- Make sure to update the totalCost formula to reflect the new fee variables -->
 
   <block name="tuition">${{ tuition.toLocaleString() }}</block>
-  
+
   <block name="adminFee">${{ adminFee.toLocaleString() }}</block>
   <!-- <block name="archivalFee">${{ archivalFee.toLocaleString() }}</block> -->
   <block name="additionalFeesRows">
-    <tr><td class="bold">Books</td></td><td>${{ textbooksFee.toLocaleString() }}</td></tr>
-    <tr><td class="bold">Materials</td></td><td>${{ materials.toLocaleString() }}</td></tr>
-
+    <tr>
+      <td class="bold">Books</td>
+      <td>${{ textbooksFee.toLocaleString() }}</td>
+    </tr>
+    <tr>
+      <td class="bold">Materials</td>
+      <td>${{ materials.toLocaleString() }}</td>
+    </tr>
+    <tr>
+      <td class="bold">Testing</td>
+      <td>${{ testingFee.toLocaleString() }}</td>
+    </tr>
   </block>
   <!-- Add additional fees here -->
-  <!-- format as <tr><td class="bold">Fee Name</td></td>$feeName.toLocaleString()</td></tr> -->
-  <block name="total">To be Announced</block>
+  <!-- format as <tr><td class="bold">Fee Name</td>$feeName.toLocaleString()</td></tr> -->
+  <!-- <block name="total">To be Announced</block> -->
   <block name="total">${{ totalCost.toLocaleString() }}</block>
+  <block name="paymentPlan">
+    <tr>
+      <th scope="row" class="bold">Payment Plan Options:</th>
+      <td>
+        <ul>
+          <li>
+            {{ months }} monthly payments of ${{ Math.ceil(totalCost /
+            months).toLocaleString() }} each
+          </li>
 
+          <li>
+            {{ Math.ceil(months * 4) }} weekly payments of ${{
+            Math.ceil(totalCost / Math.ceil(months * 4)).toLocaleString() }}
+            each
+          </li>
+        </ul>
+      </td>
+    </tr>
+  </block>
   <!-- <block name="ProgramleadForm" ><div class="has-primary-bg text-white">Coming Soon: 2024</div></block > -->
 </extends>

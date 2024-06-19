@@ -1,4 +1,4 @@
-$brand: 'elevare';
+$brand: 'ascentia';
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css");
 
 // @import url("https://use.typekit.net/uxt6rai.css");
@@ -449,10 +449,12 @@ ul > li {
 .accordion-header {
   background-color: var(--brand-primary);
   color: var(--brand-tertiary);
-  border: 2px solid var(--brand-highlight);
+  // border: 2px solid var(--brand-highlight);
   padding: 10px;
   cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
 .accordion-header:hover {
@@ -472,8 +474,19 @@ ul > li {
   color: var(--brand-tertiary);
 }
 
-.accordion-header:not(.collapsed) {
-  background-color: var(--brand-highlight-secondary);
+.btn-primary,
+.btn-primary:active,
+.accordion-button:not(.collapsed) {
+  background-color: var(--brand-primary);
   color: var(--brand-tertiary) !important;
-  border-bottom: 2px solid var(--brand-secondary);
+  // border-bottom: 2px solid var(--brand-secondary);
+}
+
+#map {
+  width: 100%;
+  height: 300px;
+}
+
+.text-center.px-3.py-2.mt-3.bg-body-secondary {
+  color: var(--brand-primary);
 }

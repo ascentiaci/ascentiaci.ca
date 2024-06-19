@@ -1,0 +1,10 @@
+@import "/node_modules/ol/ol.css";
+
+#map {
+  position: relative;
+  width: 100%;
+}
+
+.pinFeature {
+  content: url("/node_modules/@fortawesome/fontawesome-free/svgs/solid/map-pin.svg");
+}
