@@ -48,10 +48,14 @@
                 <li>
                   Upon submission of the complaint to the Executive Director,
                   Alda Messiah, who can be reached at
-                  <!-- prettier-ignore -->
-                  <if condition="BUILD_BRAND === 'ascentia'" ><a href="mailto:alda@ascentiaci.ca" >alda@ascentiaci.ca</a ></if >
-                  <!-- prettier-ignore -->
-                    <if condition="BUILD_BRAND !== 'ascentia'" ><a href="mailto:alda@elevareci.ca" >alda@elevareci.ca</a ></if >
+                 <!-- prettier-ignore -->
+<if condition="BUILD_BRAND === 'ascentia'">
+  <a href="mailto:alda@ascentiaci.ca">alda@ascentiaci.ca</a>
+</if>
+<else>
+  <a href="mailto:alda@elevareci.ca">alda@elevareci.ca</a>
+</else>
+
                 </li>
                 <li>
                   The Executive Director will then reach out to the affected
