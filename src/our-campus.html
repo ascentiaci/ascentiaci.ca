@@ -1,7 +1,7 @@
 <script locals>
   module.exports = {
-    BUILD_BRAND: locals.BUILD_BRAND || "BRAND",
-    BUILD_BRAND_SC: locals.BUILD_BRAND_SC || "BRAND_SC",
+    BUILD_BRAND: locals.BUILD_BRAND || "$BUILD_BRAND",
+    BUILD_BRAND_SC: locals.BUILD_BRAND_SC || "$BUILD_BRAND_SC",
   };
 </script>
 <extends
@@ -10,8 +10,8 @@
   "headerImg": "index.png", 
   "name": "",
   "title": "Our Campus",
-  "BUILD_BRAND": "BRAND",
-  "BUILD_BRAND_SC": "BRAND_SC"
+  "BUILD_BRAND": "$BUILD_BRAND",
+  "BUILD_BRAND_SC": "$BUILD_BRAND_SC"
 }'
 >
   <block name="pageTitle"> Our Campus </block>
@@ -23,7 +23,10 @@
   <block name="content">
     <div class="location-container">
       <div class="location">
-        <h2>Location (Coming Soon)</h2>
+        <h2>
+          Location ( {{ BUILD_BRAND === 'ascentia' ? 'Under Contruction' :
+          'Under Rennovation'}} )
+        </h2>
         <p>
           <strong>Address:</strong>
           <if condition="BUILD_BRAND === 'ascentia'"

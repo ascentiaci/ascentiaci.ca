@@ -86,13 +86,13 @@
         All Students must be 19 years of age or older at the start of their
         program.
       </li>
-      <li>Grade 12, G.E.D., Mature Student Status</li>
+      <li>
+        Grade 12 OR G.E.D. OR Mature Student Status (Successful completion of
+        the institutions Entrance Evaluation with a minimum of 75%)
+      </li>
       <li>Satisfactory completion of a Criminal Record Search</li>
       <li>A pre-admission application and interview</li>
-      <li>
-        Completed Grade 10 Math or its equivalent and must pass the Institute's
-        English Language Assessment Test.
-      </li>
+
       <li>
         International students must have an IELTS score of 5.5 bands or higher,
         or pass the College's English Language Assessment Test.
@@ -199,16 +199,14 @@
       <td>
         <ul>
           <li>
-            {{ months }} monthly payments of $<!-- prettier-ignore -->
+            {{ months }} interest-free monthly payments of $<!-- prettier-ignore -->
             {{ Math.ceil(totalCost/months).toLocaleString() }} 
 each
           </li>
 
           <li>
-            {{ Math.ceil(months * 4) }} weekly payments of $
             <!-- prettier-ignore -->
-            {{ Math.ceil(totalCost / Math.ceil(months * 4)).toLocaleString() }}
-            each
+            Student Loans and alternate funding available for those who qualify.
           </li>
         </ul>
       </td>

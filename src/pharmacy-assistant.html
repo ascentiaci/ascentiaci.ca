@@ -84,7 +84,10 @@
       </tr>
       <tr>
         <th scope="row">Education</th>
-        <td>Grade 12, G.E.D., Mature Student Status</td>
+        <td>
+          Grade 12 OR G.E.D. OR Mature Student Status (Successful completion of
+          the institutions Entrance Evaluation with a minimum of 75%)
+        </td>
       </tr>
       <tr>
         <th scope="row">Criminal Record</th>
@@ -94,13 +97,7 @@
         <th scope="row">Assessment</th>
         <td>A pre-admission application and interview</td>
       </tr>
-      <tr>
-        <th scope="row">Minimum Math Requirement</th>
-        <td>
-          Completed Grade 10 Math or its equivalent and must pass the College's
-          English Language Assessment Test.
-        </td>
-      </tr>
+
       <tr>
         <th scope="row">Language</th>
         <td>
@@ -211,16 +208,14 @@
       <td>
         <ul>
           <li>
-            {{ months }} monthly payments of $<!-- prettier-ignore -->
+            {{ months }} interest-free monthly payments of $<!-- prettier-ignore -->
             {{ Math.ceil(totalCost/months).toLocaleString() }} 
 each
           </li>
 
           <li>
-            {{ Math.ceil(months * 4) }} weekly payments of $
             <!-- prettier-ignore -->
-            {{ Math.ceil(totalCost / Math.ceil(months * 4)).toLocaleString() }}
-            each
+            Student Loans and alternate funding available for those who qualify.
           </li>
         </ul>
       </td>

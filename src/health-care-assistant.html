@@ -302,23 +302,21 @@ Education & Future Skills
       <td>
         <ul>
           <li>
-            {{ months }} monthly payments of $<!-- prettier-ignore -->
+            {{ months }} interest-free monthly payments of $<!-- prettier-ignore -->
             {{ Math.ceil(totalCost/months).toLocaleString() }} 
 each
           </li>
 
           <li>
-            {{ Math.ceil(months * 4) }} weekly payments of $
             <!-- prettier-ignore -->
-            {{ Math.ceil(totalCost / Math.ceil(months * 4)).toLocaleString() }}
-            each
+            Student Loans and alternate funding available for those who qualify.
           </li>
         </ul>
       </td>
     </tr>
   </block>
 
-  <block name="ProgramleadForm">
+  <!-- <block name="ProgramleadForm">
     <div class="has-primary-bg text-white text-center">Coming Soon: 2024</div>
-  </block>
+  </block> -->
 </extends>
