@@ -40,8 +40,15 @@
   </block>
   {{ hours=416 }}
   <block name="duration">
-    {{ hours }} hours, {{ weeks=Math.ceil(hours/28) }} weeks, {{
-    months=Math.ceil(weeks/4) }} months
+    <!-- prettier-ignore -->
+    {{ hours }} 
+    hours,
+    <!-- prettier-ignore -->
+    {{ weeks=Math.ceil(hours/28) }} 
+    weeks,
+    <!-- prettier-ignore -->
+    {{ months=Math.ceil(weeks/4) }} 
+    months
   </block>
   <block name="curriculum">
     <ul>
@@ -177,13 +184,16 @@
       <td>
         <ul>
           <li>
-            {{ months }} monthly payments of ${{ Math.ceil(totalCost /
-            months).toLocaleString() }} each
+            {{ months }} monthly payments of $
+            <!-- prettier-ignore -->
+            {{ Math.ceil(totalCost/months).toLocaleString() }} 
+each
           </li>
 
           <li>
-            {{ Math.ceil(months * 4) }} weekly payments of ${{
-            Math.ceil(totalCost / Math.ceil(months * 4)).toLocaleString() }}
+            {{ Math.ceil(months * 4) }} weekly payments of $
+            <!-- prettier-ignore -->
+            {{ Math.ceil(totalCost / Math.ceil(months * 4)).toLocaleString() }}
             each
           </li>
         </ul>

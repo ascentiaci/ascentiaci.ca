@@ -187,13 +187,15 @@
       <td>
         <ul>
           <li>
-            {{ months }} monthly payments of ${{ Math.ceil(totalCost /
-            months).toLocaleString() }} each
+            {{ months }} monthly payments of $<!-- prettier-ignore -->
+            {{ Math.ceil(totalCost/months).toLocaleString() }} 
+each
           </li>
 
           <li>
-            {{ Math.ceil(months * 4) }} weekly payments of ${{
-            Math.ceil(totalCost / Math.ceil(months * 4)).toLocaleString() }}
+            {{ Math.ceil(months * 4) }} weekly payments of $
+            <!-- prettier-ignore -->
+            {{ Math.ceil(totalCost / Math.ceil(months * 4)).toLocaleString() }}
             each
           </li>
         </ul>
