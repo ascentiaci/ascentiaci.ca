@@ -1,7 +1,7 @@
 <script locals>
   module.exports = {
-    BUILD_BRAND: locals.BUILD_BRAND || "BRAND",
-    BUILD_BRAND_SC: locals.BUILD_BRAND_SC || "BRAND_SC",
+    BUILD_BRAND: locals.BUILD_BRAND || "$BUILD_BRAND",
+    BUILD_BRAND_SC: locals.BUILD_BRAND_SC || "$BUILD_BRAND_SC",
   };
 </script>
 <extends
@@ -10,8 +10,8 @@
   "headerImg": "index.png", 
   "name": "Dispute Resolution Policy",
   "title": "Dispute Resolution Policy",
-  "BUILD_BRAND": "BRAND",
-  "BUILD_BRAND_SC": "BRAND_SC"
+  "BUILD_BRAND": "$BUILD_BRAND",
+  "BUILD_BRAND_SC": "$BUILD_BRAND_SC"
 }'
 >
   <block name="pageTitle"> Dispute Resolution Policy </block>
