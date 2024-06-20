@@ -25,6 +25,7 @@ leadFormModal.addEventListener("shown.bs.modal", function () {
 document
   .getElementById("leadForm")
   .addEventListener("submit", function (event) {
+    event.preventDefault(); // Prevent form from submitting immediately
     var responseField = document.getElementById("cf-turnstile-response");
     if (responseField) {
       responseField.value = ""; // Clear previous response value
@@ -36,11 +37,9 @@ document
         } else {
           // Provide feedback to the user
           document.getElementById("feedbackMessage").style.display = "block";
-          event.preventDefault(); // Prevent form submission
         }
       });
     } else {
-      event.preventDefault(); // Prevent form submission if Turnstile script is not loaded
       document.getElementById("feedbackMessage").style.display = "block";
     }
   });
@@ -49,18 +48,10 @@ function validateForm() {
   var tokenValue = document.getElementById("cf-turnstile-response")
     ? document.getElementById("cf-turnstile-response").value
     : "";
-  // var consentChecked = document.getElementById('consent').checked;
 
   if (!tokenValue) {
     document.getElementById("feedbackMessage").style.display = "block";
     return false; // Prevent form submission if the token is empty
-  }
-
-  if (!consentChecked) {
-    alert(
-      "You must agree to the terms and conditions before submitting the form.",
-    );
-    return false; // Prevent form submission if the consent is not checked
   }
 
   return true;
