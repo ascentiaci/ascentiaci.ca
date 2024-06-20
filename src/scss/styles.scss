@@ -159,6 +159,10 @@ a:hover {
   color: var(--brand-highlight);
 }
 
+.btn.nav-link:hover {
+  color: var(--brand-highlight) !important;
+}
+
 .btn:hover,
 .btn-primary:hover {
   background-color: var(--brand-tertiary);
