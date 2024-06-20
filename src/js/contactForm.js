@@ -19,28 +19,15 @@ document
         }),
         document.head.appendChild(e);
     }
-  }),
-  document.getElementById("leadForm").addEventListener("submit", function (e) {
-    e.preventDefault();
-    var token = document.getElementById("cf-turnstile-response").value;
-    if (token === "") {
-      document.getElementById("feedbackMessage").classList.remove("d-none");
-    } else {
-      document.getElementById("feedbackMessage").classList.add("d-none");
-      // Submit the form using AJAX to prevent redirect
-      var formData = new FormData(document.getElementById("leadForm"));
-      fetch(document.getElementById("leadForm").action, {
-        method: "POST",
-        body: formData,
-      })
-        .then((response) => response.text())
-        .then((data) => {
-          document.getElementById("leadForm").innerHTML =
-            "<h2>Thanks for your submission!</h2>";
-        })
-        .catch((error) => {
-          document.getElementById("leadForm").innerHTML =
-            "<h2>There was an error with your submission. Please try again.</h2>";
-        });
-    }
   });
+
+document.getElementById("leadForm").addEventListener("submit", function (e) {
+  var token = document.getElementById("cf-turnstile-response").value;
+  if (token === "") {
+    e.preventDefault(); // Prevent form submission if Turnstile token is missing
+    document.getElementById("feedbackMessage").classList.remove("d-none");
+  } else {
+    document.getElementById("feedbackMessage").classList.add("d-none");
+    // The form will now submit as usual
+  }
+});
