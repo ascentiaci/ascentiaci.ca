@@ -29,22 +29,14 @@ leadFormModal.addEventListener("shown.bs.modal", function () {
 document
   .getElementById("leadForm")
   .addEventListener("submit", function (event) {
+    event.preventDefault(); // Prevent the default form submission
     var responseField = document.getElementById("cf-turnstile-response");
     if (responseField.value === "") {
-      event.preventDefault(); // Prevent form submission if the token is empty
       document.getElementById("feedbackMessage").classList.remove("d-none");
+    } else {
+      document.getElementById("feedbackMessage").classList.add("d-none");
+      // Simulate successful form submission with a thank you message
+      document.getElementById("leadForm").innerHTML =
+        "<h2>Thanks for your submission!</h2>";
     }
   });
-
-function validateForm() {
-  var tokenValue = document.getElementById("cf-turnstile-response")
-    ? document.getElementById("cf-turnstile-response").value
-    : "";
-
-  if (!tokenValue) {
-    document.getElementById("feedbackMessage").classList.remove("d-none");
-    return false; // Prevent form submission if the token is empty
-  }
-
-  return true;
-}
