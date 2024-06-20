@@ -482,3 +482,47 @@ ul > li {
 .text-center.px-3.py-2.mt-3.bg-body-secondary {
   color: var(--brand-primary);
 }
+
+#leadForm {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background: #f9f9f9;
+}
+#leadForm h2 {
+  text-align: center;
+  color: #333;
+}
+#leadForm label {
+  margin-top: 10px;
+  display: block;
+  color: #666;
+}
+#leadForm input[type="text"],
+#leadForm input[type="email"],
+#leadForm input[type="tel"],
+#leadForm select,
+#leadForm textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+#leadForm input[type="submit"] {
+  width: 100%;
+  background-color: #0056b3;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+}
+#leadForm input[type="submit"]:hover {
+  background-color: #004494;
+}

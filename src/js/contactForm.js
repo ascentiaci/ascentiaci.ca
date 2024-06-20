@@ -9,7 +9,11 @@ function loadTurnstile() {
     turnstileContainer.classList.remove("d-none");
     turnstileContainer.classList.add("cf-turnstile");
     turnstileContainer.setAttribute("data-sitekey", "0x4AAAAAAAYDjhZNjYSI8Zc8");
-    window.cfTurnstile.render(turnstileContainer);
+    window.cfTurnstile.render(turnstileContainer, {
+      callback: function (token) {
+        document.getElementById("cf-turnstile-response").value = token;
+      },
+    });
   };
   document.head.appendChild(script);
 }
@@ -25,22 +29,10 @@ leadFormModal.addEventListener("shown.bs.modal", function () {
 document
   .getElementById("leadForm")
   .addEventListener("submit", function (event) {
-    event.preventDefault(); // Prevent form from submitting immediately
     var responseField = document.getElementById("cf-turnstile-response");
-    if (responseField) {
-      responseField.value = ""; // Clear previous response value
-      // Validate Turnstile response
-      window.cfTurnstile.onSubmit(event, function (token) {
-        if (token) {
-          responseField.value = token; // Set the token in the hidden field
-          document.getElementById("leadForm").submit(); // Submit the form
-        } else {
-          // Provide feedback to the user
-          document.getElementById("feedbackMessage").style.display = "block";
-        }
-      });
-    } else {
-      document.getElementById("feedbackMessage").style.display = "block";
+    if (responseField.value === "") {
+      event.preventDefault(); // Prevent form submission if the token is empty
+      document.getElementById("feedbackMessage").classList.remove("d-none");
     }
   });
 
@@ -50,7 +42,7 @@ function validateForm() {
     : "";
 
   if (!tokenValue) {
-    document.getElementById("feedbackMessage").style.display = "block";
+    document.getElementById("feedbackMessage").classList.remove("d-none");
     return false; // Prevent form submission if the token is empty
   }
 
