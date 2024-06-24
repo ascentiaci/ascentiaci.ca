@@ -1,17 +1,17 @@
 <!-- START LOCALS -->
 <script locals>
-module.exports = {
-  BUILD_BRAND: 'ascentia',
-  BUILD_BRAND_SC: 'Ascentia™',
-  BUILD_CATSCount: '2',
-  BUILD_CST: 'false',
-  BUILD_CST_PROGRAMS_LIST: 'DLB,M365',
-  BUILD_EDUCATION: 'true',
-  BUILD_EDUCATION_PROGRAMS_LIST: 'ECEA',
-  BUILD_HEALTHCARE: 'true',
-  BUILD_HEALTHCARE_PROGRAMS_LIST: 'RMT,CDA,DOC,PA,HCA,MLA',
-  BUILD_PROGRAMS: 'PA,HCA,MLA,ECEA,DR,CDA',
-}
+  module.exports = {
+    BUILD_BRAND: "ascentia",
+    BUILD_BRAND_SC: "Ascentia™",
+    BUILD_CATSCount: "2",
+    BUILD_CST: "false",
+    BUILD_CST_PROGRAMS_LIST: "DLB,M365",
+    BUILD_EDUCATION: "true",
+    BUILD_EDUCATION_PROGRAMS_LIST: "ECEA",
+    BUILD_HEALTHCARE: "true",
+    BUILD_HEALTHCARE_PROGRAMS_LIST: "RMT,CDA,DOC,PA,HCA,MLA",
+    BUILD_PROGRAMS: "PA,HCA,MLA,ECEA,DR,CDA",
+  };
 </script>
 <!-- END LOCALS -->
 <extends
@@ -143,6 +143,14 @@ module.exports = {
             width: 100%;
             height: auto;
             object-fit: cover;
+          }
+
+          /* Media Query for screens smaller than 'large' size */
+          @media (max-width: 991px) {
+            .card-group-2,
+            .card-group-3 {
+              grid-template-columns: 1fr; /* Adjust all groups to 1fr */
+            }
           }
         </style>
         <div
