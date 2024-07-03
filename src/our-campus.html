@@ -55,7 +55,15 @@
             ><a href="tel:12509998736">250-999-8736</a></if
           >
         </p>
-        <p><strong>Email:</strong> info@ascentiaci.ca</p>
+        <p>
+          <strong>Email:</strong>
+          <if condition="BUILD_BRAND === 'ascentia'"
+            ><a href="mailto:info@ascentiaci.ca">info@ascentiaci.ca</a></if
+          >
+          <if condition="BUILD_BRAND !== 'ascentia'"
+            ><a href="mailto:info@elevareci.ca">info@elevareci.ca</a></if
+          >
+        </p>
 
         <div id="map">
           <script type="module">
