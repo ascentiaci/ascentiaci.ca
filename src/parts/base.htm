@@ -94,10 +94,23 @@ module.exports = {
 
       <header class="border-0 mb-0">
         <img
-          src="/src/images/{{ headerImg }}?as=webp"
-          alt=""
-          class="headerImg"
-        />
+        src="/src/images/{{ headerImg }}?as=webp&width=576"
+        srcset="
+          /src/images/{{ headerImg }}?as=webp&width=576 576w,
+          /src/images/{{ headerImg }}?as=webp&width=768 768w,
+          /src/images/{{ headerImg }}?as=webp&width=992 992w,
+          /src/images/{{ headerImg }}?as=webp&width=1200 1200w
+        "
+        sizes="
+          (max-width: 575px) 576px,
+          (max-width: 767px) 768px,
+          (max-width: 991px) 992px,
+          1200px
+        "
+        alt=""
+        class="headerImg"
+      />
+      
         <br />
         
         <h2 class="text-center px-3 py-2 mt-3 bg-body-secondary">

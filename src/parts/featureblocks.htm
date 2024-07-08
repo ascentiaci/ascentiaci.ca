@@ -12,7 +12,25 @@
       <button class="btn pb-1 text-left px-0 bold btn-nohighlight mt-2" type="button"><small class="text-primary">{{ cta }}</small> <i class="bi bi-arrow-right text-primary align-bottom"></i></button>
     </div>
     <div class="card-footer text-left px-0 mt-2">
-      <img src="images/{{ image }}" alt="" class="card-img-bottom border-1" style="border-width: 5px; border-style: ridge;max-height: 45dvh;" />
+      <img
+  src="images/{{ image }}?as=webp&width=576"
+  srcset="
+    images/{{ image }}?as=webp&width=576 576w,
+    images/{{ image }}?as=webp&width=768 768w,
+    images/{{ image }}?as=webp&width=992 992w,
+    images/{{ image }}?as=webp&width=1200 1200w
+  "
+  sizes="
+    (max-width: 575px) 576px,
+    (max-width: 767px) 768px,
+    (max-width: 991px) 992px,
+    1200px
+  "
+  alt=""
+  class="card-img-bottom border-1"
+  style="border-width: 5px; border-style: ridge; max-height: 45dvh;"
+/>
+
     </div>
   </div>
 </a>

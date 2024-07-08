@@ -1,6 +1,23 @@
 <div class="row row-cols-1 row-cols-lg-2 px-1 py-3 justify-content-around {{ order === '1' ? 'bg-body-tertiary ' : 'bg-body-secondary' }}">
     <div class="col col-lg-4 col-12 order-{{ order }} d-none d-lg-inline" style="max-height: 300px;">
-        <img src="images/{{ image }}?as=webp&width=400px" alt="" class="object-fit-cover h-100 brand-secondary">
+        <img
+  src="images/{{ image }}?as=webp&width=576"
+  srcset="
+    images/{{ image }}?as=webp&width=576 576w,
+    images/{{ image }}?as=webp&width=768 768w,
+    images/{{ image }}?as=webp&width=992 992w,
+    images/{{ image }}?as=webp&width=1200 1200w
+  "
+  sizes="
+    (max-width: 575px) 576px,
+    (max-width: 767px) 768px,
+    (max-width: 991px) 992px,
+    1200px
+  "
+  alt=""
+  class="object-fit-cover h-100 brand-secondary"
+/>
+
     </div>
     <div class="col col-lg-8 col-12 order-{{ order2 }} d-flex flex-column {{ order === '1' ? 'text-left' : 'text-right'}}">
         <h3 class="py-2 text-center"><block name="whyHeader">Diploma in Business Co-op</block></h3>
