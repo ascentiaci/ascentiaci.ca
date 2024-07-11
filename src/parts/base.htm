@@ -27,8 +27,13 @@ module.exports = {
     <script type="module" src="js/main.js"></script>
 
     <!-- Savvy Tracking Code -->
+    <if condition="BUILD_BRAND === 'ascentia'">
+<!-- Add Ascentia Code -->
 
-    <script async src="//510226.tctm.xyz/t.js"></script>
+    </if>
+    <if condition="BUILD_BRAND !== 'ascentia'">
+      <script async src="//510226.tctm.xyz/t.js"></script>
+    </if>
   </head>
   <body>
   
