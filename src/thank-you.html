@@ -1,0 +1,33 @@
+<!-- START LOCALS -->
+<script locals>
+  module.exports = {
+    BUILD_BRAND: "ascentia",
+    BUILD_BRAND_SC: "Ascentia™",
+    BUILD_CATSCount: "2",
+    BUILD_CST: "false",
+    BUILD_CST_PROGRAMS_LIST: "DLB,M365",
+    BUILD_EDUCATION: "true",
+    BUILD_EDUCATION_PROGRAMS_LIST: "ECEA",
+    BUILD_HEALTHCARE: "true",
+    BUILD_HEALTHCARE_PROGRAMS_LIST: "RMT,CDA,DOC,PA,HCA,MLA",
+    BUILD_PROGRAMS: "PA,HCA,MLA,ECEA,DR,CDA",
+  };
+</script>
+<!-- END LOCALS -->
+<extends
+  src="parts/base.htm"
+  locals='{
+    "headerImg": "{{ `$BUILD_BRAND` === `ascentia` ? `index.png` : `lake-6819747_1920.jpg` }}", 
+    "name": "Thank You!",
+    "title": "Thank you!",
+    "BUILD_BRAND": "BRAND",
+    "BUILD_BRAND_SC": "BRAND_SC"
+
+  }'
+>
+  <block name="pageTitle">Thank You!</block>
+  <block name="introCopy">
+    Thanks for your inquiry. An admissions advisor will be in touch soon!
+  </block>
+  <block name="content"></block>
+</extends>
