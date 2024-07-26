@@ -19,8 +19,8 @@ module.exports = {
     <div class="col-12 col-lg-4">
       <a href="/src/index.html" title="goHome">
         <img src="/src/images/primary-logo-name-no-tagline-white-text.png" class="img-fluid footer-logo" alt="logo" />
-        <address>
-          <p class="pl-3" id="CampusAddress">
+        <address class="mb-0">
+          <p class="pl-3 mb-0" id="CampusAddress">
             <if condition="BUILD_BRAND === 'ascentia'">
               <a href="https://www.google.com/maps/dir/?api=1&destination=1680%20Water%20St,%20Kelowna,%20BC">Unit 301 - 1680 Water St., <br /> Kelowna, BC V1Y 8T8</a>
             </if>
@@ -29,9 +29,13 @@ module.exports = {
             </if>
           </p>
         </address>
-        <p class="pl-3">
-          <if condition="BUILD_BRAND === 'ascentia'"><a href="tel:12509998733">250-999-8733</a></if>
-          <if condition="BUILD_BRAND !== 'ascentia'"><a href="tel:12509998736">250-999-8736</a></if>
+        <p class="pl-3 mb-0">
+          <if condition="BUILD_BRAND === 'ascentia'"><a href="tel:12509998733">P: 250-999-8733</a></if>
+          <if condition="BUILD_BRAND !== 'ascentia'"><a href="tel:12509998736">P: 250-999-8736</a></if>
+        </p>
+        <p class="pl-3 mb-0">
+          <if condition="BUILD_BRAND === 'ascentia'">F: 778-402-8256</if>
+          <if condition="BUILD_BRAND !== 'ascentia'">F: 778-801-3520</if>
         </p>
         <p class="pl-3">
           <if condition="BUILD_BRAND === 'ascentia'"><a href="mailto:info@ascentiaci.ca">info@ascentiaci.ca</a></if>
@@ -40,18 +44,22 @@ module.exports = {
       </a>
     </div>
     <div class="col-12 col-lg-4 text-center">
-      <a href="https://www.privatetraininginstitutions.gov.bc.ca" target="_blank" rel="noopener">
-      <img src="/src/images/eqa-dli.png" class="img-fluid" alt="BC EQA" style="max-width: 100px; display: inline-block; margin-right: 10px;" />
-      <p class="mt-2">
-        {{ BUILD_BRAND_SC }} Career Institute is Certified by the <span class="external-link">Private Training Institutions Branch (PTIB) of the Ministry of Post-Secondary Education & Future Skills ↗</span>
+      <p style="height: 70px;">
+        &nbsp;
       </p>
-    </a>
-    </div>
-    <div class="col-12 col-lg-4">
       <p>
         <extends src="parts/policiesembed.htm"></extends>
       </p>
     </div>
+    <div class="col-12 col-lg-4 text-right">
+      <a href="https://www.privatetraininginstitutions.gov.bc.ca" target="_blank" rel="noopener">
+      <img src="/src/images/eqa-dli.png" class="img-fluid" alt="BC EQA" style="max-width: 100px; display: inline-block;" />
+      <p class="mt-2">
+        {{ BUILD_BRAND_SC }} Career Institute is Designated by the <span class="external-link">Private Training Institutions Branch (PTIB) of the Ministry of Post-Secondary Education & Future Skills ↗</span>
+      </p>
+    </a>
+    </div>
+
   </div>
   <center class="pb-3">
     &copy; {{ new Date().getFullYear(); }} {{ BUILD_BRAND_SC }} Career Institute
