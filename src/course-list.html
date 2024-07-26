@@ -37,11 +37,11 @@ module.exports = {
     <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
    
 <script src="https://cdn.datatables.net/2.1.2/js/dataTables.js"></script>
-    Funky Banana
+    <div class="d-none">
 
     <if condition="BUILD_BRAND === 'ascentia'">{{ otf = "aci" }}</if>
     <if condition="BUILD_BRAND !== 'ascentia'">{{ oft = "eci" }}</if>
-    
+  </div>
       <table id="myTable">
         <thead>
           <tr>
