@@ -526,3 +526,11 @@ ul > li {
 #leadForm input[type="submit"]:hover {
   background-color: #004494;
 }
+
+.external-link {
+  text-decoration: underline;
+  position: relative;
+  padding-right: 20px; /* Adjust padding if the icon is appended */
+  /* Optional: color customization for external links */
+  // color: #007BFF;
+}
