@@ -39,10 +39,10 @@
     {{ hours }} 
     hours,
     <!-- prettier-ignore -->
-    {{ weeks=Math.ceil(hours/28) }} 
-    weeks,
+    {{ weeks=25 }} 
+    weeks (plus 2 for breaks and holidays),
     <!-- prettier-ignore -->
-    {{ months=Math.ceil(weeks/4) }} 
+    {{ months=Math.ceil(5.8) }} 
     months
   </block>
   <block name="curriculum">
@@ -172,8 +172,8 @@
   <!-- Follow formatting to add fees -->
   {{ tuition=7205 }} {{ appFee=250 }} {{ AssessmentFee=100 }}
   <!-- prettier-ignore -->
-  {{ archivalFee=5 }} {{ books=385 }} {{ materials=0}} {{ uniform=140 }} {{ testingFee=100 }}
-  {{ totalCost=tuition+appFee+AssessmentFee+archivalFee+books+uniform+testingFee }}
+  {{ archivalFee=5 }} {{ books=385 }} {{ materials=0}} {{ uniform=140 }} 
+  {{ totalCost=tuition+appFee+AssessmentFee+archivalFee+books+uniform }}
   <!-- Make sure to update the totalCost formula to reflect the new fee variables -->
 
   <block name="tuition">${{ tuition.toLocaleString() }}</block>
@@ -192,10 +192,6 @@
     <tr>
       <th scope="row" class="bold">Uniform</th>
       <td>${{ uniform.toLocaleString() }}</td>
-    </tr>
-    <tr>
-      <th scope="row" class="bold">Testing</th>
-      <td>${{ testingFee.toLocaleString() }}</td>
     </tr>
   </block>
   <!-- Add additional fees here -->
