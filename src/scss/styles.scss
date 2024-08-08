@@ -165,6 +165,13 @@ a:hover {
   color: var(--bs-secondary-bg-rgb);
 }
 
+.nav-link.btn:hover {
+  color: black;
+}
+
+#request-info:hover {
+  color: black;
+}
 footer {
   background-color: black;
   color: white;
@@ -525,4 +532,8 @@ ul > li {
 }
 #leadForm input[type="submit"]:hover {
   background-color: #004494;
+}
+
+.text-white:hover {
+  color: black !important;
 }
