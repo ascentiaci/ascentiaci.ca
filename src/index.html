@@ -1,8 +1,8 @@
 <!-- START LOCALS -->
 <script locals>
   module.exports = {
-    BUILD_BRAND: "ascentia",
-    BUILD_BRAND_SC: "Ascentia™",
+    BUILD_BRAND: "elevare",
+    BUILD_BRAND_SC: "Elevare™",
     BUILD_CATSCount: "2",
     BUILD_CST: "false",
     BUILD_CST_PROGRAMS_LIST: "DLB,M365",
@@ -17,7 +17,7 @@
 <extends
   src="parts/base.htm"
   locals='{
-    "headerImg": "{{ `$BUILD_BRAND` === `ascentia` ? `index.png` : `lake-6819747_1920.jpg` }}", 
+    "headerImg": "{{ `$BUILD_BRAND` === `ascentia` ? `index.png` : `elevare_index.jpeg` }}", 
     "name": "Welcome to $BUILD_BRAND_SC Career Institute",
     "title": "Home",
     "BUILD_BRAND": "BRAND",
@@ -71,7 +71,7 @@
             locals='{
             "target": "admissions.html",
             "cta": "See Admissions Details",
-            "image": "brooke-cagle-tLG2hcpITZE-unsplash.jpg"
+            "image": "{{ `BUILD_BRAND` === `ascentia` ? `brooke-cagle-tLG2hcpITZE-unsplash.jpg` : `elevare_howtoapply.jpeg` }}"
           }'
           >
             <block name="title"> How to Apply </block>
@@ -85,7 +85,7 @@
             locals='{
               "target": "why-$BUILD_BRAND.html",
               "cta": "See What Makes Us Different",
-              "image": "feature2.webp"
+              "image": "{{ `BUILD_BRAND` === `ascentia` ? `feature2.webp` : `elevare_why_box.jpeg` }}"
             }'
           >
             <block name="title"> Why $BUILD_BRAND_SC </block>
@@ -98,7 +98,7 @@
             locals='{
             "target": "career-services.html",
             "cta": "Discover Career Support",
-            "image": "feature3.webp"
+            "image": "{{ `BUILD_BRAND` === `ascentia` ? `feature3.webp` : `elevare_career_box.jpeg` }}"
           }'
           >
             <block name="title"> Career Services </block>

@@ -7,7 +7,7 @@
 <extends
   src="parts/base.htm"
   locals='{
-  "headerImg": "index.png", 
+  "headerImg": "{{ `BUILD_BRAND` === `ascentia` ? `index.png` : `elevare_campus.jpeg` }}", 
   "name": "",
   "title": "Our Campus",
   "BUILD_BRAND": "$BUILD_BRAND",
