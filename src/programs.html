@@ -17,7 +17,7 @@
 <extends
   src="parts/base.htm"
   locals='{
-    "headerImg": "apple-4958609_1920.jpg", 
+    "headerImg": "{{ `BUILD_BRAND` === `ascentia` ? `apple-4958609_1920.jpg` : `eci_programs.jpeg` }}", 
     "name": "",
     "title": "Programs",
     "BUILD_BRAND": "BRAND",

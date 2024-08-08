@@ -16,9 +16,13 @@
 <!-- END LOCALS -->
 <extends
   src="parts/base.htm"
-  locals='{"headerImg": "index.png", "name": "", "title": "Career Services",
-  "BUILD_BRAND": "$BUILD_BRAND",
-  "BUILD_BRAND_SC": "$BUILD_BRAND_SC"}'
+  locals='{
+    "headerImg": "{{ `BUILD_BRAND` === `ascentia` ? `index.png` : `eci_career_header.jpeg` }}", 
+    "name": "", 
+    "title": "Career Services",
+    "BUILD_BRAND": "$BUILD_BRAND",
+    "BUILD_BRAND_SC": "$BUILD_BRAND_SC"
+  }'
 >
   <block name="pageTitle">Career Services</block>
   <block name="introCopy">

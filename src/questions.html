@@ -17,7 +17,7 @@
 <extends
   src="parts/base.htm"
   locals='{
-  "headerImg": "questions.jpg", 
+  "headerImg": "{{ `BUILD_BRAND` === `ascentia` ? `questions.jpg` : `eci_questions_header.jpeg` }}", 
   "name": "Questions?",
   "title": "Questions?",
   "BUILD_BRAND": "BUILD_BRAND",
