@@ -15,8 +15,8 @@ import { BUILD_BRAND } from "./vars";
 
 // configDotenv();
 
-const lat = BUILD_BRAND === "ascentia" ? "-119.49742" : "-119.49680";
-const long = BUILD_BRAND === "ascentia" ? "49.88389" : "49.88395";
+const lat = BUILD_BRAND === "ascentia" ? "49.88389" : "49.88395";
+const long = BUILD_BRAND === "ascentia" ? "-119.49742" : "-119.49680";
 const iconFilename = BUILD_BRAND === "ascentia" ? "favicon.ico" : "favicon.ico";
 
 // Create the map
@@ -35,7 +35,7 @@ const map = new Map({
 
 // Create a feature with a point geometry
 const pinFeature = new Feature({
-  geometry: new Point(fromLonLat([parseFloat(lat), parseFloat(long)])),
+  geometry: new Point(fromLonLat([parseFloat(long), parseFloat(lat)])),
 });
 
 // Define a style with the favicon as the custom icon for the pin
@@ -43,7 +43,7 @@ const pinStyle = new Style({
   image: new Icon({
     anchor: [0.5, 1],
     src: iconFilename, // Dynamically set the icon based on BUILD_BRAND
-    scale: 1.5, // Adjust scale as needed to make the pin more visible
+    scale: 0.5, // Adjust scale as needed to make the pin more visible
   }),
 });
 
