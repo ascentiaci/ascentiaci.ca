@@ -22,5 +22,36 @@
 			"{{ `$BUILD_BRAND` === `ascentia` ? `${1:ascentia_version}` : `${2:elevare_version}` }}"
 		],
 		"description": "Brand Specific Content"
+	},
+	"Brand-HTML": {
+		"prefix": "brand-html",
+		"body": [
+			"<if condition=\"BUILD_BRAND === 'ascentia'\">",
+			"${1:ascentia_content}",
+			"</if>",
+			"<if condition=\"BUILD_BRAND !== 'ascentia'\">",
+			"${2:elevare_content}",
+			"</if>"
+		],
+		"description": "Brand-HTML"
+	},
+	"Extend-feature-block": {
+		"prefix": "extend-feature-block",
+		"body": [
+			"<extends",
+			"            src=\"parts/featureblocks.htm\"",
+			"            locals='{",
+			"            \"target\": \"${1:target}.html\",",
+			"            \"cta\": \"${2:call_to_action}\",",
+			"            \"image\": \"${3:image}\"",
+			"          }'",
+			"          >",
+			"            <block name=\"title\"> ${4:block_title}</block>",
+			"            <block name=\"blurb\">",
+			"      ${5:blurb}",
+			"            </block>",
+			"</extends>"
+		],
+		"description": "Extend-feature-block"
 	}
 }
