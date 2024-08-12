@@ -10,6 +10,7 @@
     BUILD_EDUCATION_PROGRAMS_LIST: "ECEA",
     BUILD_HEALTHCARE: "true",
     BUILD_HEALTHCARE_PROGRAMS_LIST: "RMT,CDA,DOC,PA,HCA,MLA",
+    BUILD_OTF: "aci",
     BUILD_PROGRAMS: "PA,HCA,MLA,ECEA,DR,CDA",
   };
 </script>
@@ -41,10 +42,7 @@
     ></script>
 
     <script src="https://cdn.datatables.net/2.1.2/js/dataTables.js"></script>
-    <div class="d-none">
-      <if condition="BUILD_BRAND === 'ascentia'">{{ otf = "aci" }}</if>
-      <if condition="BUILD_BRAND !== 'ascentia'">{{ otf = "eci" }}</if>
-    </div>
+    <div class="d-none"></div>
     <table id="myTable">
       <thead>
         <tr>
@@ -61,7 +59,7 @@
           <td>10</td>
           <td>
             <a
-              href="/static/outlines/{{ otf }}/dig101_digital_literacy_for_beginners.pdf"
+              href="/static/outlines/{{ BUILD_OTF }}/dig101_digital_literacy_for_beginners.pdf"
               >LINK</a
             >
           </td>
@@ -72,7 +70,8 @@
           <td>$390</td>
           <td>28</td>
           <td>
-            <a href="/static/outlines/{{ otf }}/exc101_excel_365_essentials.pdf"
+            <a
+              href="/static/outlines/{{ BUILD_OTF }}/exc101_excel_365_essentials.pdf"
               >LINK</a
             >
           </td>
@@ -84,7 +83,7 @@
           <td>20</td>
           <td>
             <a
-              href="/static/outlines/{{ otf }}/exc102_excel_365_intermediate.pdf"
+              href="/static/outlines/{{ BUILD_OTF }}/exc102_excel_365_intermediate.pdf"
               >LINK</a
             >
           </td>
@@ -95,7 +94,8 @@
           <td>$390</td>
           <td>20</td>
           <td>
-            <a href="/static/outlines/{{ otf }}/exc103_excel_365_advanced.pdf"
+            <a
+              href="/static/outlines/{{ BUILD_OTF }}/exc103_excel_365_advanced.pdf"
               >LINK</a
             >
           </td>
@@ -107,7 +107,7 @@
           <td>16</td>
           <td>
             <a
-              href="/static/outlines/{{ otf }}/facpr_standard_first_aid_and_cpr_level_c.pdf"
+              href="/static/outlines/{{ BUILD_OTF }}/facpr_standard_first_aid_and_cpr_level_c.pdf"
               >LINK</a
             >
           </td>
@@ -119,7 +119,7 @@
           <td>4</td>
           <td>
             <a
-              href="/static/outlines/{{ otf }}/fin101_financial_awareness_and_success.pdf"
+              href="/static/outlines/{{ BUILD_OTF }}/fin101_financial_awareness_and_success.pdf"
               >LINK</a
             >
           </td>
@@ -131,7 +131,7 @@
           <td>20</td>
           <td>
             <a
-              href="/static/outlines/{{ otf }}/ind101_diversity_&_inclusion_in_professional_practice.pdf"
+              href="/static/outlines/{{ BUILD_OTF }}/ind101_diversity_&_inclusion_in_professional_practice.pdf"
               >LINK</a
             >
           </td>
@@ -143,7 +143,7 @@
           <td>8</td>
           <td>
             <a
-              href="/static/outlines/{{ otf }}/ms101_microsoft_365_introduction.pdf"
+              href="/static/outlines/{{ BUILD_OTF }}/ms101_microsoft_365_introduction.pdf"
               >LINK</a
             >
           </td>
@@ -155,7 +155,7 @@
           <td>20</td>
           <td>
             <a
-              href="/static/outlines/{{ otf }}/otl101_outlook_365_essentials.pdf"
+              href="/static/outlines/{{ BUILD_OTF }}/otl101_outlook_365_essentials.pdf"
               >LINK</a
             >
           </td>
@@ -165,7 +165,7 @@
             <td>Outlook 365 Support & Troubleshoot</td>
             <td>$250</td>
             <td>8</td>
-            <td><a href='/static/outlines/{{ otf }}/otl102_outlook_365_support_&_troubleshoot.pdf'>LINK</a></td>
+            <td><a href='/static/outlines/{{ BUILD_OTF }}/otl102_outlook_365_support_&_troubleshoot.pdf'>LINK</a></td>
           </tr> -->
 
         <tr>
@@ -174,7 +174,7 @@
           <td>28</td>
           <td>
             <a
-              href="/static/outlines/{{ otf }}/ppt101_powerpoint_365_essentials.pdf"
+              href="/static/outlines/{{ BUILD_OTF }}/ppt101_powerpoint_365_essentials.pdf"
               >LINK</a
             >
           </td>
@@ -184,14 +184,14 @@
             <td>PowerPoint 365 Advanced with Presentation Techniques</td>
             <td>$390</td>
             <td>12</td>
-            <td><a href='/static/outlines/{{ otf }}/ppt102_powerpoint_365_advanced_with_presentation_techniques.pdf'>LINK</a></td>
+            <td><a href='/static/outlines/{{ BUILD_OTF }}/ppt102_powerpoint_365_advanced_with_presentation_techniques.pdf'>LINK</a></td>
           </tr> -->
 
         <!-- <tr>
             <td>Publisher 365 Comprehensive</td>
             <td>$390</td>
             <td>24</td>
-            <td><a href='/static/outlines/{{ otf }}/pub101_publisher_365_comprehensive.pdf'>LINK</a></td>
+            <td><a href='/static/outlines/{{ BUILD_OTF }}/pub101_publisher_365_comprehensive.pdf'>LINK</a></td>
           </tr> -->
 
         <tr>
@@ -200,7 +200,7 @@
           <td>20</td>
           <td>
             <a
-              href="/static/outlines/{{ otf }}/type10_typing_skill_building_level_1.pdf"
+              href="/static/outlines/{{ BUILD_OTF }}/type10_typing_skill_building_level_1.pdf"
               >LINK</a
             >
           </td>
@@ -212,7 +212,7 @@
           <td>28</td>
           <td>
             <a
-              href="/static/outlines/{{ otf }}/type25_typing_skill_building_level_2.pdf"
+              href="/static/outlines/{{ BUILD_OTF }}/type25_typing_skill_building_level_2.pdf"
               >LINK</a
             >
           </td>
@@ -224,7 +224,7 @@
           <td>40</td>
           <td>
             <a
-              href="/static/outlines/{{ otf }}/type40_typing_skill_building_level_3.pdf"
+              href="/static/outlines/{{ BUILD_OTF }}/type40_typing_skill_building_level_3.pdf"
               >LINK</a
             >
           </td>
@@ -236,7 +236,7 @@
           <td>40</td>
           <td>
             <a
-              href="/static/outlines/{{ otf }}/type55_typing_skill_building_level_4.pdf"
+              href="/static/outlines/{{ BUILD_OTF }}/type55_typing_skill_building_level_4.pdf"
               >LINK</a
             >
           </td>
@@ -248,7 +248,7 @@
           <td>40</td>
           <td>
             <a
-              href="/static/outlines/{{ otf }}/type60_typing_skill_building_level_5.pdf"
+              href="/static/outlines/{{ BUILD_OTF }}/type60_typing_skill_building_level_5.pdf"
               >LINK</a
             >
           </td>
@@ -259,7 +259,8 @@
           <td>$390</td>
           <td>28</td>
           <td>
-            <a href="/static/outlines/{{ otf }}/wrd101_word_365_essentials.pdf"
+            <a
+              href="/static/outlines/{{ BUILD_OTF }}/wrd101_word_365_essentials.pdf"
               >LINK</a
             >
           </td>
@@ -271,7 +272,7 @@
           <td>20</td>
           <td>
             <a
-              href="/static/outlines/{{ otf }}/wrd102_word_365_intermediate.pdf"
+              href="/static/outlines/{{ BUILD_OTF }}/wrd102_word_365_intermediate.pdf"
               >LINK</a
             >
           </td>
@@ -282,7 +283,8 @@
           <td>$390</td>
           <td>16</td>
           <td>
-            <a href="/static/outlines/{{ otf }}/wrd103_word_365_advanced.pdf"
+            <a
+              href="/static/outlines/{{ BUILD_OTF }}/wrd103_word_365_advanced.pdf"
               >LINK</a
             >
           </td>
