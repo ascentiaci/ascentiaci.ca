@@ -81,6 +81,12 @@ const overlay = new Overlay({
 map.addOverlay(overlay);
 
 // Function to show the pop-up
+/**
+ * @description Displays a popup window with an institute name and positions it at
+ * the location specified by the `pinFeature`'s geometry coordinates. The institute
+ * name depends on the value of `BUILD_BRAND`, which determines whether to display
+ * "Ascentia Career Institute" or "Elevare Career Institute".
+ */
 function showPopup() {
   const coordinates = pinFeature.getGeometry().getCoordinates();
   const instituteName =
@@ -93,5 +99,7 @@ function showPopup() {
 
 // Show the pop-up on map load
 map.once("postrender", function () {
+  // Binds to an event.
+
   showPopup();
 });

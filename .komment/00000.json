@@ -1,0 +1,51 @@
+[
+  {
+    "name": "maps.js",
+    "path": "src/js/maps.js",
+    "content": {
+      "structured": {
+        "description": "A map using OpenLayers (OL) library, with an OSM tile layer and a vector layer containing a single feature representing a point on the map. The feature is styled with a custom icon dynamically loaded based on the value of `BUILD_BRAND`. When the map loads, it displays a popup with information about the institute corresponding to `BUILD_BRAND`.",
+        "items": [
+          {
+            "id": "e098d1c6-f92b-6997-a641-b86bdfb755cc",
+            "ancestors": [],
+            "description": "Displays a popup window with an institute name and positions it at the location specified by the `pinFeature`'s geometry coordinates. The institute name depends on the value of `BUILD_BRAND`, which determines whether to display \"Ascentia Career Institute\" or \"Elevare Career Institute\".",
+            "params": [],
+            "usage": {
+              "language": "javascript",
+              "code": "showPopup();\n",
+              "description": "\nThis example simply calls the showPopup function, which in turn generates a popup with the name of either \"Ascentia Career Institute\" or \"Elevare Career Institute\"."
+            },
+            "name": "showPopup",
+            "location": {
+              "start": 84,
+              "insert": 84,
+              "offset": " ",
+              "indent": 0,
+              "comment": null
+            },
+            "item_type": "function",
+            "length": 9,
+            "docLength": null
+          },
+          {
+            "id": "46e6cf11-5d70-8186-6c4b-9fbeb94eeb56",
+            "ancestors": [],
+            "description": "Binds to an event.",
+            "name": null,
+            "location": {
+              "start": 95,
+              "insert": 96,
+              "offset": " ",
+              "indent": 2,
+              "comment": null
+            },
+            "item_type": "higher_order_invocation",
+            "length": 3,
+            "docLength": null
+          }
+        ]
+      }
+    }
+  }
+]
