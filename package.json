@@ -12,7 +12,7 @@
     "prelazystart": "npm run injectBrand",
     "prebuild": "npm run injectBrand",
     "preinjectBrand": "node ./scripts/clearCacheforBuild.js",
-    "postbuild": "node ./scripts/generateFavicons.js"
+    "postbuild": "node ./scripts/generateFavicons.js && node ./scripts/postbuild.js"
   },
   "author": "",
   "license": "ISC",
