@@ -47,5 +47,154 @@
         ]
       }
     }
+  },
+  {
+    "name": "postBuild.js",
+    "path": "scripts/postBuild.js",
+    "content": {
+      "structured": {
+        "description": "A directory scanner that processes HTML files within the specified directory and its subdirectories using Node.js' fs module and path module. The code removes any <script locals> blocks from the HTML content and logs each processed file. The process is recursive, scanning all subdirectories as well.",
+        "items": [
+          {
+            "id": "0c5fdb2b-779f-15b8-1243-ef25ac5fd9bf",
+            "ancestors": [],
+            "description": "Removes script blocks containing \"locals\" from a given content string, using a regular expression to match and replace occurrences of such blocks.",
+            "params": [
+              {
+                "name": "content",
+                "default_value": null,
+                "optional": false,
+                "type_name": "string",
+                "description": "HTML content to be processed."
+              }
+            ],
+            "returns": {
+              "type_name": "string",
+              "description": "Content with all script blocks that contain \"locals\" removed."
+            },
+            "usage": {
+              "language": "javascript",
+              "code": "var content = \"<script locals>Some Local Script Content</script>\";\nvar result = removeLocalsScriptBlock(content);\n",
+              "description": ""
+            },
+            "name": "removeLocalsScriptBlock",
+            "location": {
+              "start": 7,
+              "insert": 7,
+              "offset": " ",
+              "indent": 0,
+              "comment": null
+            },
+            "item_type": "function",
+            "length": 3,
+            "docLength": null
+          },
+          {
+            "id": "7ee7c448-3368-9c95-f446-9830060921be",
+            "ancestors": [],
+            "description": "Scans a directory for HTML files, reads each file, removes any local script blocks, and writes the updated content back to the original file. It logs a success message for each processed file.",
+            "params": [],
+            "returns": {
+              "type_name": "any",
+              "description": "Console logs and errors during file processing."
+            },
+            "usage": {
+              "language": "javascript",
+              "code": "processHtmlFiles('/path/to/directory');\n",
+              "description": ""
+            },
+            "name": "processHtmlFiles",
+            "location": {
+              "start": 12,
+              "insert": 12,
+              "offset": " ",
+              "indent": 0,
+              "comment": null
+            },
+            "item_type": "function",
+            "length": 30,
+            "docLength": null
+          },
+          {
+            "id": "fa964b65-172f-f3ab-374d-2db5e55f2887",
+            "ancestors": [
+              "7ee7c448-3368-9c95-f446-9830060921be"
+            ],
+            "description": "Scans a directory, reads and processes HTML files, then writes back updated content.",
+            "name": null,
+            "location": {
+              "start": 13,
+              "insert": 14,
+              "offset": " ",
+              "indent": 4,
+              "comment": null
+            },
+            "item_type": "higher_order_invocation",
+            "length": 28,
+            "docLength": null
+          },
+          {
+            "id": "7df48273-f093-f78c-664d-c24aa14d762c",
+            "ancestors": [
+              "7ee7c448-3368-9c95-f446-9830060921be",
+              "fa964b65-172f-f3ab-374d-2db5e55f2887"
+            ],
+            "description": "Processes HTML files by reading, updating and writing them.",
+            "name": null,
+            "location": {
+              "start": 18,
+              "insert": 19,
+              "offset": " ",
+              "indent": 6,
+              "comment": null
+            },
+            "item_type": "higher_order_invocation",
+            "length": 22,
+            "docLength": null
+          },
+          {
+            "id": "e24af3d5-f190-63ba-7341-bd8a5b10cc9e",
+            "ancestors": [
+              "7ee7c448-3368-9c95-f446-9830060921be",
+              "fa964b65-172f-f3ab-374d-2db5e55f2887",
+              "7df48273-f093-f78c-664d-c24aa14d762c"
+            ],
+            "description": "Reads, processes, and writes a file.",
+            "name": null,
+            "location": {
+              "start": 23,
+              "insert": 24,
+              "offset": " ",
+              "indent": 10,
+              "comment": null
+            },
+            "item_type": "higher_order_invocation",
+            "length": 15,
+            "docLength": null
+          },
+          {
+            "id": "cd636d39-1102-80ad-7f4a-900d4cf03c5b",
+            "ancestors": [
+              "7ee7c448-3368-9c95-f446-9830060921be",
+              "fa964b65-172f-f3ab-374d-2db5e55f2887",
+              "7df48273-f093-f78c-664d-c24aa14d762c",
+              "e24af3d5-f190-63ba-7341-bd8a5b10cc9e"
+            ],
+            "description": "Writes a file and logs its status.",
+            "name": null,
+            "location": {
+              "start": 30,
+              "insert": 31,
+              "offset": " ",
+              "indent": 12,
+              "comment": null
+            },
+            "item_type": "higher_order_invocation",
+            "length": 7,
+            "docLength": null
+          }
+        ]
+      }
+    }
   }
 ]
