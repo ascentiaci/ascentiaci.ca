@@ -1,0 +1,15 @@
+{
+  "meta": {
+    "version": "1",
+    "updated_at": "2024-08-21T21:34:59.655Z",
+    "created_at": "2024-08-21T21:35:01.771Z",
+    "pipelines": [
+      "91f37129-9483-4966-a1a2-338aa21f60bd"
+    ]
+  },
+  "lookup": [
+    [
+      "scripts/postBuild.js"
+    ]
+  ]
+}
