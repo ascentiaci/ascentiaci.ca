@@ -1,323 +1,54 @@
+<!-- START LOCALS -->
 <script locals>
   module.exports = {
-    BUILD_BRAND: locals.BUILD_BRAND || "BRAND",
-    BUILD_BRAND_SC: locals.BUILD_BRAND_SC || "BRAND_SC",
+    BUILD_BRAND: "elevare",
+    BUILD_BRAND_SC: "Elevare™",
+    BUILD_CATSCount: "2",
+    BUILD_CST: "false",
+    BUILD_CST_PROGRAMS_LIST: "DLB,M365",
+    BUILD_EDUCATION: "true",
+    BUILD_EDUCATION_PROGRAMS_LIST: "ECEA",
+    BUILD_HEALTHCARE: "true",
+    BUILD_HEALTHCARE_PROGRAMS_LIST: "RMT,CDA,DOC,PA,HCA,MLA",
+    BUILD_PROGRAMS: "PA,HCA,MLA,ECEA,DR,CDA",
   };
 </script>
-
+<!-- END LOCALS -->
 <extends
-  src="parts/programpageHC.htm"
+  src="parts/base.htm"
   locals='{
     "headerImg": "eci_hca_header.jpeg", 
     "title": "Health Care Assistant",
     "BUILD_BRAND": "BRAND",
     "BUILD_BRAND_SC": "BRAND_SC"
+
   }'
 >
-  <block name="pageTitle">Health Care Assistant</block>
-
+  <block name="pageTitle">Heatlh Care Assistant</block>
   <block name="introCopy">
-    <p>
-      Begin your journey in the healthcare field with our Health Care Assistant
-      program!
-    </p>
-    <p>
-      This comprehensive training program equips you with the essential skills
-      to provide compassionate care and support to individuals in various
-      healthcare settings.
-    </p>
-    <p>
-      From understanding health and healing concepts to engaging in practical
-      care experiences, you'll be well-prepared to make a positive impact in the
-      lives of those you assist.
-    </p>
-    <p>
-      Our curriculum covers important areas such as interpersonal
-      communications, caring for individuals with common and cognitive health
-      challenges, and personal care and assistance. With hands-on labs and
-      practicums, you'll gain valuable real-world experience, ensuring you're
-      job-ready upon graduation.
-    </p>
-    <p>
-      Start your journey toward a rewarding career as a Health Care Assistant
-      with us today!
-    </p>
+    <h1>Coming Soon!</h1>
     <br />
+    <p>
+      Follow us on
+      <if condition="BUILD_BRAND === 'ascentia'">
+        <a href="https://fb.me/ascentiacareerinstitute"
+          >Facebook - @ascentiacareerinstitute</a
+        >
+      </if>
+      <if condition="BUILD_BRAND !== 'ascentia'">
+        <a href="https://fb.me/elevarecareerinstitute"
+          >Facebook - @elevarecareerinstitute</a
+        >
+      </if>
+      or reach out to
+      <if condition="BUILD_BRAND === 'ascentia'">
+        <a href="mailto:info@ascentiaci.ca">info@ascentiaci.ca</a> or
+        250-999-8733
+      </if>
+      <if condition="BUILD_BRAND !== 'ascentia'">
+        <a href="mailto:info@elevareci.ca">info@elevareci.ca</a> or 250-999-8736
+      </if>
+    </p>
   </block>
-
-  <block name="description"></block>
-
-  {{ hours=990 }}
-  <block name="duration">
-    <!-- prettier-ignore -->
-    {{ hours }} 
-    hours,
-    <!-- prettier-ignore -->
-    {{ weeks=Math.ceil(43) }} 
-    weeks <i>(plus 2 for breaks and holidays)</i>,
-    <!-- prettier-ignore -->
-    {{ months=Math.ceil(9.9) }} 
-    months
-  </block>
-
-  <block name="curriculum">
-    <ul>
-      <li>Typing Skill Building (Levels 1 and 2: 10, 25 WPM)</li>
-      <li>Financial Awareness and Success</li>
-      <li>Diversity & Inclusion in Professional Practice</li>
-      <li>Digital Literacy for Beginners</li>
-      <li>Microsoft 365 Introduction</li>
-      <li>Microsoft Word 365 Essentials</li>
-      <li>Microsoft Outlook 365 Essentials</li>
-      <li>PowerPoint 365 Essentials</li>
-      <li>Job Search and Resume Writing</li>
-      <li>Health and Healing: Concepts for Practice</li>
-      <li>Health 1: Interpersonal Communications</li>
-      <li>Health 2: Lifestyle and Choices</li>
-      <li>Health Care Assistant: Introduction to Practice</li>
-      <li>
-        Healing 1: Caring for Individuals Experiencing Common Health Challenges
-      </li>
-      <li>
-        Healing 2: Caring for Individuals Experiencing Cognitive or Mental
-        Challenges
-      </li>
-      <li>Healing 3: Personal Care and Assistance</li>
-      <li>Practicum: Multi-level/Complex Care with Dementia Care</li>
-      <li>Practicum: Home Support/Assisted Living/Group Home</li>
-      <li>Standard First Aid with CPR Level C Training</li>
-      <li>Food Safe Training</li>
-      <li>WHMIS Training</li>
-    </ul>
-  </block>
-
-  <block name="certification">BC Registry #, Diploma</block>
-
-  <!-- <block name="compliance">
-    This program has been approved by the Private Training 
-Institutions Branch (PTIB) of the Ministry of Post-Secondary 
-Education & Future Skills
-  </block> -->
-
-  <block name="salary">$52,140</block>
-
-  <block name="outlook">22,480</block>
-
-  <block name="admitRequirementsEFL">
-    <table class="table table-striped pl-0">
-      <tr>
-        <th scope="col" class="bold">Requirement</th>
-        <th scope="col">Details</th>
-      </tr>
-      <tr>
-        <th scope="row" class="bold">Age</th>
-        <td>
-          All Students must be 19 years of age or older at the start of their
-          program.
-        </td>
-      </tr>
-      <tr>
-        <th scope="row">Evidence of English Proficiency</th>
-        <td>
-          Evidence of one of the following: Proof of completion of Grade 10
-          English; or College courses determined to be equivalent to completion
-          of Grade 10 English (or higher) by post-secondary institutions.
-          Applicants must produce transcripts as evidence of completion. A
-          minimum of a C grade is acceptable.
-        </td>
-      </tr>
-      <tr>
-        <th scope="row">
-          <strong>Canadian Adult Achievement Test (CAAT):</strong>
-        </th>
-        <td>Reading Comprehension 35/50, Spelling 23/32</td>
-      </tr>
-      <tr>
-        <th scope="row"><strong>Language Placement Index (LPI):</strong></th>
-        <td>
-          The three individual scores (Sentence Structure, English Usage, and
-          Reading Comprehension) must total a minimum of 20, out of a maximum
-          possible score of 40. Essay level of 4, with a minimum essay score of
-          24/40
-        </td>
-      </tr>
-      <tr>
-        <th scope="row"><strong>Accuplacer:</strong></th>
-        <td>
-          Grade 10 level or higher Cut Scores*: Reading Comprehension 60,
-          Sentences Skill 55, Writeplacer 4
-        </td>
-      </tr>
-    </table>
-  </block>
-
-  <block name="admitRequirementsESL">
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th scope="col">Requirement</th>
-          <th scope="col">Details</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">Age</th>
-          <td>
-            All students must be 19 years of age or older at the start of their
-            program.
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">TOEFL</th>
-          <td>
-            Test must be within the last two years, IBT only — Overall score of
-            76 with no score lower than 20 in Speaking and Listening and no
-            score lower than 18 in Reading and Writing.
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">IELTS</th>
-          <td>
-            Academic or General — test must be within the last two years:
-            Overall score of 6 with a minimum of 6 in Speaking and Listening and
-            no score lower than 5.5 in Reading and Writing.
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">CLB PT</th>
-          <td>
-            Test must be within the last year: Listening 7, Speaking 7, Reading
-            6, and Writing 6 - Note: a CLB Report Card from a LINC Program may
-            also be accepted.
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">CELPIP</th>
-          <td>
-            Academic or General — Academic: Aggregate score of 4L or better,
-            with 4L or better in Speaking and Listening and 3H or better in
-            Reading and Writing. General: CELPIP 7 or better in Speaking and
-            Listening and CELPIP 6 in Reading and Writing.
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">CAEL</th>
-          <td>Overall Score of 60, with no section less than 50 Passing.</td>
-        </tr>
-      </tbody>
-    </table>
-  </block>
-
-  <block name="prePractice">
-    <ol>
-      <li>A clear criminal record check</li>
-      <li>
-        Immunizations as per Practice Education Guidelines
-        <ul>
-          <li>
-            Provide proof of a negative reaction to a TB skin test or a chest
-            x-ray with a note from a physician stating that you are not
-            contagious.
-          </li>
-          <li>
-            A formal declaration of health from a Physician affirming your
-            capacity, both mentally and physically, to carry out tasks typically
-            expected in your selected profession.
-          </li>
-          <li>
-            It is strongly recommended that student immunizations remain current
-            for
-            <em
-              >Hepatitis B, Measles, Mumps, Rubella, Tetanus, Polio, and
-              Diphtheria.</em
-            >
-          </li>
-          <li>
-            Minimum <strong><u>two</u></strong>
-            <em>doses of the Covid-19 Vaccine</em>
-          </li>
-        </ul>
-      </li>
-      <li>Completion of Student Practice Education Core Orientation modules</li>
-      <li>Completion of First Aid and CPR ‘C’ Certification</li>
-      <li>Completion of WHIMIS and Food Safe</li>
-      <li>Completion of Workplace Violence Prevention Modules</li>
-      <li>
-        Completion of Student Practice Education Core Orientation Modules
-        (SPECO)
-      </li>
-      <li>
-        Successful completion of all theoretical courses with a minimum 70%
-        grade in each course
-      </li>
-      <li>
-        Successful demonstration of skills testing in preparation for practice
-        experiences
-      </li>
-    </ol>
-  </block>
-
-  <!-- Enter Tuition and Fees Here -->
-  <!-- Follow formatting to add fees -->
-  <!-- prettier-ignore -->
-  {{ tuition=9605 }} 
-  {{ adminFee=250 }} 
-  {{ archivalFee=5}} 
-  {{ textbooksFee=175 }} 
-  {{ uniform=140 }} 
-  {{ materials=25 }} 
-  {{ testing=100 }} 
-  {{ totalCost=tuition+adminFee+archivalFee+textbooksFee+uniform+materials+testing }}
-  <!-- Make sure to update the totalCost formula to reflect the new fee variables -->
-
-  <block name="tuition">${{ tuition.toLocaleString() }}</block>
-
-  <block name="adminFee">${{ adminFee.toLocaleString() }}</block>
-  <block name="archivalFee">${{ archivalFee.toLocaleString() }}</block>
-
-  <block name="additionalFeesRows">
-    <tr>
-      <td class="bold">Textbooks</td>
-      <td>${{ textbooksFee.toLocaleString() }}</td>
-    </tr>
-    <tr>
-      <td class="bold">Materials</td>
-      <td>${{ materials.toLocaleString() }}</td>
-    </tr>
-    <tr>
-      <td class="bold">Testing</td>
-      <td>${{ testing.toLocaleString() }}</td>
-    </tr>
-    <tr>
-      <td class="bold">Uniform</td>
-      <td>${{ uniform.toLocaleString() }}</td>
-    </tr>
-  </block>
-  <!-- Add additional fees here -->
-  <!-- format as <tr><td class="bold">Fee Name</td>$feeName.toLocaleString()</td></tr> -->
-  <block name="total">${{ totalCost.toLocaleString() }}</block>
-
-  <block name="paymentPlan">
-    <tr>
-      <th scope="row" class="bold">Payment Plan Options:</th>
-      <td>
-        <ul>
-          <li>
-            {{ months }} interest-free monthly payments of $<!-- prettier-ignore -->
-            {{ Math.ceil(totalCost/months).toLocaleString() }} 
-each
-          </li>
-
-          <li>
-            <!-- prettier-ignore -->
-            Student Loans and alternate funding available for those who qualify.
-          </li>
-        </ul>
-      </td>
-    </tr>
-  </block>
-
-  <!-- <block name="ProgramleadForm">
-    <div class="has-primary-bg text-white text-center">Coming Soon: 2024</div>
-  </block> -->
+  <block name="content"> </block>
 </extends>
