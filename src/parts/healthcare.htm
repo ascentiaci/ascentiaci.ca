@@ -1,8 +1,8 @@
 <!-- START LOCALS -->
 <script locals>
 module.exports = {
-  BUILD_BRAND: 'ascentia',
-  BUILD_BRAND_SC: 'Ascentia™',
+  BUILD_BRAND: 'elevare',
+  BUILD_BRAND_SC: 'Elevare™',
   BUILD_CATSCount: '2',
   BUILD_CST: 'false',
   BUILD_CST_PROGRAMS_LIST: 'DLB,M365',
@@ -29,7 +29,7 @@ module.exports = {
       "name": "Pharmacy Assistant",
       "intro": "In just under 6 months, you will graduate equipped with comprehensive training in essential pharmacy assistant skills. Our curriculum is meticulously crafted to align with the latest trends in the pharmaceutical field, ensuring you stay ahead of the curve. Led by skilled instructors with firsthand pharmacy...",
       "href": "pharmacy-assistant.html",
-      "image": "pharmacy.jpg"
+      "image": "{{ `BUILD_BRAND` === `ascentia` ? `pharmacy.jpg` : `eci_pharmacy_tech_thumb.jpeg` }}"
     }'></include>
   </if>
 
@@ -38,7 +38,7 @@ module.exports = {
       "name": "Medical Laboratory Assistant",
       "intro": "Designed for those eager to enter the medical field swiftly, our fast-track program offers comprehensive training in less than a year. Dive into hands-on learning led by experienced instructors, gaining essential skills vital for success in medical assistance roles. Our industry-relevant curriculum is...",
       "href": "medical-lab-assistant.html",
-      "image": "medical-lab.jpg"
+      "image": "eci_mla_thumb.jpeg"
     }'></include>
   </if>
   

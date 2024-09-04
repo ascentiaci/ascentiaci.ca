@@ -1,0 +1,109 @@
+<script locals>
+  module.exports = {
+    BUILD_BRAND: locals.BUILD_BRAND || "BRAND",
+    BUILD_BRAND_SC: locals.BUILD_BRAND_SC || "BRAND_SC",
+  };
+</script>
+<extends
+  src="parts/policypages.htm"
+  locals='{
+  "headerImg": "index.png", 
+  "name": "Student Statement of Rights",
+  "title": "Student Statement of Rights",
+  "BUILD_BRAND": "BRAND",
+  "BUILD_BRAND_SC": "BRAND_SC"
+}'
+>
+  <block name="pageTitle"> Student Statement of Rights </block>
+
+  <block name="instituteName">$BUILD_BRAND_SC Career Institute</block>
+  <block name="instituteNumber">03500</block>
+  <block name="effectiveDate">May 1, 2024</block>
+  <block name="revisionDate">May 1, 2024</block>
+
+  <block name="policyContent"
+    ><div class="container mt-5">
+      <div class="card">
+        <div class="card-header">
+          <h3>Policy Detail</h3>
+        </div>
+        <div class="card-body">
+          <p>
+            <strong>$BUILD_BRAND_SC Career Institute</strong> is certified with
+            the Private Training Institutions Branch (PTIB) of the British
+            Columbia Ministry of Advanced Education and Skills Training.
+          </p>
+
+          <p>
+            Before you enrol at a certified private training institution, you
+            should be aware of your rights and responsibilities.
+          </p>
+
+          <p>
+            You have the right to be treated fairly and respectfully by the
+            institution.
+          </p>
+
+          <p>
+            You have the right to a student enrolment contract that includes the
+            following information:
+          </p>
+          <ul>
+            <li>Amount of tuition and any additional fees for your program</li>
+            <li>Refund policy</li>
+            <li>
+              If your program includes a work experience, the requirements to
+              participate in the work experience and the geographic area where
+              it will be provided
+            </li>
+            <li>
+              Whether the program was approved by PTIB or does not require
+              approval
+            </li>
+          </ul>
+
+          <p>
+            Make sure you read the contract before signing. The institution must
+            provide you with a signed copy.
+          </p>
+
+          <p>
+            You have the right to access the institution’s dispute resolution
+            process and to be protected against retaliation for making a
+            complaint.
+          </p>
+
+          <p>
+            You have the right to make a claim to PTIB for a tuition refund if:
+          </p>
+          <ul>
+            <li>
+              Your institution ceased to hold a certificate before you completed
+              an approved program
+            </li>
+            <li>
+              You were misled about a significant aspect of your approved
+              program
+            </li>
+          </ul>
+          <p>
+            You must file the claim within one year of completing, being
+            dismissed, or withdrawing from your program.
+          </p>
+
+          <p>
+            For more information about PTIB and how to be an informed student,
+            go to:
+            <a
+              href="http://www.privatetraininginstitutions.gov.bc.ca/students/be-an-informed-student"
+              target="_blank"
+              ><u
+                >http://www.privatetraininginstitutions.gov.bc.ca/students/be-an-informed-student</u
+              ></a
+            >.
+          </p>
+        </div>
+      </div>
+    </div>
+  </block>
+</extends>

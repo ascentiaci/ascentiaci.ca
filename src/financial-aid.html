@@ -7,7 +7,7 @@
 <extends
   src="parts/base.htm"
   locals='{
-  "headerImg": "fabian-blank-pElSkGRA2NU-unsplash.jpg", 
+  "headerImg": "{{ `BUILD_BRAND` === `ascentia` ? `fabian-blank-pElSkGRA2NU-unsplash.jpg` : `eci_fin_aid_head.jpeg` }}", 
   "name": "",
   "title": "Financial Aid",
   "BUILD_BRAND": "BRAND",
@@ -29,108 +29,87 @@
       <div class="row">
         <div class="col">
           <h3>Types of Financial Aid</h3>
-          <div class="accordion" id="financialAidAccordion">
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="headingGrants">
-                <button
-                  class="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseGrants"
-                  aria-expanded="false"
-                  aria-controls="collapseGrants"
-                >
-                  Grants
-                </button>
-              </h2>
-              <div
-                id="collapseGrants"
-                class="accordion-collapse collapse collapsed"
-                aria-labelledby="headingGrants"
-                data-bs-parent="#financialAidAccordion"
-              >
-                <div class="accordion-body">
-                  Grants are typically need-based and may be available through
-                  government programs. These do not require repayment. Please
-                  check the eligibility criteria and application process for any
-                  grants you may be eligible for.
+          <div class="row">
+            <div class="col-md-4 mb-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title">Grants</h5>
+                  <p class="card-text">
+                    Grants are typically need-based and may be available through
+                    government programs. These do not require repayment. Please
+                    check the eligibility criteria and application process for
+                    any grants you may be eligible for.
+                  </p>
                 </div>
               </div>
             </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="headingLoans">
-                <button
-                  class="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseLoans"
-                  aria-expanded="false"
-                  aria-controls="collapseLoans"
-                >
-                  Student Loans
-                </button>
-              </h2>
-              <div
-                id="collapseLoans"
-                class="accordion-collapse collapse"
-                aria-labelledby="headingLoans"
-                data-bs-parent="#financialAidAccordion"
-              >
-                <div class="accordion-body">
-                  Student loans are a common way to finance your education. Our
-                  admissions advisors can guide you through the process of
-                  applying for federal and provincial student loans, as well as
-                  private loan options. Understand the terms and conditions, and
-                  find the best loan options to suit your needs.
+            <div class="col-md-4 mb-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title">Student Loans</h5>
+                  <p class="card-text">
+                    Student loans are a common way to finance your education.
+                    Our admissions advisors can guide you through the process of
+                    applying for federal and provincial student loans, as well
+                    as private loan options. Understand the terms and
+                    conditions, and find the best loan options to suit your
+                    needs.
+                  </p>
                 </div>
               </div>
             </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="headingPaymentPlans">
-                <button
-                  class="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapsePaymentPlans"
-                  aria-expanded="false"
-                  aria-controls="collapsePaymentPlans"
-                >
-                  Interest-Free Payment Plans
-                </button>
-              </h2>
-              <div
-                id="collapsePaymentPlans"
-                class="accordion-collapse collapsed"
-                aria-labelledby="headingPaymentPlans"
-                data-bs-parent="#financialAidAccordion"
-              >
-                <div class="accordion-body">
-                  We offer flexible interest-free payment plans to help you
-                  manage the cost of your education. These plans allow you to
-                  spread out your tuition payments over the course of your
-                  program with no interest. Contact our admissions advisors to
-                  discuss payment plan options.
+            <div class="col-md-4 mb-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title">Interest-Free Payment Plans</h5>
+                  <p class="card-text">
+                    We offer flexible interest-free payment plans to help you
+                    manage the cost of your education. These plans allow you to
+                    spread out your tuition payments over the course of your
+                    program with no interest. Contact our admissions advisors to
+                    discuss payment plan options.
+                  </p>
                 </div>
               </div>
             </div>
           </div>
 
           <h3>Additional Financial Resources</h3>
-          <ul>
-            <li>
-              <a rel="noopener" href="https://www.workbc.ca/" target="_blank"
-                >WorkBC 🔗</a
-              >: Depending on your qualifications, you may be eligible for
-              financial assistance through WorkBC. They offer various programs
-              and services to support your educational and career goals.
-            </li>
-            <li>
-              Employer Training Incentives: Some employers offer training
-              incentives to support their employees' professional development.
-              Check with your employer to see if they provide any financial
-              assistance for further education.
-            </li>
-          </ul>
+          <div class="row">
+            <div class="col-md-6 mb-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title">
+                    <a
+                      rel="noopener"
+                      href="https://www.workbc.ca/"
+                      target="_blank"
+                      >WorkBC 🔗</a
+                    >
+                  </h5>
+                  <p class="card-text">
+                    Depending on your qualifications, you may be eligible for
+                    financial assistance through WorkBC. They offer various
+                    programs and services to support your educational and career
+                    goals.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 mb-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title">Employer Training Incentives</h5>
+                  <p class="card-text">
+                    Some employers offer training incentives to support their
+                    employees' professional development. Check with your
+                    employer to see if they provide any financial assistance for
+                    further education.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
 
           <h3>How to Apply for Financial Aid</h3>
           <p>

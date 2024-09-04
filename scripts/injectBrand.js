@@ -77,12 +77,14 @@ const pagesToUpdate = [
   "../src/parts/education.htm",
   "../src/parts/footer.htm",
   "../src/parts/computer-systems-and-technology.htm",
+  "../src/parts/policypages.htm",
   "../src/programs.html",
   "../src/index.html",
   "../src/questions.html",
   "../src/parts/contactus.htm",
   "../src/career-services.html",
   "../src/parts/modalleadform.htm",
+  "../src/course-list.html",
 ];
 
 for (const filePath of pagesToUpdate) {

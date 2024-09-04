@@ -1,23 +1,25 @@
 <!-- START LOCALS -->
 <script locals>
-module.exports = {
-  BUILD_BRAND: 'ascentia',
-  BUILD_BRAND_SC: 'Ascentia™',
-  BUILD_CATSCount: '2',
-  BUILD_CST: 'false',
-  BUILD_CST_PROGRAMS_LIST: 'DLB,M365',
-  BUILD_EDUCATION: 'true',
-  BUILD_EDUCATION_PROGRAMS_LIST: 'ECEA',
-  BUILD_HEALTHCARE: 'true',
-  BUILD_HEALTHCARE_PROGRAMS_LIST: 'RMT,CDA,DOC,PA,HCA,MLA',
-  BUILD_PROGRAMS: 'PA,HCA,MLA,ECEA,DR,CDA',
-}
+
+  module.exports = {
+    BUILD_BRAND: "elevare",
+    BUILD_BRAND_SC: "Elevare™",
+    BUILD_CATSCount: "2",
+    BUILD_CST: "false",
+    BUILD_CST_PROGRAMS_LIST: "DLB,M365",
+    BUILD_EDUCATION: "true",
+    BUILD_EDUCATION_PROGRAMS_LIST: "ECEA",
+    BUILD_HEALTHCARE: "true",
+    BUILD_HEALTHCARE_PROGRAMS_LIST: "RMT,CDA,DOC,PA,HCA,MLA",
+    BUILD_PROGRAMS: "PA,HCA,MLA,ECEA,DR,CDA",
+  };
+
 </script>
 <!-- END LOCALS -->
 <extends
   src="parts/base.htm"
   locals='{
-    "headerImg": "{{ `$BUILD_BRAND` === `ascentia` ? `index.png` : `lake-6819747_1920.jpg` }}", 
+    "headerImg": "{{ `$BUILD_BRAND` === `ascentia` ? `index.png` : `elevare_index.jpeg` }}", 
     "name": "Welcome to $BUILD_BRAND_SC Career Institute",
     "title": "Home",
     "BUILD_BRAND": "BRAND",
@@ -71,7 +73,7 @@ module.exports = {
             locals='{
             "target": "admissions.html",
             "cta": "See Admissions Details",
-            "image": "brooke-cagle-tLG2hcpITZE-unsplash.jpg"
+            "image": "{{ `BUILD_BRAND` === `ascentia` ? `brooke-cagle-tLG2hcpITZE-unsplash.jpg` : `elevare_howtoapply.jpeg` }}"
           }'
           >
             <block name="title"> How to Apply </block>
@@ -85,7 +87,7 @@ module.exports = {
             locals='{
               "target": "why-$BUILD_BRAND.html",
               "cta": "See What Makes Us Different",
-              "image": "feature2.webp"
+              "image": "{{ `BUILD_BRAND` === `ascentia` ? `feature2.webp` : `elevare_why_box.jpeg` }}"
             }'
           >
             <block name="title"> Why $BUILD_BRAND_SC </block>
@@ -98,7 +100,7 @@ module.exports = {
             locals='{
             "target": "career-services.html",
             "cta": "Discover Career Support",
-            "image": "feature3.webp"
+            "image": "{{ `BUILD_BRAND` === `ascentia` ? `feature3.webp` : `elevare_career_box.jpeg` }}"
           }'
           >
             <block name="title"> Career Services </block>
@@ -118,94 +120,146 @@ module.exports = {
         career. Discover our specialized programs crafted to propel your career
         in high-demand industries.
       </p>
-      <div class="program-blocks container py-4" id="program-blocks">
-        <style>
-          .program-blocks {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-          }
-          .card-group {
-            display: grid;
-            gap: 1rem;
-          }
-          .card-group-1 {
-            grid-template-columns: 1fr;
-            max-width: 50%;
-          }
-          .card-group-2 {
-            grid-template-columns: repeat(2, 1fr);
-          }
-          .card-group-3 {
-            grid-template-columns: repeat(3, 1fr);
-          }
-          .card-group img {
-            width: 100%;
-            height: auto;
-            object-fit: cover;
-          }
-
-          /* Media Query for screens smaller than 'large' size */
-          @media (max-width: 991px) {
-            .card-group-2,
-            .card-group-3 {
-              grid-template-columns: 1fr; /* Adjust all groups to 1fr */
+      <if condition="BUILD_BRAND === 'ascentia'">
+        <div class="program-blocks container py-4" id="program-blocks">
+          <style>
+            .program-blocks {
+              display: flex;
+              justify-content: center;
+              align-items: center;
             }
-          }
-        </style>
-        <div
-          class="card-group row row-cols-1 row-cols-lg-{{ BUILD_CATSCount }} card-group-{{ BUILD_CATSCount }} gx-4"
-        >
-          <if condition="BUILD_HEALTHCARE === 'true'">
-            <extends
-              src="parts/featureblocks.htm"
-              locals='{
+            .card-group {
+              display: grid;
+              gap: 1rem;
+            }
+            .card-group-1 {
+              grid-template-columns: 1fr;
+              max-width: 50%;
+            }
+            .card-group-2 {
+              grid-template-columns: repeat(2, 1fr);
+            }
+            .card-group-3 {
+              grid-template-columns: repeat(3, 1fr);
+            }
+            .card-group img {
+              width: 100%;
+              height: auto;
+              object-fit: cover;
+            }
+
+            /* Media Query for screens smaller than 'large' size */
+            @media (max-width: 991px) {
+              .card-group-2,
+              .card-group-3 {
+                grid-template-columns: 1fr; /* Adjust all groups to 1fr */
+              }
+            }
+          </style>
+          <div
+            class="card-group row row-cols-1 row-cols-lg-{{ BUILD_CATSCount }} card-group-{{ BUILD_CATSCount }} gx-4"
+          >
+            <if condition="BUILD_HEALTHCARE === 'true'">
+              <extends
+                src="parts/featureblocks.htm"
+                locals='{
             "target": "healthcare.html",
             "cta": "Explore",
             "image": "pexels-kampus-7551635.jpg"
           }'
-            >
-              <block name="title"> Healthcare<br /> </block>
-              <block name="blurb">
-                Discover your future in healthcare with our diploma programs!
-              </block>
-            </extends>
-          </if>
-          <if condition="BUILD_EDUCATION === 'true'">
-            <extends
-              src="parts/featureblocks.htm"
-              locals='{
+              >
+                <block name="title"> Healthcare<br /> </block>
+                <block name="blurb">
+                  Discover your future in healthcare with our diploma programs!
+                </block>
+              </extends>
+            </if>
+            <if condition="BUILD_EDUCATION === 'true'">
+              <extends
+                src="parts/featureblocks.htm"
+                locals='{
           "target": "education.html",
           "cta": "Explore",
           "image": "early-childhood-education.jpg"
         }'
+              >
+                <block name="title">
+                  Education
+                  <br />
+                </block>
+                <block name="blurb">
+                  Shape the minds of tomorrow with our education diplomas!
+                </block>
+              </extends></if
             >
-              <block name="title">
-                Education
-                <br />
-              </block>
-              <block name="blurb">
-                Shape the minds of tomorrow with our education diplomas!
-              </block>
-            </extends></if
-          >
-          <if condition="BUILD_CST === 'true'">
-            <extends
-              src="parts/featureblocks.htm"
-              locals='{
+            <if condition="BUILD_CST === 'true'">
+              <extends
+                src="parts/featureblocks.htm"
+                locals='{
           "target": "computer-systems-and-technology.html",
           "cta": "Explore",
           "image": "m365.jpg"
         }'
+              >
+                <block name="title"> Computer Systems and Technology </block>
+                <block name="blurb">
+                  Master tech skills with our Computer Systems programs!
+                </block>
+              </extends></if
             >
-              <block name="title"> Computer Systems and Technology </block>
-              <block name="blurb">
-                Master tech skills with our Computer Systems programs!
-              </block>
-            </extends></if
-          >
+          </div>
         </div>
-      </div>
+      </if>
+      <if condition="BUILD_BRAND !== 'ascentia'">
+        <div class="feature-blocks container py-4" id="feature-blocks">
+          <div class="card-group row row-cols-1 row-cols-lg-3 gx-4">
+            <extends
+              src="parts/featureblocks.htm"
+              locals='{
+                      "target": "health-care-assistant.html",
+                      "cta": "Learn More",
+                      "image": "pexels-kampus-7551635.jpg"
+                    }'
+            >
+              <block name="title"> Health Care Assistant Diploma</block>
+              <block name="blurb">
+                In less than a year, you will graduate equipped with the
+                essential skills needed to thrive in British Columbia’s
+                healthcare sector
+              </block>
+            </extends>
+            <extends
+              src="parts/featureblocks.htm"
+              locals='{
+                      "target": "pharmacy-assistant.html",
+                      "cta": "Learn More",
+                      "image": "eci_pharmacy_tech_full.jpeg"
+                    }'
+            >
+              <block name="title">Pharmacy Assistant Diploma</block>
+              <block name="blurb">
+                In just under 6 months, you will graduate equipped with
+                comprehensive training in essential pharmacy assistant skills.
+              </block>
+            </extends>
+            <extends
+              src="parts/featureblocks.htm"
+              locals='{
+                      "target": "medical-lab-assistant.html",
+                      "cta": "Learn More",
+                      "image": "eci_mla_full.jpeg"
+                    }'
+            >
+              <block name="title">Medical Laboratory Assistant Diploma</block>
+              <block name="blurb">
+                Designed for those eager to enter the medical field swiftly, our
+                fast-track program offers comprehensive training in less than a
+                year.
+              </block>
+            </extends>
+          </div>
+        </div>
+      </if>
     </div>
   </block>
 </extends>

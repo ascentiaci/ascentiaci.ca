@@ -8,3 +8,40 @@
 .pinFeature {
   content: url("/node_modules/@fortawesome/fontawesome-free/svgs/solid/map-pin.svg");
 }
+
+.ol-popup {
+  position: absolute;
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid black;
+  bottom: 12px;
+  left: -50px;
+  white-space: nowrap;
+  /* Ensures the text stays on one line */
+}
+
+.ol-popup:after,
+.ol-popup:before {
+  top: 100%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+.ol-popup:after {
+  border-top-color: white;
+  border-width: 10px;
+  left: 48px;
+  margin-left: -10px;
+}
+
+.ol-popup:before {
+  border-top-color: black;
+  border-width: 11px;
+  left: 48px;
+  margin-left: -11px;
+}

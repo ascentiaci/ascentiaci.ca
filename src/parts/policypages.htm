@@ -1,3 +1,20 @@
+<!-- START LOCALS -->
+<script locals>
+module.exports = {
+  BUILD_BRAND: 'ascentia',
+  BUILD_BRAND_SC: 'Ascentia™',
+  BUILD_CATSCount: '2',
+  BUILD_CST: 'false',
+  BUILD_CST_PROGRAMS_LIST: 'DLB,M365',
+  BUILD_EDUCATION: 'true',
+  BUILD_EDUCATION_PROGRAMS_LIST: 'ECEA',
+  BUILD_HEALTHCARE: 'true',
+  BUILD_HEALTHCARE_PROGRAMS_LIST: 'RMT,CDA,DOC,PA,HCA,MLA',
+  BUILD_OTF: 'aci',
+  BUILD_PROGRAMS: 'PA,HCA,MLA,ECEA,DR,CDA',
+}
+</script>
+<!-- END LOCALS -->
 <extends src="parts/base.htm" locals='{
   "headerImg": "index.png", 
   "name": "{{ name }}",
@@ -16,8 +33,16 @@
       <tr>
         <td><block name="instituteName"></block></td>
         <td>&nbsp;</td>
-        
-        <td><block name="instituteNumber"></block></td>
+        <td>
+          <if condition="BUILD_BRAND === 'ascentia'">
+          03500
+          </if>
+          <if condition="BUILD_BRAND !== 'ascentia'">
+          03501
+          </if>
+
+        </td>
+        <!-- <td><block name="instituteNumber"></block></td> -->
       </tr>
       <tr>
         <td><strong>Institution Name</strong></td>
