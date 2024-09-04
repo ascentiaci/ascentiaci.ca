@@ -1,6 +1,6 @@
 module.exports = {
-  BUILD_BRAND: "elevare",
-  BUILD_BRAND_SC: "Elevare™",
+  BUILD_BRAND: "ascentia",
+  BUILD_BRAND_SC: "Ascentia™",
   BUILD_CATSCount: "2",
   BUILD_CST: "false",
   BUILD_CST_PROGRAMS_LIST: "DLB,M365",
@@ -8,5 +8,6 @@ module.exports = {
   BUILD_EDUCATION_PROGRAMS_LIST: "ECEA",
   BUILD_HEALTHCARE: "true",
   BUILD_HEALTHCARE_PROGRAMS_LIST: "RMT,CDA,DOC,PA,HCA,MLA",
+  BUILD_OTF: "aci",
   BUILD_PROGRAMS: "PA,HCA,MLA,ECEA,DR,CDA",
 };

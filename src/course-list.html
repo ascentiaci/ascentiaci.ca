@@ -31,6 +31,57 @@
   >
   <block name="introCopy"> </block>
   <block name="content">
+    <div class="container">
+      <h2>Computer System Requirements</h2>
+      <p>
+        To participate in these courses remotely, students must use a modern
+        Windows 11 computer. MacOS and Chromebooks are not supported, and
+        students using these devices will be unable to participate. Below are
+        the basic system requirements:
+      </p>
+
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Requirement</th>
+            <th>Details</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Operating System</td>
+            <td>Microsoft Windows 11</td>
+          </tr>
+          <tr>
+            <td>Display</td>
+            <td>14-inch or larger</td>
+          </tr>
+          <tr>
+            <td>Webcam</td>
+            <td>Required for exams</td>
+          </tr>
+          <tr>
+            <td>Headset with Microphone</td>
+            <td>Recommended for optimal participation</td>
+          </tr>
+          <tr>
+            <td>External Mouse</td>
+            <td>A laptop touchpad will work, but it's not ideal</td>
+          </tr>
+          <tr>
+            <td>Microsoft Office</td>
+            <td>Office 2021 or 365 (free student license provided)</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>
+        Most computers that meet or exceed these requirements can be purchased
+        from major retailers for between $500 and $900, before taxes and
+        optional addons.
+      </p>
+    </div>
+
     <link
       rel="stylesheet"
       href="https://cdn.datatables.net/2.1.2/css/dataTables.dataTables.css"
@@ -46,6 +97,7 @@
     <table id="myTable">
       <thead>
         <tr>
+          <th>Group</th>
           <th>Course</th>
           <th>Price</th>
           <th>Hours</th>
@@ -54,6 +106,7 @@
       </thead>
       <tbody>
         <tr>
+          <td>1 - Essentials</td>
           <td>Digital Literacy for Beginners</td>
           <td>$390</td>
           <td>10</td>
@@ -66,6 +119,7 @@
         </tr>
 
         <tr>
+          <td>1 - Essentials</td>
           <td>Microsoft Excel 365 Essentials</td>
           <td>$390</td>
           <td>28</td>
@@ -78,6 +132,7 @@
         </tr>
 
         <tr>
+          <td>2 - Intermediate</td>
           <td>Microsoft Excel 365 Intermediate</td>
           <td>$390</td>
           <td>20</td>
@@ -90,6 +145,7 @@
         </tr>
 
         <tr>
+          <td>3 - Advanced</td>
           <td>Microsoft Excel 365 Advanced</td>
           <td>$390</td>
           <td>20</td>
@@ -102,6 +158,7 @@
         </tr>
 
         <tr>
+          <td>5 - Medical</td>
           <td>Standard First Aid with CPR Level C Training</td>
           <td>$195</td>
           <td>16</td>
@@ -114,6 +171,7 @@
         </tr>
 
         <tr>
+          <td>1 - Essentials</td>
           <td>Financial Awareness and Success</td>
           <td>$175</td>
           <td>4</td>
@@ -126,6 +184,7 @@
         </tr>
 
         <tr>
+          <td>5 - Medical</td>
           <td>Diversity & Inclusion in Professional Practice</td>
           <td>$655</td>
           <td>20</td>
@@ -138,6 +197,7 @@
         </tr>
 
         <tr>
+          <td>1 - Essentials</td>
           <td>Microsoft 365 Introduction</td>
           <td>$250</td>
           <td>8</td>
@@ -150,6 +210,7 @@
         </tr>
 
         <tr>
+          <td>1 - Essentials</td>
           <td>Microsoft Outlook 365 Essentials</td>
           <td>$390</td>
           <td>20</td>
@@ -169,6 +230,7 @@
           </tr> -->
 
         <tr>
+          <td>1 - Essentials</td>
           <td>PowerPoint 365 Essentials</td>
           <td>$390</td>
           <td>28</td>
@@ -195,6 +257,7 @@
           </tr> -->
 
         <tr>
+          <td>4 - Typing Skills</td>
           <td>Typing Skill Building Level 1</td>
           <td>$350</td>
           <td>20</td>
@@ -207,6 +270,7 @@
         </tr>
 
         <tr>
+          <td>4 - Typing Skills</td>
           <td>Typing Skill Building Level 2</td>
           <td>$390</td>
           <td>28</td>
@@ -219,6 +283,7 @@
         </tr>
 
         <tr>
+          <td>4 - Typing Skills</td>
           <td>Typing Skill Building Level 3</td>
           <td>$390</td>
           <td>40</td>
@@ -231,6 +296,7 @@
         </tr>
 
         <tr>
+          <td>4 - Typing Skills</td>
           <td>Typing Skill Building Level 4</td>
           <td>$390</td>
           <td>40</td>
@@ -243,6 +309,7 @@
         </tr>
 
         <tr>
+          <td>4 - Typing Skills</td>
           <td>Typing Skill Building Level 5</td>
           <td>$390</td>
           <td>40</td>
@@ -255,6 +322,7 @@
         </tr>
 
         <tr>
+          <td>1 - Essentials</td>
           <td>Microsoft Word 365 Essentials</td>
           <td>$390</td>
           <td>28</td>
@@ -267,6 +335,7 @@
         </tr>
 
         <tr>
+          <td>2 - Intermediate</td>
           <td>Microsoft Word 365 Intermediate</td>
           <td>$390</td>
           <td>20</td>
@@ -279,6 +348,7 @@
         </tr>
 
         <tr>
+          <td>3 - Advanced</td>
           <td>Microsoft Word 365 Advanced</td>
           <td>$390</td>
           <td>16</td>
@@ -295,6 +365,8 @@
     <script>
       let table = new DataTable("#myTable", {
         // options
+        order: [[0, "asc"]],
+        pageLength: -1,
       });
     </script>
   </block>
