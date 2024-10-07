@@ -93,5 +93,6 @@ function showPopup() {
 
 // Show the pop-up on map load
 map.once("postrender", function () {
+  // Executes on map post-render event.
   showPopup();
 });
