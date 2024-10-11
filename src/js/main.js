@@ -21,9 +21,11 @@ let alertStartDate = new Date("2024-10-8");
 let alertEndDate = new Date("2024-10-19");
 let content = `
 <div style="background-color: #0033cc; color: #fff; padding: 15px; text-align: center; position: relative; z-index: 1000;">
-  <h1 style="color: #fff;"><strong>OPEN HOUSE: <br>Tour, Meet & Win!</strong> <br>
-  <strong>Win a FULL Scholarship worth up to $16,300*</strong><br></h1>
-  Join us for light refreshments.<br>
+  <h1 style="color: #fff;"><strong>Join us for our Open House<br>
+  October 18, 9 AM - 8 PM | Downtown Kelowna
+  </strong> <br>
+  <strong>Enter to Win a FULL Scholarship worth up to $16,300*</strong><br></h1>
+  
   *Eligibility based on admissions requirements. Ballot entry must be completed in person.<br>
   <a href="https://www.facebook.com/share/GxT2SMBWXGgoRYt2/" id="openHouseLink" style="color: #ffcc00; text-decoration: underline;">Click here for more details!</a>
 </div>
