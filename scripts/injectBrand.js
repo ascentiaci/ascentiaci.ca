@@ -85,6 +85,7 @@ const pagesToUpdate = [
   "../src/career-services.html",
   "../src/parts/modalleadform.htm",
   "../src/course-list.html",
+  "../src/our-staff.html",
 ];
 
 for (const filePath of pagesToUpdate) {
