@@ -1,8 +1,8 @@
 <!-- START LOCALS -->
 <script locals>
   module.exports = {
-    BUILD_BRAND: "ascentia",
-    BUILD_BRAND_SC: "Ascentia™",
+    BUILD_BRAND: "elevare",
+    BUILD_BRAND_SC: "Elevare™",
     BUILD_CATSCount: "2",
     BUILD_CST: "false",
     BUILD_CST_PROGRAMS_LIST: "DLB,M365",
@@ -10,7 +10,7 @@
     BUILD_EDUCATION_PROGRAMS_LIST: "ECEA",
     BUILD_HEALTHCARE: "true",
     BUILD_HEALTHCARE_PROGRAMS_LIST: "RMT,CDA,DOC,PA,HCA,MLA",
-    BUILD_OTF: "aci",
+    BUILD_OTF: "eci",
     BUILD_PROGRAMS: "PA,HCA,MLA,ECEA,DR,CDA",
   };
 </script>
@@ -39,23 +39,26 @@
     <div class="row text-center pl-3 pt-5">
       <extends
         src="parts/bio.htm"
-        locals='{
-      "portrait": "alda",
-      "Name": "Alda Messiah",
-      "title": "Executive Director",
-      "bio": "26 years of experience operating private career colleges in BC.",
-      "BUILD_OTF": "{{ BUILD_OTF }}"
-    }'
+        locals='{ 
+        "portrait": "alda",
+        "Name": "Alda Messiah",
+        "title": "Executive Director",
+        "bio": "With 26 years of experience operating private career colleges in BC, Alda has been instrumental in shaping educational programs that meet the demands of today’s job market. She is passionate about fostering environments where students can thrive and achieve their career goals.",
+        "BUILD_OTF": "{{ BUILD_OTF }}",
+        "order": "last"
+      }'
       ></extends>
+
       <extends
         src="parts/bio.htm"
         locals='{
-    "portrait": "leo",
-    "Name": "Leo Lin",
-    "title": "Instructor",
-    "bio": "15 years of experience in IT and Business Instruction.",
-    "BUILD_OTF": "{{ BUILD_OTF }}"
-  }'
+        "portrait": "leo",
+        "Name": "Leo Lin",
+        "title": "Instructor",
+        "bio": "Leo brings 15 years of experience in IT and Business Instruction, specializing in helping students bridge the gap between technical skills and real-world business applications. His hands-on teaching style ensures that students are well-prepared for the workforce.",
+        "BUILD_OTF": "{{ BUILD_OTF }}",
+        "order": "1"
+      }'
       ></extends>
 
       <extends
@@ -64,8 +67,9 @@
         "portrait": "rod",
         "Name": "Rod Templeton",
         "title": "IT Instructor",
-        "bio": "12 years of experience in IT and Business Instruction",
-        "BUILD_OTF": "{{ BUILD_OTF }}"
+        "bio": "With 12 years of experience in IT and Business Instruction, Rod is dedicated to mentoring students and providing them with the tools they need to succeed in a rapidly evolving tech landscape. His practical approach to teaching equips students with industry-relevant skills.",
+        "BUILD_OTF": "{{ BUILD_OTF }}",
+        "order": "2"
       }'
       ></extends>
 
@@ -75,8 +79,9 @@
         "portrait": "chris",
         "Name": "Chris Cabanas",
         "title": "Healthcare Instructor and Program Administrator",
-        "bio": "13 years of experience in nursing and 10 years in education.",
-        "BUILD_OTF": "{{ BUILD_OTF }}"
+        "bio": "Chris has 13 years of experience in nursing and 10 years in education. He brings a wealth of practical healthcare experience to his role and is passionate about preparing the next generation of healthcare professionals through hands-on learning and comprehensive curriculum design.",
+        "BUILD_OTF": "{{ BUILD_OTF }}",
+        "order": "3"
       }'
       ></extends>
 
@@ -86,8 +91,9 @@
         "portrait": "meo",
         "Name": "MaryEllen Olynuk",
         "title": "Admissions Advisor",
-        "bio": "8 years of experience.",
-        "BUILD_OTF": "{{ BUILD_OTF }}"
+        "bio": "With 8 years of experience, MaryEllen helps guide prospective students through the admissions process, ensuring they find the right program to meet their career aspirations. She’s known for her personalized approach and commitment to student success.",
+        "BUILD_OTF": "{{ BUILD_OTF }}",
+        "order": "4"
       }'
       ></extends>
 
@@ -97,8 +103,9 @@
         "portrait": "dragan",
         "Name": "Dragan Soro",
         "title": "Accountant and Instructor",
-        "bio": "15 years of experience in Business and Accounting.",
-        "BUILD_OTF": "{{ BUILD_OTF }}"
+        "bio": "Dragan has 15 years of experience in Business and Accounting. He combines his expertise with a talent for teaching, ensuring that students not only understand financial principles but also how to apply them in real-world business contexts.",
+        "BUILD_OTF": "{{ BUILD_OTF }}",
+        "order": "5"
       }'
       ></extends>
 
@@ -108,8 +115,9 @@
         "portrait": "maryreese",
         "Name": "Mary Rees",
         "title": "Job Search and Practicum Placement Coordinator",
-        "bio": "26 years of experience.",
-        "BUILD_OTF": "{{ BUILD_OTF }}"
+        "bio": "With 26 years of experience, Mary is dedicated to helping students transition from education to employment. She leverages her extensive network and career development expertise to connect students with meaningful practicum placements and job opportunities.",
+        "BUILD_OTF": "{{ BUILD_OTF }}",
+        "order": "6"
       }'
       ></extends>
 
@@ -119,8 +127,9 @@
         "portrait": "mike",
         "Name": "Michael Ross",
         "title": "Lead IT Instructor",
-        "bio": "8 years of experience in IT and Business Instruction",
-        "BUILD_OTF": "{{ BUILD_OTF }}"
+        "bio": "Michael brings 8 years of experience in IT and Business Instruction. His expertise in leading-edge technologies and his approachable teaching style make him a valuable resource for students looking to build successful careers in the IT sector.",
+        "BUILD_OTF": "{{ BUILD_OTF }}",
+        "order": "last"
       }'
       ></extends>
     </div>
