@@ -21,6 +21,7 @@
   </block>
 
   <block name="content">
+    <hr />
     <div class="location-container">
       <div class="location">
         <h2>
@@ -28,6 +29,7 @@
           <if condition="BUILD_BRAND === 'ascentia'"> (Under Construction) </if>
           <if condition="BUILD_BRAND !== 'ascentia'"> </if>
         </h2>
+
         <p>
           <strong>Address:</strong>
           <if condition="BUILD_BRAND === 'ascentia'"
@@ -71,6 +73,21 @@
           <script type="module" src="./js/maps.js"></script>
         </div>
       </div>
+      <if condition="BUILD_BRAND !== 'ascentia'">
+        <h2>
+          <br />
+          <hr />
+          Private Training Insitutions Branch Designation
+        </h2>
+        <if condition="BUILD_BRAND === 'ascentia'"> </if>
+        <if condition="BUILD_BRAND !== 'ascentia'">
+          <img
+            src="/src/images/eci-ptib.png?as=webp"
+            alt="Elevare Career Institiute's Private Training Insitutions Branch Designation Certificate"
+          />
+        </if>
+      </if>
+
       <!-- <div class="location">
         <br />
         <h2>Temporary Office</h2>
