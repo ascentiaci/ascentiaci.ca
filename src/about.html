@@ -1,0 +1,93 @@
+<!-- START LOCALS -->
+<script locals>
+  module.exports = {
+    BUILD_BRAND: "ascentia",
+    BUILD_BRAND_SC: "Ascentia™",
+    BUILD_CATSCount: "2",
+    BUILD_CST: "false",
+    BUILD_CST_PROGRAMS_LIST: "DLB,M365",
+    BUILD_EDUCATION: "true",
+    BUILD_EDUCATION_PROGRAMS_LIST: "ECEA",
+    BUILD_HEALTHCARE: "true",
+    BUILD_HEALTHCARE_PROGRAMS_LIST: "RMT,CDA,DOC,PA,HCA,MLA",
+    BUILD_OTF: "aci",
+    BUILD_PROGRAMS: "PA,HCA,MLA,ECEA,DR,CDA",
+  };
+</script>
+<!-- END LOCALS -->
+
+<extends
+  src="parts/base.htm"
+  locals='{
+  "headerImg": "eci_about_header.jpeg", 
+  "name": "",
+  "title": "About $BUILD_BRAND_SC",
+  "BUILD_BRAND": "BRAND",
+  "BUILD_BRAND_SC": "BRAND_SC"
+}'
+>
+  <block name="pageTitle"> About Elevare™ </block>
+  <block name="introCopy"> </block>
+  <block name="content">
+    <div class="text-left container">
+      <if condition="BUILD_BRAND === 'ascentia'">
+        <p>
+          <strong>$BUILD_BRAND_SC (ə-‘sen-ti-ə / a-SEN-tee-ah)</strong>, derived
+          from the Latin word ‘ascend’, embodies the essence of our mission at
+          $BUILD_BRAND_SC Career Institute.
+        </p>
+        <p>
+          Just as climbing to new heights represents progress and achievement,
+          so too does our commitment to guiding students towards greater
+          personal and professional growth.
+        </p>
+        <p>
+          At $BUILD_BRAND_SC, we believe in empowering individuals to ascend
+          beyond their current circumstances, elevating their lives and skills
+          to new levels of success.
+        </p>
+      </if>
+      <if condition="BUILD_BRAND !== 'ascentia'">
+        <p>
+          <strong>Elevare™ (ˈɛl ə ˌvɑr) / (EL-uh-var)</strong>, derived from
+          the Latin word ‘elevaré’, embodies the essence of our mission at
+          $BUILD_BRAND_SC Career Institute.
+        </p>
+        <p>
+          Just as climbing to new heights represents progress and achievement,
+          so too does our commitment to guiding students towards greater
+          personal and professional growth.
+        </p>
+        <p>
+          At $BUILD_BRAND_SC, we believe in empowering individuals to ascend
+          beyond their current circumstances, elevating their lives and skills
+          to new levels of success.
+        </p>
+      </if>
+      <hr />
+
+      <h2 class="text-left">Our Mission:</h2>
+      <p></p>
+
+      <p>
+        Our mission is to provide our students with the skills, knowledge, and
+        practical experience necessary to thrive in their desired careers. By
+        offering flexible learning options, personalized support, and
+        industry-leading programs, we aim to be British Columbia’s premier
+        career institute, fostering a culture of integrity, inclusivity, and
+        lifelong learning within our community.
+      </p>
+
+      <h2 class="text-left">Our Vision:</h2>
+
+      <p>
+        To create an environment where individuals are empowered to embark on
+        fulfilling career paths by providing accessible, comprehensive, and
+        innovative educational opportunities tailored to their unique needs and
+        aspirations.
+      </p>
+
+      <include src="src/parts/ourteam.htm"></include>
+    </div>
+  </block>
+</extends>
