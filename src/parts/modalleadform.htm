@@ -1,8 +1,8 @@
 <!-- START LOCALS -->
 <script locals>
 module.exports = {
-  BUILD_BRAND: 'ascentia',
-  BUILD_BRAND_SC: 'Ascentia™',
+  BUILD_BRAND: 'elevare',
+  BUILD_BRAND_SC: 'Elevare™',
   BUILD_CATSCount: '2',
   BUILD_CST: 'false',
   BUILD_CST_PROGRAMS_LIST: 'DLB,M365',
@@ -10,7 +10,7 @@ module.exports = {
   BUILD_EDUCATION_PROGRAMS_LIST: 'ECEA',
   BUILD_HEALTHCARE: 'true',
   BUILD_HEALTHCARE_PROGRAMS_LIST: 'RMT,CDA,DOC,PA,HCA,MLA',
-  BUILD_OTF: 'aci',
+  BUILD_OTF: 'eci',
   BUILD_PROGRAMS: 'PA,HCA,MLA,ECEA,DR,CDA',
 }
 </script>
@@ -23,40 +23,64 @@ module.exports = {
                     <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form id="leadForm" action="https://n8n.888ltd.ca/webhook/6c342149-4461-44c7-a1c8-d0201db5799a" method="POST">
+                    <!-- https://eci.orbundsis.com/einstein-freshair/public_save_contact_form.jsp?adminid=23&fid=23&contactid=0&redirect=0   << Static. just need to change the subdomain to {{ BUILD_OTF }}
+                     &firstname=[First Name]&lastname=[Last Name]&email=[Email]&cellphone=[Cell Phone]&smssupported=[SMS]&XP2491=[Program Of Interest]&XP2492=[Your Message]&XP2493=[Lead ID]&XP2555=[utm_src]&XP2554=[utm_term]&XP2553=[utm_campaign]&XP2552=[utm_medium] -->
+
+
+                    <!-- <form id="leadForm" action="https://n8n.888ltd.ca/webhook/6c342149-4461-44c7-a1c8-d0201db5799a" method="POST"> -->
+                    <form id="leadForm" action="https://{{ BUILD_OTF }}.orbundsis.com/einstein-freshair/public_save_contact_form.jsp" method="POST">
                         <h2>Request Information</h2>
-                        <label for="firstName">First Name: </label>
-                        <input type="text" id="firstName" name="firstName" placeholder="Your first name" required>
-                        <label for="lastName">Last Name:</label>
-                        <input type="text" id="lastName" name="lastName" placeholder="Your last name" required>
+                        <label for="firstname">First Name: </label>
+                        <input type="text" id="firstname" name="firstname" placeholder="Your first name" required>
+                        <label for="lastname">Last Name:</label>
+                        <input type="text" id="lastname" name="lastname" placeholder="Your last name" required>
                         <label for="email">Email:</label>
                         <input type="email" id="email" name="email" placeholder="Your email address" required>
-                        <label for="phone">Phone Number:</label>
-                        <input type="tel" id="phone" name="phone" placeholder="Your phone number" required>
+                        <label for="cellphone">cellphone Number:</label>
+                        <input type="tel" id="cellphone" name="cellphone" placeholder="Your phone number" required>
                         <label for="programInterest">Program of Interest:</label>
-                        <select id="programInterest" name="programInterest" required>
+                        <select id="programInterest" name="XP2491" required>
                             <option value="">Select a Program</option>
                             <option value="" disabled>-- Healthcare --</option>
+                            <if condition="BUILD_BRAND === 'ascentia'">
+                            
                             <option value="chairside-dental-assistant-diploma">Chairside Dental Assistant Diploma</option>
                             <option value="dental-receptionist-diploma">Dental Receptionist Diploma</option>
-                            <option value="health-care-assistant-diploma">Health Care Assistant Diploma</option>
-                            <option value="pharmacy-assistant-diploma">Pharmacy Assistant Diploma</option>
-                            <option value="medical-lab-assistant-diploma">Medical Laboratory Assistant Diploma</option>
+                            </if>
+                            <if condition="BUILD_BRAND !== 'ascentia'">
+                                <option value="health-care-assistant-diploma">Health Care Assistant Diploma</option>
+                                <option value="pharmacy-assistant-diploma">Pharmacy Assistant Diploma</option>
+                                <option value="medical-lab-assistant-diploma">Medical Laboratory Assistant Diploma</option>
+                                <option value="acute-care-micro-credential">Acute Care Micro Credential</option>
+                            
+                            </if>
+                            <if condition="BUILD_BRAND === 'ascentia'">
+                            
                             <option value="" disabled>-- Education --</option>
                             <option value="early-childhood-education-assistant-diploma">Early Childhood Education Assistant Diploma</option>
-                            <option value="" disabled>-- Computer Systems and Technology--</option>
+                            </if>
+                            <if condition="BUILD_BRAND !== 'ascentia'">
+                            
+                            </if>
+                            <!-- <option value="" disabled>-- Computer Systems and Technology--</option>
                             <option value="microsoft-365-courses">Microsoft 365 Courses</option>
-                            <option value="digital-literacy-for-beginners-course">Digital Literacy for Beginners Course</option>
+                            <option value="digital-literacy-for-beginners-course">Digital Literacy for Beginners Course</option> -->
                         </select>
                         <label for="comments">Additional Comments:</label>
-                        <textarea id="comments" name="comments" placeholder="Any additional information or questions"></textarea>
+                        <textarea id="comments" name="XP2492" placeholder="Any additional information or questions"></textarea>
                         <label for="consent">
-                            <input type="checkbox" id="consent" name="consent">
+                            <input type="checkbox" id="consent" name="XP2555">
                             (optional) I consent to receive SMS communications from {{ BUILD_BRAND_SC }} Career Institute.
                         </label>
                         <div id="turnstileContainer" class="d-none"></div>
                         <input type="hidden" id="cf-turnstile-response" name="cf-turnstile-response" value="">
-                        <input type="hidden" id="school" value="{{ BUILD_BRAND }}">
+                        <!-- <input type="hidden" id="school" value="{{ BUILD_BRAND }}"> -->
+                        <input type="hidden" name="adminid" value="23">
+                        <input type="hidden" name="fid" value="23">
+                        <input type="hidden" name="contactid" value="0">
+                        <input type="hidden" name="redirect" value="https://google.com">
+                        <input type="hidden" name="XP2493" id="leadid" value="Marketing Site">
+                        
                         <input type="submit" value="Submit">
                         <div id="feedbackMessage" class="red d-none">Please complete the CAPTCHA verification.</div>
                     </form>
